@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Settings | AlumniHub Office</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/office-settings.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     PAGE LOADER
+========================================================== -->
+
+<div
+    class="page-loader"
+    id="pageLoader"
+>
+
+    <div class="loader-content">
+
+        <div class="loader-logo">
+            <i class="bx bxs-graduation"></i>
+        </div>
+
+        <div class="loader-spinner"></div>
+
+        <p>
+            Loading settings...
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     SIDEBAR OVERLAY
+========================================================== -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================== -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+    <div class="sidebar-header">
+
+        <a
+            href="office-dashboard.html"
+            class="brand"
+        >
+
+            <div
+    class="office-ams-logo"
+    style="
+        width:46px;
+        height:46px;
+        min-width:46px;
+        flex:0 0 46px;
+        border-radius:50%;
+        overflow:hidden;
+        background:#fff;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    "
+>
+    <img
+        src="/assets/images/logo/ams-round-logo.jpg"
+        alt="AMS Logo"
+        style="
+            width:46px;
+            height:46px;
+            min-width:46px;
+            max-width:46px;
+            object-fit:cover;
+            object-position:center;
+            border-radius:50%;
+            display:block;
+            margin:0;
+            padding:0;
+        "
+    >
+</div>
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+                    AlumniHub
+                </span>
+
+                <span class="brand-role">
+                    Office Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <button
+            type="button"
+            class="sidebar-close"
+            id="sidebarClose"
+            aria-label="Close sidebar"
+        >
+
+            <i class="bx bx-x"></i>
+
+        </button>
+
+    </div>
+
+
+    <div class="office-account">
+
+        <div class="office-account-avatar">
+
+            <img
+                src="../assets/images/avatars/default-avatar.png"
+                alt="Office staff"
+                id="sidebarProfileImage"
+            >
+
+            <span
+                class="avatar-initials"
+                id="sidebarInitials"
+            >
+                AO
+            </span>
+
+            <span class="online-indicator"></span>
+
+        </div>
+
+
+        <div class="office-account-details">
+
+            <p
+                class="office-account-name"
+                id="sidebarUserName"
+            >
+                Alumni Office Staff
+            </p>
+
+            <p class="office-account-role">
+
+                <i class="bx bx-shield-quarter"></i>
+
+                Alumni Affairs Office
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <nav class="sidebar-navigation">
+
+        <p class="sidebar-section-title">
+            Main Menu
+        </p>
+
+
+        <ul class="sidebar-menu">
+
+            <li>
+
+                <a
+                    href="office-dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-dashboard"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="alumni-records.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-user-detail"></i>
+
+                    <span>
+                        Alumni Records
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="account-verification.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-user-check"></i>
+
+                    <span>
+                        Account Verification
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="office-events.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-calendar-event"></i>
+
+                    <span>
+                        Events Management
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="office-jobs.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-briefcase-alt-2"></i>
+
+                    <span>
+                        Job Opportunities
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="office-announcements.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-megaphone"></i>
+
+                    <span>
+                        Announcements
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="office-reports.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-report"></i>
+
+                    <span>
+                        Reports
+                    </span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+
+        <p class="sidebar-section-title">
+            Account
+        </p>
+
+
+        <ul class="sidebar-menu">
+
+            <li>
+
+                <a
+                    href="office-profile.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-user-circle"></i>
+
+                    <span>
+                        Profile
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="office-settings.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i class="bx bxs-cog"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <div class="sidebar-footer">
+
+        <button
+            type="button"
+            class="logout-button"
+            id="logoutButton"
+        >
+
+            <i class="bx bx-log-out"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     APP
+========================================================== -->
+
+<div class="app-layout">
+
+
+    <!-- TOP HEADER -->
+
+    <header class="top-header">
+
+        <div class="header-left">
+
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open sidebar"
+            >
+
+                <i class="bx bx-menu"></i>
+
+            </button>
+
+
+            <div class="header-search">
+
+                <i class="bx bx-search"></i>
+
+                <input
+                    type="search"
+                    id="globalSearch"
+                    placeholder="Search settings..."
+                    autocomplete="off"
+                >
+
+                <span class="search-shortcut">
+                    Ctrl K
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                class="header-action-button"
+                id="themeToggle"
+                title="Toggle theme"
+            >
+
+                <i
+                    class="bx bx-moon"
+                    id="themeIcon"
+                ></i>
+
+            </button>
+
+
+            <div class="header-profile-wrapper">
+
+                <button
+                    type="button"
+                    class="header-profile"
+                    id="headerProfileButton"
+                >
+
+                    <div class="header-profile-avatar">
+
+                        <img
+                            src="../assets/images/avatars/default-avatar.png"
+                            alt="Office staff"
+                            id="headerProfileImage"
+                        >
+
+                        <span
+                            class="avatar-initials"
+                            id="headerInitials"
+                        >
+                            AO
+                        </span>
+
+                    </div>
+
+
+                    <div class="header-profile-info">
+
+                        <span
+                            class="header-profile-name"
+                            id="headerUserName"
+                        >
+                            Alumni Office
+                        </span>
+
+                        <span class="header-profile-role">
+                            Office Staff
+                        </span>
+
+                    </div>
+
+
+                    <i class="bx bx-chevron-down"></i>
+
+                </button>
+
+
+                <div
+                    class="profile-dropdown"
+                    id="profileDropdown"
+                >
+
+                    <a href="office-profile.html">
+
+                        <i class="bx bx-user"></i>
+
+                        My Profile
+
+                    </a>
+
+
+                    <a href="office-settings.html">
+
+                        <i class="bx bx-cog"></i>
+
+                        Settings
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        id="profileLogoutButton"
+                    >
+
+                        <i class="bx bx-log-out"></i>
+
+                        Logout
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-header">
+
+            <div class="page-heading">
+
+                <div class="page-heading-icon">
+
+                    <i class="bx bxs-cog"></i>
+
+                </div>
+
+
+                <div>
+
+                    <p class="page-eyebrow">
+                        Alumni Office
+                    </p>
+
+                    <h1>
+                        Settings
+                    </h1>
+
+                    <p class="page-description">
+                        Manage your account preferences, security, notifications, and appearance.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="page-header-actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="resetAllSettingsButton"
+                >
+
+                    <i class="bx bx-reset"></i>
+
+                    Reset Defaults
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="button button-primary"
+                    id="saveAllSettingsButton"
+                >
+
+                    <i class="bx bx-save"></i>
+
+                    <span id="saveAllSettingsText">
+                        Save Changes
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SETTINGS LAYOUT
+        ================================================== -->
+
+        <div class="settings-layout">
+
+
+            <!-- SETTINGS MENU -->
+
+            <aside class="settings-menu-card">
+
+                <button
+                    type="button"
+                    class="settings-menu-button active"
+                    data-settings-section="accountSection"
+                >
+
+                    <i class="bx bx-user"></i>
+
+                    <span>
+                        Account
+                    </span>
+
+                </button>
+
+
+            
+
+
+                <button
+                    type="button"
+                    class="settings-menu-button"
+                    data-settings-section="notificationsSection"
+                >
+
+                    <i class="bx bx-bell"></i>
+
+                    <span>
+                        Notifications
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="settings-menu-button"
+                    data-settings-section="appearanceSection"
+                >
+
+                    <i class="bx bx-palette"></i>
+
+                    <span>
+                        Appearance
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="settings-menu-button"
+                    data-settings-section="securitySection"
+                >
+
+                    <i class="bx bx-shield-quarter"></i>
+
+                    <span>
+                        Security
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="settings-menu-button"
+                    data-settings-section="preferencesSection"
+                >
+
+                    <i class="bx bx-slider-alt"></i>
+
+                    <span>
+                        Preferences
+                    </span>
+
+                </button>
+
+            </aside>
+
+
+
+            <!-- SETTINGS CONTENT -->
+
+            <div class="settings-content">
+
+
+                <!-- =========================================
+                     ACCOUNT
+                ========================================== -->
+
+                <section
+                    class="settings-section active"
+                    id="accountSection"
+                >
+
+                    <div class="settings-section-header">
+
+                        <div>
+
+                            <p class="settings-eyebrow">
+                                Profile
+                            </p>
+
+                            <h2>
+                                Account Information
+                            </h2>
+
+                            <p>
+                                Your account information is loaded directly from your AlumniHub profile.
+                            </p>
+
+                        </div>
+
+                        <i class="bx bx-user-circle"></i>
+
+                    </div>
+
+
+                    <div class="settings-form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="accountFirstName">
+                                First Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="accountFirstName"
+                                readonly
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="accountMiddleName">
+                                Middle Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="accountMiddleName"
+                                readonly
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="accountLastName">
+                                Last Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="accountLastName"
+                                readonly
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="accountEmail">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="accountEmail"
+                                readonly
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label>
+                                Account Role
+                            </label>
+
+                            <div class="readonly-setting">
+
+                                <i class="bx bx-shield-quarter"></i>
+
+                                <div>
+
+                                    <strong id="accountRole">
+                                        Alumni Office
+                                    </strong>
+
+                                    <span>
+                                        Role permissions are managed by the system administrator.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <a
+                                href="office-profile.html"
+                                class="button button-secondary"
+                            >
+
+                                <i class="bx bx-edit"></i>
+
+                                Edit Profile Information
+
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+            
+
+
+
+                <!-- =========================================
+                     NOTIFICATIONS
+                ========================================== -->
+
+                <section
+                    class="settings-section"
+                    id="notificationsSection"
+                    hidden
+                >
+
+                    <div class="settings-section-header">
+
+                        <div>
+
+                            <p class="settings-eyebrow">
+                                Notifications
+                            </p>
+
+                            <h2>
+                                Notification Preferences
+                            </h2>
+
+                            <p>
+                                Choose which AlumniHub updates you want to receive.
+                            </p>
+
+                        </div>
+
+                        <i class="bx bx-bell"></i>
+
+                    </div>
+
+
+                    <div class="settings-options-list">
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <div class="setting-option-icon">
+                                    <i class="bx bx-user-check"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Account Verification Updates
+                                    </strong>
+
+                                    <span>
+                                        Notify me when verification records change.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="notificationVerification"
+                                    checked
+                                >
+
+                                <span class="switch-slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <div class="setting-option-icon">
+                                    <i class="bx bx-calendar-event"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Events Notifications
+                                    </strong>
+
+                                    <span>
+                                        Receive event activity and RSVP updates.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="notificationEvents"
+                                    checked
+                                >
+
+                                <span class="switch-slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <div class="setting-option-icon">
+                                    <i class="bx bx-briefcase"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Job Updates
+                                    </strong>
+
+                                    <span>
+                                        Receive updates related to job postings.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="notificationJobs"
+                                    checked
+                                >
+
+                                <span class="switch-slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <div class="setting-option-icon">
+                                    <i class="bx bx-megaphone"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Announcement Updates
+                                    </strong>
+
+                                    <span>
+                                        Receive notifications for announcement activity.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="notificationAnnouncements"
+                                    checked
+                                >
+
+                                <span class="switch-slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <div class="setting-option-icon">
+                                    <i class="bx bx-envelope"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Email Notifications
+                                    </strong>
+
+                                    <span>
+                                        Allow AlumniHub to send notification emails.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="notificationEmail"
+                                >
+
+                                <span class="switch-slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     APPEARANCE
+                ========================================== -->
+
+                <section
+                    class="settings-section"
+                    id="appearanceSection"
+                    hidden
+                >
+
+                    <div class="settings-section-header">
+
+                        <div>
+
+                            <p class="settings-eyebrow">
+                                Display
+                            </p>
+
+                            <h2>
+                                Appearance
+                            </h2>
+
+                            <p>
+                                Customize how the Alumni Office portal looks.
+                            </p>
+
+                        </div>
+
+                        <i class="bx bx-palette"></i>
+
+                    </div>
+
+
+                    <div class="appearance-options">
+
+
+                        <label class="theme-card">
+
+                            <input
+                                type="radio"
+                                name="appearanceTheme"
+                                value="light"
+                                id="lightThemeOption"
+                            >
+
+                            <div class="theme-preview light-preview">
+
+                                <div class="preview-sidebar"></div>
+
+                                <div class="preview-content">
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                </div>
+
+                            </div>
+
+                            <strong>
+                                Light
+                            </strong>
+
+                        </label>
+
+
+                        <label class="theme-card">
+
+                            <input
+                                type="radio"
+                                name="appearanceTheme"
+                                value="dark"
+                                id="darkThemeOption"
+                            >
+
+                            <div class="theme-preview dark-preview">
+
+                                <div class="preview-sidebar"></div>
+
+                                <div class="preview-content">
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                </div>
+
+                            </div>
+
+                            <strong>
+                                Glossy Black
+                            </strong>
+
+                        </label>
+
+
+                        <label class="theme-card">
+
+                            <input
+                                type="radio"
+                                name="appearanceTheme"
+                                value="system"
+                                id="systemThemeOption"
+                            >
+
+                            <div class="theme-preview system-preview">
+
+                                <div class="preview-sidebar"></div>
+
+                                <div class="preview-content">
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                </div>
+
+                            </div>
+
+                            <strong>
+                                System
+                            </strong>
+
+                        </label>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     SECURITY
+                ========================================== -->
+
+                <section
+                    class="settings-section"
+                    id="securitySection"
+                    hidden
+                >
+
+                    <div class="settings-section-header">
+
+                        <div>
+
+                            <p class="settings-eyebrow">
+                                Account Protection
+                            </p>
+
+                            <h2>
+                                Security Preferences
+                            </h2>
+
+                            <p>
+                                Manage session and account protection preferences.
+                            </p>
+
+                        </div>
+
+                        <i class="bx bx-shield-quarter"></i>
+
+                    </div>
+
+
+                    <div class="settings-options-list">
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <div class="setting-option-icon">
+                                    <i class="bx bx-time-five"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Session Timeout
+                                    </strong>
+
+                                    <span>
+                                        Automatically sign out after inactivity.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <select id="sessionTimeout">
+
+                                <option value="15">
+                                    15 minutes
+                                </option>
+
+                                <option value="30">
+                                    30 minutes
+                                </option>
+
+                                <option value="60">
+                                    1 hour
+                                </option>
+
+                                <option value="120">
+                                    2 hours
+                                </option>
+
+                                <option value="0">
+                                    Disabled
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <div class="setting-option-icon">
+                                    <i class="bx bx-lock"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Login Activity Alerts
+                                    </strong>
+
+                                    <span>
+                                        Notify me about new account login activity.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="loginActivityAlerts"
+                                    checked
+                                >
+
+                                <span class="switch-slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <div class="setting-option-icon">
+                                    <i class="bx bx-log-out-circle"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Sign Out Other Sessions
+                                    </strong>
+
+                                    <span>
+                                        End other active login sessions for this account.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="button button-secondary"
+                                id="signOutOtherSessionsButton"
+                            >
+
+                                Sign Out Others
+
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     SYSTEM PREFERENCES
+                ========================================== -->
+
+                <section
+                    class="settings-section"
+                    id="preferencesSection"
+                    hidden
+                >
+
+                    <div class="settings-section-header">
+
+                        <div>
+
+                            <p class="settings-eyebrow">
+                                Portal
+                            </p>
+
+                            <h2>
+                                System Preferences
+                            </h2>
+
+                            <p>
+                                Customize common AlumniHub behavior for your account.
+                            </p>
+
+                        </div>
+
+                        <i class="bx bx-slider-alt"></i>
+
+                    </div>
+
+
+                    <div class="settings-form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="recordsPerPage">
+                                Records Per Page
+                            </label>
+
+                            <select id="recordsPerPage">
+
+                                <option value="10">
+                                    10
+                                </option>
+
+                                <option value="20">
+                                    20
+                                </option>
+
+                                <option value="50">
+                                    50
+                                </option>
+
+                                <option value="100">
+                                    100
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="dateFormat">
+                                Date Format
+                            </label>
+
+                            <select id="dateFormat">
+
+                                <option value="MMM_D_YYYY">
+                                    Aug 16, 2026
+                                </option>
+
+                                <option value="MM_DD_YYYY">
+                                    08/16/2026
+                                </option>
+
+                                <option value="DD_MM_YYYY">
+                                    16/08/2026
+                                </option>
+
+                                <option value="YYYY_MM_DD">
+                                    2026-08-16
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="defaultLandingPage">
+                                Default Landing Page
+                            </label>
+
+                            <select id="defaultLandingPage">
+
+                                <option value="office-dashboard.html">
+                                    Dashboard
+                                </option>
+
+                                <option value="alumni-records.html">
+                                    Alumni Records
+                                </option>
+
+                                <option value="events.html">
+                                    Events Management
+                                </option>
+
+                                <option value="office-reports.html">
+                                    Reports
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="languagePreference">
+                                Language
+                            </label>
+
+                            <select id="languagePreference">
+
+                                <option value="en">
+                                    English
+                                </option>
+
+                                <option value="fil">
+                                    Filipino
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="page-footer">
+
+            <span>
+
+                ©
+                <span id="currentYear"></span>
+                AlumniHub
+
+            </span>
+
+
+            <span>
+
+                <span class="status-dot"></span>
+
+                Alumni Office Portal
+
+            </span>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     RESET SETTINGS CONFIRMATION
+========================================================== -->
+
+<div
+    class="modal"
+    id="resetSettingsModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal-backdrop"
+        data-close-modal="resetSettingsModal"
+    ></div>
+
+
+    <div class="modal-dialog confirmation-modal-dialog">
+
+        <div class="modal-icon warning">
+
+            <i class="bx bx-reset"></i>
+
+        </div>
+
+
+        <h2>
+            Reset settings?
+        </h2>
+
+
+        <p>
+            Your preferences will return to AlumniHub default settings.
+        </p>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="button button-secondary"
+                data-close-modal="resetSettingsModal"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                class="button button-danger"
+                id="confirmResetSettingsButton"
+            >
+                Reset Settings
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     SIGN OUT OTHER SESSIONS CONFIRMATION
+========================================================== -->
+
+<div
+    class="modal"
+    id="signOutSessionsModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal-backdrop"
+        data-close-modal="signOutSessionsModal"
+    ></div>
+
+
+    <div class="modal-dialog confirmation-modal-dialog">
+
+        <div class="modal-icon">
+
+            <i class="bx bx-devices"></i>
+
+        </div>
+
+
+        <h2>
+            Sign out other sessions?
+        </h2>
+
+
+        <p>
+            Other active sessions will be invalidated while this current session remains active.
+        </p>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="button button-secondary"
+                data-close-modal="signOutSessionsModal"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                class="button button-primary"
+                id="confirmSignOutSessionsButton"
+            >
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     LOGOUT MODAL
+========================================================== -->
+
+<div
+    class="modal"
+    id="logoutModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal-backdrop"
+        data-close-modal="logoutModal"
+    ></div>
+
+
+    <div class="modal-dialog confirmation-modal-dialog">
+
+        <div class="modal-icon danger">
+
+            <i class="bx bx-log-out"></i>
+
+        </div>
+
+
+        <h2>
+            Sign out?
+        </h2>
+
+
+        <p>
+            You will need to log in again to access the Alumni Office Portal.
+        </p>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="button button-secondary"
+                data-close-modal="logoutModal"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                class="button button-danger"
+                id="confirmLogoutButton"
+            >
+                Sign Out
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================== -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+></div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script src="../assets/js/office-settings.js"></script>
+<script src="../assets/js/office-header.js"></script>
+
+
+</body>
+
+</html>

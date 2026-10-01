@@ -1,0 +1,2372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Settings | AlumniHub</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+   <!-- Shared CSS -->
+<link rel="stylesheet" href="../assets/css/variable.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/page-transition.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+
+<!-- Settings CSS -->
+<link rel="stylesheet" href="../assets/css/settings.css">
+</head>
+
+<body>
+
+    <div class="dashboard-shell">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-top">
+
+                <a href="dashboard.html" class="sidebar-brand">
+
+    <div class="brand-mark">
+        <img
+            src="../assets/images/logo/ams-round-logo.jpg"
+            alt="AMS Logo"
+            class="ams-brand-logo"
+        >
+    </div>
+
+    <div class="brand-text">
+        <strong>A.M.S</strong>
+        <small>AlumniHub</small>
+    </div>
+
+</a>
+
+
+                <div class="sidebar-search">
+
+                    <i class="bx bx-search"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Search anything"
+                    >
+
+                    <span>⌘ K</span>
+
+                </div>
+
+
+                <p class="menu-label">
+                    Main Navigation
+                </p>
+
+
+                <nav class="menu">
+
+                    <a href="dashboard.html">
+                        <i class="bx bxs-dashboard"></i>
+                        <span>Overview</span>
+                    </a>
+
+                    <a href="alumni-directory.html">
+                        <i class="bx bx-group"></i>
+                        <span>Alumni Directory</span>
+                    </a>
+
+                    <a href="account-approvals.html">
+                        <i class="bx bx-user-check"></i>
+                        <span>Account Approvals</span>
+                    </a>
+
+                    <a href="profile.html">
+                        <i class="bx bx-user"></i>
+                        <span>My Profile</span>
+                    </a>
+
+                    <a href="events.html">
+                        <i class="bx bx-calendar-event"></i>
+                        <span>Events</span>
+                    </a>
+
+                    <a href="jobs.html">
+                        <i class="bx bx-briefcase"></i>
+                        <span>Jobs</span>
+                    </a>
+
+                    <a href="announcements.html">
+                        <i class="bx bxs bullhorn"></i>
+                        <span>Announcements</span>
+                    </a>
+
+                    <a href="reports.html">
+                        <i class="bx bx-bar-chart-alt-2"></i>
+                        <span>Reports</span>
+                    </a>
+
+                </nav>
+
+            </div>
+
+
+            <div class="sidebar-bottom">
+
+                <p class="menu-label">
+                    Support
+                </p>
+
+                <a
+                    href="settings.html"
+                    class="support-link active"
+                >
+                    <i class="bx bx-cog"></i>
+                    <span>Settings</span>
+                </a>
+
+
+                <button
+                    id="logout"
+                    class="sidebar-profile"
+                    type="button"
+                >
+
+                    <div
+                        id="sidebarAvatar"
+                        class="sidebar-avatar"
+                    >
+                        A
+                    </div>
+
+                    <div class="sidebar-user">
+
+                        <strong id="sidebarName">
+                            Administrator
+                        </strong>
+
+                        <small id="sidebarEmail">
+                            admin@alumnihub.com
+                        </small>
+
+                    </div>
+
+                    <i class="bx bx-log-out"></i>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <div class="topbar-inner">
+
+                    <div class="topbar-left">
+
+                        <button
+                            id="mobileMenuButton"
+                            class="topbar-menu-button"
+                            type="button"
+                            aria-label="Open navigation"
+                        >
+                            <i class="bx bx-menu"></i>
+                        </button>
+
+                        <div class="breadcrumb">
+
+                            <a
+                                href="dashboard.html"
+                                class="breadcrumb-dashboard"
+                                title="Back to Dashboard"
+                            >
+                                Administrator
+                            </a>
+
+                            <i class="bx bx-chevron-right"></i>
+
+                            <strong>Settings</strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="topbar-actions">
+
+                        <button
+                            id="themeToggle"
+                            class="topbar-icon"
+                            type="button"
+                            aria-label="Toggle theme"
+                        >
+                            <i class="bx bx-moon"></i>
+                        </button>
+
+                        <button
+                            class="topbar-icon notification-button"
+                            type="button"
+                            aria-label="Notifications"
+                        >
+                            <i class="bx bx-bell"></i>
+                            <span class="notification-dot"></span>
+                        </button>
+
+                        <button
+                            class="topbar-icon"
+                            type="button"
+                            aria-label="Help"
+                        >
+                            <i class="bx bx-help-circle"></i>
+                        </button>
+
+                        <div
+                            id="topbarAvatar"
+                            class="topbar-avatar"
+                        >
+                            A
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- SETTINGS PAGE -->
+
+            <div class="settings-page-container">
+
+                <!-- PAGE HEADER -->
+
+                <section class="settings-page-header">
+
+                    <div>
+
+                        <div class="settings-page-badge">
+                            <i class="bx bx-cog"></i>
+                            Administration Preferences
+                        </div>
+
+                        <h1>Settings</h1>
+
+                        <p>
+                            Manage your profile, account security,
+                            notifications, appearance, and system preferences.
+                        </p>
+
+                    </div>
+
+
+                    <div class="settings-header-actions">
+
+                        <button
+                            id="resetSettingsButton"
+                            class="settings-secondary-button"
+                            type="button"
+                        >
+                            <i class="bx bx-reset"></i>
+                            Reset
+                        </button>
+
+                        <button
+                            id="saveAllSettingsButton"
+                            class="settings-primary-button"
+                            type="button"
+                        >
+                            <i class="bx bx-save"></i>
+                            Save Changes
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SETTINGS LAYOUT -->
+
+                <section class="settings-layout">
+
+                    <!-- SETTINGS NAVIGATION -->
+
+                    <aside class="settings-navigation">
+
+                        <div class="settings-navigation-header">
+
+                            <span>Settings Menu</span>
+
+                            <small>
+                                Select a section to manage
+                            </small>
+
+                        </div>
+
+
+                        <nav class="settings-navigation-list">
+
+                            <button
+                                class="settings-nav-item active"
+                                data-settings-target="profileSettings"
+                                type="button"
+                            >
+                                <i class="bx bx-user"></i>
+
+                                <span>
+                                    <strong>Profile</strong>
+                                    <small>Personal information</small>
+                                </span>
+                            </button>
+
+
+                            <button
+                                class="settings-nav-item"
+                                data-settings-target="accountSettings"
+                                type="button"
+                            >
+                                <i class="bx bx-id-card"></i>
+
+                                <span>
+                                    <strong>Account</strong>
+                                    <small>Account information</small>
+                                </span>
+                            </button>
+
+
+                            <button
+                                class="settings-nav-item"
+                                data-settings-target="passwordSettings"
+                                type="button"
+                            >
+                                <i class="bx bx-lock-alt"></i>
+
+                                <span>
+                                    <strong>Password</strong>
+                                    <small>Update your password</small>
+                                </span>
+                            </button>
+
+
+                            <button
+                                class="settings-nav-item"
+                                data-settings-target="notificationSettings"
+                                type="button"
+                            >
+                                <i class="bx bx-bell"></i>
+
+                                <span>
+                                    <strong>Notifications</strong>
+                                    <small>Alerts and reminders</small>
+                                </span>
+                            </button>
+
+
+                            <button
+                                class="settings-nav-item"
+                                data-settings-target="appearanceSettings"
+                                type="button"
+                            >
+                                <i class="bx bx-palette"></i>
+
+                                <span>
+                                    <strong>Appearance</strong>
+                                    <small>Theme and display</small>
+                                </span>
+                            </button>
+
+
+                            <button
+                                class="settings-nav-item"
+                                data-settings-target="securitySettings"
+                                type="button"
+                            >
+                                <i class="bx bx-shield-quarter"></i>
+
+                                <span>
+                                    <strong>Security</strong>
+                                    <small>Sessions and login alerts</small>
+                                </span>
+                            </button>
+
+
+                            <button
+                                class="settings-nav-item"
+                                data-settings-target="systemSettings"
+                                type="button"
+                            >
+                                <i class="bx bx-slider-alt"></i>
+
+                                <span>
+                                    <strong>System</strong>
+                                    <small>Language and formats</small>
+                                </span>
+                            </button>
+
+                        </nav>
+
+                    </aside>
+
+
+                    <!-- SETTINGS CONTENT -->
+
+                    <div class="settings-content">
+
+                        <!-- PROFILE SETTINGS -->
+
+                        <article
+                            id="profileSettings"
+                            class="settings-section active"
+                        >
+
+                            <div class="settings-section-header">
+
+                                <div class="settings-section-heading">
+
+                                    <div class="settings-section-icon">
+                                        <i class="bx bx-user"></i>
+                                    </div>
+
+                                    <div>
+                                        <h2>Profile Settings</h2>
+
+                                        <p>
+                                            Update your personal information
+                                            and administrator profile.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                                <span class="settings-status-badge">
+                                    Administrator
+                                </span>
+
+                            </div>
+
+
+                            <div class="settings-section-body">
+
+                                <div class="profile-photo-setting">
+
+                                    <div
+                                        id="settingsProfilePreview"
+                                        class="settings-profile-preview"
+                                    >
+                                        A
+                                    </div>
+
+                                    <div class="profile-photo-information">
+
+                                        <h3>Profile Picture</h3>
+
+                                        <p>
+                                            Upload a JPG or PNG image with a
+                                            maximum size of 2 MB.
+                                        </p>
+
+                                        <div class="profile-photo-actions">
+
+                                            <label
+                                                for="profilePictureInput"
+                                                class="settings-upload-button"
+                                            >
+                                                <i class="bx bx-upload"></i>
+                                                Upload Photo
+                                            </label>
+
+                                            <input
+                                                id="profilePictureInput"
+                                                type="file"
+                                                accept="image/png, image/jpeg"
+                                                hidden
+                                            >
+
+                                            <button
+                                                id="removeProfilePictureButton"
+                                                class="settings-text-button danger"
+                                                type="button"
+                                            >
+                                                Remove
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="settings-form-grid">
+
+                                    <div class="settings-form-field">
+
+                                        <label for="settingsFirstName">
+                                            First Name
+                                            <span>*</span>
+                                        </label>
+
+                                        <div class="settings-input-wrapper">
+
+                                            <i class="bx bx-user"></i>
+
+                                            <input
+                                                id="settingsFirstName"
+                                                type="text"
+                                                placeholder="Enter first name"
+                                            >
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="settings-form-field">
+
+                                        <label for="settingsMiddleName">
+                                            Middle Name
+                                        </label>
+
+                                        <div class="settings-input-wrapper">
+
+                                            <i class="bx bx-user"></i>
+
+                                            <input
+                                                id="settingsMiddleName"
+                                                type="text"
+                                                placeholder="Enter middle name"
+                                            >
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="settings-form-field">
+
+                                        <label for="settingsLastName">
+                                            Last Name
+                                            <span>*</span>
+                                        </label>
+
+                                        <div class="settings-input-wrapper">
+
+                                            <i class="bx bx-user"></i>
+
+                                            <input
+                                                id="settingsLastName"
+                                                type="text"
+                                                placeholder="Enter last name"
+                                            >
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="settings-form-field">
+
+                                        <label for="settingsEmail">
+                                            Email Address
+                                            <span>*</span>
+                                        </label>
+
+                                        <div class="settings-input-wrapper">
+
+                                            <i class="bx bx-envelope"></i>
+
+                                            <input
+                                                id="settingsEmail"
+                                                type="email"
+                                                placeholder="Enter email address"
+                                            >
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="settings-form-field">
+
+                                        <label for="settingsPhone">
+                                            Phone Number
+                                        </label>
+
+                                        <div class="settings-input-wrapper">
+
+                                            <i class="bx bx-phone"></i>
+
+                                            <input
+                                                id="settingsPhone"
+                                                type="tel"
+                                                placeholder="+63 900 000 0000"
+                                            >
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="settings-form-field">
+
+                                        <label for="settingsPosition">
+                                            Position
+                                        </label>
+
+                                        <div class="settings-input-wrapper">
+
+                                            <i class="bx bx-briefcase"></i>
+
+                                            <input
+                                                id="settingsPosition"
+                                                type="text"
+                                                value="System Administrator"
+                                                placeholder="Enter position"
+                                            >
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="settings-form-field full-width">
+
+                                        <label for="settingsAddress">
+                                            Address
+                                        </label>
+
+                                        <div class="settings-input-wrapper">
+
+                                            <i class="bx bx-map"></i>
+
+                                            <input
+                                                id="settingsAddress"
+                                                type="text"
+                                                placeholder="Enter complete address"
+                                            >
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="settings-form-field full-width">
+
+                                        <label for="settingsBio">
+                                            About
+                                        </label>
+
+                                        <textarea
+                                            id="settingsBio"
+                                            rows="4"
+                                            maxlength="300"
+                                            placeholder="Write a short description about yourself..."
+                                        ></textarea>
+
+                                        <small class="settings-field-helper">
+                                            <span id="bioCharacterCount">0</span>/300
+                                            characters
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- ACCOUNT SETTINGS -->
+
+                        <article
+                            id="accountSettings"
+                            class="settings-section"
+                        >
+
+                            <div class="settings-section-header">
+
+                                <div class="settings-section-heading">
+
+                                    <div class="settings-section-icon">
+                                        <i class="bx bx-id-card"></i>
+                                    </div>
+
+                                    <div>
+                                        <h2>Account Information</h2>
+
+                                        <p>
+                                            Review your role, status, and
+                                            account activity.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                                <span class="settings-status-badge success">
+                                    Active
+                                </span>
+
+                            </div>
+
+
+                            <div class="settings-section-body">
+
+                                <div class="account-information-grid">
+
+                                    <div class="account-information-item">
+
+                                        <div class="account-information-icon">
+                                            <i class="bx bx-user-circle"></i>
+                                        </div>
+
+                                        <div>
+                                            <span>Username</span>
+
+                                            <strong id="accountUsername">
+                                                administrator
+                                            </strong>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="account-information-item">
+
+                                        <div class="account-information-icon">
+                                            <i class="bx bx-shield"></i>
+                                        </div>
+
+                                        <div>
+                                            <span>Account Role</span>
+
+                                            <strong id="accountRole">
+                                                Administrator
+                                            </strong>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="account-information-item">
+
+                                        <div class="account-information-icon">
+                                            <i class="bx bx-check-circle"></i>
+                                        </div>
+
+                                        <div>
+                                            <span>Account Status</span>
+
+                                            <strong class="success-text">
+                                                Active
+                                            </strong>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="account-information-item">
+
+                                        <div class="account-information-icon">
+                                            <i class="bx bx-calendar"></i>
+                                        </div>
+
+                                        <div>
+                                            <span>Account Created</span>
+
+                                            <strong id="accountCreatedDate">
+                                                July 2026
+                                            </strong>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="account-information-item">
+
+                                        <div class="account-information-icon">
+                                            <i class="bx bx-time-five"></i>
+                                        </div>
+
+                                        <div>
+                                            <span>Last Login</span>
+
+                                            <strong id="accountLastLogin">
+                                                Today
+                                            </strong>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="account-information-item">
+
+                                        <div class="account-information-icon">
+                                            <i class="bx bx-badge-check"></i>
+                                        </div>
+
+                                        <div>
+                                            <span>Email Verification</span>
+
+                                            <strong class="success-text">
+                                                Verified
+                                            </strong>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="settings-information-callout">
+
+                                    <i class="bx bx-info-circle"></i>
+
+                                    <div>
+                                        <strong>
+                                            Account details are protected
+                                        </strong>
+
+                                        <p>
+                                            Your role and account status can
+                                            only be changed by an authorized
+                                            system administrator.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PASSWORD SETTINGS -->
+
+                        <article
+                            id="passwordSettings"
+                            class="settings-section"
+                        >
+
+                            <div class="settings-section-header">
+
+                                <div class="settings-section-heading">
+
+                                    <div class="settings-section-icon">
+                                        <i class="bx bx-lock-alt"></i>
+                                    </div>
+
+                                    <div>
+                                        <h2>Change Password</h2>
+
+                                        <p>
+                                            Use a strong and unique password
+                                            to protect your account.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="settings-section-body">
+
+                                <div class="password-settings-layout">
+
+                                    <div class="password-form">
+
+                                        <div class="settings-form-field">
+
+                                            <label for="currentPassword">
+                                                Current Password
+                                            </label>
+
+                                            <div class="settings-input-wrapper">
+
+                                                <i class="bx bx-lock"></i>
+
+                                                <input
+                                                    id="currentPassword"
+                                                    type="password"
+                                                    placeholder="Enter current password"
+                                                >
+
+                                                <button
+                                                    class="password-visibility-button"
+                                                    data-password-target="currentPassword"
+                                                    type="button"
+                                                    aria-label="Show password"
+                                                >
+                                                    <i class="bx bx-hide"></i>
+                                                </button>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="settings-form-field">
+
+                                            <label for="newPassword">
+                                                New Password
+                                            </label>
+
+                                            <div class="settings-input-wrapper">
+
+                                                <i class="bx bx-lock-open"></i>
+
+                                                <input
+                                                    id="newPassword"
+                                                    type="password"
+                                                    placeholder="Enter new password"
+                                                >
+
+                                                <button
+                                                    class="password-visibility-button"
+                                                    data-password-target="newPassword"
+                                                    type="button"
+                                                    aria-label="Show password"
+                                                >
+                                                    <i class="bx bx-hide"></i>
+                                                </button>
+
+                                            </div>
+
+                                            <div class="password-strength">
+
+                                                <div class="password-strength-track">
+                                                    <span id="passwordStrengthBar"></span>
+                                                </div>
+
+                                                <div class="password-strength-label">
+
+                                                    <span>Password strength</span>
+
+                                                    <strong id="passwordStrengthText">
+                                                        None
+                                                    </strong>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="settings-form-field">
+
+                                            <label for="confirmPassword">
+                                                Confirm New Password
+                                            </label>
+
+                                            <div class="settings-input-wrapper">
+
+                                                <i class="bx bx-check-shield"></i>
+
+                                                <input
+                                                    id="confirmPassword"
+                                                    type="password"
+                                                    placeholder="Confirm new password"
+                                                >
+
+                                                <button
+                                                    class="password-visibility-button"
+                                                    data-password-target="confirmPassword"
+                                                    type="button"
+                                                    aria-label="Show password"
+                                                >
+                                                    <i class="bx bx-hide"></i>
+                                                </button>
+
+                                            </div>
+
+                                            <small
+                                                id="passwordMatchMessage"
+                                                class="settings-field-helper"
+                                            >
+                                                Re-enter the new password.
+                                            </small>
+
+                                        </div>
+
+
+                                        <button
+                                            id="updatePasswordButton"
+                                            class="settings-primary-button"
+                                            type="button"
+                                        >
+                                            <i class="bx bx-lock"></i>
+                                            Update Password
+                                        </button>
+
+                                    </div>
+
+
+                                    <div class="password-requirements">
+
+                                        <h3>Password Requirements</h3>
+
+                                        <ul>
+
+                                            <li id="requirementLength">
+                                                <i class="bx bx-circle"></i>
+                                                At least 8 characters
+                                            </li>
+
+                                            <li id="requirementUppercase">
+                                                <i class="bx bx-circle"></i>
+                                                One uppercase letter
+                                            </li>
+
+                                            <li id="requirementLowercase">
+                                                <i class="bx bx-circle"></i>
+                                                One lowercase letter
+                                            </li>
+
+                                            <li id="requirementNumber">
+                                                <i class="bx bx-circle"></i>
+                                                One number
+                                            </li>
+
+                                            <li id="requirementSpecial">
+                                                <i class="bx bx-circle"></i>
+                                                One special character
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- NOTIFICATION SETTINGS -->
+
+                        <article
+                            id="notificationSettings"
+                            class="settings-section"
+                        >
+
+                            <div class="settings-section-header">
+
+                                <div class="settings-section-heading">
+
+                                    <div class="settings-section-icon">
+                                        <i class="bx bx-bell"></i>
+                                    </div>
+
+                                    <div>
+                                        <h2>Notification Preferences</h2>
+
+                                        <p>
+                                            Select the alerts and updates you
+                                            want to receive.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="settings-section-body">
+
+                                <div class="settings-option-list">
+
+                                    <div class="settings-option-item">
+
+                                        <div class="settings-option-information">
+
+                                            <div class="settings-option-icon">
+                                                <i class="bx bx-envelope"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>Email Notifications</strong>
+
+                                                <p>
+                                                    Receive important account
+                                                    updates through email.
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <label class="settings-switch">
+
+                                            <input
+                                                id="emailNotifications"
+                                                type="checkbox"
+                                                checked
+                                            >
+
+                                            <span></span>
+
+                                        </label>
+
+                                    </div>
+
+
+                                    <div class="settings-option-item">
+
+                                        <div class="settings-option-information">
+
+                                            <div class="settings-option-icon">
+                                                <i class="bx bx-bell-ring"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>System Notifications</strong>
+
+                                                <p>
+                                                    Display notifications
+                                                    inside the AlumniHub portal.
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <label class="settings-switch">
+
+                                            <input
+                                                id="systemNotifications"
+                                                type="checkbox"
+                                                checked
+                                            >
+
+                                            <span></span>
+
+                                        </label>
+
+                                    </div>
+
+
+                                    <div class="settings-option-item">
+
+                                        <div class="settings-option-information">
+
+                                            <div class="settings-option-icon">
+                                                <i class="bx bx-calendar-event"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>Event Reminders</strong>
+
+                                                <p>
+                                                    Receive reminders for
+                                                    upcoming alumni events.
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <label class="settings-switch">
+
+                                            <input
+                                                id="eventReminders"
+                                                type="checkbox"
+                                                checked
+                                            >
+
+                                            <span></span>
+
+                                        </label>
+
+                                    </div>
+
+
+                                    <div class="settings-option-item">
+
+                                        <div class="settings-option-information">
+
+                                            <div class="settings-option-icon">
+                                                <i class="bx bx-briefcase"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>Job Alerts</strong>
+
+                                                <p>
+                                                    Receive updates about newly
+                                                    posted job opportunities.
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <label class="settings-switch">
+
+                                            <input
+                                                id="jobAlerts"
+                                                type="checkbox"
+                                                checked
+                                            >
+
+                                            <span></span>
+
+                                        </label>
+
+                                    </div>
+
+
+                                    <div class="settings-option-item">
+
+                                        <div class="settings-option-information">
+
+                                            <div class="settings-option-icon">
+                                                <i class="bx bx-bullhorn"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>Announcements</strong>
+
+                                                <p>
+                                                    Receive newly published
+                                                    institutional announcements.
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <label class="settings-switch">
+
+                                            <input
+                                                id="announcementNotifications"
+                                                type="checkbox"
+                                                checked
+                                            >
+
+                                            <span></span>
+
+                                        </label>
+
+                                    </div>
+
+
+                                    <div class="settings-option-item">
+
+                                        <div class="settings-option-information">
+
+                                            <div class="settings-option-icon">
+                                                <i class="bx bx-mail-send"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>Marketing Emails</strong>
+
+                                                <p>
+                                                    Receive optional AlumniHub
+                                                    news and promotional updates.
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <label class="settings-switch">
+
+                                            <input
+                                                id="marketingEmails"
+                                                type="checkbox"
+                                            >
+
+                                            <span></span>
+
+                                        </label>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- APPEARANCE SETTINGS -->
+
+                        <article
+                            id="appearanceSettings"
+                            class="settings-section"
+                        >
+
+                            <div class="settings-section-header">
+
+                                <div class="settings-section-heading">
+
+                                    <div class="settings-section-icon">
+                                        <i class="bx bx-palette"></i>
+                                    </div>
+
+                                    <div>
+                                        <h2>Appearance</h2>
+
+                                        <p>
+                                            Personalize the visual appearance
+                                            of your AlumniHub dashboard.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="settings-section-body">
+
+                                <div class="appearance-setting-group">
+
+                                    <div class="appearance-group-heading">
+
+                                        <h3>Theme</h3>
+
+                                        <p>
+                                            Choose how AlumniHub appears on
+                                            your device.
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="theme-choice-grid">
+
+                                        <label class="theme-choice active">
+
+                                            <input
+                                                type="radio"
+                                                name="settingsTheme"
+                                                value="light"
+                                                checked
+                                            >
+
+                                            <span class="theme-preview light-preview">
+
+                                                <span class="theme-preview-sidebar"></span>
+
+                                                <span class="theme-preview-content">
+
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+
+                                                </span>
+
+                                            </span>
+
+                                            <strong>
+                                                <i class="bx bx-sun"></i>
+                                                Light
+                                            </strong>
+
+                                        </label>
+
+
+                                        <label class="theme-choice">
+
+                                            <input
+                                                type="radio"
+                                                name="settingsTheme"
+                                                value="dark"
+                                            >
+
+                                            <span class="theme-preview dark-preview">
+
+                                                <span class="theme-preview-sidebar"></span>
+
+                                                <span class="theme-preview-content">
+
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+
+                                                </span>
+
+                                            </span>
+
+                                            <strong>
+                                                <i class="bx bx-moon"></i>
+                                                Dark
+                                            </strong>
+
+                                        </label>
+
+
+                                        <label class="theme-choice">
+
+                                            <input
+                                                type="radio"
+                                                name="settingsTheme"
+                                                value="system"
+                                            >
+
+                                            <span class="theme-preview system-preview">
+
+                                                <span class="theme-preview-sidebar"></span>
+
+                                                <span class="theme-preview-content">
+
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+
+                                                </span>
+
+                                            </span>
+
+                                            <strong>
+                                                <i class="bx bx-desktop"></i>
+                                                System
+                                            </strong>
+
+                                        </label>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="appearance-setting-group">
+
+                                    <div class="appearance-group-heading">
+
+                                        <h3>Accent Color</h3>
+
+                                        <p>
+                                            Select the primary interface color.
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="accent-color-options">
+
+                                        <label class="accent-color-choice blue active">
+
+                                            <input
+                                                type="radio"
+                                                name="accentColor"
+                                                value="blue"
+                                                checked
+                                            >
+
+                                            <span></span>
+
+                                            <strong>Blue</strong>
+
+                                        </label>
+
+
+                                        <label class="accent-color-choice green">
+
+                                            <input
+                                                type="radio"
+                                                name="accentColor"
+                                                value="green"
+                                            >
+
+                                            <span></span>
+
+                                            <strong>Green</strong>
+
+                                        </label>
+
+
+                                        <label class="accent-color-choice purple">
+
+                                            <input
+                                                type="radio"
+                                                name="accentColor"
+                                                value="purple"
+                                            >
+
+                                            <span></span>
+
+                                            <strong>Purple</strong>
+
+                                        </label>
+
+
+                                        <label class="accent-color-choice orange">
+
+                                            <input
+                                                type="radio"
+                                                name="accentColor"
+                                                value="orange"
+                                            >
+
+                                            <span></span>
+
+                                            <strong>Orange</strong>
+
+                                        </label>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="appearance-setting-group">
+
+                                    <div class="appearance-group-heading">
+
+                                        <h3>Font Size</h3>
+
+                                        <p>
+                                            Adjust the size of text across the
+                                            dashboard.
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="font-size-options">
+
+                                        <label class="font-size-choice">
+
+                                            <input
+                                                type="radio"
+                                                name="fontSize"
+                                                value="small"
+                                            >
+
+                                            <span>Aa</span>
+
+                                            <strong>Small</strong>
+
+                                        </label>
+
+
+                                        <label class="font-size-choice active">
+
+                                            <input
+                                                type="radio"
+                                                name="fontSize"
+                                                value="medium"
+                                                checked
+                                            >
+
+                                            <span>Aa</span>
+
+                                            <strong>Medium</strong>
+
+                                        </label>
+
+
+                                        <label class="font-size-choice">
+
+                                            <input
+                                                type="radio"
+                                                name="fontSize"
+                                                value="large"
+                                            >
+
+                                            <span>Aa</span>
+
+                                            <strong>Large</strong>
+
+                                        </label>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- SECURITY SETTINGS -->
+
+                        <article
+                            id="securitySettings"
+                            class="settings-section"
+                        >
+
+                            <div class="settings-section-header">
+
+                                <div class="settings-section-heading">
+
+                                    <div class="settings-section-icon">
+                                        <i class="bx bx-shield-quarter"></i>
+                                    </div>
+
+                                    <div>
+                                        <h2>Security</h2>
+
+                                        <p>
+                                            Manage account protection,
+                                            sessions, and login activity.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                                <span class="settings-status-badge success">
+                                    Secure
+                                </span>
+
+                            </div>
+
+
+                            <div class="settings-section-body">
+
+                                <div class="settings-option-list">
+
+                                    <div class="settings-option-item">
+
+                                        <div class="settings-option-information">
+
+                                            <div class="settings-option-icon">
+                                                <i class="bx bx-shield-plus"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>
+                                                    Two-Factor Authentication
+                                                </strong>
+
+                                                <p>
+                                                    Require an additional
+                                                    verification code during login.
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <label class="settings-switch">
+
+                                            <input
+                                                id="twoFactorAuthentication"
+                                                type="checkbox"
+                                            >
+
+                                            <span></span>
+
+                                        </label>
+
+                                    </div>
+
+
+                                    <div class="settings-option-item">
+
+                                        <div class="settings-option-information">
+
+                                            <div class="settings-option-icon">
+                                                <i class="bx bx-error-circle"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>Login Alerts</strong>
+
+                                                <p>
+                                                    Receive an alert when a new
+                                                    device signs in.
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <label class="settings-switch">
+
+                                            <input
+                                                id="loginAlerts"
+                                                type="checkbox"
+                                                checked
+                                            >
+
+                                            <span></span>
+
+                                        </label>
+
+                                    </div>
+
+
+                                    <div class="settings-option-item">
+
+                                        <div class="settings-option-information">
+
+                                            <div class="settings-option-icon">
+                                                <i class="bx bx-log-out-circle"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>Automatic Logout</strong>
+
+                                                <p>
+                                                    Sign out automatically after
+                                                    a period of inactivity.
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <label class="settings-switch">
+
+                                            <input
+                                                id="automaticLogout"
+                                                type="checkbox"
+                                                checked
+                                            >
+
+                                            <span></span>
+
+                                        </label>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="security-timeout-setting">
+
+                                    <div>
+
+                                        <label for="sessionTimeout">
+                                            Session Timeout
+                                        </label>
+
+                                        <p>
+                                            Choose how long an inactive session
+                                            remains signed in.
+                                        </p>
+
+                                    </div>
+
+                                    <div class="settings-select-wrapper">
+
+                                        <i class="bx bx-time"></i>
+
+                                        <select id="sessionTimeout">
+
+                                            <option value="15">
+                                                15 minutes
+                                            </option>
+
+                                            <option
+                                                value="30"
+                                                selected
+                                            >
+                                                30 minutes
+                                            </option>
+
+                                            <option value="60">
+                                                1 hour
+                                            </option>
+
+                                            <option value="120">
+                                                2 hours
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="active-session-card">
+
+                                    <div class="active-session-heading">
+
+                                        <div>
+                                            <h3>Active Session</h3>
+
+                                            <p>
+                                                Device currently using your
+                                                AlumniHub account.
+                                            </p>
+                                        </div>
+
+                                        <span>
+                                            Current device
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="active-session-details">
+
+                                        <div class="active-session-device">
+
+                                            <div>
+                                                <i class="bx bx-desktop"></i>
+                                            </div>
+
+                                            <span>
+                                                <strong>Windows Computer</strong>
+
+                                                <small>
+                                                    Chrome Browser • Philippines
+                                                </small>
+                                            </span>
+
+                                        </div>
+
+                                        <div class="active-session-time">
+
+                                            <span>Last active</span>
+
+                                            <strong>Now</strong>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- SYSTEM SETTINGS -->
+
+                        <article
+                            id="systemSettings"
+                            class="settings-section"
+                        >
+
+                            <div class="settings-section-header">
+
+                                <div class="settings-section-heading">
+
+                                    <div class="settings-section-icon">
+                                        <i class="bx bx-slider-alt"></i>
+                                    </div>
+
+                                    <div>
+                                        <h2>System Preferences</h2>
+
+                                        <p>
+                                            Configure language, time zone,
+                                            formats, and dashboard behavior.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="settings-section-body">
+
+                                <div class="settings-form-grid">
+
+                                    <div class="settings-form-field">
+
+                                        <label for="systemLanguage">
+                                            Language
+                                        </label>
+
+                                        <div class="settings-select-wrapper">
+
+                                            <i class="bx bx-globe"></i>
+
+                                            <select id="systemLanguage">
+
+                                                <option
+                                                    value="en"
+                                                    selected
+                                                >
+                                                    English
+                                                </option>
+
+                                                <option value="fil">
+                                                    Filipino
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="settings-form-field">
+
+                                        <label for="systemTimezone">
+                                            Time Zone
+                                        </label>
+
+                                        <div class="settings-select-wrapper">
+
+                                            <i class="bx bx-time-five"></i>
+
+                                            <select id="systemTimezone">
+
+                                                <option
+                                                    value="Asia/Manila"
+                                                    selected
+                                                >
+                                                    Asia/Manila (UTC+8)
+                                                </option>
+
+                                                <option value="UTC">
+                                                    Coordinated Universal Time
+                                                </option>
+
+                                                <option value="Asia/Singapore">
+                                                    Asia/Singapore (UTC+8)
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="settings-form-field">
+
+                                        <label for="systemDateFormat">
+                                            Date Format
+                                        </label>
+
+                                        <div class="settings-select-wrapper">
+
+                                            <i class="bx bx-calendar"></i>
+
+                                            <select id="systemDateFormat">
+
+                                                <option
+                                                    value="MM/DD/YYYY"
+                                                    selected
+                                                >
+                                                    MM/DD/YYYY
+                                                </option>
+
+                                                <option value="DD/MM/YYYY">
+                                                    DD/MM/YYYY
+                                                </option>
+
+                                                <option value="YYYY-MM-DD">
+                                                    YYYY-MM-DD
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="settings-form-field">
+
+                                        <label for="systemTimeFormat">
+                                            Time Format
+                                        </label>
+
+                                        <div class="settings-select-wrapper">
+
+                                            <i class="bx bx-time"></i>
+
+                                            <select id="systemTimeFormat">
+
+                                                <option
+                                                    value="12"
+                                                    selected
+                                                >
+                                                    12-hour format
+                                                </option>
+
+                                                <option value="24">
+                                                    24-hour format
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="settings-form-field">
+
+                                        <label for="defaultDashboard">
+                                            Default Landing Page
+                                        </label>
+
+                                        <div class="settings-select-wrapper">
+
+                                            <i class="bx bx-home"></i>
+
+                                            <select id="defaultDashboard">
+
+                                                <option
+                                                    value="dashboard.html"
+                                                    selected
+                                                >
+                                                    Dashboard Overview
+                                                </option>
+
+                                                <option value="alumni-directory.html">
+                                                    Alumni Directory
+                                                </option>
+
+                                                <option value="account-approvals.html">
+                                                    Account Approvals
+                                                </option>
+
+                                                <option value="reports.html">
+                                                    Reports & Analytics
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="settings-form-field">
+
+                                        <label for="recordsPerPage">
+                                            Records Per Page
+                                        </label>
+
+                                        <div class="settings-select-wrapper">
+
+                                            <i class="bx bx-list-ul"></i>
+
+                                            <select id="recordsPerPage">
+
+                                                <option value="10">
+                                                    10 records
+                                                </option>
+
+                                                <option
+                                                    value="25"
+                                                    selected
+                                                >
+                                                    25 records
+                                                </option>
+
+                                                <option value="50">
+                                                    50 records
+                                                </option>
+
+                                                <option value="100">
+                                                    100 records
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="settings-option-list compact">
+
+                                    <div class="settings-option-item">
+
+                                        <div class="settings-option-information">
+
+                                            <div class="settings-option-icon">
+                                                <i class="bx bx-refresh"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>Automatic Data Refresh</strong>
+
+                                                <p>
+                                                    Refresh dashboard statistics
+                                                    when updated records are available.
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <label class="settings-switch">
+
+                                            <input
+                                                id="automaticDataRefresh"
+                                                type="checkbox"
+                                                checked
+                                            >
+
+                                            <span></span>
+
+                                        </label>
+
+                                    </div>
+
+
+                                    <div class="settings-option-item">
+
+                                        <div class="settings-option-information">
+
+                                            <div class="settings-option-icon">
+                                                <i class="bx bx-message-rounded-error"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>Confirmation Dialogs</strong>
+
+                                                <p>
+                                                    Ask for confirmation before
+                                                    sensitive or destructive actions.
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <label class="settings-switch">
+
+                                            <input
+                                                id="confirmationDialogs"
+                                                type="checkbox"
+                                                checked
+                                            >
+
+                                            <span></span>
+
+                                        </label>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- SAVE PANEL -->
+
+                        <div class="settings-save-panel">
+
+                            <div>
+
+                                <i class="bx bx-info-circle"></i>
+
+                                <span>
+                                    Changes are currently saved in this browser
+                                    until backend integration is completed.
+                                </span>
+
+                            </div>
+
+
+                            <div class="settings-save-actions">
+
+                                <button
+                                    id="cancelSettingsButton"
+                                    class="settings-text-button"
+                                    type="button"
+                                >
+                                    Cancel
+                                </button>
+
+                                <button
+                                    id="bottomResetSettingsButton"
+                                    class="settings-secondary-button"
+                                    type="button"
+                                >
+                                    <i class="bx bx-reset"></i>
+                                    Reset
+                                </button>
+
+                                <button
+                                    id="bottomSaveSettingsButton"
+                                    class="settings-primary-button"
+                                    type="button"
+                                >
+                                    <i class="bx bx-save"></i>
+                                    Save Changes
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- SAVE CONFIRMATION MODAL -->
+
+    <div
+        id="saveSettingsModal"
+        class="settings-modal"
+        aria-hidden="true"
+    >
+
+        <div class="settings-modal-backdrop"></div>
+
+        <div
+            class="settings-modal-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="saveSettingsModalTitle"
+        >
+
+            <div class="settings-modal-icon success">
+                <i class="bx bx-save"></i>
+            </div>
+
+            <h2 id="saveSettingsModalTitle">
+                Save Settings?
+            </h2>
+
+            <p>
+                Your updated profile and preferences will be applied
+                to your AlumniHub account.
+            </p>
+
+            <div class="settings-modal-actions">
+
+                <button
+                    class="settings-secondary-button"
+                    data-close-modal="saveSettingsModal"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    id="confirmSaveSettingsButton"
+                    class="settings-primary-button"
+                    type="button"
+                >
+                    <i class="bx bx-check"></i>
+                    Save Changes
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESET CONFIRMATION MODAL -->
+
+    <div
+        id="resetSettingsModal"
+        class="settings-modal"
+        aria-hidden="true"
+    >
+
+        <div class="settings-modal-backdrop"></div>
+
+        <div
+            class="settings-modal-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="resetSettingsModalTitle"
+        >
+
+            <div class="settings-modal-icon warning">
+                <i class="bx bx-reset"></i>
+            </div>
+
+            <h2 id="resetSettingsModalTitle">
+                Reset All Settings?
+            </h2>
+
+            <p>
+                This will restore your notification, appearance,
+                security, and system preferences to their defaults.
+            </p>
+
+            <div class="settings-modal-actions">
+
+                <button
+                    class="settings-secondary-button"
+                    data-close-modal="resetSettingsModal"
+                    type="button"
+                >
+                    Keep Settings
+                </button>
+
+                <button
+                    id="confirmResetSettingsButton"
+                    class="settings-danger-button"
+                    type="button"
+                >
+                    <i class="bx bx-reset"></i>
+                    Reset Settings
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div
+        id="settingsToast"
+        class="settings-toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i
+            id="settingsToastIcon"
+            class="bx bx-check-circle"
+        ></i>
+
+        <span id="settingsToastMessage">
+            Settings saved successfully.
+        </span>
+
+    </div>
+
+    
+    <!-- Scripts -->
+<script src="../assets/js/settings.js"></script>
+<script src="../assets/js/page-transition.js"></script>
+<script src="../assets/js/admin-header.js"></script>
+</body>
+
+</html>

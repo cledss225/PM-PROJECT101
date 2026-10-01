@@ -1,0 +1,425 @@
+/* =========================================================
+   ALUMNI PORTAL
+   SILVER MIST AURA — GLOBAL LIGHT MODE
+   Applies to ALL Alumni pages
+========================================================= */
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+body:not(.dark):not(.dark-mode) {
+    position: relative;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f5f4f7 0%,
+            #eeeeF2 15%,
+            #d8d8df 30%,
+            #b9b9c6 48%,
+            #9d9caf 63%,
+            #706b91 81%,
+            #33234f 100%
+        ) !important;
+
+    background-attachment: fixed !important;
+}
+
+
+/* =========================================================
+   SILVER MIST — LAYER 1
+========================================================= */
+
+body:not(.dark):not(.dark-mode)::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(200, 200, 210, 0.12) 28%,
+            rgba(255, 255, 255, 0.90) 42%,
+            rgba(160, 160, 180, 0.72) 68%,
+            rgba(130, 120, 160, 0.84) 100%
+        );
+
+    mix-blend-mode: hard-light;
+
+    filter: blur(120px);
+
+    transform: translateZ(0);
+}
+
+
+/* =========================================================
+   SILVER MIST — LAYER 2
+========================================================= */
+
+body:not(.dark):not(.dark-mode)::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(200, 200, 210, 0.22) 34%,
+            rgba(255, 255, 255, 0.70) 60%,
+            rgba(160, 160, 180, 0.60) 82%,
+            rgba(130, 120, 160, 0.76) 100%
+        );
+
+    mix-blend-mode: soft-light;
+
+    filter: blur(120px);
+
+    opacity: 0.95;
+
+    transform: translateZ(0);
+}
+
+
+/* =========================================================
+   REMOVE SOLID PAGE BACKGROUNDS
+   So Silver Mist remains visible
+========================================================= */
+
+body:not(.dark):not(.dark-mode) main,
+body:not(.dark):not(.dark-mode) .main-content,
+body:not(.dark):not(.dark-mode) .page-content,
+body:not(.dark):not(.dark-mode) .content,
+body:not(.dark):not(.dark-mode) .dashboard-content,
+body:not(.dark):not(.dark-mode) .alumni-content,
+body:not(.dark):not(.dark-mode) .profile-page-container,
+body:not(.dark):not(.dark-mode) .events-page,
+body:not(.dark):not(.dark-mode) .jobs-page,
+body:not(.dark):not(.dark-mode) .announcements-page,
+body:not(.dark):not(.dark-mode) .directory-page,
+body:not(.dark):not(.dark-mode) .settings-page {
+
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   LIGHT GLASS TOPBAR
+========================================================= */
+
+body:not(.dark):not(.dark-mode) .topbar,
+body:not(.dark):not(.dark-mode) .header,
+body:not(.dark):not(.dark-mode) .page-header {
+
+    background:
+        rgba(255, 255, 255, 0.80) !important;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.62);
+
+    backdrop-filter:
+        blur(18px)
+        saturate(115%);
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(115%);
+}
+
+
+/* =========================================================
+   LIGHT GLASS CARDS
+========================================================= */
+
+body:not(.dark):not(.dark-mode) .card,
+body:not(.dark):not(.dark-mode) .panel,
+body:not(.dark):not(.dark-mode) .profile-card,
+body:not(.dark):not(.dark-mode) .info-card,
+body:not(.dark):not(.dark-mode) .event-card,
+body:not(.dark):not(.dark-mode) .job-card,
+body:not(.dark):not(.dark-mode) .announcement-card,
+body:not(.dark):not(.dark-mode) .directory-card,
+body:not(.dark):not(.dark-mode) .settings-card {
+
+    background:
+        rgba(255, 255, 255, 0.82) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.68) !important;
+
+    box-shadow:
+        0 12px 30px rgba(31, 25, 50, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.88);
+
+    backdrop-filter:
+        blur(16px)
+        saturate(110%);
+
+    -webkit-backdrop-filter:
+        blur(16px)
+        saturate(110%);
+}
+
+
+/* =========================================================
+   DARK MODE
+   Silver Mist completely disabled
+========================================================= */
+
+body.dark::before,
+body.dark::after,
+body.dark-mode::before,
+body.dark-mode::after {
+    display: none !important;
+}
+/* =========================================================
+   ALUMNI PORTAL DARK MODE — PEARL DIVING AURA
+   Applies to ALL Alumni pages
+========================================================= */
+
+body.dark,
+body.dark-mode {
+    background-color: #100e0b !important;
+}
+
+
+/* Main page canvas */
+body.dark main,
+body.dark .main-content,
+body.dark .page-content,
+body.dark .content,
+body.dark-mode main,
+body.dark-mode .main-content,
+body.dark-mode .page-content,
+body.dark-mode .content {
+    position: relative;
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle at 25% 35%,
+            rgba(178, 235, 242, 0.13) 0%,
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 75% 30%,
+            rgba(224, 247, 250, 0.10) 0%,
+            transparent 36%
+        ),
+        radial-gradient(
+            circle at 45% 75%,
+            rgba(128, 222, 234, 0.08) 0%,
+            transparent 42%
+        ),
+        linear-gradient(
+            145deg,
+            #111311 0%,
+            #151918 36%,
+            #101514 68%,
+            #0c0f0e 100%
+        ) !important;
+
+    background-attachment: fixed !important;
+}
+
+
+/* =========================================================
+   PEARL DIVING LAYER 1
+========================================================= */
+
+body.dark::before,
+body.dark-mode::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -2;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 25% 35%,
+            rgba(178, 235, 242, 0.60) 0%,
+            transparent 45%
+        );
+
+    mix-blend-mode: screen;
+
+    filter: blur(260px);
+
+    transform: translateZ(0);
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   PEARL DIVING LAYER 2
+========================================================= */
+
+body.dark::after,
+body.dark-mode::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 75% 30%,
+            rgba(224, 247, 250, 0.50) 0%,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 45% 75%,
+            rgba(128, 222, 234, 0.34) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 255, 255, 0.12) 0%,
+            transparent 30%
+        );
+
+    mix-blend-mode: screen;
+
+    filter: blur(220px);
+
+    opacity: 0.88;
+
+    transform: translateZ(0);
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   DARK GLASS CARDS
+========================================================= */
+
+body.dark .card,
+body.dark .panel,
+body.dark .profile-card,
+body.dark .info-card,
+body.dark .event-card,
+body.dark .job-card,
+body.dark .announcement-card,
+body.dark .directory-card,
+body.dark .settings-card,
+
+body.dark-mode .card,
+body.dark-mode .panel,
+body.dark-mode .profile-card,
+body.dark-mode .info-card,
+body.dark-mode .event-card,
+body.dark-mode .job-card,
+body.dark-mode .announcement-card,
+body.dark-mode .directory-card,
+body.dark-mode .settings-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(22, 27, 27, 0.78),
+            rgba(12, 16, 16, 0.70)
+        ) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07) !important;
+
+    box-shadow:
+        0 18px 42px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+    backdrop-filter:
+        blur(20px)
+        saturate(110%);
+
+    -webkit-backdrop-filter:
+        blur(20px)
+        saturate(110%);
+}
+
+
+/* =========================================================
+   DARK GLASS HEADER / TOPBAR
+========================================================= */
+
+body.dark .topbar,
+body.dark .header,
+body.dark .page-header,
+
+body.dark-mode .topbar,
+body.dark-mode .header,
+body.dark-mode .page-header {
+
+    background:
+        rgba(9, 12, 12, 0.76) !important;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.06) !important;
+
+    backdrop-filter:
+        blur(20px)
+        saturate(110%);
+
+    -webkit-backdrop-filter:
+        blur(20px)
+        saturate(110%);
+}
+
+
+/* =========================================================
+   INPUTS / FILTERS
+========================================================= */
+
+body.dark input,
+body.dark select,
+body.dark textarea,
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+
+    background:
+        rgba(10, 14, 14, 0.72) !important;
+
+    color: #eefafa !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07) !important;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+body.dark,
+body.dark-mode {
+    color: #f3f8f8;
+}
+
+body.dark p,
+body.dark .muted,
+body.dark-mode p,
+body.dark-mode .muted {
+    color: rgba(226, 232, 240, 0.72);
+}

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create and verify an AlumniHub alumni account">
+    <title>AlumniHub | Create Account</title>
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/login.css">
+
+    <style>
+        /* =========================================================
+           REGISTER / VERIFICATION PAGE — STRUCTURE FIX
+        ========================================================= */
+
+        .login-page {
+            position: relative;
+            min-height: 100vh;
+            display: flex !important;
+            gap: 24px;
+            padding: 24px;
+            overflow: hidden;
+        }
+
+        .login-panel,
+        .showcase-panel {
+            flex: 0 0 calc(50% - 12px);
+            min-width: 0;
+            min-height: calc(100vh - 48px);
+            transition:
+                transform .82s cubic-bezier(.22, 1, .36, 1),
+                opacity .45s ease;
+            will-change: transform;
+        }
+
+        .login-panel {
+            overflow-y: auto;
+            padding: 42px 48px;
+            align-items: flex-start;
+        }
+
+        .login-content {
+            width: 100%;
+            max-width: 560px;
+            margin: auto;
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+
+        .showcase-panel {
+            padding: 48px;
+        }
+
+        .showcase-content {
+            width: 100%;
+            max-width: 760px;
+            margin: auto;
+        }
+
+        /* Exact panel swap: both panels are the same width */
+        .login-page.verification-mode .login-panel {
+            transform: translateX(calc(100% + 24px));
+        }
+
+        .login-page.verification-mode .showcase-panel {
+            transform: translateX(calc(-100% - 24px));
+        }
+
+
+        /* =========================================================
+           REGISTER FORM
+        ========================================================= */
+
+        .register-name-grid,
+        .register-password-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .register-note {
+            display: flex;
+            gap: 9px;
+            align-items: flex-start;
+            margin: 14px 0 18px;
+            padding: 11px 12px;
+            border: 1px solid rgba(124, 58, 237, .14);
+            border-radius: 12px;
+            background: rgba(124, 58, 237, .045);
+            color: #7b8190;
+            font-size: 11px;
+            line-height: 1.55;
+        }
+
+        .register-note i {
+            margin-top: 2px;
+            color: #7c3aed;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .register-message {
+            display: none;
+            margin-bottom: 15px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .register-message.show {
+            display: block;
+        }
+
+        .register-message.error {
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+            background: #fef2f2;
+        }
+
+        .register-message.success {
+            color: #166534;
+            border: 1px solid #bbf7d0;
+            background: #f0fdf4;
+        }
+
+
+        /* =========================================================
+           STEPPER
+        ========================================================= */
+
+        .step-indicator {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 24px;
+        }
+
+        .step-dot {
+            width: 30px;
+            height: 30px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            border: 1px solid #ddd6fe;
+            color: #8b8fa3;
+            background: #faf9ff;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .step-dot.active {
+            color: #fff;
+            background: linear-gradient(135deg, #6d28d9, #7c3aed);
+            border-color: #7c3aed;
+            box-shadow: 0 6px 16px rgba(124, 58, 237, .22);
+        }
+
+        .step-line {
+            width: 46px;
+            height: 2px;
+            border-radius: 999px;
+            background: #e9e5ff;
+        }
+
+
+        /* =========================================================
+           VERIFICATION CONTENT
+        ========================================================= */
+
+        .verification-view {
+            display: none;
+            opacity: 0;
+            transform: translateY(14px);
+        }
+
+        .verification-view.show {
+            display: block;
+            animation: verificationEnter .55s ease forwards;
+        }
+
+        .register-view.hide {
+            display: none;
+        }
+
+        @keyframes verificationEnter {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-page.verification-mode .login-content {
+            max-width: 620px;
+        }
+
+        .login-page.verification-mode .brand {
+            margin-bottom: 36px;
+        }
+
+        .verification-view .login-heading {
+            margin-bottom: 20px;
+        }
+
+        .verification-view .login-heading h1 {
+            max-width: 520px;
+            font-size: 40px;
+            line-height: 1.05;
+            letter-spacing: -.9px;
+        }
+
+        .verification-view .login-heading p {
+            max-width: 520px;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .verification-account {
+            margin: 0 0 18px;
+            padding: 13px 14px;
+            border: 1px solid #e9e5ff;
+            border-radius: 12px;
+            background: #faf9ff;
+            color: #667085;
+            font-size: 11px;
+            line-height: 1.55;
+        }
+
+        .verification-methods {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 0;
+        }
+
+        .verification-card {
+            width: 100%;
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 17px;
+            border: 1px solid #e9e5ff;
+            border-radius: 15px;
+            background: #ffffff;
+            text-align: left;
+            cursor: pointer;
+            transition:
+                transform .2s ease,
+                border-color .2s ease,
+                background .2s ease,
+                box-shadow .2s ease;
+        }
+
+        .verification-card:hover {
+            transform: translateY(-2px);
+            border-color: #c4b5fd;
+            background: #fcfbff;
+            box-shadow: 0 10px 24px rgba(76, 29, 149, .07);
+        }
+
+        .verification-card.active {
+            border-color: #8b5cf6;
+            background: linear-gradient(180deg, #fbfaff, #f8f5ff);
+            box-shadow: 0 10px 26px rgba(124, 58, 237, .10);
+        }
+
+        .verification-card-icon {
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            flex: 0 0 46px;
+            border-radius: 12px;
+            color: #7c3aed;
+            background: #f3e8ff;
+            font-size: 21px;
+        }
+
+        .verification-card strong {
+            display: block;
+            color: #111827;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .verification-card span {
+            display: block;
+            margin-top: 4px;
+            color: #7b8190;
+            font-size: 10.5px;
+            line-height: 1.45;
+        }
+
+        .verification-detail {
+            display: none;
+            margin-top: 16px;
+            padding: 18px;
+            border: 1px solid #e9e5ff;
+            border-radius: 15px;
+            background: #fbfaff;
+        }
+
+        .verification-detail.show {
+            display: block;
+            animation: verificationEnter .35s ease forwards;
+        }
+
+        .verification-detail h3 {
+            margin: 0 0 5px;
+            color: #111827;
+            font-size: 15px;
+        }
+
+        .verification-detail p {
+            margin: 0 0 14px;
+            color: #7b8190;
+            font-size: 11px;
+            line-height: 1.55;
+        }
+
+        .verification-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 0;
+        }
+
+        .secondary-action {
+            width: 100%;
+            min-height: 46px;
+            border: 1px solid #ddd6fe;
+            border-radius: 11px;
+            background: #fff;
+            color: #5b21b6;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        .secondary-action:hover {
+            border-color: #8b5cf6;
+            background: #faf7ff;
+        }
+
+        .otp-grid {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 9px;
+            margin: 14px 0;
+        }
+
+        .otp-grid input {
+    width: 100%;
+    min-width: 0;
+    height: 56px;
+    padding: 0;
+
+    text-align: center;
+
+    /* Mas visible */
+    background: #f8f5ff;
+    border: 2px solid #c4b5fd;
+    border-radius: 12px;
+
+    color: #4c1d95;
+    font-size: 21px;
+    font-weight: 800;
+
+    outline: none;
+    caret-color: #7c3aed;
+
+    box-shadow:
+        0 2px 7px rgba(76, 29, 149, 0.06);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.otp-grid input:hover {
+    border-color: #a78bfa;
+    background: #f5f0ff;
+}
+
+.otp-grid input:focus {
+    background: #ffffff;
+    border-color: #7c3aed;
+
+    box-shadow:
+        0 0 0 4px rgba(124, 58, 237, 0.12),
+        0 5px 14px rgba(76, 29, 149, 0.10);
+
+    transform: translateY(-1px);
+}
+
+/* Kapag may digit na */
+.otp-grid input:not(:placeholder-shown) {
+    border-color: #8b5cf6;
+    background: #f3e8ff;
+}
+
+        .verification-detail .login-btn {
+            height: 50px;
+            border-radius: 11px;
+            background: linear-gradient(135deg, #111827, #1e293b);
+        }
+
+        .verification-detail .login-btn:hover {
+            background: linear-gradient(135deg, #6d28d9, #7c3aed);
+        }
+
+
+        /* =========================================================
+           SHOWCASE AFTER SWAP
+        ========================================================= */
+
+        .login-page.verification-mode .showcase-panel {
+            padding: 48px;
+        }
+
+        .login-page.verification-mode .dashboard-preview {
+            transform: none;
+        }
+
+        .login-page.verification-mode .showcase-message {
+            margin-top: 42px;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1180px) {
+            .login-panel,
+            .showcase-panel {
+                padding: 36px;
+            }
+
+            .login-content {
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .login-page {
+                display: block !important;
+                overflow: visible;
+            }
+
+            .showcase-panel {
+                display: none;
+            }
+
+            .login-panel {
+                min-height: calc(100vh - 48px);
+                width: 100%;
+            }
+
+            .login-page.verification-mode .login-panel,
+            .login-page.verification-mode .showcase-panel {
+                transform: none;
+            }
+
+            .login-content,
+            .login-page.verification-mode .login-content {
+                max-width: 620px;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .register-name-grid,
+            .register-password-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .login-panel {
+                padding: 28px 22px;
+            }
+
+            .verification-view .login-heading h1 {
+                font-size: 32px;
+            }
+
+            .otp-grid {
+                gap: 5px;
+            }
+
+            .otp-grid input {
+                height: 46px;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+<div class="login-page" id="registerPage">
+
+    <section class="login-panel">
+        <div class="login-content">
+
+            <div class="brand">
+                <div class="brand-logo">
+                    <img src="../assets/images/logo/ams-round-logo.jpg" alt="AMS Logo">
+                </div>
+                <div class="brand-text">
+                    <strong>AlumniHub</strong>
+                    <small>Alumni Management System</small>
+                </div>
+            </div>
+
+            <!-- REGISTER VIEW -->
+            <div class="register-view" id="registerView">
+
+                <div class="step-indicator">
+                    <span class="step-dot active">1</span>
+                    <span class="step-line"></span>
+                    <span class="step-dot">2</span>
+                    <span class="step-line"></span>
+                    <span class="step-dot">3</span>
+                </div>
+
+                <div class="login-heading">
+                    <h1>Create your account</h1>
+                    <p>Register as an alumnus and stay connected with the AlumniHub community.</p>
+                </div>
+
+                <form id="registerForm" autocomplete="on">
+                    <div id="registerMessage" class="register-message"></div>
+
+                    <div class="register-name-grid">
+                        <div class="input-group">
+                            <label for="firstName">First Name</label>
+                            <div class="input-wrapper">
+                                <i class="bx bx-user"></i>
+                                <input type="text" id="firstName" name="first_name" placeholder="First name" autocomplete="given-name" required>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="lastName">Last Name</label>
+                            <div class="input-wrapper">
+                                <i class="bx bx-user"></i>
+                                <input type="text" id="lastName" name="last_name" placeholder="Last name" autocomplete="family-name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="middleName">Middle Name <span style="opacity:.55;font-weight:400">(Optional)</span></label>
+                        <div class="input-wrapper">
+                            <i class="bx bx-user"></i>
+                            <input type="text" id="middleName" name="middle_name" placeholder="Middle name" autocomplete="additional-name">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="registerEmail">Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="bx bx-envelope"></i>
+                            <input type="email" id="registerEmail" name="email" placeholder="you@example.com" autocomplete="email" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="phoneNumber">Mobile Number</label>
+                        <div class="input-wrapper">
+                            <i class="bx bx-phone"></i>
+                            <input
+                                type="tel"
+                                id="phoneNumber"
+                                name="phone_number"
+                                placeholder="09XXXXXXXXX"
+                                inputmode="numeric"
+                                maxlength="11"
+                                pattern="09[0-9]{9}"
+                                autocomplete="tel"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="register-password-grid">
+                        <div class="input-group">
+                            <label for="registerPassword">Password</label>
+                            <div class="input-wrapper">
+                                <i class="bx bx-lock-alt"></i>
+                                <input type="password" id="registerPassword" name="password" placeholder="Minimum 8 characters" autocomplete="new-password" minlength="8" required>
+                                <i class="bx bx-show password-toggle" id="registerPasswordToggle" title="Show password"></i>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="input-wrapper">
+                                <i class="bx bx-lock-alt"></i>
+                                <input type="password" id="confirmPassword" placeholder="Re-enter password" autocomplete="new-password" minlength="8" required>
+                                <i class="bx bx-show password-toggle" id="confirmPasswordToggle" title="Show password"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="register-note">
+                        <i class="bx bx-info-circle"></i>
+                        <span>
+                            After account creation, choose Email Verification,
+                            SMS OTP, or Manual Verification.
+                        </span>
+                    </div>
+
+                    <button type="submit" class="login-btn" id="registerButton">
+                        <span>Create Account</span>
+                        <i class="bx bx-user-plus"></i>
+                    </button>
+                </form>
+
+                <div class="register-link">
+                    Already have an account?
+                    <a href="login.html">Sign in</a>
+                </div>
+
+            </div>
+
+
+            <!-- VERIFICATION VIEW -->
+            <div class="verification-view" id="verificationView">
+
+                <div class="step-indicator">
+                    <span class="step-dot">1</span>
+                    <span class="step-line"></span>
+                    <span class="step-dot active">2</span>
+                    <span class="step-line"></span>
+                    <span class="step-dot">3</span>
+                </div>
+
+                <div class="login-heading">
+                    <h1>Verify your alumni account</h1>
+                    <p>Choose the verification method that matches your available graduate records.</p>
+                </div>
+
+                <div class="verification-account" id="verificationAccountSummary">
+                    Account created successfully.
+                </div>
+
+                <div class="verification-methods">
+
+                    <button type="button" class="verification-card" data-method="email">
+                        <div class="verification-card-icon">
+                            <i class="bx bx-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email Verification</strong>
+                            <span>Use the Gmail/email address recorded in your graduate credentials.</span>
+                        </div>
+                    </button>
+
+                    <button type="button" class="verification-card" data-method="sms">
+                        <div class="verification-card-icon">
+                            <i class="bx bx-message-rounded-dots"></i>
+                        </div>
+                        <div>
+                            <strong>SMS OTP</strong>
+                            <span>Receive a 6-digit code on the mobile number recorded by the school.</span>
+                        </div>
+                    </button>
+
+                    <button type="button" class="verification-card" data-method="manual">
+                        <div class="verification-card-icon">
+                            <i class="bx bx-user-check"></i>
+                        </div>
+                        <div>
+                            <strong>Manual Verification</strong>
+                            <span>For older graduates who no longer have access to their old email or number.</span>
+                        </div>
+                    </button>
+
+                </div>
+
+
+                <div class="verification-detail" id="emailVerificationPanel">
+                    <h3>Email Verification</h3>
+                    <p id="emailVerificationText">We will send a verification code to your registered email.</p>
+
+                    <div class="verification-actions">
+                        <button type="button" class="secondary-action" id="sendEmailCodeBtn">
+                            Send Code
+                        </button>
+                    </div>
+
+                    <div class="otp-grid" data-otp-group="email">
+                        <input maxlength="1" inputmode="numeric">
+                        <input maxlength="1" inputmode="numeric">
+                        <input maxlength="1" inputmode="numeric">
+                        <input maxlength="1" inputmode="numeric">
+                        <input maxlength="1" inputmode="numeric">
+                        <input maxlength="1" inputmode="numeric">
+                    </div>
+
+                    <button type="button" class="login-btn" id="verifyEmailCodeBtn">
+                        Verify Email
+                    </button>
+                </div>
+
+
+                <div class="verification-detail" id="smsVerificationPanel">
+                    <h3>SMS OTP Verification</h3>
+                    <p id="smsVerificationText">We will send a 6-digit OTP to your registered mobile number.</p>
+
+                    <div class="verification-actions">
+                        <button type="button" class="secondary-action" id="sendSmsCodeBtn">
+                            Send OTP
+                        </button>
+                    </div>
+
+                    <div class="otp-grid" data-otp-group="sms">
+                        <input maxlength="1" inputmode="numeric">
+                        <input maxlength="1" inputmode="numeric">
+                        <input maxlength="1" inputmode="numeric">
+                        <input maxlength="1" inputmode="numeric">
+                        <input maxlength="1" inputmode="numeric">
+                        <input maxlength="1" inputmode="numeric">
+                    </div>
+
+                    <button type="button" class="login-btn" id="verifySmsCodeBtn">
+                        Verify Mobile Number
+                    </button>
+                </div>
+
+
+                <div class="verification-detail" id="manualVerificationPanel">
+                    <h3>Manual Verification</h3>
+                    <p>
+                        Your account will remain pending until an administrator verifies
+                        your graduate record.
+                    </p>
+
+                    <button type="button" class="login-btn" id="manualVerificationBtn">
+                        Submit for Admin Review
+                    </button>
+                </div>
+
+                <div class="register-link">
+                    <a href="login.html">Return to Sign In</a>
+                </div>
+
+            </div>
+
+
+            <div class="login-footer">
+                <span>© 2026 AlumniHub</span>
+                <span id="footerStageText">Alumni Registration</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="showcase-panel">
+        <div class="showcase-content">
+            <div class="showcase-top">
+                <span class="mini-logo">AlumniHub</span>
+                <span class="secure-badge">
+                    <i class="bx bx-shield-quarter"></i>
+                    Secure Registration
+                </span>
+            </div>
+
+            <div class="dashboard-preview">
+                <div class="preview-header">
+                    <div>
+                        <small>AlumniHub Community</small>
+                        <h3>Join the network 👋</h3>
+                    </div>
+                    <div class="preview-avatar">A</div>
+                </div>
+
+                <div class="preview-stats">
+                    <div class="preview-stat">
+                        <span>Alumni Network</span>
+                        <strong>Connected</strong>
+                        <small class="growth">Build meaningful connections</small>
+                    </div>
+
+                    <div class="preview-stat">
+                        <span>Opportunities</span>
+                        <strong>Growing</strong>
+                        <small class="growth">Events, jobs, and updates</small>
+                    </div>
+                </div>
+
+                <div class="preview-chart">
+                    <div class="chart-title">
+                        <strong>Alumni Community</strong>
+                        <span>2026</span>
+                    </div>
+
+                    <div class="chart-bars">
+                        <span style="height:35%"></span>
+                        <span style="height:48%"></span>
+                        <span style="height:42%"></span>
+                        <span style="height:65%"></span>
+                        <span style="height:58%"></span>
+                        <span style="height:80%"></span>
+                        <span style="height:92%"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showcase-message">
+                <h2>Connect. Grow.<br>Give Back.</h2>
+                <p>
+                    Create your AlumniHub account to stay connected,
+                    discover opportunities, and participate in the alumni community.
+                </p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script src="../assets/js/register.js"></script>
+</body>
+</html>

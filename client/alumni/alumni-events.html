@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AlumniHub Alumni Events"
+    >
+
+    <title>
+        Events | AlumniHub
+    </title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Alumni Events CSS -->
+    <link
+        rel="stylesheet"
+        href="../assets/css/alumni/alumni-events.css"
+    >
+    <link rel="stylesheet" href="../assets/css/alumni/alumni-theme.css">
+    <link
+    rel="stylesheet"
+    href="../assets/css/page-transition.css"
+>
+</head>
+
+
+<body>
+
+<div class="alumni-shell">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="sidebar-top">
+
+            <a
+                href="alumni-dashboard.html"
+                class="brand"
+            >
+
+                <div
+                    class="alumni-ams-logo"
+                    style="
+                        width:46px;
+                        height:46px;
+                        min-width:46px;
+                        max-width:46px;
+                        flex:0 0 46px;
+                        border-radius:50%;
+                        overflow:hidden;
+                        background:#ffffff;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        padding:0;
+                        margin:0;
+                    "
+                >
+                    <img
+                        src="/assets/images/logo/ams-round-logo.jpg"
+                        alt="AMS Logo"
+                        width="46"
+                        height="46"
+                        style="
+                            width:46px;
+                            height:46px;
+                            min-width:46px;
+                            max-width:46px;
+                            object-fit:cover;
+                            object-position:center;
+                            border-radius:50%;
+                            display:block;
+                            margin:0;
+                            padding:0;
+                        "
+                    >
+                </div>
+
+                <div class="brand-text">
+                    <strong>AlumniHub</strong>
+                    <span>Alumni Portal</span>
+                </div>
+
+            </a>
+
+
+            <!-- USER CARD -->
+
+            <div class="sidebar-user">
+
+                <div
+                    class="sidebar-avatar"
+                    id="sidebarAvatar"
+                >
+                    AL
+                </div>
+
+                <div class="sidebar-user-info">
+
+                    <strong id="sidebarUserName">
+                        Alumni User
+                    </strong>
+
+                    <span
+                        class="verified-text"
+                        id="sidebarVerification"
+                    >
+                        <i class="bx bxs-badge-check"></i>
+                        Verified Alumni
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p class="menu-label">
+                MAIN MENU
+            </p>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="alumni-dashboard.html">
+                    <i class="bx bxs-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="alumni-profile.html">
+                    <i class="bx bxs-user-circle"></i>
+                    <span>My Profile</span>
+                </a>
+
+                <a
+                    href="alumni-events.html"
+                    class="active"
+                >
+                    <i class="bx bxs-calendar-event"></i>
+                    <span>Events</span>
+                </a>
+
+                <a href="alumni-jobs.html">
+                    <i class="bx bxs-briefcase"></i>
+                    <span>Job Opportunities</span>
+                </a>
+
+                <a href="alumni-announcements.html">
+                    <i class="bx bxs-megaphone"></i>
+                    <span>Announcements</span>
+                </a>
+
+                <a href="alumni-directory.html">
+                    <i class="bx bxs-group"></i>
+                    <span>Alumni Directory</span>
+                </a>
+
+            </nav>
+
+
+            <p class="menu-label account-label">
+                ACCOUNT
+            </p>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="alumni-settings.html">
+                    <i class="bx bxs-cog"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="logout-btn"
+                id="logoutBtn"
+            >
+                <i class="bx bx-log-out"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <div class="main-area">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    aria-label="Open menu"
+                >
+                    <i class="bx bx-menu"></i>
+                </button>
+
+
+                <div class="global-search">
+
+                    <i class="bx bx-search"></i>
+
+                    <input
+                        type="search"
+                        id="globalSearch"
+                        placeholder="Search events..."
+                        autocomplete="off"
+                    >
+
+                    <span class="search-shortcut">
+                        Ctrl K
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button
+                    type="button"
+                    class="topbar-icon-btn"
+                    id="themeToggle"
+                    aria-label="Toggle theme"
+                >
+                    <i class="bx bx-sun"></i>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="topbar-icon-btn"
+                    aria-label="Notifications"
+                >
+                    <i class="bx bx-bell"></i>
+                </button>
+
+
+                <div class="topbar-user">
+
+                    <div
+                        class="topbar-avatar"
+                        id="topbarAvatar"
+                    >
+                        AL
+                    </div>
+
+                    <div class="topbar-user-text">
+
+                        <strong id="topbarUserName">
+                            Alumni User
+                        </strong>
+
+                        <span>
+                            Alumni
+                        </span>
+
+                    </div>
+
+                    <i class="bx bx-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <main class="events-main">
+
+
+            <!-- PAGE HEADER -->
+
+            <section class="page-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        ALUMNI PORTAL
+                    </span>
+
+                    <h1>
+                        Events
+                    </h1>
+
+                    <p>
+                        Discover upcoming alumni activities,
+                        university events, reunions, seminars,
+                        and networking opportunities.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="#myRsvpsSection"
+                    class="primary-btn"
+                >
+                    <i class="bx bx-check-circle"></i>
+                    My RSVPs
+                </a>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+            ================================================== -->
+
+            <section class="event-stat-grid">
+
+
+                <article class="event-stat-card">
+
+                    <div class="stat-icon total">
+                        <i class="bx bx-calendar"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Available Events
+                        </span>
+
+                        <strong id="totalEventsCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Published activities
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="event-stat-card">
+
+                    <div class="stat-icon upcoming">
+                        <i class="bx bx-time-five"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Upcoming
+                        </span>
+
+                        <strong id="upcomingEventsCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Events ahead
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="event-stat-card">
+
+                    <div class="stat-icon joined">
+                        <i class="bx bx-check-circle"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            My RSVPs
+                        </span>
+
+                        <strong id="myRsvpCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Events you've joined
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="event-stat-card">
+
+                    <div class="stat-icon completed">
+                        <i class="bx bx-calendar-check"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Completed
+                        </span>
+
+                        <strong id="completedEventsCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Past activities
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FILTERS
+            ================================================== -->
+
+            <section class="event-toolbar">
+
+                <div class="event-search-box">
+
+                    <i class="bx bx-search"></i>
+
+                    <input
+                        type="search"
+                        id="eventSearch"
+                        placeholder="Search event title, type, or venue..."
+                    >
+
+                </div>
+
+
+                <div class="event-filter-group">
+
+                    <select
+                        id="eventTypeFilter"
+                        aria-label="Filter event type"
+                    >
+
+                        <option value="all">
+                            All Event Types
+                        </option>
+
+                        <option value="Reunion">
+                            Reunion
+                        </option>
+
+                        <option value="Seminar">
+                            Seminar
+                        </option>
+
+                        <option value="Workshop">
+                            Workshop
+                        </option>
+
+                        <option value="Networking">
+                            Networking
+                        </option>
+
+                        <option value="Career">
+                            Career
+                        </option>
+
+                        <option value="Community">
+                            Community
+                        </option>
+
+                    </select>
+
+
+                    <select
+                        id="eventStatusFilter"
+                        aria-label="Filter event status"
+                    >
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="Upcoming">
+                            Upcoming
+                        </option>
+
+                        <option value="Ongoing">
+                            Ongoing
+                        </option>
+
+                        <option value="Completed">
+                            Completed
+                        </option>
+
+                    </select>
+
+
+                    <select
+                        id="eventModeFilter"
+                        aria-label="Filter event mode"
+                    >
+
+                        <option value="all">
+                            All Modes
+                        </option>
+
+                        <option value="Onsite">
+                            Onsite
+                        </option>
+
+                        <option value="Online">
+                            Online
+                        </option>
+
+                        <option value="Hybrid">
+                            Hybrid
+                        </option>
+
+                    </select>
+
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        id="resetEventFilters"
+                    >
+                        <i class="bx bx-reset"></i>
+                        Reset
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 EVENTS PANEL
+            ================================================== -->
+
+            <section class="events-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            STAY CONNECTED
+                        </span>
+
+                        <h2>
+                            Alumni Events
+                        </h2>
+
+                        <p id="eventResultText">
+                            Showing available events.
+                        </p>
+
+                    </div>
+
+
+                    <span class="live-record-badge">
+
+                        <span></span>
+
+                        Live Records
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- LOADING -->
+
+                <div
+                    class="events-loading"
+                    id="eventsLoading"
+                >
+
+                    <span class="loader"></span>
+
+                    <p>
+                        Loading alumni events...
+                    </p>
+
+                </div>
+
+
+
+                <!-- ERROR -->
+
+                <div
+                    class="events-error hidden"
+                    id="eventsError"
+                >
+
+                    <div class="error-icon">
+                        <i class="bx bx-error-circle"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Unable to load events
+                        </strong>
+
+                        <p id="eventsErrorMessage">
+                            Something went wrong.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        id="retryEventsBtn"
+                    >
+                        <i class="bx bx-refresh"></i>
+                        Try Again
+                    </button>
+
+                </div>
+
+
+
+                <!-- EVENTS GRID -->
+
+                <div
+                    class="events-grid hidden"
+                    id="eventsGrid"
+                ></div>
+
+
+
+                <!-- EMPTY -->
+
+                <div
+                    class="events-empty hidden"
+                    id="eventsEmpty"
+                >
+
+                    <div class="empty-icon">
+                        <i class="bx bx-calendar-x"></i>
+                    </div>
+
+                    <h3>
+                        No events found
+                    </h3>
+
+                    <p>
+                        Try changing your search or filter options.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MY RSVPS
+            ================================================== -->
+
+            <section
+                class="events-panel my-rsvps-panel"
+                id="myRsvpsSection"
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            MY ACTIVITIES
+                        </span>
+
+                        <h2>
+                            My RSVPs
+                        </h2>
+
+                        <p>
+                            Events you have registered to attend.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="my-rsvp-list"
+                    id="myRsvpList"
+                ></div>
+
+
+                <div
+                    class="events-empty"
+                    id="myRsvpEmpty"
+                >
+
+                    <div class="empty-icon">
+                        <i class="bx bx-calendar-heart"></i>
+                    </div>
+
+                    <h3>
+                        No RSVPs yet
+                    </h3>
+
+                    <p>
+                        Join an upcoming event and it will appear here.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     EVENT DETAILS MODAL
+========================================================== -->
+
+<div
+    class="modal hidden"
+    id="eventDetailsModal"
+>
+
+    <div
+        class="modal-backdrop"
+        id="eventDetailsBackdrop"
+    ></div>
+
+
+    <div class="modal-dialog">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    EVENT DETAILS
+                </span>
+
+                <h2 id="detailsEventTitle">
+                    Alumni Event
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeDetailsModalBtn"
+                aria-label="Close"
+            >
+                <i class="bx bx-x"></i>
+            </button>
+
+        </div>
+
+
+
+        <div class="event-details-body">
+
+
+            <div class="event-details-status-row">
+
+                <span
+                    class="event-status-badge"
+                    id="detailsEventStatus"
+                >
+                    Upcoming
+                </span>
+
+
+                <span
+                    class="event-type-badge"
+                    id="detailsEventType"
+                >
+                    Event
+                </span>
+
+            </div>
+
+
+
+            <p
+                class="event-details-description"
+                id="detailsEventDescription"
+            >
+                —
+            </p>
+
+
+
+            <div class="event-details-grid">
+
+
+                <div class="event-detail-item">
+
+                    <i class="bx bx-calendar"></i>
+
+                    <div>
+                        <span>Date</span>
+                        <strong id="detailsEventDate">—</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="event-detail-item">
+
+                    <i class="bx bx-time"></i>
+
+                    <div>
+                        <span>Time</span>
+                        <strong id="detailsEventTime">—</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="event-detail-item">
+
+                    <i class="bx bx-map"></i>
+
+                    <div>
+                        <span>Venue</span>
+                        <strong id="detailsEventVenue">—</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="event-detail-item">
+
+                    <i class="bx bx-desktop"></i>
+
+                    <div>
+                        <span>Mode</span>
+                        <strong id="detailsEventMode">—</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="event-detail-item">
+
+                    <i class="bx bx-group"></i>
+
+                    <div>
+                        <span>Registered</span>
+
+                        <strong>
+                            <span id="detailsAttendeeCount">0</span>
+                            /
+                            <span id="detailsCapacity">—</span>
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="event-detail-item">
+
+                    <i class="bx bx-user"></i>
+
+                    <div>
+                        <span>Organizer</span>
+                        <strong id="detailsOrganizer">—</strong>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div
+                class="online-link-container hidden"
+                id="onlineLinkContainer"
+            >
+
+                <div>
+
+                    <i class="bx bx-link-external"></i>
+
+                    <span>
+                        Online Meeting Link
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    id="detailsOnlineLink"
+                >
+                    Open Link
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="secondary-btn"
+                id="closeEventDetailsBtn"
+            >
+                Close
+            </button>
+
+
+            <button
+                type="button"
+                class="primary-btn"
+                id="eventRsvpBtn"
+            >
+
+                <i class="bx bx-check-circle"></i>
+
+                <span>
+                    RSVP to Event
+                </span>
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     RSVP CONFIRMATION MODAL
+========================================================== -->
+
+<div
+    class="modal hidden"
+    id="rsvpConfirmModal"
+>
+
+    <div class="modal-backdrop"></div>
+
+
+    <div class="modal-dialog confirmation-dialog">
+
+        <div class="confirmation-icon success">
+
+            <i class="bx bx-calendar-check"></i>
+
+        </div>
+
+
+        <h2 id="rsvpConfirmTitle">
+            Join this event?
+        </h2>
+
+
+        <p id="rsvpConfirmMessage">
+            Your RSVP will be recorded in AlumniHub.
+        </p>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="secondary-btn"
+                id="cancelRsvpBtn"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                class="primary-btn"
+                id="confirmRsvpBtn"
+            >
+
+                <i class="bx bx-check"></i>
+
+                Confirm RSVP
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     CANCEL RSVP MODAL
+========================================================== -->
+
+<div
+    class="modal hidden"
+    id="cancelRsvpModal"
+>
+
+    <div class="modal-backdrop"></div>
+
+
+    <div class="modal-dialog confirmation-dialog">
+
+        <div class="confirmation-icon danger">
+
+            <i class="bx bx-calendar-x"></i>
+
+        </div>
+
+
+        <h2>
+            Cancel your RSVP?
+        </h2>
+
+
+        <p>
+            You will be removed from the attendee list
+            for this event.
+        </p>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="secondary-btn"
+                id="keepRsvpBtn"
+            >
+                Keep RSVP
+            </button>
+
+
+            <button
+                type="button"
+                class="danger-btn"
+                id="confirmCancelRsvpBtn"
+            >
+
+                <i class="bx bx-x"></i>
+
+                Cancel RSVP
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     LOGOUT CONFIRMATION
+========================================================== -->
+
+<div
+    class="modal hidden"
+    id="logoutModal"
+>
+
+    <div
+        class="modal-backdrop"
+        id="logoutBackdrop"
+    ></div>
+
+
+    <div class="modal-dialog confirmation-dialog">
+
+        <div class="confirmation-icon danger">
+
+            <i class="bx bx-log-out"></i>
+
+        </div>
+
+
+        <h2>
+            Log out of AlumniHub?
+        </h2>
+
+
+        <p>
+            You will need to sign in again to access
+            your Alumni Portal.
+        </p>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="secondary-btn"
+                id="cancelLogoutBtn"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                class="danger-btn"
+                id="confirmLogoutBtn"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================== -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+></div>
+
+
+
+<!-- Alumni Events JavaScript -->
+
+<script
+    src="../assets/js/alumni/alumni-events.js"
+></script>
+<script
+    src="../assets/js/page-transition.js"
+></script>
+
+
+</body>
+
+</html>

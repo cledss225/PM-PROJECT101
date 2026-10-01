@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Alumni Directory | AlumniHub</title>
+
+    <!-- Google Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Alumni Directory CSS -->
+    <link
+        rel="stylesheet"
+        href="../assets/css/alumni/alumni-directory.css"
+    >
+    <link rel="stylesheet" href="../assets/css/alumni/alumni-theme.css">
+    <link
+    rel="stylesheet"
+    href="../assets/css/page-transition.css"
+>
+</head>
+
+
+<body>
+
+    <div class="app-shell">
+
+
+        <!-- ==========================================
+             SIDEBAR
+        ========================================== -->
+
+        <aside
+            class="sidebar"
+            id="sidebar"
+        >
+
+            <div class="sidebar-brand">
+
+                <div
+                    class="alumni-ams-logo"
+                    style="
+                        width:46px;
+                        height:46px;
+                        min-width:46px;
+                        max-width:46px;
+                        flex:0 0 46px;
+                        border-radius:50%;
+                        overflow:hidden;
+                        background:#ffffff;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        padding:0;
+                        margin:0;
+                    "
+                >
+                    <img
+                        src="/assets/images/logo/ams-round-logo.jpg"
+                        alt="AMS Logo"
+                        width="46"
+                        height="46"
+                        style="
+                            width:46px;
+                            height:46px;
+                            min-width:46px;
+                            max-width:46px;
+                            object-fit:cover;
+                            object-position:center;
+                            border-radius:50%;
+                            display:block;
+                            margin:0;
+                            padding:0;
+                        "
+                    >
+                </div>
+
+                <div class="brand-text">
+                    <h2>AlumniHub</h2>
+                    <span>Alumni Portal</span>
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-profile">
+
+                <div
+                    class="profile-avatar"
+                    id="sidebarProfileAvatar"
+                >
+                    A
+                </div>
+
+                <div class="profile-info">
+
+                    <strong id="sidebarProfileName">
+                        Alumni User
+                    </strong>
+
+                    <span class="verified-status">
+                        <i class="bx bxs-check-circle"></i>
+                        Verified Alumni
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <span class="nav-label">
+                    MAIN MENU
+                </span>
+
+
+                <a
+                    href="alumni-dashboard.html"
+                    class="nav-link"
+                >
+                    <i class="bx bxs-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a
+                    href="alumni-profile.html"
+                    class="nav-link"
+                >
+                    <i class="bx bxs-user"></i>
+                    <span>My Profile</span>
+                </a>
+
+
+                <a
+                    href="alumni-events.html"
+                    class="nav-link"
+                >
+                    <i class="bx bxs-calendar-event"></i>
+                    <span>Events</span>
+                </a>
+
+
+                <a
+                    href="alumni-jobs.html"
+                    class="nav-link"
+                >
+                    <i class="bx bxs-briefcase-alt-2"></i>
+                    <span>Job Opportunities</span>
+                </a>
+
+
+                <a
+                    href="alumni-announcements.html"
+                    class="nav-link"
+                >
+                    <i class="bx bxs-megaphone"></i>
+                    <span>Announcements</span>
+                </a>
+
+
+                <a
+                    href="alumni-directory.html"
+                    class="nav-link active"
+                >
+                    <i class="bx bxs-group"></i>
+                    <span>Alumni Directory</span>
+                </a>
+
+
+                <span class="nav-label nav-label-secondary">
+                    ACCOUNT
+                </span>
+
+
+                <a
+                    href="alumni-settings.html"
+                    class="nav-link"
+                >
+                    <i class="bx bxs-cog"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    id="logoutBtn"
+                >
+                    <i class="bx bx-log-out"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ==========================================
+             MAIN CONTENT
+        ========================================== -->
+
+        <main class="main-content">
+
+
+            <!-- ==========================================
+                 TOPBAR
+            ========================================== -->
+
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="icon-button menu-toggle"
+                        id="menuToggle"
+                        aria-label="Toggle sidebar"
+                    >
+                        <i class="bx bx-menu"></i>
+                    </button>
+
+
+                    <div class="page-heading">
+
+                        <span class="page-eyebrow">
+                            ALUMNI PORTAL
+                        </span>
+
+                        <h1>
+                            Alumni Directory
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-actions">
+
+                    <button
+                        type="button"
+                        class="icon-button"
+                        id="refreshDirectoryBtn"
+                        title="Refresh directory"
+                        aria-label="Refresh directory"
+                    >
+                        <i class="bx bx-refresh"></i>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="icon-button"
+                        id="themeToggle"
+                        title="Toggle theme"
+                        aria-label="Toggle theme"
+                    >
+                        <i
+                            class="bx bx-moon"
+                            id="themeIcon"
+                        ></i>
+                    </button>
+
+
+                    <div class="topbar-profile">
+
+                        <div
+                            class="topbar-avatar"
+                            id="topbarAvatar"
+                        >
+                            A
+                        </div>
+
+                        <div class="topbar-user-info">
+
+                            <strong id="topbarUserName">
+                                Alumni User
+                            </strong>
+
+                            <span>
+                                Alumni
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- ==========================================
+                 PAGE CONTENT
+            ========================================== -->
+
+            <section class="page-content">
+
+
+                <!-- ======================================
+                     HERO
+                ======================================= -->
+
+                <section class="directory-hero">
+
+                    <div class="hero-content">
+
+                        <div class="hero-badge">
+                            <i class="bx bxs-group"></i>
+                            Alumni Community
+                        </div>
+
+                        <h2>
+                            Connect with your
+                            <span>fellow alumni.</span>
+                        </h2>
+
+                        <p>
+                            Explore the AlumniHub community, discover
+                            graduates from different programs and
+                            batches, and learn about their current
+                            careers and professional affiliations.
+                        </p>
+
+                    </div>
+
+
+                    <div class="hero-visual">
+
+                        <div class="hero-icon-wrapper">
+                            <i class="bx bxs-group"></i>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ======================================
+                     SUMMARY
+                ======================================= -->
+
+                <section class="directory-summary-grid">
+
+
+                    <article class="summary-card">
+
+                        <div class="summary-icon">
+                            <i class="bx bx-group"></i>
+                        </div>
+
+                        <div class="summary-info">
+
+                            <span>
+                                Alumni Members
+                            </span>
+
+                            <strong id="totalAlumniCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="summary-card">
+
+                        <div class="summary-icon">
+                            <i class="bx bx-badge-check"></i>
+                        </div>
+
+                        <div class="summary-info">
+
+                            <span>
+                                Verified Alumni
+                            </span>
+
+                            <strong id="verifiedAlumniCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="summary-card">
+
+                        <div class="summary-icon">
+                            <i class="bx bx-briefcase"></i>
+                        </div>
+
+                        <div class="summary-info">
+
+                            <span>
+                                Currently Employed
+                            </span>
+
+                            <strong id="employedAlumniCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- ======================================
+                     SEARCH + FILTERS
+                ======================================= -->
+
+                <section class="directory-toolbar">
+
+
+                    <div class="directory-search">
+
+                        <i class="bx bx-search"></i>
+
+                        <input
+                            type="search"
+                            id="directorySearchInput"
+                            placeholder="Search name, email, program, company, or job..."
+                            autocomplete="off"
+                        >
+
+                        <button
+                            type="button"
+                            class="clear-search-btn"
+                            id="clearDirectorySearchBtn"
+                            aria-label="Clear search"
+                        >
+                            <i class="bx bx-x"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="directory-filters">
+
+
+                        <div class="filter-field">
+
+                            <label for="programFilter">
+                                Program
+                            </label>
+
+                            <div class="select-wrapper">
+
+                                <select id="programFilter">
+
+                                    <option value="">
+                                        All Programs
+                                    </option>
+
+                                </select>
+
+                                <i class="bx bx-chevron-down"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="filter-field">
+
+                            <label for="batchFilter">
+                                Batch
+                            </label>
+
+                            <div class="select-wrapper">
+
+                                <select id="batchFilter">
+
+                                    <option value="">
+                                        All Batches
+                                    </option>
+
+                                </select>
+
+                                <i class="bx bx-chevron-down"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="filter-field">
+
+                            <label for="verificationFilter">
+                                Verification
+                            </label>
+
+                            <div class="select-wrapper">
+
+                                <select id="verificationFilter">
+
+                                    <option value="">
+                                        All Alumni
+                                    </option>
+
+                                    <option value="verified">
+                                        Verified Only
+                                    </option>
+
+                                </select>
+
+                                <i class="bx bx-chevron-down"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="reset-filter-btn"
+                            id="resetDirectoryFiltersBtn"
+                        >
+                            <i class="bx bx-reset"></i>
+                            Reset
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ======================================
+                     RESULTS HEADER
+                ======================================= -->
+
+                <section class="results-header">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            COMMUNITY DIRECTORY
+                        </span>
+
+                        <h3>
+                            Alumni Members
+                        </h3>
+
+                        <p id="directoryResultText">
+                            Loading alumni records...
+                        </p>
+
+                    </div>
+
+
+                    <div class="result-sort">
+
+                        <label for="directorySort">
+                            Sort by
+                        </label>
+
+                        <div class="select-wrapper compact">
+
+                            <select id="directorySort">
+
+                                <option value="name">
+                                    Name A-Z
+                                </option>
+
+                                <option value="batch-newest">
+                                    Newest Batch
+                                </option>
+
+                                <option value="batch-oldest">
+                                    Oldest Batch
+                                </option>
+
+                                <option value="program">
+                                    Program A-Z
+                                </option>
+
+                            </select>
+
+                            <i class="bx bx-chevron-down"></i>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ======================================
+                     LOADING STATE
+                ======================================= -->
+
+                <section
+                    class="state-container"
+                    id="directoryLoadingState"
+                >
+
+                    <div class="loading-spinner"></div>
+
+                    <h3>
+                        Loading alumni directory
+                    </h3>
+
+                    <p>
+                        Please wait while we retrieve the latest
+                        alumni records.
+                    </p>
+
+                </section>
+
+
+
+                <!-- ======================================
+                     ERROR STATE
+                ======================================= -->
+
+                <section
+                    class="state-container hidden"
+                    id="directoryErrorState"
+                >
+
+                    <div class="state-icon error">
+                        <i class="bx bx-error-circle"></i>
+                    </div>
+
+                    <h3>
+                        Unable to load alumni
+                    </h3>
+
+                    <p id="directoryErrorMessage">
+                        Something went wrong while loading the directory.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="retryDirectoryBtn"
+                    >
+                        <i class="bx bx-refresh"></i>
+                        Try Again
+                    </button>
+
+                </section>
+
+
+
+                <!-- ======================================
+                     EMPTY STATE
+                ======================================= -->
+
+                <section
+                    class="state-container hidden"
+                    id="directoryEmptyState"
+                >
+
+                    <div class="state-icon">
+                        <i class="bx bx-user-x"></i>
+                    </div>
+
+                    <h3>
+                        No alumni found
+                    </h3>
+
+                    <p>
+                        Try changing your search keyword or selected
+                        filters.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="emptyResetDirectoryBtn"
+                    >
+                        <i class="bx bx-reset"></i>
+                        Clear Filters
+                    </button>
+
+                </section>
+
+
+
+                <!-- ======================================
+                     ALUMNI GRID
+                ======================================= -->
+
+                <section
+                    class="alumni-grid hidden"
+                    id="alumniGrid"
+                >
+
+                    <!-- Cards generated by alumni-directory.js -->
+
+                </section>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         MOBILE SIDEBAR OVERLAY
+    ========================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- ==========================================
+         ALUMNI DETAILS MODAL
+    ========================================== -->
+
+    <div
+        class="modal-overlay hidden"
+        id="alumniDetailsModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalAlumniName"
+    >
+
+        <div class="alumni-modal">
+
+
+            <!-- HEADER -->
+
+            <div class="alumni-modal-header">
+
+                <div class="modal-profile-header">
+
+                    <div
+                        class="modal-avatar"
+                        id="modalAlumniAvatar"
+                    >
+                        A
+                    </div>
+
+
+                    <div class="modal-profile-info">
+
+                        <div class="modal-name-row">
+
+                            <h2 id="modalAlumniName">
+                                Alumni Name
+                            </h2>
+
+                            <span
+                                class="verified-badge hidden"
+                                id="modalVerifiedBadge"
+                            >
+                                <i class="bx bxs-check-circle"></i>
+                                Verified
+                            </span>
+
+                        </div>
+
+                        <p id="modalAlumniEmail">
+                            alumni@email.com
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close-btn"
+                    id="closeAlumniModalBtn"
+                    aria-label="Close alumni details"
+                >
+                    <i class="bx bx-x"></i>
+                </button>
+
+            </div>
+
+
+
+            <!-- BODY -->
+
+            <div class="alumni-modal-body">
+
+
+                <div class="alumni-meta-grid">
+
+
+                    <div class="meta-item">
+
+                        <div class="meta-icon">
+                            <i class="bx bx-id-card"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Student Number
+                            </span>
+
+                            <strong id="modalStudentNumber">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="meta-item">
+
+                        <div class="meta-icon">
+                            <i class="bx bxs-graduation"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Program
+                            </span>
+
+                            <strong id="modalProgram">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="meta-item">
+
+                        <div class="meta-icon">
+                            <i class="bx bx-calendar"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Batch Year
+                            </span>
+
+                            <strong id="modalBatchYear">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="meta-item">
+
+                        <div class="meta-icon">
+                            <i class="bx bx-briefcase"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Current Job
+                            </span>
+
+                            <strong id="modalCurrentJob">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="meta-item">
+
+                        <div class="meta-icon">
+                            <i class="bx bx-buildings"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Company
+                            </span>
+
+                            <strong id="modalCompany">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="meta-item">
+
+                        <div class="meta-icon">
+                            <i class="bx bx-badge-check"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Account Status
+                            </span>
+
+                            <strong id="modalVerificationStatus">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="privacy-note">
+
+                    <i class="bx bx-shield-quarter"></i>
+
+                    <div>
+
+                        <strong>
+                            Alumni Directory Privacy
+                        </strong>
+
+                        <p>
+                            Only basic academic and professional
+                            information is displayed in this directory.
+                            Personal details such as address, birth date,
+                            and phone number are not shown.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FOOTER -->
+
+            <div class="alumni-modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="modalCloseFooterBtn"
+                >
+                    Close
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+    ></div>
+
+    <!-- ======================================
+     PAGINATION
+======================================= -->
+
+<section
+    class="directory-pagination hidden"
+    id="directoryPagination"
+>
+
+    <div class="pagination-info">
+
+        <span id="paginationInfo">
+            Showing 0–0 of 0 alumni
+        </span>
+
+    </div>
+
+
+    <div class="pagination-controls">
+
+        <button
+            type="button"
+            class="pagination-button"
+            id="previousPageBtn"
+            disabled
+        >
+            <i class="bx bx-chevron-left"></i>
+            Previous
+        </button>
+
+
+        <span
+            class="pagination-page-info"
+            id="paginationPageInfo"
+        >
+            Page 1 of 1
+        </span>
+
+
+        <button
+            type="button"
+            class="pagination-button"
+            id="nextPageBtn"
+            disabled
+        >
+            Next
+            <i class="bx bx-chevron-right"></i>
+        </button>
+
+    </div>
+
+</section>
+
+
+
+    <!-- Alumni Directory JS -->
+    <script
+        src="../assets/js/alumni/alumni-directory.js"
+        defer
+    ></script>
+    <script
+    src="../assets/js/page-transition.js"
+></script>
+
+</body>
+
+</html>

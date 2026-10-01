@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AlumniHub Alumni Profile"
+    >
+
+    <title>My Profile | AlumniHub</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Alumni Profile CSS -->
+    <link
+        rel="stylesheet"
+        href="../assets/css/alumni/alumni-profile.css"
+    >
+    <link rel="stylesheet" href="../assets/css/alumni/alumni-theme.css">
+    <link
+    rel="stylesheet"
+    href="../assets/css/page-transition.css"
+>
+</head>
+
+
+<body>
+
+<div class="alumni-shell">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-top">
+
+            <a
+                href="alumni-dashboard.html"
+                class="brand"
+            >
+
+                <div
+                    class="alumni-ams-logo"
+                    style="
+                        width:46px;
+                        height:46px;
+                        min-width:46px;
+                        max-width:46px;
+                        flex:0 0 46px;
+                        border-radius:50%;
+                        overflow:hidden;
+                        background:#ffffff;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        padding:0;
+                        margin:0;
+                    "
+                >
+                    <img
+                        src="/assets/images/logo/ams-round-logo.jpg"
+                        alt="AMS Logo"
+                        width="46"
+                        height="46"
+                        style="
+                            width:46px;
+                            height:46px;
+                            min-width:46px;
+                            max-width:46px;
+                            object-fit:cover;
+                            object-position:center;
+                            border-radius:50%;
+                            display:block;
+                            margin:0;
+                            padding:0;
+                        "
+                    >
+                </div>
+
+                <div class="brand-text">
+                    <strong>AlumniHub</strong>
+                    <span>Alumni Portal</span>
+                </div>
+
+            </a>
+
+
+            <!-- USER CARD -->
+
+            <div class="sidebar-user">
+
+                <div
+                    class="sidebar-avatar"
+                    id="sidebarAvatar"
+                >
+                    AL
+                </div>
+
+                <div class="sidebar-user-info">
+
+                    <strong id="sidebarUserName">
+                        Alumni User
+                    </strong>
+
+                    <span class="verified-text">
+                        <i class="bx bxs-badge-check"></i>
+                        Verified Alumni
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <p class="menu-label">
+                MAIN MENU
+            </p>
+
+            <nav class="sidebar-nav">
+
+                <a href="alumni-dashboard.html">
+                    <i class="bx bxs-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a
+                    href="alumni-profile.html"
+                    class="active"
+                >
+                    <i class="bx bxs-user-circle"></i>
+                    <span>My Profile</span>
+                </a>
+
+                <a href="alumni-events.html">
+                    <i class="bx bxs-calendar-event"></i>
+                    <span>Events</span>
+                </a>
+
+                <a href="alumni-jobs.html">
+                    <i class="bx bxs-briefcase"></i>
+                    <span>Job Opportunities</span>
+                </a>
+
+                <a href="alumni-announcements.html">
+                    <i class="bx bxs-megaphone"></i>
+                    <span>Announcements</span>
+                </a>
+
+                <a href="alumni-directory.html">
+                    <i class="bx bxs-group"></i>
+                    <span>Alumni Directory</span>
+                </a>
+
+            </nav>
+
+
+            <p class="menu-label account-label">
+                ACCOUNT
+            </p>
+
+            <nav class="sidebar-nav">
+
+                <a href="alumni-settings.html">
+                    <i class="bx bxs-cog"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <!-- LOGOUT -->
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="logout-btn"
+                id="logoutBtn"
+            >
+                <i class="bx bx-log-out"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <div class="main-area">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    aria-label="Open menu"
+                >
+                    <i class="bx bx-menu"></i>
+                </button>
+
+
+                <div class="global-search">
+
+                    <i class="bx bx-search"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Search events, jobs, announcements..."
+                        id="globalSearch"
+                    >
+
+                    <span class="search-shortcut">
+                        Ctrl K
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button
+                    type="button"
+                    class="topbar-icon-btn"
+                    id="themeToggle"
+                    title="Toggle theme"
+                >
+                    <i class="bx bx-sun"></i>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="topbar-icon-btn"
+                    title="Notifications"
+                >
+                    <i class="bx bx-bell"></i>
+                </button>
+
+
+                <div class="topbar-user">
+
+                    <div
+                        class="topbar-avatar"
+                        id="topbarAvatar"
+                    >
+                        AL
+                    </div>
+
+                    <div class="topbar-user-text">
+
+                        <strong id="topbarUserName">
+                            Alumni User
+                        </strong>
+
+                        <span>
+                            Alumni
+                        </span>
+
+                    </div>
+
+                    <i class="bx bx-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <main class="profile-main">
+
+
+            <!-- PAGE HEADING -->
+
+            <section class="page-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        ALUMNI PORTAL
+                    </span>
+
+                    <h1>
+                        My Profile
+                    </h1>
+
+                    <p>
+                        Manage your personal, academic,
+                        contact, and employment information.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="editProfileBtn"
+                >
+                    <i class="bx bx-edit-alt"></i>
+                    Edit Profile
+                </button>
+
+            </section>
+
+
+
+            <!-- PROFILE HERO -->
+
+            <section class="profile-hero">
+
+                <div class="profile-identity">
+
+                    <div
+                        class="profile-avatar"
+                        id="profileAvatar"
+                        style="position:relative; overflow:visible;"
+                    >
+                        AL
+
+                        <button
+                            type="button"
+                            id="changeAvatarBtn"
+                            title="Change profile picture"
+                            aria-label="Change profile picture"
+                            style="
+                                position:absolute;
+                                right:-6px;
+                                bottom:-6px;
+                                width:32px;
+                                height:32px;
+                                border:3px solid #111114;
+                                border-radius:50%;
+                                background:#7448ff;
+                                color:#ffffff;
+                                display:flex;
+                                align-items:center;
+                                justify-content:center;
+                                cursor:pointer;
+                                z-index:5;
+                                box-shadow:0 6px 18px rgba(0,0,0,.35);
+                            "
+                        >
+                            <i class="bx bxs-camera" style="font-size:16px;"></i>
+                        </button>
+
+                        <input
+                            type="file"
+                            id="avatarFileInput"
+                            accept="image/jpeg,image/png,image/webp"
+                            hidden
+                        >
+                    </div>
+
+
+                    <div class="profile-identity-text">
+
+                        <div class="profile-name-row">
+
+                            <h2 id="profileFullName">
+                                Alumni User
+                            </h2>
+
+                            <span
+                                class="verified-badge"
+                                id="verificationBadge"
+                            >
+                                <i class="bx bxs-badge-check"></i>
+                                Verified Alumni
+                            </span>
+
+                        </div>
+
+
+                        <p id="profileProgramBatch">
+                            AlumniHub Graduate
+                        </p>
+
+
+                        <div class="profile-meta">
+
+                            <span>
+                                <i class="bx bx-envelope"></i>
+                                <span id="profileEmail">
+                                    —
+                                </span>
+                            </span>
+
+                            <span>
+                                <i class="bx bx-id-card"></i>
+                                <span id="profileStudentNumber">
+                                    —
+                                </span>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="completion-card">
+
+                    <div class="completion-header">
+
+                        <span>
+                            Profile Completion
+                        </span>
+
+                        <strong id="completionPercent">
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <div class="completion-track">
+
+                        <span
+                            id="completionBar"
+                            style="width: 0%;"
+                        ></span>
+
+                    </div>
+
+                    <small id="completionMessage">
+                        Complete your profile to get the most
+                        out of AlumniHub.
+                    </small>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- LOADING STATE -->
+
+            <div
+                class="profile-loading"
+                id="profileLoading"
+            >
+
+                <span class="loader"></span>
+
+                <p>
+                    Loading your profile...
+                </p>
+
+            </div>
+
+
+
+            <!-- ERROR STATE -->
+
+            <div
+                class="profile-error hidden"
+                id="profileError"
+            >
+
+                <div class="error-icon">
+                    <i class="bx bx-error-circle"></i>
+                </div>
+
+                <div>
+                    <strong>
+                        Unable to load profile
+                    </strong>
+
+                    <p id="profileErrorMessage">
+                        Something went wrong.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="retryProfileBtn"
+                >
+                    <i class="bx bx-refresh"></i>
+                    Try Again
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROFILE CONTENT
+            ================================================== -->
+
+            <div
+                class="profile-content hidden"
+                id="profileContent"
+            >
+
+
+                <!-- PERSONAL INFORMATION -->
+
+                <section class="profile-section">
+
+                    <div class="section-heading">
+
+                        <div class="section-heading-icon">
+                            <i class="bx bxs-user"></i>
+                        </div>
+
+                        <div>
+                            <h2>
+                                Personal Information
+                            </h2>
+
+                            <p>
+                                Your basic personal details.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-grid">
+
+                        <div class="info-item">
+                            <span class="info-label">
+                                First Name
+                            </span>
+                            <strong id="viewFirstName">—</strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-label">
+                                Middle Name
+                            </span>
+                            <strong id="viewMiddleName">—</strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-label">
+                                Last Name
+                            </span>
+                            <strong id="viewLastName">—</strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-label">
+                                Birth Date
+                            </span>
+                            <strong id="viewBirthDate">—</strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-label">
+                                Gender
+                            </span>
+                            <strong id="viewGender">—</strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-label">
+                                Email Address
+                            </span>
+                            <strong id="viewEmail">—</strong>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- CONTACT INFORMATION -->
+
+                <section class="profile-section">
+
+                    <div class="section-heading">
+
+                        <div class="section-heading-icon">
+                            <i class="bx bxs-contact"></i>
+                        </div>
+
+                        <div>
+                            <h2>
+                                Contact Information
+                            </h2>
+
+                            <p>
+                                Information used to stay connected.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-grid">
+
+                        <div class="info-item">
+                            <span class="info-label">
+                                Phone Number
+                            </span>
+                            <strong id="viewPhoneNumber">—</strong>
+                        </div>
+
+                        <div class="info-item full-width">
+                            <span class="info-label">
+                                Address
+                            </span>
+                            <strong id="viewAddress">—</strong>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ACADEMIC INFORMATION -->
+
+                <section class="profile-section">
+
+                    <div class="section-heading">
+
+                        <div class="section-heading-icon">
+                            <i class="bx bxs-graduation"></i>
+                        </div>
+
+                        <div>
+                            <h2>
+                                Academic Information
+                            </h2>
+
+                            <p>
+                                Your AlumniHub academic record.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-grid">
+
+                        <div class="info-item">
+                            <span class="info-label">
+                                Student Number
+                            </span>
+                            <strong id="viewStudentNumber">—</strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-label">
+                                Program
+                            </span>
+                            <strong id="viewProgram">—</strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-label">
+                                Batch Year
+                            </span>
+                            <strong id="viewBatchYear">—</strong>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- EMPLOYMENT INFORMATION -->
+
+                <section class="profile-section">
+
+                    <div class="section-heading">
+
+                        <div class="section-heading-icon">
+                            <i class="bx bxs-briefcase"></i>
+                        </div>
+
+                        <div>
+                            <h2>
+                                Employment Information
+                            </h2>
+
+                            <p>
+                                Keep your professional information updated.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-grid">
+
+                        <div class="info-item">
+                            <span class="info-label">
+                                Current Job
+                            </span>
+                            <strong id="viewCurrentJob">—</strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-label">
+                                Company
+                            </span>
+                            <strong id="viewCompany">—</strong>
+                        </div>
+
+                        <div class="info-item full-width">
+                            <span class="info-label">
+                                LinkedIn
+                            </span>
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                id="viewLinkedIn"
+                                class="profile-link"
+                            >
+                                —
+                            </a>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ACCOUNT INFORMATION -->
+
+                <section class="profile-section">
+
+                    <div class="section-heading">
+
+                        <div class="section-heading-icon">
+                            <i class="bx bxs-shield"></i>
+                        </div>
+
+                        <div>
+                            <h2>
+                                Account Information
+                            </h2>
+
+                            <p>
+                                Current AlumniHub account status.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="account-status-grid">
+
+                        <div class="account-status-card">
+
+                            <div class="status-card-icon success">
+                                <i class="bx bxs-badge-check"></i>
+                            </div>
+
+                            <div>
+                                <span>
+                                    Verification
+                                </span>
+
+                                <strong id="viewVerificationStatus">
+                                    —
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="account-status-card">
+
+                            <div class="status-card-icon primary">
+                                <i class="bx bxs-user-check"></i>
+                            </div>
+
+                            <div>
+                                <span>
+                                    Account Status
+                                </span>
+
+                                <strong id="viewAccountStatus">
+                                    —
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     EDIT PROFILE MODAL
+========================================================== -->
+
+<div
+    class="modal hidden"
+    id="editProfileModal"
+>
+
+    <div
+        class="modal-backdrop"
+        id="editModalBackdrop"
+    ></div>
+
+
+    <div class="modal-dialog">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    ALUMNI PROFILE
+                </span>
+
+                <h2>
+                    Edit Profile
+                </h2>
+
+                <p>
+                    Update your AlumniHub information.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeEditModalBtn"
+                aria-label="Close"
+            >
+                <i class="bx bx-x"></i>
+            </button>
+
+        </div>
+
+
+
+        <form id="profileForm">
+
+
+            <!-- PERSONAL -->
+
+            <div class="form-section">
+
+                <div class="form-section-title">
+
+                    <i class="bx bxs-user"></i>
+
+                    <span>
+                        Personal Information
+                    </span>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="firstName">
+                            First Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="firstName"
+                            name="first_name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="middleName">
+                            Middle Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="middleName"
+                            name="middle_name"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="lastName">
+                            Last Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="lastName"
+                            name="last_name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="birthDate">
+                            Birth Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="birthDate"
+                            name="birth_date"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="gender">
+                            Gender
+                        </label>
+
+                        <select
+                            id="gender"
+                            name="gender"
+                        >
+
+                            <option value="">
+                                Select gender
+                            </option>
+
+                            <option value="Male">
+                                Male
+                            </option>
+
+                            <option value="Female">
+                                Female
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                            <option value="Prefer not to say">
+                                Prefer not to say
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="profileEmailInput">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="profileEmailInput"
+                            disabled
+                        >
+
+                        <small>
+                            Email changes are managed through
+                            account settings.
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div class="form-section">
+
+                <div class="form-section-title">
+
+                    <i class="bx bxs-contact"></i>
+
+                    <span>
+                        Contact Information
+                    </span>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="phoneNumber">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phoneNumber"
+                            name="phone_number"
+                            placeholder="09XXXXXXXXX"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label for="address">
+                            Address
+                        </label>
+
+                        <textarea
+                            id="address"
+                            name="address"
+                            rows="3"
+                            placeholder="Enter your current address"
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ACADEMIC -->
+
+            <div class="form-section">
+
+                <div class="form-section-title">
+
+                    <i class="bx bxs-graduation"></i>
+
+                    <span>
+                        Academic Information
+                    </span>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="studentNumber">
+                            Student Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentNumber"
+                            name="student_number"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="program">
+                            Program
+                        </label>
+
+                        <input
+                            type="text"
+                            id="program"
+                            name="program"
+                            placeholder="e.g. BS Information Technology"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="batchYear">
+                            Batch Year
+                        </label>
+
+                        <input
+                            type="number"
+                            id="batchYear"
+                            name="batch_year"
+                            min="1950"
+                            max="2100"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EMPLOYMENT -->
+
+            <div class="form-section">
+
+                <div class="form-section-title">
+
+                    <i class="bx bxs-briefcase"></i>
+
+                    <span>
+                        Employment Information
+                    </span>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="currentJob">
+                            Current Job
+                        </label>
+
+                        <input
+                            type="text"
+                            id="currentJob"
+                            name="current_job"
+                            placeholder="e.g. Software Developer"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="company">
+                            Company
+                        </label>
+
+                        <input
+                            type="text"
+                            id="company"
+                            name="company"
+                            placeholder="Company name"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label for="linkedinUrl">
+                            LinkedIn URL
+                        </label>
+
+                        <input
+                            type="url"
+                            id="linkedinUrl"
+                            name="linkedin_url"
+                            placeholder="https://linkedin.com/in/username"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ACTIONS -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelEditBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                    id="saveProfileBtn"
+                >
+                    <i class="bx bx-save"></i>
+
+                    <span>
+                        Save Changes
+                    </span>
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================== -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+></div>
+
+
+
+<!-- Alumni Profile JS -->
+
+<script
+    src="../assets/js/alumni/alumni-profile.js"
+></script>
+<script
+    src="../assets/js/page-transition.js"
+></script>
+
+
+</body>
+
+</html>

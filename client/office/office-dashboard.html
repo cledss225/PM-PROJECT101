@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AlumniHub Alumni Office Dashboard"
+    >
+
+    <title>
+        Alumni Office Dashboard | AlumniHub
+    </title>
+
+
+    <!-- Google Font: Poppins -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Boxicons -->
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- Office Dashboard CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/office-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- Mobile Sidebar Overlay -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- Sidebar -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="sidebar-header">
+
+            <a
+                href="office-dashboard.html"
+                class="brand"
+            >
+
+                <div class="brand-logo">
+                    <img
+                        src="../assets/images/logo/ams-round-logo.jpg"
+                        alt="AMS Logo"
+                        class="ams-brand-logo"
+                    >
+                </div>
+
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        AlumniHub
+                    </span>
+
+                    <span class="brand-role">
+                        Office Portal
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <button
+                type="button"
+                class="sidebar-close"
+                id="sidebarClose"
+                aria-label="Close sidebar"
+            >
+
+                <i class='bx bx-x'></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="office-account">
+
+            <div class="office-account-avatar">
+
+                <img
+                    src="../assets/images/logo/avatars/background/avatar.jpg"
+                    alt="Office staff profile"
+                    id="sidebarProfileImage"
+                    onerror="this.style.display='none'; document.getElementById('sidebarInitials').style.display='flex';"
+                >
+
+                <span
+                    class="avatar-initials"
+                    id="sidebarInitials"
+                >
+                    AO
+                </span>
+
+                <span class="online-indicator"></span>
+
+            </div>
+
+
+            <div class="office-account-details">
+
+                <p
+                    class="office-account-name"
+                    id="sidebarUserName"
+                >
+                    Alumni Office Staff
+                </p>
+
+                <p class="office-account-role">
+
+                    <i class='bx bx-shield-quarter'></i>
+
+                    Alumni Affairs Office
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav
+            class="sidebar-navigation"
+            aria-label="Office portal navigation"
+        >
+
+            <p class="sidebar-section-title">
+                Main Menu
+            </p>
+
+
+            <ul class="sidebar-menu">
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="office-dashboard.html"
+                        class="sidebar-link active"
+                        aria-current="page"
+                    >
+
+                        <i class='bx bxs-dashboard'></i>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="alumni-records.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class='bx bxs-user-detail'></i>
+
+                        <span>
+                            Alumni Records
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="account-verification.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class='bx bxs-user-check'></i>
+
+                        <span>
+                            Account Verification
+                        </span>
+
+                        <span
+                            class="menu-badge"
+                            id="verificationMenuBadge"
+                        >
+                            0
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="office-events.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class='bx bxs-calendar-event'></i>
+
+                        <span>
+                            Events Management
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="office-jobs.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class='bx bxs-briefcase-alt-2'></i>
+
+                        <span>
+                            Job Opportunities
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="office-announcements.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class='bx bxs-megaphone'></i>
+
+                        <span>
+                            Announcements
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="office-reports.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class='bx bxs-report'></i>
+
+                        <span>
+                            Reports
+                        </span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+            
+
+
+            <p class="sidebar-section-title">
+                Account
+            </p>
+
+
+            <ul class="sidebar-menu">
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="office-profile.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class='bx bxs-user-circle'></i>
+
+                        <span>
+                            Profile
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="office-settings.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class='bx bxs-cog'></i>
+
+                        <span>
+                            Settings
+                        </span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+
+                <i class='bx bx-log-out'></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main Application -->
+
+    <div class="app-layout">
+
+        <!-- Top Header -->
+
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open sidebar"
+                >
+
+                    <i class='bx bx-menu'></i>
+
+                </button>
+
+
+                <div class="header-search">
+
+                    <i class='bx bx-search'></i>
+
+                    <input
+                        type="search"
+                        id="globalSearch"
+                        placeholder="Search alumni, events, jobs..."
+                        aria-label="Search office portal"
+                    >
+
+                    <span class="search-shortcut">
+                        Ctrl K
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="header-action-button theme-toggle"
+                    id="themeToggle"
+                    aria-label="Change theme"
+                    title="Change theme"
+                >
+
+                    <i
+                        class='bx bx-moon'
+                        id="themeIcon"
+                    ></i>
+
+                </button>
+
+
+                <div class="notification-wrapper">
+
+                    <button
+                        type="button"
+                        class="header-action-button notification-button"
+                        id="notificationButton"
+                        aria-label="View notifications"
+                        aria-expanded="false"
+                    >
+
+                        <i class='bx bx-bell'></i>
+
+                        <span
+                            class="notification-dot"
+                            id="notificationDot"
+                        ></span>
+
+                    </button>
+
+
+                    <div
+                        class="notification-dropdown"
+                        id="notificationDropdown"
+                    >
+
+                        <div class="notification-header">
+
+                            <div>
+
+                                <h3>
+                                    Notifications
+                                </h3>
+
+                                <p>
+                                    Recent office activity
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                id="markAllReadButton"
+                            >
+                                Mark all read
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="notification-list"
+                            id="notificationList"
+                        >
+
+                            <div class="notification-empty">
+
+                                <i class='bx bx-bell-off'></i>
+
+                                <p>
+                                    No new notifications
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="account-verification.html"
+                            class="notification-footer"
+                        >
+                            View account verifications
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="header-profile-wrapper">
+
+                    <button
+                        type="button"
+                        class="header-profile"
+                        id="headerProfileButton"
+                        aria-expanded="false"
+                    >
+
+                        <div class="header-profile-avatar">
+
+                            <img
+                                src="../assets/images/logo/avatars/background/avatar.jpg"
+                                alt="Office staff"
+                                id="headerProfileImage"
+                                onerror="this.style.display='none'; document.getElementById('headerInitials').style.display='flex';"
+                            >
+
+                            <span
+                                class="avatar-initials"
+                                id="headerInitials"
+                            >
+                                AO
+                            </span>
+
+                        </div>
+
+
+                        <div class="header-profile-info">
+
+                            <span
+                                class="header-profile-name"
+                                id="headerUserName"
+                            >
+                                Office Staff
+                            </span>
+
+                            <span class="header-profile-role">
+                                Alumni Office
+                            </span>
+
+                        </div>
+
+
+                        <i class='bx bx-chevron-down'></i>
+
+                    </button>
+
+
+                    <div
+                        class="profile-dropdown"
+                        id="profileDropdown"
+                    >
+
+                        <a href="office-profile.html">
+
+                            <i class='bx bx-user'></i>
+
+                            My Profile
+
+                        </a>
+
+
+                        <a href="settings.html">
+
+                            <i class='bx bx-cog'></i>
+
+                            Settings
+
+                        </a>
+
+
+                        <div class="dropdown-divider"></div>
+
+
+                        <button
+                            type="button"
+                            id="profileLogoutButton"
+                        >
+
+                            <i class='bx bx-log-out'></i>
+
+                            Logout
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Main Content -->
+
+        <main class="main-content">
+
+            <!-- Welcome Section -->
+
+            <section class="welcome-section">
+
+                <div class="welcome-content">
+
+                    <p
+                        class="welcome-eyebrow"
+                        id="currentDate"
+                    >
+                        Alumni Affairs Office
+                    </p>
+
+
+                    <h1>
+
+                        <span id="greetingText">
+                            Welcome back
+                        </span>,
+
+                        <span id="welcomeUserName">
+                            Office Staff
+                        </span>
+
+                        <span
+                            class="welcome-wave"
+                            aria-hidden="true"
+                        >
+                            👋
+                        </span>
+
+                    </h1>
+
+
+                    <p class="welcome-description">
+                        Here is an overview of alumni records,
+                        account verifications, events, and office activities.
+                    </p>
+
+                </div>
+
+
+                <div class="welcome-status">
+
+                    <div class="status-icon">
+
+                        <i class='bx bx-building-house'></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Office Status
+                        </span>
+
+                        <strong>
+
+                            <span class="status-dot"></span>
+
+                            Operational
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Statistics Cards -->
+
+            <section
+                class="statistics-grid"
+                aria-label="Office dashboard statistics"
+            >
+
+                <article class="stat-card stat-card-primary">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon">
+
+                            <i class='bx bxs-graduation'></i>
+
+                        </div>
+
+
+                        <span class="stat-trend positive">
+
+                            <i class='bx bx-trending-up'></i>
+
+                            Updated
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-content">
+
+                        <p>
+                            Total Alumni
+                        </p>
+
+                        <h2 id="totalAlumni">
+                            0
+                        </h2>
+
+                        <span>
+                            Registered alumni records
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-progress">
+
+                        <span
+                            id="totalAlumniProgress"
+                            style="width: 0%;"
+                        ></span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card stat-card-warning">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon">
+
+                            <i class='bx bxs-user-detail'></i>
+
+                        </div>
+
+
+                        <a
+                            href="account-verification.html"
+                            class="stat-link"
+                        >
+                            Review
+
+                            <i class='bx bx-right-arrow-alt'></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="stat-content">
+
+                        <p>
+                            Pending Verification
+                        </p>
+
+                        <h2 id="pendingVerifications">
+                            0
+                        </h2>
+
+                        <span>
+                            Accounts waiting for review
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-progress">
+
+                        <span
+                            id="pendingProgress"
+                            style="width: 0%;"
+                        ></span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card stat-card-success">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon">
+
+                            <i class='bx bxs-user-check'></i>
+
+                        </div>
+
+
+                        <span class="stat-trend positive">
+
+                            <i class='bx bx-check-circle'></i>
+
+                            Verified
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-content">
+
+                        <p>
+                            Verified Alumni
+                        </p>
+
+                        <h2 id="verifiedAlumni">
+                            0
+                        </h2>
+
+                        <span>
+                            Approved alumni accounts
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-progress">
+
+                        <span
+                            id="verifiedProgress"
+                            style="width: 0%;"
+                        ></span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card stat-card-purple">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon">
+
+                            <i class='bx bxs-calendar-event'></i>
+
+                        </div>
+
+
+                        <a
+                            href="events.html"
+                            class="stat-link"
+                        >
+                            View
+
+                            <i class='bx bx-right-arrow-alt'></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="stat-content">
+
+                        <p>
+                            Upcoming Events
+                        </p>
+
+                        <h2 id="upcomingEvents">
+                            0
+                        </h2>
+
+                        <span>
+                            Scheduled alumni activities
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-progress">
+
+                        <span
+                            id="eventProgress"
+                            style="width: 0%;"
+                        ></span>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- Main Dashboard Grid -->
+
+            <section class="dashboard-grid">
+
+                <!-- Left Column -->
+
+                <div class="dashboard-main-column">
+
+                    <!-- Charts -->
+
+                    <div class="charts-grid">
+
+                        <article class="dashboard-card chart-card">
+
+                            <div class="card-header">
+
+                                <div>
+
+                                    <h2>
+                                        Alumni by Batch
+                                    </h2>
+
+                                    <p>
+                                        Distribution of registered alumni
+                                    </p>
+
+                                </div>
+
+
+                                <select
+                                    id="batchChartFilter"
+                                    class="card-select"
+                                    aria-label="Filter alumni batch chart"
+                                >
+
+                                    <option value="all">
+                                        All Years
+                                    </option>
+
+                                    <option value="5">
+                                        Last 5 Years
+                                    </option>
+
+                                    <option value="10">
+                                        Last 10 Years
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="chart-container">
+
+                                <canvas
+                                    id="batchChart"
+                                    aria-label="Alumni by batch chart"
+                                ></canvas>
+
+
+                                <div
+                                    class="chart-placeholder"
+                                    id="batchChartPlaceholder"
+                                >
+
+                                    <i class='bx bx-line-chart'></i>
+
+                                    <p>
+                                        Alumni batch data will appear here
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="dashboard-card chart-card">
+
+                            <div class="card-header">
+
+                                <div>
+
+                                    <h2>
+                                        Employment Status
+                                    </h2>
+
+                                    <p>
+                                        Current alumni employment overview
+                                    </p>
+
+                                </div>
+
+
+                                <button
+                                    type="button"
+                                    class="card-icon-button"
+                                    id="refreshEmploymentChart"
+                                    aria-label="Refresh employment chart"
+                                >
+
+                                    <i class='bx bx-refresh'></i>
+
+                                </button>
+
+                            </div>
+
+
+                            <div class="employment-chart-layout">
+
+                                <div class="donut-chart-wrapper">
+
+                                    <canvas
+                                        id="employmentChart"
+                                        aria-label="Alumni employment status chart"
+                                    ></canvas>
+
+
+                                    <div class="donut-chart-center">
+
+                                        <strong id="employmentPercentage">
+                                            0%
+                                        </strong>
+
+                                        <span>
+                                            Employed
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="chart-legend">
+
+                                    <div class="legend-item">
+
+                                        <span class="legend-color employed"></span>
+
+                                        <div>
+
+                                            <p>
+                                                Employed
+                                            </p>
+
+                                            <strong id="employedCount">
+                                                0
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="legend-item">
+
+                                        <span class="legend-color unemployed"></span>
+
+                                        <div>
+
+                                            <p>
+                                                Unemployed
+                                            </p>
+
+                                            <strong id="unemployedCount">
+                                                0
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="legend-item">
+
+                                        <span class="legend-color unknown"></span>
+
+                                        <div>
+
+                                            <p>
+                                                Not Specified
+                                            </p>
+
+                                            <strong id="unknownEmploymentCount">
+                                                0
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- Recent Registrations -->
+
+                    <article class="dashboard-card registrations-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h2>
+                                    Recent Alumni Registrations
+                                </h2>
+
+                                <p>
+                                    Newly registered accounts requiring attention
+                                </p>
+
+                            </div>
+
+
+                            <a
+                                href="account-verification.html"
+                                class="view-all-link"
+                            >
+                                View All
+
+                                <i class='bx bx-right-arrow-alt'></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+                            <table class="dashboard-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Alumni
+                                        </th>
+
+                                        <th>
+                                            Program
+                                        </th>
+
+                                        <th>
+                                            Batch
+                                        </th>
+
+                                        <th>
+                                            Registered
+                                        </th>
+
+                                        <th>
+                                            Status
+                                        </th>
+
+                                        <th>
+                                            Action
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="recentRegistrationsBody">
+
+                                    <tr class="empty-table-row">
+
+                                        <td colspan="6">
+
+                                            <div class="table-empty-state">
+
+                                                <i class='bx bx-user-plus'></i>
+
+                                                <h3>
+                                                    No recent registrations
+                                                </h3>
+
+                                                <p>
+                                                    New alumni accounts will appear here.
+                                                </p>
+
+                                            </div>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- Right Column -->
+
+                <aside class="dashboard-side-column">
+
+                    <!-- Quick Actions -->
+
+                    <article class="dashboard-card quick-actions-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h2>
+                                    Quick Actions
+                                </h2>
+
+                                <p>
+                                    Common office tasks
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions-grid">
+
+                            <a
+                                href="account-verification.html"
+                                class="quick-action-item verify-action"
+                            >
+
+                                <div class="quick-action-icon">
+
+                                    <i class='bx bxs-user-check'></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Verify Account
+                                    </strong>
+
+                                    <span>
+                                        Review pending alumni
+                                    </span>
+
+                                </div>
+
+
+                                <i class='bx bx-chevron-right'></i>
+
+                            </a>
+
+
+                            <a
+                                href="events.html?action=create"
+                                class="quick-action-item event-action"
+                            >
+
+                                <div class="quick-action-icon">
+
+                                    <i class='bx bxs-calendar-plus'></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Create Event
+                                    </strong>
+
+                                    <span>
+                                        Schedule a new event
+                                    </span>
+
+                                </div>
+
+
+                                <i class='bx bx-chevron-right'></i>
+
+                            </a>
+
+
+                            <a
+                                href="jobs.html?action=create"
+                                class="quick-action-item job-action"
+                            >
+
+                                <div class="quick-action-icon">
+
+                                    <i class='bx bxs-briefcase-alt'></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Post Job
+                                    </strong>
+
+                                    <span>
+                                        Add a job opportunity
+                                    </span>
+
+                                </div>
+
+
+                                <i class='bx bx-chevron-right'></i>
+
+                            </a>
+
+
+                            <a
+                                href="announcements.html?action=create"
+                                class="quick-action-item announcement-action"
+                            >
+
+                                <div class="quick-action-icon">
+
+                                    <i class='bx bxs-megaphone'></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Announcement
+                                    </strong>
+
+                                    <span>
+                                        Publish office updates
+                                    </span>
+
+                                </div>
+
+
+                                <i class='bx bx-chevron-right'></i>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Upcoming Events -->
+
+                    <article class="dashboard-card upcoming-events-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h2>
+                                    Upcoming Events
+                                </h2>
+
+                                <p>
+                                    Nearest scheduled activities
+                                </p>
+
+                            </div>
+
+
+                            <a
+                                href="events.html"
+                                class="card-icon-link"
+                                aria-label="View all events"
+                            >
+
+                                <i class='bx bx-calendar'></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div
+                            class="upcoming-events-list"
+                            id="upcomingEventsList"
+                        >
+
+                            <div class="content-empty-state">
+
+                                <i class='bx bx-calendar-x'></i>
+
+                                <p>
+                                    No upcoming events
+                                </p>
+
+                                <a href="events.html?action=create">
+                                    Create an event
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Recent Activity -->
+
+                    <article class="dashboard-card activity-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h2>
+                                    Recent Activity
+                                </h2>
+
+                                <p>
+                                    Latest office actions
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="card-icon-button"
+                                id="refreshActivityButton"
+                                aria-label="Refresh recent activity"
+                            >
+
+                                <i class='bx bx-refresh'></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="activity-timeline"
+                            id="activityTimeline"
+                        >
+
+                            <div class="content-empty-state">
+
+                                <i class='bx bx-history'></i>
+
+                                <p>
+                                    No recent activity
+                                </p>
+
+                                <span>
+                                    Office actions will appear here.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </aside>
+
+            </section>
+
+
+            <!-- Footer -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+
+                    © <span id="currentYear"></span>
+
+                    AlumniHub. Alumni Affairs Office Portal.
+
+                </p>
+
+
+                <div>
+
+                    <span>
+
+                        <i class='bx bx-shield-quarter'></i>
+
+                        Secure Office Access
+
+                    </span>
+
+                    <span
+                        class="system-status"
+                        id="systemStatus"
+                    >
+
+                        <span class="status-dot"></span>
+
+                        System Online
+
+                    </span>
+
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- Logout Confirmation Modal -->
+
+    <div
+        class="modal"
+        id="logoutModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close-modal="logoutModal"
+        ></div>
+
+
+        <div
+            class="modal-dialog logout-modal-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-icon danger">
+
+                <i class='bx bx-log-out'></i>
+
+            </div>
+
+
+            <h2 id="logoutModalTitle">
+                Log out of AlumniHub?
+            </h2>
+
+
+            <p>
+                You will need to sign in again to access the
+                Alumni Office Portal.
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    data-close-modal="logoutModal"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    class="button button-danger"
+                    id="confirmLogoutButton"
+                >
+                    Yes, Log Out
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Loading Screen -->
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+    >
+
+        <div class="loader-content">
+
+            <div class="loader-logo">
+
+                <i class='bx bxs-graduation'></i>
+
+            </div>
+
+
+            <div class="loader-spinner"></div>
+
+
+            <p>
+                Loading Office Dashboard...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Toast Container -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+    <!-- Chart.js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- Office Dashboard JavaScript -->
+
+    <script src="../assets/js/office-dashboard.js"></script>
+    <script src="../assets/js/office-header.js"></script>
+
+</body>
+
+</html>

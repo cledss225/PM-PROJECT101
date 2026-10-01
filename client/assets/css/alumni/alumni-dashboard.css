@@ -1,0 +1,5518 @@
+/* =========================================================
+   ALUMNIHUB - ALUMNI DASHBOARD
+========================================================= */
+
+:root {
+    --bg: #f5f7fb;
+    --surface: #ffffff;
+    --surface-2: #f8fafc;
+    --surface-3: #eef2f7;
+
+    --text: #172033;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+
+    --primary: #6c4cff;
+    --primary-2: #8b5cf6;
+    --primary-soft: rgba(108, 76, 255, 0.12);
+
+    --success: #16a34a;
+    --success-soft: rgba(22, 163, 74, 0.12);
+
+    --info: #2563eb;
+    --info-soft: rgba(37, 99, 235, 0.12);
+
+    --warning: #d97706;
+    --warning-soft: rgba(217, 119, 6, 0.12);
+
+    --danger: #dc2626;
+    --danger-soft: rgba(220, 38, 38, 0.12);
+
+    --cyan: #0891b2;
+    --cyan-soft: rgba(8, 145, 178, 0.12);
+
+    --shadow-sm: 0 6px 18px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 18px 45px rgba(15, 23, 42, 0.10);
+
+    --sidebar-width: 280px;
+    --header-height: 76px;
+
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+
+    --transition: 0.22s ease;
+}
+
+
+/* =========================================================
+   ALUMNIHUB — GLOSSY DARK COLLEGE ART MODE
+========================================================= */
+
+body.dark,
+body.dark-mode {
+    /* MAIN BACKGROUND */
+    --bg: #c1c5c9;
+
+    /* GLOSSY DARK SURFACES */
+    --surface: rgba(30, 33, 37, 0.94);
+    --surface-2: rgba(39, 42, 47, 0.92);
+    --surface-3: rgba(48, 51, 57, 0.90);
+
+    /* TEXT */
+    --text: #f8f6f0;
+    --muted: #aaaeb5;
+
+    /* BORDER */
+    --border: rgba(255, 255, 255, 0.12);
+
+    /* COLLEGE ART ACCENTS */
+    --primary-soft: rgba(255, 79, 163, 0.16);
+    --success-soft: rgba(155, 215, 104, 0.14);
+    --info-soft: rgba(88, 188, 232, 0.15);
+    --warning-soft: rgba(255, 217, 40, 0.14);
+    --danger-soft: rgba(255, 100, 100, 0.15);
+    --cyan-soft: rgba(88, 188, 232, 0.15);
+
+    /* GLOSSY SHADOW */
+    --shadow-sm:
+        0 8px 24px rgba(0, 0, 0, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    --shadow-md:
+        0 20px 50px rgba(0, 0, 0, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Poppins", sans-serif;
+
+    background: var(--bg);
+    color: var(--text);
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   PAGE LOADER
+========================================================= */
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--bg);
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.page-loader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loader-logo {
+    width: 60px;
+    height: 60px;
+
+    margin-bottom: 16px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 18px;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-2)
+    );
+
+    box-shadow: 0 12px 30px rgba(108, 76, 255, 0.28);
+
+    font-size: 29px;
+}
+
+.loader-spinner {
+    width: 38px;
+    height: 38px;
+
+    border: 3px solid var(--border);
+    border-top-color: var(--primary);
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+.loader-content p {
+    margin-top: 12px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+
+    z-index: 1000;
+
+    width: var(--sidebar-width);
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--surface);
+
+    border-right: 1px solid var(--border);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.28s cubic-bezier(.22, .61, .36, 1),
+        background var(--transition);
+}
+
+.sidebar-header {
+    min-height: 82px;
+
+    padding: 18px 18px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 13px;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-2)
+    );
+
+    box-shadow: 0 8px 20px rgba(108, 76, 255, 0.28);
+
+    font-size: 23px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.2;
+}
+
+.brand-name {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.brand-role {
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+.sidebar-close {
+    display: none;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 10px;
+
+    color: var(--muted);
+
+    background: transparent;
+
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   ALUMNI SIDEBAR ACCOUNT
+========================================================= */
+
+.alumni-account {
+    margin: 16px;
+    padding: 13px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    background: var(--surface-2);
+}
+
+.alumni-account-avatar,
+.header-profile-avatar {
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    border-radius: 50%;
+}
+
+.alumni-account-avatar img,
+.header-profile-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: inherit;
+}
+
+.avatar-initials {
+    width: 100%;
+    height: 100%;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: inherit;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-2)
+    );
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.online-indicator {
+    position: absolute;
+
+    right: 0;
+    bottom: 1px;
+
+    width: 11px;
+    height: 11px;
+
+    border: 2px solid var(--surface-2);
+    border-radius: 50%;
+
+    background: #22c55e;
+}
+
+.alumni-account-details {
+    min-width: 0;
+}
+
+.alumni-account-name {
+    overflow: hidden;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.alumni-account-role {
+    margin-top: 4px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: var(--success);
+
+    font-size: 10px;
+}
+body.dark .alumni-account-role,
+body.dark-mode .alumni-account-role {
+    color: #86efac !important;
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
+
+.sidebar-navigation {
+    flex: 1;
+
+    padding: 0 12px 18px;
+
+    overflow-y: auto;
+}
+
+.sidebar-section-title {
+    padding: 12px 10px 8px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.sidebar-menu {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    margin-bottom: 4px;
+}
+
+.sidebar-link {
+    position: relative;
+
+    min-height: 44px;
+
+    padding: 0 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border-radius: 12px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: var(--transition);
+}
+
+.sidebar-link i {
+    font-size: 19px;
+}
+
+.sidebar-link:hover {
+    color: var(--text);
+
+    background: var(--surface-2);
+}
+
+.sidebar-link.active {
+    color: var(--primary);
+
+    background: var(--primary-soft);
+}
+
+.sidebar-link.active::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+
+    width: 3px;
+    height: 22px;
+
+    border-radius: 0 4px 4px 0;
+
+    background: var(--primary);
+}
+
+
+/* =========================================================
+   SIDEBAR FOOTER
+========================================================= */
+
+.sidebar-footer {
+    padding: 14px 16px 18px;
+
+    border-top: 1px solid var(--border);
+}
+
+.logout-button {
+    width: 100%;
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: 12px;
+
+    color: var(--danger);
+
+    background: var(--danger-soft);
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.logout-button:hover {
+    transform: translateY(-1px);
+
+    background: rgba(220, 38, 38, 0.16);
+}
+
+
+/* =========================================================
+   SIDEBAR OVERLAY
+========================================================= */
+
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 950;
+
+    display: none;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(2px);
+}
+
+.sidebar-overlay.show {
+    display: block;
+}
+
+
+/* =========================================================
+   APP LAYOUT
+========================================================= */
+
+.app-layout {
+    min-height: 100vh;
+
+    margin-left: var(--sidebar-width);
+}
+
+
+/* =========================================================
+   TOP HEADER
+========================================================= */
+
+.top-header {
+    position: sticky;
+    top: 0;
+
+    z-index: 800;
+
+    height: var(--header-height);
+
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(255, 255, 255, 0.88);
+
+    backdrop-filter: blur(18px);
+}
+
+body.dark .top-header,
+body.dark-mode .top-header {
+    background: rgba(13, 13, 15, 0.88);
+}
+
+.header-left,
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-toggle,
+.header-action-button {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    color: var(--text);
+
+    background: var(--surface);
+
+    font-size: 20px;
+
+    transition: var(--transition);
+}
+
+.menu-toggle:hover,
+.header-action-button:hover {
+    color: var(--primary);
+
+    border-color: rgba(108, 76, 255, 0.25);
+
+    background: var(--primary-soft);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.header-search {
+    position: relative;
+
+    width: min(430px, 38vw);
+}
+
+.header-search > i {
+    position: absolute;
+
+    left: 14px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--muted);
+
+    font-size: 18px;
+}
+
+.header-search input {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 75px 0 42px;
+
+    border: 1px solid var(--border);
+    outline: none;
+
+    border-radius: 12px;
+
+    color: var(--text);
+
+    background: var(--surface-2);
+
+    font-size: 11px;
+
+    transition: var(--transition);
+}
+
+.header-search input:focus {
+    border-color: var(--primary);
+
+    box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.header-search input::placeholder {
+    color: var(--muted);
+}
+
+.search-shortcut {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    padding: 4px 7px;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    color: var(--muted);
+
+    background: var(--surface);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   NOTIFICATION
+========================================================= */
+
+.notification-wrapper {
+    position: relative;
+}
+
+.notification-button {
+    position: relative;
+}
+
+.notification-dot {
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
+    width: 8px;
+    height: 8px;
+
+    border: 2px solid var(--surface);
+    border-radius: 50%;
+
+    background: var(--danger);
+}
+
+.notification-dropdown {
+    position: absolute;
+
+    top: calc(100% + 12px);
+    right: 0;
+
+    width: 320px;
+
+    padding: 10px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow-md);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-6px);
+
+    transition: var(--transition);
+}
+
+.notification-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.notification-dropdown-header {
+    padding: 8px 8px 12px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.notification-dropdown-header strong {
+    display: block;
+
+    font-size: 12px;
+}
+
+.notification-dropdown-header span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+.notification-list {
+    max-height: 340px;
+
+    overflow-y: auto;
+}
+
+.notification-empty {
+    padding: 32px 12px;
+
+    text-align: center;
+
+    color: var(--muted);
+}
+
+.notification-empty i {
+    margin-bottom: 8px;
+
+    font-size: 28px;
+}
+
+.notification-empty p {
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   HEADER PROFILE
+========================================================= */
+
+.header-profile-wrapper {
+    position: relative;
+}
+
+.header-profile {
+    min-height: 48px;
+
+    padding: 5px 10px 5px 5px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    color: var(--text);
+
+    background: var(--surface);
+}
+
+.header-profile-avatar {
+    width: 36px;
+    height: 36px;
+
+    flex-basis: 36px;
+}
+
+.header-profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header-profile-name {
+    max-width: 130px;
+
+    overflow: hidden;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.header-profile-role {
+    margin-top: 1px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+.header-profile > i {
+    color: var(--muted);
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   PROFILE DROPDOWN
+========================================================= */
+
+.profile-dropdown {
+    position: absolute;
+
+    top: calc(100% + 12px);
+    right: 0;
+
+    z-index: 100;
+
+    width: 210px;
+
+    padding: 8px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow-md);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-6px);
+
+    transition: var(--transition);
+}
+
+.profile-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.profile-dropdown a,
+.profile-dropdown button {
+    width: 100%;
+    min-height: 40px;
+
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: none;
+    border-radius: 9px;
+
+    color: var(--text);
+
+    background: transparent;
+
+    font-size: 11px;
+
+    text-align: left;
+}
+
+.profile-dropdown a:hover,
+.profile-dropdown button:hover {
+    background: var(--surface-2);
+}
+
+.profile-dropdown button:last-child {
+    color: var(--danger);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+    padding: 30px;
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.welcome-section {
+    margin-bottom: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.page-eyebrow,
+.card-eyebrow {
+    margin-bottom: 4px;
+
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.welcome-section h1 {
+    font-size: clamp(23px, 3vw, 31px);
+
+    line-height: 1.25;
+}
+
+.welcome-section h1 span {
+    color: var(--primary);
+}
+
+.welcome-section > div:first-child > p:last-child {
+    margin-top: 6px;
+
+    max-width: 650px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.welcome-date {
+    min-width: 190px;
+
+    padding: 12px 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.welcome-date > i {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 11px;
+
+    color: var(--primary);
+
+    background: var(--primary-soft);
+
+    font-size: 19px;
+}
+
+.welcome-date div {
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-date span {
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+.welcome-date strong {
+    margin-top: 2px;
+
+    font-size: 10.5px;
+}
+
+
+/* =========================================================
+   PROFILE COMPLETION
+========================================================= */
+
+.profile-completion-card {
+    position: relative;
+
+    margin-bottom: 20px;
+    padding: 18px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    border: 1px solid rgba(108, 76, 255, 0.18);
+    border-radius: var(--radius-lg);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--surface),
+            var(--primary-soft)
+        );
+
+    box-shadow: var(--shadow-sm);
+}
+
+.profile-completion-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -110px;
+    right: -60px;
+
+    border-radius: 50%;
+
+    background: rgba(108, 76, 255, 0.08);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.profile-completion-icon {
+    width: 52px;
+    height: 52px;
+
+    flex: 0 0 52px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 15px;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-2)
+    );
+
+    box-shadow: 0 9px 22px rgba(108, 76, 255, 0.22);
+
+    font-size: 24px;
+}
+
+.profile-completion-content {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.profile-completion-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.profile-completion-heading h2 {
+    font-size: 13px;
+}
+
+.profile-completion-heading p {
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 9.5px;
+}
+
+.profile-completion-heading > strong {
+    color: var(--primary);
+
+    font-size: 16px;
+}
+
+.profile-progress {
+    width: 100%;
+    height: 7px;
+
+    margin-top: 11px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: var(--surface-3);
+}
+
+.profile-progress span {
+    width: 0%;
+    height: 100%;
+
+    display: block;
+
+    border-radius: inherit;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--primary-2)
+    );
+
+    transition: width 0.5s ease;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.button {
+    min-height: 42px;
+
+    padding: 0 15px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: 1px solid transparent;
+    border-radius: 11px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.button:hover {
+    transform: translateY(-1px);
+}
+
+.button-primary {
+    color: #ffffff !important;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-2)
+    );
+
+    box-shadow: 0 8px 20px rgba(108, 76, 255, 0.20);
+}
+
+.button-secondary {
+    color: var(--text);
+
+    border-color: var(--border);
+
+    background: var(--surface);
+}
+
+.button-danger {
+    color: #ffffff;
+
+    background: var(--danger);
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+
+.summary-grid {
+    margin-bottom: 20px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.summary-card {
+    min-width: 0;
+
+    padding: 17px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.summary-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(108, 76, 255, 0.18);
+
+    box-shadow: var(--shadow-md);
+}
+
+.summary-icon {
+    width: 47px;
+    height: 47px;
+
+    flex: 0 0 47px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 14px;
+
+    font-size: 21px;
+}
+
+.summary-icon.events {
+    color: var(--primary);
+
+    background: var(--primary-soft);
+}
+
+.summary-icon.rsvp {
+    color: var(--success);
+
+    background: var(--success-soft);
+}
+
+.summary-icon.jobs {
+    color: var(--info);
+
+    background: var(--info-soft);
+}
+
+.summary-icon.announcements {
+    color: var(--warning);
+
+    background: var(--warning-soft);
+}
+
+.summary-card p {
+    color: var(--muted);
+
+    font-size: 9.5px;
+}
+
+.summary-card h2 {
+    margin: 2px 0;
+
+    font-size: 22px;
+}
+
+.summary-card span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 8.5px;
+}
+
+
+/* =========================================================
+   DASHBOARD GRID
+========================================================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.dashboard-card {
+    min-width: 0;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.dashboard-card-header {
+    padding: 18px 20px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.dashboard-card-header h2 {
+    font-size: 14px;
+}
+
+.dashboard-card-header > div > span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 9.5px;
+}
+
+.view-all-link {
+    flex: 0 0 auto;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    color: var(--primary);
+
+    font-size: 9.5px;
+    font-weight: 600;
+}
+
+.view-all-link i {
+    font-size: 16px;
+
+    transition: transform var(--transition);
+}
+
+.view-all-link:hover i {
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   DASHBOARD LISTS
+========================================================= */
+
+.dashboard-list {
+    padding: 6px 20px 15px;
+}
+
+.dashboard-list-item {
+    padding: 13px 0;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.dashboard-list-item:last-child {
+    border-bottom: none;
+}
+
+.list-item-icon {
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    color: var(--primary);
+
+    background: var(--primary-soft);
+
+    font-size: 19px;
+}
+
+.list-item-content {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.list-item-content strong {
+    display: block;
+
+    overflow: hidden;
+
+    font-size: 10.5px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.list-item-content p {
+    margin-top: 3px;
+
+    overflow: hidden;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.list-item-meta {
+    margin-top: 5px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    color: var(--muted);
+
+    font-size: 8.5px;
+}
+
+.list-item-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+
+/* =========================================================
+   LOADING / EMPTY
+========================================================= */
+
+.card-loading {
+    min-height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    color: var(--muted);
+
+    font-size: 9.5px;
+}
+
+.small-spinner {
+    width: 19px;
+    height: 19px;
+
+    border: 2px solid var(--border);
+    border-top-color: var(--primary);
+
+    border-radius: 50%;
+
+    animation: spin 0.7s linear infinite;
+}
+
+.dashboard-empty {
+    min-height: 175px;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.dashboard-empty > i {
+    margin-bottom: 9px;
+
+    color: var(--muted);
+
+    font-size: 31px;
+}
+
+.dashboard-empty h3 {
+    font-size: 11px;
+}
+
+.dashboard-empty p {
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.quick-actions-grid {
+    padding: 16px 20px 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.quick-action {
+    min-width: 0;
+
+    padding: 13px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    border: 1px solid var(--border);
+    border-radius: 13px;
+
+    background: var(--surface-2);
+
+    transition: var(--transition);
+}
+
+.quick-action:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(108, 76, 255, 0.22);
+
+    background: var(--primary-soft);
+}
+
+.quick-action-icon {
+    width: 41px;
+    height: 41px;
+
+    flex: 0 0 41px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    font-size: 19px;
+}
+
+.quick-action-icon.profile {
+    color: var(--primary);
+
+    background: var(--primary-soft);
+}
+
+.quick-action-icon.events {
+    color: var(--success);
+
+    background: var(--success-soft);
+}
+
+.quick-action-icon.jobs {
+    color: var(--info);
+
+    background: var(--info-soft);
+}
+
+.quick-action-icon.directory {
+    color: var(--cyan);
+
+    background: var(--cyan-soft);
+}
+
+.quick-action strong {
+    display: block;
+
+    font-size: 10px;
+}
+
+.quick-action span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 8.5px;
+}
+
+
+/* =========================================================
+   PAGE FOOTER
+========================================================= */
+
+.page-footer {
+    padding: 24px 2px 2px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    color: var(--muted);
+
+    font-size: 9.5px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    display: inline-block;
+
+    margin-right: 5px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.11);
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 3000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.62);
+
+    backdrop-filter: blur(5px);
+}
+
+.modal-dialog {
+    position: relative;
+
+    z-index: 1;
+
+    width: min(420px, 100%);
+
+    padding: 28px;
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow-md);
+
+    text-align: center;
+
+    animation: modalIn 0.22s ease;
+}
+
+.modal-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 16px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 17px;
+
+    color: var(--primary);
+
+    background: var(--primary-soft);
+
+    font-size: 27px;
+}
+
+.modal-icon.danger {
+    color: var(--danger);
+
+    background: var(--danger-soft);
+}
+
+.modal-dialog h2 {
+    font-size: 17px;
+}
+
+.modal-dialog p {
+    margin: 8px auto 18px;
+
+    color: var(--muted);
+
+    font-size: 10.5px;
+    line-height: 1.65;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+/* =========================================================
+   TOASTS
+========================================================= */
+
+.toast-container {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 6000;
+
+    display: grid;
+    gap: 10px;
+}
+
+.toast {
+    width: min(360px, calc(100vw - 40px));
+
+    padding: 13px 14px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    border: 1px solid var(--border);
+    border-radius: 13px;
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow-md);
+
+    transition:
+        opacity 0.22s ease,
+        transform 0.22s ease;
+}
+
+.toast > i {
+    margin-top: 1px;
+
+    font-size: 20px;
+}
+
+.toast.success > i {
+    color: var(--success);
+}
+
+.toast.error > i {
+    color: var(--danger);
+}
+
+.toast.info > i {
+    color: var(--info);
+}
+
+.toast strong {
+    display: block;
+
+    font-size: 10.5px;
+}
+
+.toast span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes modalIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(10px)
+            scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 960px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar-close,
+    .menu-toggle {
+        display: grid;
+        place-items: center;
+    }
+
+    .app-layout {
+        margin-left: 0;
+    }
+
+    .header-search {
+        width: min(420px, 55vw);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .top-header {
+        padding: 0 15px;
+    }
+
+    .header-search {
+        display: none;
+    }
+
+    .header-profile-info,
+    .header-profile > .bx-chevron-down {
+        display: none;
+    }
+
+    .main-content {
+        padding: 20px 14px;
+    }
+
+    .welcome-section {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .welcome-date {
+        width: 100%;
+    }
+
+    .profile-completion-card {
+        align-items: flex-start;
+        flex-direction: column;
+        isolation: isolate;
+    }
+
+    .profile-completion-content {
+        width: 100%;
+    }
+
+    .profile-completion-card > .button {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .quick-actions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .notification-dropdown {
+        position: fixed;
+
+        top: 68px;
+        right: 14px;
+        left: 14px;
+
+        width: auto;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card {
+        padding: 15px;
+    }
+
+    .dashboard-card-header {
+        flex-direction: column;
+    }
+
+    .profile-completion-heading {
+        flex-direction: column;
+    }
+
+    .modal {
+        padding: 10px;
+    }
+
+    .modal-dialog {
+        padding: 23px 18px;
+
+        border-radius: 16px;
+    }
+
+    .modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .modal-actions .button {
+        width: 100%;
+    }
+
+}
+/* =========================================
+   ALUMNI AMS SIDEBAR LOGO - FINAL
+========================================= */
+
+.sidebar-header .alumni-ams-logo {
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    flex: 0 0 46px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: none !important;
+    border-radius: 50% !important;
+
+    background: #ffffff !important;
+
+    overflow: hidden !important;
+    box-shadow: none !important;
+}
+
+.sidebar-header .alumni-ams-logo img {
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    max-width: 46px !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border-radius: 50% !important;
+
+    transform: scale(1.28) !important;
+}
+/* =========================================
+   FIX ALUMNI PAGE LOADER LOGO
+========================================= */
+
+.page-loader .loader-logo {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+
+    border-radius: 50% !important;
+    overflow: hidden !important;
+
+    background: #ffffff !important;
+}
+
+.page-loader .loader-logo img {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+
+    border-radius: 50% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* =========================================================
+   FULL SCREEN ALUMNI COMMUNITY HERO
+========================================================= */
+
+.alumni-community-hero {
+    position: relative;
+
+    min-height:
+        calc(
+            100vh -
+            var(--header-height)
+        );
+
+    margin:
+        -30px
+        -30px
+        30px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(4, 6, 10, 0.42) 0%,
+            rgba(7, 8, 14, 0.58) 48%,
+            rgba(7, 8, 14, 0.84) 100%
+        ),
+        url("../../images/alumnipics.jpg");
+
+    background-size: cover;
+
+    background-position:
+        center center;
+
+    background-repeat: no-repeat;
+
+    border-radius: 0;
+
+    box-shadow:
+        inset 0 -80px 100px
+        rgba(0, 0, 0, 0.30);
+}
+
+
+/* subtle premium vignette */
+.alumni-community-hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 20%,
+            rgba(0, 0, 0, 0.12) 62%,
+            rgba(0, 0, 0, 0.48) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* hero content */
+.alumni-community-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(
+        900px,
+        calc(100% - 48px)
+    );
+
+    text-align: center;
+
+    color: #ffffff;
+}
+
+
+/* eyebrow */
+.alumni-community-hero-eyebrow {
+    margin-bottom: 12px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.82
+        );
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(
+        16px,
+        1.6vw,
+        22px
+    );
+}
+
+
+/* main title */
+.alumni-community-hero h1 {
+    max-width: 850px;
+
+    margin:
+        0 auto
+        18px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            52px,
+            7vw,
+            92px
+        );
+
+    font-weight: 700;
+
+    line-height: 0.98;
+
+    letter-spacing: -0.035em;
+
+    text-shadow:
+        0 6px 24px
+        rgba(0, 0, 0, 0.38);
+}
+
+
+/* description */
+.alumni-community-hero-description {
+    max-width: 720px;
+
+    margin:
+        0 auto
+        28px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.82
+        );
+
+    font-size:
+        clamp(
+            13px,
+            1.3vw,
+            17px
+        );
+
+    line-height: 1.8;
+}
+
+
+/* navigation buttons */
+.alumni-community-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.alumni-community-links a {
+    min-height: 46px;
+
+    padding:
+        0
+        18px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.22
+        );
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    background:
+        rgba(
+            8,
+            8,
+            12,
+            0.34
+        );
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition:
+        0.25s ease;
+}
+
+
+.alumni-community-links a:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(
+            139,
+            92,
+            246,
+            0.72
+        );
+
+    background:
+        rgba(
+            108,
+            76,
+            255,
+            0.30
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(
+            0,
+            0,
+            0,
+            0.22
+        );
+}
+
+
+/* Scroll indicator */
+.alumni-community-scroll {
+    position: absolute;
+
+    bottom: 24px;
+    left: 50%;
+
+    z-index: 2;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.62
+        );
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+}
+
+
+.alumni-community-scroll i {
+    font-size: 20px;
+
+    animation:
+        alumniHeroScroll
+        1.5s ease-in-out
+        infinite;
+}
+
+
+@keyframes alumniHeroScroll {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(6px);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .alumni-community-hero {
+        min-height:
+            calc(
+                100vh -
+                var(--header-height)
+            );
+
+        margin:
+            -24px
+            -24px
+            26px;
+    }
+
+
+    .alumni-community-hero h1 {
+        font-size:
+            clamp(
+                44px,
+                11vw,
+                72px
+            );
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .alumni-community-hero {
+        margin:
+            -20px
+            -20px
+            24px;
+
+        background-position:
+            center;
+    }
+
+
+    .alumni-community-hero-content {
+        width:
+            calc(
+                100% -
+                30px
+            );
+    }
+
+}
+
+
+    /* =========================================================
+   HERO QUICK NAVIGATION — PREMIUM GLASS PILLS
+========================================================= */
+
+.alumni-community-links {
+    margin-top: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+/* Navigation Button */
+.alumni-community-links a {
+    position: relative;
+
+    min-height: 48px;
+
+    padding:
+        0
+        18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.16);
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.10),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.18),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.13);
+
+    backdrop-filter:
+        blur(16px)
+        saturate(125%);
+
+    -webkit-backdrop-filter:
+        blur(16px)
+        saturate(125%);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.28s
+        cubic-bezier(0.16, 1, 0.3, 1),
+
+        border-color 0.25s ease,
+
+        background 0.25s ease,
+
+        box-shadow 0.25s ease;
+}
+
+
+/* Glossy reflection */
+.alumni-community-links a::before {
+    content: "";
+
+    position: absolute;
+
+    top: -60%;
+    left: -20%;
+
+    width: 70%;
+    height: 180%;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.18) 45%,
+            transparent 75%
+        );
+
+    transform:
+        rotate(12deg);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        left 0.5s ease,
+        opacity 0.3s ease;
+}
+
+
+/* Purple ambient glow */
+.alumni-community-links a::after {
+    content: "";
+
+    position: absolute;
+
+    inset: auto 20% -18px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(108, 76, 255, 0.42);
+
+    filter: blur(18px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.28s ease;
+}
+
+
+/* Icons */
+.alumni-community-links a i {
+    position: relative;
+    z-index: 2;
+
+    color: #c9baff;
+
+    font-size: 17px;
+
+    transition:
+        transform 0.28s
+        cubic-bezier(0.16, 1, 0.3, 1),
+
+        color 0.25s ease;
+}
+
+
+/* Text / content stays above effects */
+.alumni-community-links a span {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Hover */
+.alumni-community-links a:hover {
+    transform:
+        translateY(-3px)
+        scale(1.015);
+
+    border-color:
+        rgba(167, 139, 250, 0.62);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(108, 76, 255, 0.26),
+            rgba(124, 92, 255, 0.12)
+        );
+
+    box-shadow:
+        0 16px 38px
+        rgba(0, 0, 0, 0.26),
+
+        0 0 0 1px
+        rgba(124, 92, 255, 0.08),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.18);
+}
+
+
+.alumni-community-links a:hover::before {
+    left: 70%;
+
+    opacity: 1;
+}
+
+
+.alumni-community-links a:hover::after {
+    opacity: 1;
+}
+
+
+.alumni-community-links a:hover i {
+    color: #ffffff;
+
+    transform:
+        scale(1.12);
+}
+
+
+/* Click feedback */
+.alumni-community-links a:active {
+    transform:
+        translateY(-1px)
+        scale(0.985);
+}
+
+
+/* Focus accessibility */
+.alumni-community-links a:focus-visible {
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139, 92, 246, 0.24),
+
+        0 14px 34px
+        rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .alumni-community-links {
+        width: 100%;
+
+        gap: 9px;
+    }
+
+
+    .alumni-community-links a {
+        flex:
+            1 1
+            calc(50% - 10px);
+
+        min-height: 46px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .alumni-community-links {
+        flex-direction: column;
+    }
+
+
+    .alumni-community-links a {
+        width: 100%;
+    }
+
+}
+/* =========================================================
+   ALUMNI HERO — TYPOGRAPHY + BUTTON POSITION REFINEMENT
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   HERO CONTENT
+--------------------------------------------------------- */
+
+.alumni-community-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(1000px, calc(100% - 60px));
+
+    text-align: center;
+
+    color: #ffffff;
+
+    /* Slightly lower than exact center */
+    transform: translateY(35px);
+}
+
+
+/* ---------------------------------------------------------
+   SMALL ALUMNIHUB COMMUNITY TEXT
+--------------------------------------------------------- */
+
+.alumni-community-hero-eyebrow {
+    margin: 0 0 10px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(255, 255, 255, 0.72);
+}
+
+
+/* ---------------------------------------------------------
+   MAIN HERO TITLE
+--------------------------------------------------------- */
+
+.alumni-community-hero h1 {
+    margin:
+        0 auto
+        14px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(48px, 5vw, 76px);
+
+    font-weight: 700;
+
+    line-height: 0.98;
+
+    letter-spacing: -0.035em;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 4px 22px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+--------------------------------------------------------- */
+
+.alumni-community-hero-description {
+    max-width: 760px;
+
+    margin:
+        0 auto;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size:
+        14px;
+
+    font-weight: 400;
+
+    line-height: 1.75;
+
+    color:
+        rgba(255, 255, 255, 0.76);
+}
+
+
+/* =========================================================
+   MOVE NAVIGATION BUTTONS LOWER
+========================================================= */
+
+.alumni-community-links {
+    margin-top: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   BUTTON TYPOGRAPHY
+--------------------------------------------------------- */
+
+.alumni-community-links a {
+    min-height: 48px;
+
+    padding:
+        0 20px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 0;
+
+    text-decoration: none;
+}
+
+
+/* Main icon */
+.alumni-community-links a i:first-child {
+    font-size: 16px;
+}
+
+
+/* Arrow */
+.alumni-community-links a i:last-child {
+    margin-left: 4px;
+
+    font-size: 16px;
+
+    opacity: 0.72;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.alumni-community-links a:hover i:last-child {
+    transform:
+        translateX(3px);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   EXPLORE DASHBOARD
+========================================================= */
+
+.alumni-community-scroll {
+    bottom: 25px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.15em;
+
+    color:
+        rgba(255, 255, 255, 0.58);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .alumni-community-hero-content {
+        transform: translateY(15px);
+    }
+
+
+    .alumni-community-links {
+        margin-top: 35px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .alumni-community-hero h1 {
+        font-size:
+            clamp(40px, 12vw, 58px);
+    }
+
+
+    .alumni-community-hero-description {
+        font-size: 12px;
+    }
+
+
+    .alumni-community-links {
+        margin-top: 28px;
+    }
+
+}
+/* =========================================================
+   ALUMNIHUB COMMUNITY HERO
+   FINAL PREMIUM REFINEMENT
+========================================================= */
+
+
+/* HERO CONTENT */
+.alumni-community-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(1050px, calc(100% - 60px));
+
+    margin: 0 auto;
+
+    text-align: center;
+    color: #ffffff;
+
+    /* Slightly lower than dead-center */
+    transform: translateY(38px);
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.alumni-community-hero-eyebrow {
+    margin: 0 0 12px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.68);
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.alumni-community-hero h1 {
+    margin: 0 auto 18px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(54px, 5.5vw, 82px);
+
+    font-weight: 700;
+
+    line-height: 0.94;
+
+    letter-spacing: -0.04em;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.42);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.alumni-community-hero-description {
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.74);
+
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================================================
+   QUICK NAVIGATION
+========================================================= */
+
+.alumni-community-links {
+    margin-top: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+/* BUTTON */
+.alumni-community-links a {
+    position: relative;
+
+    min-height: 48px;
+
+    padding: 0 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.11),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    backdrop-filter:
+        blur(16px)
+        saturate(130%);
+
+    -webkit-backdrop-filter:
+        blur(16px)
+        saturate(130%);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.20),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.14);
+
+    transition:
+        transform 0.3s
+        cubic-bezier(0.16, 1, 0.3, 1),
+
+        border-color 0.25s ease,
+
+        background 0.25s ease,
+
+        box-shadow 0.25s ease;
+}
+
+
+/* GLOSS REFLECTION */
+.alumni-community-links a::before {
+    content: "";
+
+    position: absolute;
+
+    top: -70%;
+    left: -40%;
+
+    width: 55%;
+    height: 220%;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent,
+            rgba(255, 255, 255, 0.18),
+            transparent
+        );
+
+    transform: rotate(15deg);
+
+    opacity: 0;
+
+    transition:
+        left 0.55s ease,
+        opacity 0.25s ease;
+
+    pointer-events: none;
+}
+
+
+/* PURPLE AMBIENT GLOW */
+.alumni-community-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 20%;
+    right: 20%;
+
+    bottom: -18px;
+
+    height: 20px;
+
+    background:
+        rgba(124, 92, 255, 0.45);
+
+    filter: blur(18px);
+
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease;
+
+    pointer-events: none;
+}
+
+
+/* BUTTON ICONS */
+.alumni-community-links a i {
+    position: relative;
+    z-index: 2;
+
+    font-size: 16px;
+
+    color: #c9baff;
+
+    transition:
+        transform 0.3s
+        cubic-bezier(0.16, 1, 0.3, 1),
+
+        color 0.25s ease;
+}
+
+
+/* TEXT */
+.alumni-community-links a span {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* LAST ICON = ARROW */
+.alumni-community-links a i:last-child {
+    margin-left: 3px;
+
+    opacity: 0.70;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.alumni-community-links a:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(167, 139, 250, 0.65);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 92, 255, 0.28),
+            rgba(255, 255, 255, 0.06)
+        );
+
+    box-shadow:
+        0 16px 38px
+        rgba(0, 0, 0, 0.28),
+
+        0 0 28px
+        rgba(124, 92, 255, 0.12),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.18);
+}
+
+
+.alumni-community-links a:hover::before {
+    left: 100%;
+    opacity: 1;
+}
+
+
+.alumni-community-links a:hover::after {
+    opacity: 1;
+}
+
+
+.alumni-community-links a:hover i:first-child {
+    color: #ffffff;
+
+    transform: scale(1.10);
+}
+
+
+.alumni-community-links a:hover i:last-child {
+    color: #ffffff;
+
+    transform:
+        translateX(4px);
+}
+
+
+/* CLICK */
+.alumni-community-links a:active {
+    transform:
+        translateY(-1px)
+        scale(0.98);
+}
+
+
+/* =========================================================
+   EXPLORE DASHBOARD
+========================================================= */
+
+.alumni-community-scroll {
+    bottom: 22px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(255, 255, 255, 0.52);
+}
+
+
+.alumni-community-scroll i {
+    margin-top: 3px;
+
+    font-size: 19px;
+
+    color:
+        rgba(255, 255, 255, 0.70);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .alumni-community-hero-content {
+        width:
+            calc(100% - 40px);
+
+        transform:
+            translateY(20px);
+    }
+
+
+    .alumni-community-hero h1 {
+        font-size:
+            clamp(48px, 9vw, 68px);
+    }
+
+
+    .alumni-community-links {
+        margin-top: 38px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .alumni-community-hero-content {
+        transform:
+            translateY(5px);
+    }
+
+
+    .alumni-community-hero h1 {
+        font-size:
+            clamp(42px, 12vw, 56px);
+    }
+
+
+    .alumni-community-hero-description {
+        font-size: 12px;
+    }
+
+
+    .alumni-community-links {
+        margin-top: 28px;
+
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .alumni-community-links a {
+        width: min(100%, 330px);
+    }
+
+}
+/* =========================================================
+   FORCE HERO BUTTONS LOWER
+========================================================= */
+
+.alumni-community-hero-content {
+    transform: translateY(-10px) !important;
+}
+
+.alumni-community-links {
+    position: relative;
+
+    top: 120px;
+
+    margin-top: 0 !important;
+}
+/* =========================================================
+   LANDING / HERO TEXT
+   Always white in Light & Dark Mode
+========================================================= */
+
+.alumni-hero,
+.alumni-hero * {
+    color: #ffffff;
+}
+
+/* Small label */
+.alumni-hero .hero-label {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* Main title */
+.alumni-hero h1,
+.alumni-hero h2,
+.alumni-hero .hero-title {
+    color: #ffffff !important;
+}
+
+/* Description */
+.alumni-hero p,
+.alumni-hero .hero-description {
+    color: rgba(255, 255, 255, 0.82) !important;
+}
+
+/* Hero buttons */
+.alumni-hero .hero-actions a {
+    color: #ffffff !important;
+}
+
+/* Button icons + arrows */
+.alumni-hero .hero-actions i,
+.alumni-hero .hero-actions svg {
+    color: #c4b5fd;
+    stroke: currentColor;
+}
+/* =========================================================
+   ALUMNI COMMUNITY HERO
+   KEEP TEXT WHITE IN BOTH LIGHT & DARK MODE
+========================================================= */
+
+/* Small text: AlumniHub Community */
+.alumni-community-hero .hero-label {
+    color: rgba(255, 255, 255, 0.78) !important;
+}
+
+/* Who Will You Discover? */
+.alumni-community-hero h1,
+.alumni-community-hero h2,
+.alumni-community-hero .hero-title {
+    color: #ffffff !important;
+}
+
+/* Description */
+.alumni-community-hero p,
+.alumni-community-hero .hero-description {
+    color: rgba(255, 255, 255, 0.88) !important;
+}
+
+/* Navigation button text */
+.alumni-community-hero a {
+    color: #ffffff !important;
+}
+
+/* Icons */
+.alumni-community-hero i {
+    color: #c4b5fd !important;
+}
+/* =========================================================
+   ALUMNIHUB COLLEGE ART / EDITORIAL ZINE REDESIGN
+   Dashboard-only extension. Keeps the existing shell,
+   dark mode, modals, responsive sidebar and API states.
+========================================================= */
+
+:root {
+    --zine-ink: #111111;
+    --zine-paper: #f4efe5;
+    --zine-paper-2: #fffdf7;
+    --zine-yellow: #f3c940;
+    --zine-blue: #53b9e8;
+    --zine-pink: #f45aa7;
+    --zine-green: #66c98e;
+    --zine-red: #ef5b4c;
+    --zine-tan: #d9c5a7;
+    --zine-shadow: 9px 10px 0 rgba(17, 17, 17, .92);
+    --zine-border: 2px solid #111111;
+}
+
+body.dark,
+body.dark-mode {
+    --zine-paper: #202124;
+    --zine-paper-2: #292a2e;
+}
+body.dark,
+body.dark-mode {
+    --zine-paper: #202124;
+    --zine-paper-2: #292a2e;
+}
+
+
+/* =========================================================
+   DARK MODE — COLLEGE ART PAPER
+========================================================= */
+
+body.dark .zine-section,
+body.dark-mode .zine-section {
+    color: #f3efe7;
+}
+
+
+/* Main hero text */
+body.dark .hero-copy h1,
+body.dark-mode .hero-copy h1 {
+    color: #f5f1e8;
+}
+
+
+/* CONTINUES HERE remains a cutout */
+body.dark .hero-copy h1 span,
+body.dark-mode .hero-copy h1 span {
+    color: #111;
+    background: #f3efe7;
+}
+
+
+/* Small heading / description */
+body.dark .hero-kicker,
+body.dark-mode .hero-kicker,
+body.dark .hero-copy p,
+body.dark-mode .hero-copy p {
+    color: #d4d0c8;
+}
+
+
+/* Dark paper texture */
+body.dark .zine-section::before,
+body.dark-mode .zine-section::before {
+    opacity: .10;
+
+    background-image:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,.7) 0 1px,
+            transparent 1.2px
+        ),
+        radial-gradient(
+            circle at 72% 63%,
+            rgba(255,255,255,.55) 0 1px,
+            transparent 1.2px
+        );
+}
+
+.main-content {
+    padding: 22px 28px 30px;
+    overflow: hidden;
+}
+
+.zine-section {
+    position: relative;
+    width: 100%;
+    min-height: 82vh;
+    margin: 0 0 28px;
+    padding: clamp(34px, 5vw, 72px);
+    overflow: hidden;
+    border: var(--zine-border);
+    background: var(--zine-paper);
+    color: var(--zine-ink);
+    box-shadow: var(--zine-shadow);
+    isolation: isolate;
+}
+
+.zine-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    opacity: .16;
+    background-image:
+        radial-gradient(circle at 15% 20%, #111 0 1px, transparent 1.2px),
+        radial-gradient(circle at 72% 63%, #111 0 1px, transparent 1.2px);
+    background-size: 27px 27px, 33px 33px;
+    pointer-events: none;
+}
+
+.zine-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .28;
+    pointer-events: none;
+    background:
+        repeating-linear-gradient(0deg, rgba(0,0,0,.025) 0 1px, transparent 1px 4px),
+        linear-gradient(100deg, transparent 0 48%, rgba(255,255,255,.35) 49%, transparent 51%);
+}
+
+.zine-kicker {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.section-number {
+    display: inline-grid;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 14px;
+    place-items: center;
+    border: 2px solid #111;
+    border-radius: 50%;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    font-weight: 800;
+    background: #fff;
+    color: #111;
+}
+
+.section-number.inverse {
+    color: #fff;
+    border-color: #fff;
+    background: transparent;
+}
+
+.section-masthead {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: 40px;
+}
+
+.section-masthead h2,
+.classified-title h2,
+.finale-copy h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 900;
+    letter-spacing: -.045em;
+    line-height: .94;
+}
+
+.section-masthead h2 {
+    max-width: 760px;
+    font-size: clamp(42px, 6vw, 82px);
+}
+
+.section-intro {
+    max-width: 430px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* HERO */
+.zine-hero {
+    min-height: calc(100vh - var(--header-height) - 46px);
+    display: flex;
+    align-items: center;
+    background: #e9e4d9;
+}
+
+.zine-hero::before {
+    opacity: .18;
+}
+
+.zine-noise {
+    position: absolute;
+    inset: 0;
+    opacity: .08;
+    background-image: repeating-radial-gradient(circle at 30% 40%, #000 0 1px, transparent 1px 3px);
+    background-size: 8px 8px;
+    pointer-events: none;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 6;
+    width: min(650px, 62%);
+}
+
+.hero-copy h1 {
+    margin: 0;
+    max-width: 700px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(58px, 8vw, 112px);
+    font-weight: 900;
+    letter-spacing: -.065em;
+    line-height: .82;
+    text-transform: uppercase;
+}
+
+.hero-copy h1 span {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 2px 12px 8px;
+    color: #fff;
+    background: #111;
+    transform: rotate(-1.2deg);
+}
+
+.hero-copy h1 span::after {
+    content: "";
+    position: absolute;
+    left: 6%;
+    right: -4%;
+    bottom: 6px;
+    height: 20px;
+    z-index: -1;
+    background: var(--zine-pink);
+    transform: rotate(-2deg);
+}
+
+.hero-copy > p {
+    width: min(560px, 100%);
+    margin-top: 26px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+.hero-actions,
+.finale-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 28px;
+}
+
+.zine-button {
+    min-height: 48px;
+    padding: 0 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 2px solid #111;
+    color: #111;
+    background: #fff;
+    box-shadow: 4px 4px 0 #111;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.zine-button:hover {
+    transform: translate(3px, 3px) rotate(-.5deg);
+    box-shadow: 1px 1px 0 #111;
+}
+
+.zine-button-primary { background: var(--zine-pink); }
+.zine-button-paper { background: var(--zine-yellow); }
+.zine-button-dark { color: #111; background: #ffff; }
+.zine-button-yellow { background: var(--zine-yellow); }
+.zine-button-white { background: #fff; }
+
+.hero-collage-photo {
+    position: absolute;
+    z-index: 2;
+    border: 3px solid #111;
+    background-image:
+        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.1)),
+        url("../../images/alumnipics.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(1) contrast(1.1);
+    box-shadow: 10px 10px 0 #111;
+}
+
+.hero-photo-main {
+    width: 38%;
+    height: 68%;
+    right: 8%;
+    top: 14%;
+    transform: rotate(3deg);
+    clip-path: polygon(2% 3%, 98% 0, 100% 92%, 92% 100%, 0 97%);
+}
+
+.hero-photo-small {
+    width: 25%;
+    height: 34%;
+    right: 29%;
+    bottom: 4%;
+    z-index: 4;
+    transform: rotate(-6deg);
+    background-position: 30% center;
+}
+
+.hero-editorial-card {
+    position: absolute;
+    right: 3%;
+    top: 8%;
+    z-index: 7;
+    width: 210px;
+    padding: 20px;
+    border: 2px solid #111;
+    background: var(--zine-blue);
+    color: #1f2937;
+    box-shadow: 5px 5px 0 #111;
+    transform: rotate(5deg);
+}
+
+.editorial-number {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.hero-editorial-card strong {
+    display: block;
+    margin-top: 6px;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.hero-editorial-card p {
+    margin-top: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paper-scrap {
+    position: absolute;
+    z-index: 8;
+    padding: 10px 13px;
+    border: 2px solid #111;
+    box-shadow: 3px 3px 0 #111;
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1.05;
+}
+
+.scrap-blue { right: 2%; bottom: 22%; background: var(--zine-blue); transform: rotate(-8deg); }
+.scrap-yellow { right: 39%; top: 6%; background: var(--zine-yellow); transform: rotate(6deg); }
+.scrap-pink { left: 43%; bottom: 6%; background: var(--zine-pink); transform: rotate(-4deg); }
+
+.scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: 22px;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    color: #111;
+    background: transparent;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .16em;
+}
+
+.scroll-cue i { font-size: 18px; animation: zineBounce 1.6s ease-in-out infinite; }
+
+/* OVERVIEW */
+.overview-section { background: #f3eee4; }
+.overview-section .section-masthead h2 span { color: var(--zine-pink); }
+
+.date-stamp {
+    min-width: 190px;
+    padding: 14px 18px;
+    border: 2px dashed #111;
+    background: #fff;
+    transform: rotate(1deg);
+}
+
+.date-stamp span {
+    display: block;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: .16em;
+}
+
+.date-stamp strong {
+    display: block;
+    margin-top: 4px;
+    font-family: Georgia, serif;
+    font-size: 17px;
+}
+
+.stats-collage {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin: 12px 0 42px;
+}
+
+.zine-stat {
+    min-height: 210px;
+    padding: 24px;
+    position: relative;
+    border: 2px solid #111;
+    box-shadow: 6px 6px 0 #111;
+    transition: transform .22s ease;
+    color: #111;
+}
+
+.zine-stat:hover { transform: translateY(-7px) rotate(0deg); }
+.zine-stat strong {
+    display: block;
+    margin-top: 24px;
+    font-family: Georgia, serif;
+    font-size: clamp(44px, 5vw, 72px);
+    line-height: .8;
+}
+.zine-stat p {
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #111 !important;
+}
+
+.zine-stat small {
+    display: block;
+    margin-top: 6px;
+    font-size: 10px;
+    line-height: 1.5;
+    color: #111;
+}
+
+.stat-icon {
+    font-size: 23px;
+    color: #111;
+}
+.stat-yellow { background: var(--zine-yellow); }
+.stat-blue { background: var(--zine-blue); }
+.stat-green { background: var(--zine-green); }
+.stat-pink { background: var(--zine-pink); }
+.tilt-left { transform: rotate(-1.3deg); }
+.tilt-right { transform: rotate(1.4deg); }
+.tilt-left-soft { transform: rotate(-.6deg); }
+.tilt-right-soft { transform: rotate(.8deg); }
+
+.profile-completion-card {
+    position: relative;
+    padding: 26px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 22px;
+    border: 2px solid #111;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: 7px 7px 0 #111;
+}
+
+.profile-tape {
+    position: absolute;
+    width: 110px;
+    height: 24px;
+    top: -12px;
+    left: 48%;
+    background: rgba(239, 213, 145, .78);
+    transform: rotate(-2deg);
+}
+
+.profile-completion-icon {
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    border: 2px solid #111;
+    background: var(--zine-yellow);
+    font-size: 28px;
+}
+
+.profile-completion-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.profile-completion-heading h3 {
+    margin: 2px 0 5px;
+    font-family: Georgia, serif;
+    font-size: 24px;
+}
+
+.profile-completion-heading p { max-width: 650px; color: #404040; font-size: 11px; line-height: 1.6; }
+.profile-completion-heading > strong { font-family: Georgia, serif; font-size: 30px; }
+.mini-label { font-size: 8px; font-weight: 900; letter-spacing: .16em; }
+.profile-progress { height: 8px; margin-top: 13px; border: 1px solid #111; background: #eee; }
+.profile-progress span { display: block; height: 100%; background: var(--zine-pink); }
+
+/* PEOPLE */
+.people-section { background: #dceef3; }
+.people-collage {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr);
+    gap: 34px;
+    align-items: stretch;
+}
+
+.people-feature-card {
+    min-height: 530px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #111;
+    background: #111;
+    box-shadow: 9px 9px 0 #111;
+}
+
+.people-photo {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to top, rgba(0,0,0,.84), rgba(0,0,0,.05) 68%),
+        url("../../images/alumnipics.jpg") center/cover no-repeat;
+    filter: grayscale(.75) contrast(1.08);
+    transition: transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.people-feature-card:hover .people-photo { transform: scale(1.045); }
+.people-feature-copy {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    z-index: 2;
+    padding: 38px;
+    color: #fff;
+}
+.people-feature-copy h3 {
+    max-width: 650px;
+    margin: 10px 0;
+    font-family: Georgia, serif;
+    font-size: clamp(36px, 4.7vw, 64px);
+    line-height: .95;
+}
+.people-feature-copy p { max-width: 530px; color: rgba(255,255,255,.86); font-size: 12px; line-height: 1.7; }
+.scribble-label { display: inline-block; padding: 5px 8px; color: #111; background: var(--zine-yellow); font-size: 9px; font-weight: 900; transform: rotate(-2deg); }
+.inline-arrow { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; font-size: 11px; font-weight: 900; }
+
+.people-note-stack { display: grid; gap: 24px; }
+.paper-note {
+    position: relative;
+    min-height: 240px;
+    padding: 30px;
+    border: 2px solid #111;
+    box-shadow: 7px 7px 0 #111;
+    color: #111;
+    transition: transform .2s ease;
+}
+.paper-note:first-child { transform: rotate(2deg); }
+.paper-note:last-child { transform: rotate(-2deg); }
+.paper-note:hover { transform: translateY(-5px) rotate(0); }
+.note-white { background: #fffdf6; }
+.note-blue { background: var(--zine-blue); }
+.note-icon { font-size: 26px; }
+.paper-note strong { display: block; margin: 20px 0 10px; font-family: Georgia, serif; font-size: 26px; line-height: 1; }
+.paper-note p { font-size: 11px; line-height: 1.65;  color: #000000 !important; }
+.paper-note > span:last-child { display: block; margin-top: 20px; font-size: 10px; font-weight: 900; }
+
+/* EVENTS */
+.events-section { background: #f0d3a8; }
+.cutout-link {
+    padding: 10px 13px;
+    border: 2px solid #111;
+    color: #111;
+    background: var(--zine-yellow);
+    box-shadow: 4px 4px 0 #111;
+    font-size: 10px;
+    font-weight: 900;
+}
+.cutout-link-dark { color: #fff; background: #111; }
+
+.bulletin-board {
+    position: relative;
+    min-height: 430px;
+    padding: 42px;
+    border: 8px solid #6f4d2f;
+    background:
+        radial-gradient(circle, rgba(83,52,28,.2) 1px, transparent 1px) 0 0/8px 8px,
+        #b88c5d;
+    box-shadow: inset 0 0 30px rgba(70,38,15,.28), 9px 10px 0 #111;
+}
+.board-pin { position: absolute; width: 13px; height: 13px; border-radius: 50%; background: var(--zine-red); box-shadow: 1px 2px 0 rgba(0,0,0,.5); }
+.pin-a { left: 15px; top: 14px; }
+.pin-b { right: 17px; top: 13px; background: var(--zine-blue); }
+
+.event-poster-grid,
+.jobs-classified-grid,
+.announcement-note-grid {
+    display: grid !important;
+    gap: 20px;
+}
+.event-poster-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+
+.events-section .dashboard-list-item {
+    position: relative;
+    min-height: 170px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 18px;
+    border: 2px solid #111;
+    border-radius: 0;
+    color: #111;
+    background: #fff6dd;
+    box-shadow: 6px 6px 0 rgba(17,17,17,.85);
+    transition: transform .2s ease;
+}
+.events-section .dashboard-list-item:nth-child(2n) { background: #e5f4ff; transform: rotate(1deg); }
+.events-section .dashboard-list-item:nth-child(3n) { background: #ffe4ef; transform: rotate(-1deg); }
+.events-section .dashboard-list-item:hover { transform: translateY(-5px) rotate(0); }
+.events-section .list-item-icon {
+    width: 48px; height: 48px; display:grid; place-items:center;
+    border:2px solid #111; background:var(--zine-yellow); font-size:23px;
+}
+.events-section .list-item-content strong { font-family: Georgia, serif; font-size: 22px; line-height: 1.05; }
+.events-section .list-item-content p { margin-top: 8px; font-size: 10px; line-height: 1.5;  color: #0a0a0a; }
+.events-section .list-item-meta {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 9px;
+    color: #111111 !important;
+}
+
+/* JOBS / CLASSIFIED */
+.careers-section { background: #f5f0e5; }
+.classified-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: end;
+    gap: 25px;
+    padding-bottom: 18px;
+    border-bottom: 5px double #111;
+}
+.classified-title { text-align: center; }
+.classified-title > span { font-family: Georgia, serif; font-size: 13px; font-weight: 900; }
+.classified-title h2 { font-size: clamp(38px, 6vw, 76px); }
+.classified-title small { font-size: 10px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.classified-cta { padding: 10px 12px; border:2px solid #111; background:#111; color:#fff; font-size:10px; font-weight:900; }
+.classified-paper { margin-top: 28px; padding: 28px 0 0; }
+.classified-rule { height: 1px; margin-bottom: 24px; background:#111; }
+.jobs-classified-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.careers-section .dashboard-list-item {
+    position: relative;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 17px;
+    border: 1px solid #111;
+    border-radius: 0;
+    color:#111;
+    background: transparent;
+    box-shadow: none;
+    transition: background .18s ease, transform .18s ease;
+}
+.careers-section .dashboard-list-item::after {
+    content:"OPEN";
+    position:absolute;
+    top:10px; right:10px;
+    padding:3px 6px;
+    border:1px solid #111;
+    font:800 8px/1 "Courier New",monospace;
+}
+.careers-section .dashboard-list-item:hover { background:#fff; transform:translateY(-3px); }
+.careers-section .list-item-icon { width:45px;height:45px;display:grid;place-items:center;border:2px solid #111;background:var(--zine-green);font-size:21px; }
+.careers-section .list-item-content strong { font-family:Georgia,serif;font-size:23px;line-height:1; }
+.careers-section .list-item-content p { margin-top:7px;font-size:11px;font-weight:700; color: #333333; }
+.careers-section .list-item-meta { margin-top:14px;display:flex;flex-wrap:wrap;gap:12px;font-size:9px; color: #111111 !important; }
+
+/* ANNOUNCEMENT WALL */
+.announcements-section { background: #d7e7dc; }
+.announcement-wall {
+    position: relative;
+    min-height: 430px;
+    padding: 38px;
+    border: 2px solid #111;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.045) 1px, transparent 1px) 0 0/24px 24px,
+        linear-gradient(rgba(0,0,0,.045) 1px, transparent 1px) 0 0/24px 24px,
+        #f3f0e7;
+    box-shadow: 8px 8px 0 #111;
+}
+.announcement-note-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.announcements-section .dashboard-list-item {
+    position:relative;
+    min-height:170px;
+    padding:25px;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:16px;
+    border:2px solid #111;
+    border-radius:0;
+    color:#111;
+    background:var(--zine-yellow);
+    box-shadow:5px 5px 0 #111;
+    transform:rotate(-1deg);
+    transition:transform .2s ease;
+}
+.announcements-section .dashboard-list-item:nth-child(2n) { background:var(--zine-pink); transform:rotate(1deg); }
+.announcements-section .dashboard-list-item:nth-child(3n) { background:var(--zine-blue); }
+.announcements-section .dashboard-list-item:hover { transform:translateY(-5px) rotate(0); }
+.announcements-section .list-item-icon { width:44px;height:44px;display:grid;place-items:center;border:2px solid #111;background:#fff;font-size:21px; }
+.announcements-section .list-item-content strong { font-family:Georgia,serif;font-size:22px;line-height:1.05; }
+.announcements-section .list-item-content p { margin-top:8px;font-size:10px;line-height:1.5; color: #333333; }
+.announcements-section .list-item-meta { margin-top:13px;display:flex;gap:10px;font-size:9px;font-weight:700; color: #111111 !important; }
+.wall-doodle { position:absolute; z-index:2; font-family:Georgia,serif; font-size:50px; font-weight:900; }
+.doodle-one { right:18px; top:-28px; transform:rotate(12deg); }
+.doodle-two { left:10px; bottom:-30px; transform:rotate(-12deg); }
+
+/* SHARED LOADING / EMPTY STATES */
+.card-loading,
+.dashboard-empty {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #111;
+    text-align: center;
+}
+.card-loading span,
+.dashboard-empty p { font-size: 10px; font-weight: 700; }
+.dashboard-empty h3 { font-family:Georgia,serif;font-size:24px; }
+.dashboard-empty i { font-size:34px; }
+.small-spinner { width:34px;height:34px;border:3px solid rgba(17,17,17,.2);border-top-color:#111;border-radius:50%;animation:spin .8s linear infinite; }
+
+/* FINALE */
+.finale-section {
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background: #111;
+}
+.finale-section::before {
+    opacity: .2;
+    background-image:
+        radial-gradient(circle at 25% 25%, #fff 0 1px, transparent 1px),
+        radial-gradient(circle at 80% 70%, #fff 0 1px, transparent 1px);
+}
+.finale-collage {
+    position:absolute;
+    inset:8% 5% 8% auto;
+    width:39%;
+    border:3px solid #fff;
+    background:
+        linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.25)),
+        url("../../images/alumnipics.jpg") center/cover no-repeat;
+    filter:grayscale(1) contrast(1.15);
+    transform:rotate(3deg);
+    box-shadow:10px 10px 0 var(--zine-pink);
+}
+.finale-copy { position:relative;z-index:3;width:60%; }
+.inverse-kicker { color:#fff; }
+.finale-copy h2 { max-width:800px;font-size:clamp(48px,7vw,92px); }
+.finale-copy > p { max-width:590px;margin-top:24px;color:rgba(255,255,255,.78);font-size:13px;line-height:1.8; }
+.finale-quote-card {
+    position:absolute;
+    right:3%;bottom:6%;z-index:6;
+    width:220px;padding:20px;
+    border:2px solid #111;color:#111;background:var(--zine-yellow);box-shadow:5px 5px 0 var(--zine-pink);transform:rotate(-5deg);
+}
+.finale-quote-card span { font-size:8px;font-weight:900;letter-spacing:.16em; }
+.finale-quote-card strong { display:block;margin:10px 0;font-family:Georgia,serif;font-size:23px;line-height:.95; }
+.finale-quote-card small { font-size:9px; }
+
+.zine-footer {
+    margin-top: 14px;
+    padding: 20px 6px 8px;
+    color: var(--muted);
+}
+
+/* REVEAL MOTION */
+.reveal-section {
+    opacity: 0;
+    transform: translateY(34px) rotate(.15deg);
+    transition: opacity .7s ease, transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.reveal-section.is-visible { opacity:1; transform:translateY(0) rotate(0); }
+
+@keyframes zineBounce {
+    0%,100% { transform:translateY(0); }
+    50% { transform:translateY(5px); }
+}
+
+/* DARK MODE: preserve college-art paper colors while shell stays glossy black */
+body.dark .zine-section,
+body.dark-mode .zine-section { color:#111; }
+body.dark .zine-footer,
+body.dark-mode .zine-footer { color:#9ca3af; }
+
+/* RESPONSIVE */
+@media (max-width: 1280px) {
+    .stats-collage { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .hero-copy { width: 58%; }
+    .hero-photo-main { width: 40%; right: 4%; }
+    .scrap-pink { left: 36%; }
+}
+
+@media (max-width: 1050px) {
+    .zine-section { min-height:auto; padding:42px 34px; }
+    .zine-hero { min-height:850px; align-items:flex-start; }
+    .hero-copy { width:100%; max-width:700px; }
+    .hero-copy > p { max-width:500px; }
+    .hero-photo-main { width:50%;height:42%;right:7%;top:auto;bottom:9%; }
+    .hero-photo-small { width:30%;height:25%;right:45%;bottom:4%; }
+    .hero-editorial-card { right:4%;top:8%; }
+    .people-collage { grid-template-columns:1fr; }
+    .people-note-stack { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .finale-copy { width:68%; }
+    .finale-collage { width:42%;opacity:.5; }
+}
+
+@media (max-width: 760px) {
+    .main-content { padding:14px; }
+    .zine-section { margin-bottom:20px;padding:32px 20px;box-shadow:6px 6px 0 #111; }
+    .zine-hero { min-height:820px; }
+    .hero-copy h1 { font-size:clamp(50px,15vw,78px); }
+    .hero-editorial-card { display:none; }
+    .hero-photo-main { width:70%;height:34%;right:5%;bottom:10%; }
+    .hero-photo-small { width:42%;height:20%;left:5%;right:auto;bottom:4%; }
+    .paper-scrap.scrap-blue { right:2%;bottom:38%; }
+    .scrap-yellow { right:3%;top:3%; }
+    .scrap-pink { left:3%;bottom:30%; }
+    .scroll-cue { left:20px; transform:none; }
+    .section-masthead { align-items:flex-start;flex-direction:column;gap:18px; }
+    .section-masthead h2 { font-size:clamp(40px,13vw,60px); }
+    .date-stamp { width:100%; }
+    .stats-collage,
+    .event-poster-grid,
+    .jobs-classified-grid,
+    .announcement-note-grid,
+    .people-note-stack { grid-template-columns:1fr; }
+    .profile-completion-card { grid-template-columns:1fr; }
+    .profile-completion-heading { flex-direction:column;gap:8px; }
+    .people-feature-card { min-height:500px; }
+    .people-feature-copy { padding:25px; }
+    .bulletin-board,.announcement-wall { padding:24px 16px; }
+    .classified-header { grid-template-columns:1fr;text-align:left; }
+    .classified-title { text-align:left; }
+    .classified-title h2 { font-size:clamp(36px,12vw,56px); }
+    .classified-cta { justify-self:start; }
+    .finale-section { min-height:760px;align-items:flex-start; }
+    .finale-copy { width:100%; }
+    .finale-copy h2 { font-size:clamp(44px,13vw,68px); }
+    .finale-collage { width:72%;height:35%;inset:auto 5% 6% auto; }
+    .finale-quote-card { width:190px;right:auto;left:4%;bottom:4%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-section { opacity:1;transform:none;transition:none; }
+    .scroll-cue i { animation:none; }
+    .zine-button,
+    .zine-stat,
+    .paper-note,
+    .dashboard-list-item,
+    .people-photo { transition:none !important; }
+}
+
+/* =========================================================
+   V2 — COLLEGE ART APP SHELL + COLLAPSIBLE SIDEBAR
+   Keeps mobile drawer behavior while adding desktop mini mode.
+========================================================= */
+
+:root {
+    --sidebar-mini-width: 86px;
+    --zine-ink: #111111;
+    --zine-paper: #f3efe3;
+    --zine-pink: #ff4fa3;
+    --zine-yellow: #ffd928;
+    --zine-blue: #58bce8;
+    --zine-green: #9bd768;
+}
+
+/* Desktop hamburger is always visible in the new shell */
+.menu-toggle {
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--zine-ink);
+    border-radius: 0;
+    background: var(--zine-yellow);
+    color: var(--zine-ink);
+    box-shadow: 3px 3px 0 var(--zine-ink);
+    transform: rotate(-1deg);
+}
+
+.menu-toggle:hover {
+    color: var(--zine-ink);
+    border-color: var(--zine-ink);
+    background: var(--zine-pink);
+    transform: translate(2px,2px) rotate(1deg);
+    box-shadow: 1px 1px 0 var(--zine-ink);
+}
+
+/* Sidebar now belongs to the same zine / campus-art visual language */
+.sidebar {
+    background:
+        radial-gradient(circle at 1px 1px, rgba(17,17,17,.07) 1px, transparent 1.2px),
+        #f6f1e6;
+    background-size: 8px 8px;
+    border-right: 3px solid var(--zine-ink);
+    box-shadow: none;
+}
+
+.sidebar-header {
+    min-height: 84px;
+    border-bottom: 2px solid var(--zine-ink);
+    background: rgba(255,255,255,.58);
+}
+
+.brand-name {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -.03em;
+    color: var(--zine-ink);
+}
+
+.brand-role,
+.sidebar-section-title,
+.alumni-account-name {
+    color: var(--zine-ink);
+}
+
+.brand-role {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+}
+
+.alumni-account {
+    position: relative;
+    border: 2px solid var(--zine-ink);
+    border-radius: 0;
+    background: #fff;
+    box-shadow: 4px 4px 0 var(--zine-ink);
+    transform: rotate(-.5deg);
+}
+
+.alumni-account::after {
+    content: "ALUMNI";
+    position: absolute;
+    right: 8px;
+    top: -9px;
+    padding: 2px 7px;
+    background: var(--zine-yellow);
+    border: 1px solid var(--zine-ink);
+    color: var(--zine-ink);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    transform: rotate(3deg);
+}
+
+.alumni-account-role {
+    color: #176d37;
+    font-weight: 800;
+}
+
+.sidebar-section-title {
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: .16em;
+}
+
+.sidebar-link {
+    min-height: 46px;
+    border: 2px solid transparent;
+    border-radius: 0;
+    color: #2d2d2d;
+    font-weight: 700;
+}
+
+.sidebar-link:hover {
+    color: var(--zine-ink);
+    border-color: var(--zine-ink);
+    background: #fff;
+    box-shadow: 3px 3px 0 var(--zine-ink);
+    transform: translate(-1px,-1px) rotate(-.3deg);
+}
+
+.sidebar-link.active {
+    color: var(--zine-ink);
+    border-color: var(--zine-ink);
+    background: var(--zine-pink);
+    box-shadow: 4px 4px 0 var(--zine-ink);
+    transform: rotate(-.5deg);
+}
+
+.sidebar-link.active::before { display:none; }
+.sidebar-link i { color: inherit; }
+
+.sidebar-footer {
+    border-top: 2px solid var(--zine-ink);
+    background: rgba(255,255,255,.45);
+}
+
+.logout-button {
+    border: 2px solid var(--zine-ink);
+    border-radius: 0;
+    color: var(--zine-ink);
+    background: #ff726f;
+    box-shadow: 3px 3px 0 var(--zine-ink);
+}
+
+.logout-button:hover {
+    background: #ff5853;
+    transform: translate(2px,2px);
+    box-shadow: 1px 1px 0 var(--zine-ink);
+}
+
+/* Topbar echoes the paper/print treatment instead of admin-template glass */
+.top-header {
+    border-bottom: 3px solid var(--zine-ink);
+    background:
+        linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)),
+        radial-gradient(circle at 1px 1px, rgba(17,17,17,.08) 1px, transparent 1.2px);
+    background-size: auto, 8px 8px;
+    backdrop-filter: none;
+}
+
+.header-search input,
+.header-action-button,
+.header-profile {
+    border: 2px solid var(--zine-ink);
+    border-radius: 0;
+    background: #fff;
+    color: var(--zine-ink);
+    box-shadow: 2px 2px 0 var(--zine-ink);
+}
+
+.header-search input:focus {
+    border-color: var(--zine-ink);
+    box-shadow: 4px 4px 0 var(--zine-blue);
+}
+
+.search-shortcut {
+    border: 1px solid var(--zine-ink);
+    border-radius: 0;
+    background: var(--zine-yellow);
+    color: var(--zine-ink);
+    font-weight: 800;
+}
+
+.header-action-button:hover {
+    color: var(--zine-ink);
+    border-color: var(--zine-ink);
+    background: var(--zine-blue);
+}
+
+.header-profile-name { color: var(--zine-ink); font-weight: 800; }
+.header-profile-role { color: #555; font-weight: 700; }
+
+/* Desktop mini sidebar */
+@media (min-width: 961px) {
+    .sidebar,
+    .app-layout,
+    .brand-text,
+    .alumni-account-details,
+    .sidebar-link span,
+    .sidebar-section-title,
+    .logout-button span {
+        transition: width .3s cubic-bezier(.2,.8,.2,1),
+                    margin .3s cubic-bezier(.2,.8,.2,1),
+                    opacity .18s ease,
+                    transform .25s ease;
+    }
+
+    body.sidebar-mini .sidebar {
+        width: var(--sidebar-mini-width);
+    }
+
+    body.sidebar-mini .app-layout {
+        margin-left: var(--sidebar-mini-width);
+    }
+
+    body.sidebar-mini .sidebar-header {
+        padding-inline: 12px;
+        justify-content: center;
+    }
+
+    body.sidebar-mini .brand { justify-content:center; }
+    body.sidebar-mini .brand-text,
+    body.sidebar-mini .alumni-account-details,
+    body.sidebar-mini .sidebar-section-title,
+    body.sidebar-mini .sidebar-link span,
+    body.sidebar-mini .logout-button span {
+        display: none;
+    }
+
+    body.sidebar-mini .alumni-account {
+        margin: 14px 12px;
+        padding: 8px;
+        justify-content: center;
+        box-shadow: 3px 3px 0 var(--zine-ink);
+    }
+
+    body.sidebar-mini .alumni-account::after { display:none; }
+    body.sidebar-mini .sidebar-navigation { padding-inline: 10px; }
+    body.sidebar-mini .sidebar-menu li { margin-bottom: 8px; }
+    body.sidebar-mini .sidebar-link {
+        min-height: 48px;
+        padding: 0;
+        justify-content: center;
+        gap: 0;
+    }
+    body.sidebar-mini .sidebar-link i { font-size: 22px; }
+    body.sidebar-mini .sidebar-footer { padding: 14px 10px 18px; }
+    body.sidebar-mini .logout-button { padding:0; min-height:48px; }
+    body.sidebar-mini .logout-button i { font-size:21px; }
+    body.sidebar-mini .sidebar-close { display:none; }
+
+    body.sidebar-mini .main-content {
+        max-width: none;
+    }
+}
+
+/* Dark zine shell: black ink/paper inversion while keeping bright collage accents */
+body.dark .sidebar,
+body.dark-mode .sidebar {
+    background:
+        radial-gradient(circle at 1px 1px, rgba(255,255,255,.065) 1px, transparent 1.2px),
+        #101010;
+    border-right-color: #f1eee5;
+}
+
+body.dark .sidebar-header,
+body.dark-mode .sidebar-header,
+body.dark .sidebar-footer,
+body.dark-mode .sidebar-footer {
+    border-color: #f1eee5;
+    background: rgba(0,0,0,.25);
+}
+
+body.dark .brand-name,
+body.dark-mode .brand-name,
+body.dark .brand-role,
+body.dark-mode .brand-role,
+body.dark .sidebar-section-title,
+body.dark-mode .sidebar-section-title,
+body.dark .alumni-account-name,
+body.dark-mode .alumni-account-name {
+    color: #f4f0e7;
+}
+
+body.dark .alumni-account,
+body.dark-mode .alumni-account {
+    background: #161616 !important;
+    border-color: #3a3a3a !important;
+    box-shadow: 4px 4px 0 #080808 !important;
+}
+
+body.dark .sidebar-link,
+body.dark-mode .sidebar-link { color:#d8d4ca; }
+body.dark .sidebar-link:hover,
+body.dark-mode .sidebar-link:hover {
+    color:#111;
+    background:#f4f0e7;
+    border-color:#f4f0e7;
+    box-shadow:3px 3px 0 var(--zine-blue);
+}
+body.dark .sidebar-link.active,
+body.dark-mode .sidebar-link.active {
+    color:#111;
+    border-color:#f4f0e7;
+    background:var(--zine-pink);
+    box-shadow:4px 4px 0 #f4f0e7;
+}
+
+body.dark .top-header,
+body.dark-mode .top-header {
+    border-bottom-color:#f1eee5;
+    background:
+        linear-gradient(rgba(12,12,12,.95), rgba(12,12,12,.95)),
+        radial-gradient(circle at 1px 1px, rgba(255,255,255,.07) 1px, transparent 1.2px);
+}
+
+body.dark .header-search input,
+body.dark-mode .header-search input,
+body.dark .header-action-button,
+body.dark-mode .header-action-button,
+body.dark .header-profile,
+body.dark-mode .header-profile {
+    color:#f4f0e7;
+    background:#171717;
+    border-color:#f4f0e7;
+    box-shadow:2px 2px 0 #f4f0e7;
+}
+
+body.dark .header-profile-name,
+body.dark-mode .header-profile-name { color:#f4f0e7; }
+body.dark .header-profile-role,
+body.dark-mode .header-profile-role { color:#aaa59a; }
+
+/* On tablet/mobile revert mini-state and retain drawer UX */
+@media (max-width: 960px) {
+    body.sidebar-mini .sidebar { width: var(--sidebar-width); }
+    body.sidebar-mini .app-layout { margin-left: 0; }
+    .menu-toggle { display:grid;place-items:center; }
+}
+/* =========================================================
+   V2.1 — GLOSSY LIGHT APP SHELL
+   Light pearl / frosted-glass treatment for the outer shell.
+   Keeps the College Art / Editorial Zine content untouched.
+========================================================= */
+
+/* Outer page / gutters */
+body,
+body.dark,
+body.dark-mode {
+    background:
+        radial-gradient(circle at 12% 10%, rgba(255,255,255,.96) 0%, transparent 31%),
+        radial-gradient(circle at 82% 12%, rgba(168,215,255,.25) 0%, transparent 30%),
+        radial-gradient(circle at 74% 86%, rgba(255,145,207,.16) 0%, transparent 30%),
+        radial-gradient(circle at 18% 88%, rgba(255,221,92,.12) 0%, transparent 28%),
+        linear-gradient(135deg, #f8fafc 0%, #eef3f7 46%, #fbf8f3 100%) !important;
+    background-attachment: fixed !important;
+}
+
+/* Glossy pearl sidebar */
+.sidebar,
+body.dark .sidebar,
+body.dark-mode .sidebar {
+    background:
+        linear-gradient(145deg, rgba(255,255,255,.86), rgba(247,250,253,.68)),
+        radial-gradient(circle at 1px 1px, rgba(17,17,17,.035) 1px, transparent 1.2px) !important;
+    background-size: auto, 9px 9px !important;
+    border-right: 1px solid rgba(17,17,17,.16) !important;
+    box-shadow:
+        10px 0 34px rgba(49,66,86,.09),
+        inset -1px 0 0 rgba(255,255,255,.78) !important;
+    backdrop-filter: blur(24px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(150%) !important;
+}
+
+.sidebar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(115deg, rgba(255,255,255,.56), transparent 28%, transparent 72%, rgba(255,255,255,.20));
+    opacity: .55;
+}
+
+.sidebar-header,
+body.dark .sidebar-header,
+body.dark-mode .sidebar-header,
+.sidebar-footer,
+body.dark .sidebar-footer,
+body.dark-mode .sidebar-footer {
+    position: relative;
+    z-index: 1;
+    background: rgba(255,255,255,.42) !important;
+    border-color: rgba(17,17,17,.13) !important;
+}
+
+.sidebar-navigation,
+.alumni-account {
+    position: relative;
+    z-index: 1;
+}
+
+/* Account card — clean glossy white */
+body:not(.dark):not(.dark-mode) .alumni-account {
+    border: 1px solid rgba(17,17,17,.17) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.92),
+            rgba(255,255,255,.68)
+        ) !important;
+
+    box-shadow:
+        0 9px 24px rgba(37,52,69,.10),
+        inset 0 1px 0 rgba(255,255,255,.95) !important;
+}
+
+/* Sidebar text stays readable even if dark mode class is still active */
+.brand-name,
+.brand-role,
+.sidebar-section-title,
+.alumni-account-name,
+body.dark .brand-name,
+body.dark-mode .brand-name,
+body.dark .brand-role,
+body.dark-mode .brand-role,
+body.dark .sidebar-section-title,
+body.dark-mode .sidebar-section-title,
+body.dark .alumni-account-name,
+body.dark-mode .alumni-account-name {
+    color: #eeeeee !important;
+}
+
+.sidebar-link,
+body.dark .sidebar-link,
+body.dark-mode .sidebar-link {
+    color: #3e4650 !important;
+}
+
+.sidebar-link:hover,
+body.dark .sidebar-link:hover,
+body.dark-mode .sidebar-link:hover {
+    color: #111 !important;
+    background: rgba(255,255,255,.88) !important;
+    border-color: rgba(17,17,17,.16) !important;
+    box-shadow: 0 7px 18px rgba(43,55,70,.10) !important;
+}
+
+.sidebar-link.active,
+body.dark .sidebar-link.active,
+body.dark-mode .sidebar-link.active {
+    color: #111 !important;
+    border-color: rgba(17,17,17,.20) !important;
+    background: linear-gradient(135deg, #ff66ae, #ff8bc2) !important;
+    box-shadow:
+        0 7px 18px rgba(255,79,163,.22),
+        inset 0 1px 0 rgba(255,255,255,.58) !important;
+}
+
+/* Glossy light topbar */
+.top-header,
+body.dark .top-header,
+body.dark-mode .top-header {
+    border-bottom: 1px solid rgba(17,17,17,.13) !important;
+    background: linear-gradient(110deg, rgba(255,255,255,.82), rgba(249,252,255,.70)) !important;
+    box-shadow:
+        0 10px 28px rgba(49,66,86,.08),
+        inset 0 1px 0 rgba(255,255,255,.95) !important;
+    backdrop-filter: blur(24px) saturate(155%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(155%) !important;
+}
+
+/* Search, theme, notifications, profile */
+.header-search input,
+.header-action-button,
+.header-profile,
+body.dark .header-search input,
+body.dark-mode .header-search input,
+body.dark .header-action-button,
+body.dark-mode .header-action-button,
+body.dark .header-profile,
+body.dark-mode .header-profile {
+    color: #171717 !important;
+    border: 1px solid rgba(17,17,17,.15) !important;
+    background: linear-gradient(145deg, rgba(255,255,255,.92), rgba(255,255,255,.66)) !important;
+    box-shadow:
+        0 7px 18px rgba(39,52,67,.09),
+        inset 0 1px 0 rgba(255,255,255,.95) !important;
+    backdrop-filter: blur(14px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(150%) !important;
+}
+
+.header-search input::placeholder,
+body.dark .header-search input::placeholder,
+body.dark-mode .header-search input::placeholder {
+    color: #6b7280 !important;
+}
+
+.header-profile-name,
+body.dark .header-profile-name,
+body.dark-mode .header-profile-name {
+    color: #171717 !important;
+}
+
+.header-profile-role,
+body.dark .header-profile-role,
+body.dark-mode .header-profile-role {
+    color: #6b7280 !important;
+}
+
+/* Hamburger — glossy yellow accent */
+.menu-toggle {
+    border: 1px solid rgba(17,17,17,.18) !important;
+    border-radius: 10px !important;
+    background: linear-gradient(145deg, #ffe76a, #ffd52d) !important;
+    box-shadow:
+        0 8px 18px rgba(207,163,0,.20),
+        inset 0 1px 0 rgba(255,255,255,.76) !important;
+    transform: none !important;
+}
+
+.menu-toggle:hover {
+    transform: translateY(-1px) !important;
+    background: linear-gradient(145deg, #ff7fbd, #ff58a7) !important;
+    box-shadow: 0 10px 20px rgba(255,79,163,.20) !important;
+}
+
+.search-shortcut {
+    border: 1px solid rgba(17,17,17,.14) !important;
+    border-radius: 7px !important;
+    background: linear-gradient(145deg, #ffe96f, #ffd42e) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.65) !important;
+}
+
+/* Dropdowns also match the new light shell */
+.notification-dropdown,
+.profile-dropdown,
+body.dark .notification-dropdown,
+body.dark-mode .notification-dropdown,
+body.dark .profile-dropdown,
+body.dark-mode .profile-dropdown {
+    color: #171717 !important;
+    border: 1px solid rgba(17,17,17,.14) !important;
+    background: rgba(255,255,255,.90) !important;
+    box-shadow: 0 20px 44px rgba(34,48,64,.14) !important;
+    backdrop-filter: blur(24px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(150%) !important;
+}
+
+.profile-dropdown a,
+.profile-dropdown button,
+body.dark .profile-dropdown a,
+body.dark-mode .profile-dropdown a,
+body.dark .profile-dropdown button,
+body.dark-mode .profile-dropdown button {
+    color: #171717 !important;
+}
+
+.profile-dropdown a:hover,
+.profile-dropdown button:hover,
+body.dark .profile-dropdown a:hover,
+body.dark-mode .profile-dropdown a:hover,
+body.dark .profile-dropdown button:hover,
+body.dark-mode .profile-dropdown button:hover {
+    background: rgba(238,243,248,.92) !important;
+}
+
+/* Keep outer application area visually clean */
+.app-layout {
+    background: transparent !important;
+}
+
+/* Mobile drawer keeps the same glossy light finish */
+@media (max-width: 960px) {
+    .sidebar {
+        box-shadow: 18px 0 42px rgba(35,49,65,.17) !important;
+    }
+}
+/* =========================================================
+   ALUMNIHUB — THEME-AWARE SIDEBAR + TOPBAR
+========================================================= */
+
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+body:not(.dark):not(.dark-mode) .sidebar {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.96),
+            rgba(247,249,252,.90)
+        ) !important;
+
+    border-right: 1px solid rgba(20, 25, 35, 0.10) !important;
+
+    box-shadow:
+        6px 0 25px rgba(20, 30, 50, 0.06),
+        inset -1px 0 0 rgba(255,255,255,.75) !important;
+
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+}
+
+
+body:not(.dark):not(.dark-mode) .sidebar-header,
+body:not(.dark):not(.dark-mode) .sidebar-footer {
+    background: rgba(255,255,255,.55) !important;
+    border-color: rgba(20,25,35,.10) !important;
+}
+
+
+body:not(.dark):not(.dark-mode) .top-header {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.93),
+            rgba(245,249,255,.86)
+        ) !important;
+
+    border-bottom: 1px solid rgba(20,25,35,.10) !important;
+
+    box-shadow:
+        0 6px 24px rgba(30,40,60,.06),
+        inset 0 1px 0 rgba(255,255,255,.85) !important;
+
+    backdrop-filter: blur(22px) saturate(145%);
+    -webkit-backdrop-filter: blur(22px) saturate(145%);
+}
+
+
+/* LIGHT MODE TEXT */
+
+body:not(.dark):not(.dark-mode) .sidebar-link,
+body:not(.dark):not(.dark-mode) .brand-name,
+body:not(.dark):not(.dark-mode) .brand-role,
+body:not(.dark):not(.dark-mode) .sidebar-section-title,
+body:not(.dark):not(.dark-mode) .alumni-account-name {
+    color: #262a30 !important;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark .sidebar,
+body.dark-mode .sidebar {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,22,26,.97),
+            rgba(10,11,14,.95)
+        ) !important;
+
+    border-right: 1px solid rgba(255,255,255,.10) !important;
+
+    box-shadow:
+        8px 0 30px rgba(0,0,0,.28),
+        inset -1px 0 0 rgba(255,255,255,.04) !important;
+
+    backdrop-filter: blur(22px) saturate(125%);
+    -webkit-backdrop-filter: blur(22px) saturate(125%);
+}
+
+
+body.dark .sidebar-header,
+body.dark-mode .sidebar-header,
+body.dark .sidebar-footer,
+body.dark-mode .sidebar-footer {
+    background: rgba(255,255,255,.025) !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+
+body.dark .top-header,
+body.dark-mode .top-header {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(18,20,24,.96),
+            rgba(9,10,13,.94)
+        ) !important;
+
+    border-bottom: 1px solid rgba(255,255,255,.10) !important;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.05) !important;
+
+    backdrop-filter: blur(22px) saturate(125%);
+    -webkit-backdrop-filter: blur(22px) saturate(125%);
+}
+
+
+/* DARK MODE TEXT */
+
+body.dark .sidebar-link,
+body.dark-mode .sidebar-link,
+body.dark .brand-name,
+body.dark-mode .brand-name,
+body.dark .brand-role,
+body.dark-mode .brand-role,
+body.dark .sidebar-section-title,
+body.dark-mode .sidebar-section-title,
+body.dark .alumni-account-name,
+body.dark-mode .alumni-account-name {
+    color: #eeeeee !important;
+}
+
+
+/* DARK MODE HEADER CONTROLS */
+
+body.dark .header-search input,
+body.dark-mode .header-search input,
+body.dark .header-action-button,
+body.dark-mode .header-action-button,
+body.dark .header-profile,
+body.dark-mode .header-profile {
+    background: rgba(255,255,255,.055) !important;
+
+    color: #f4f4f4 !important;
+
+    border-color: rgba(255,255,255,.13) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05),
+        0 6px 18px rgba(0,0,0,.18) !important;
+}
+
+
+body.dark .header-profile-name,
+body.dark-mode .header-profile-name {
+    color: #ffffff !important;
+}
+
+
+body.dark .header-profile-role,
+body.dark-mode .header-profile-role {
+    color: #a9adb5 !important;
+}
+
+
+/* SEARCH PLACEHOLDER */
+
+body.dark .header-search input::placeholder,
+body.dark-mode .header-search input::placeholder {
+    color: #858a92 !important;
+}
+
+
+/* KEEP COLLEGE ART ACTIVE COLORS */
+
+body.dark .sidebar-link.active,
+body.dark-mode .sidebar-link.active {
+    color: #111 !important;
+    background: var(--zine-pink) !important;
+}
+
+
+body.dark .menu-toggle,
+body.dark-mode .menu-toggle {
+    color: #111 !important;
+    background: var(--zine-yellow) !important;
+}
+/* =========================================================
+   FINAL DARK MODE — ALL 7 COLLEGE ART SECTIONS
+   Keeps the collage accents, but converts every section shell
+   and major paper surface into a coordinated charcoal palette.
+========================================================= */
+
+body.dark .zine-section,
+body.dark-mode .zine-section {
+    color: #f3efe7 !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow:
+        0 18px 42px rgba(0,0,0,.30),
+        inset 0 1px 0 rgba(255,255,255,.04) !important;
+}
+
+/* 1 — HERO */
+body.dark .zine-hero,
+body.dark-mode .zine-hero {
+    background:
+        radial-gradient(circle at 18% 15%, rgba(255,255,255,.035), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(88,188,232,.06), transparent 32%),
+        linear-gradient(135deg, #242528 0%, #1d1f22 48%, #25262a 100%) !important;
+}
+
+/* 2 — OVERVIEW */
+body.dark .overview-section,
+body.dark-mode .overview-section {
+    background:
+        radial-gradient(circle at 12% 12%, rgba(255,79,163,.055), transparent 28%),
+        linear-gradient(135deg, #242528 0%, #1d1f22 100%) !important;
+}
+
+/* 3 — PEOPLE */
+body.dark .people-section,
+body.dark-mode .people-section {
+    background:
+        radial-gradient(circle at 88% 14%, rgba(88,188,232,.08), transparent 30%),
+        linear-gradient(135deg, #22262a 0%, #1b1e21 100%) !important;
+}
+
+/* 4 — EVENTS */
+body.dark .events-section,
+body.dark-mode .events-section {
+    background:
+        radial-gradient(circle at 15% 18%, rgba(255,217,40,.055), transparent 30%),
+        linear-gradient(135deg, #2a2620 0%, #201e1b 100%) !important;
+}
+
+/* 5 — CAREERS */
+body.dark .careers-section,
+body.dark-mode .careers-section {
+    background:
+        radial-gradient(circle at 82% 18%, rgba(155,215,104,.055), transparent 30%),
+        linear-gradient(135deg, #232625 0%, #1b1d1c 100%) !important;
+}
+
+/* 6 — ANNOUNCEMENTS */
+body.dark .announcements-section,
+body.dark-mode .announcements-section {
+    background:
+        radial-gradient(circle at 15% 15%, rgba(102,201,142,.06), transparent 30%),
+        linear-gradient(135deg, #212724 0%, #1b201e 100%) !important;
+}
+
+/* 7 — FINALE */
+body.dark .finale-section,
+body.dark-mode .finale-section {
+    background:
+        radial-gradient(circle at 85% 20%, rgba(244,90,167,.08), transparent 32%),
+        linear-gradient(135deg, #17181a 0%, #0f1012 100%) !important;
+}
+
+/* Dark editorial text for the common mastheads */
+body.dark .section-masthead h2,
+body.dark-mode .section-masthead h2,
+body.dark .section-masthead p,
+body.dark-mode .section-masthead p,
+body.dark .section-kicker,
+body.dark-mode .section-kicker,
+body.dark .date-stamp,
+body.dark-mode .date-stamp {
+    color: #f3efe7 !important;
+}
+
+body.dark .date-stamp,
+body.dark-mode .date-stamp {
+    border-color: rgba(255,255,255,.28) !important;
+    background: rgba(255,255,255,.045) !important;
+}
+
+/* Overview paper/profile surfaces */
+body.dark .profile-completion-card,
+body.dark-mode .profile-completion-card {
+    color: #f3efe7 !important;
+    border-color: rgba(255,255,255,.14) !important;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,.055), rgba(255,255,255,.02)) !important;
+    box-shadow:
+        0 14px 34px rgba(0,0,0,.24),
+        inset 0 1px 0 rgba(255,255,255,.04) !important;
+}
+
+body.dark .profile-completion-heading p,
+body.dark-mode .profile-completion-heading p {
+    color: #aaaeb5 !important;
+}
+
+body.dark .profile-progress,
+body.dark-mode .profile-progress {
+    border-color: rgba(255,255,255,.20) !important;
+    background: rgba(255,255,255,.08) !important;
+}
+
+/* People section notes */
+body.dark .paper-note,
+body.dark-mode .paper-note {
+    color: #111 !important;
+}
+
+/* Events board */
+body.dark .bulletin-board,
+body.dark-mode .bulletin-board {
+    border-color: rgba(255,255,255,.16) !important;
+    background:
+        linear-gradient(rgba(255,255,255,.025), rgba(255,255,255,.025)),
+        #24211d !important;
+    box-shadow: 8px 8px 0 rgba(0,0,0,.38) !important;
+}
+
+/* Keep event poster cards light enough to feel like pinned paper */
+body.dark .events-section .dashboard-list-item,
+body.dark-mode .events-section .dashboard-list-item {
+    color: #111 !important;
+}
+
+/* Careers newspaper sheet */
+body.dark .classified-header,
+body.dark-mode .classified-header {
+    border-bottom-color: rgba(255,255,255,.70) !important;
+}
+
+body.dark .classified-title,
+body.dark-mode .classified-title,
+body.dark .careers-section .dashboard-list-item,
+body.dark-mode .careers-section .dashboard-list-item {
+    color: #f3efe7 !important;
+}
+
+body.dark .classified-rule,
+body.dark-mode .classified-rule {
+    background: rgba(255,255,255,.55) !important;
+}
+
+body.dark .careers-section .dashboard-list-item,
+body.dark-mode .careers-section .dashboard-list-item {
+    border-color: rgba(255,255,255,.20) !important;
+}
+
+body.dark .careers-section .dashboard-list-item:hover,
+body.dark-mode .careers-section .dashboard-list-item:hover {
+    background: rgba(255,255,255,.055) !important;
+}
+
+/* Announcement wall */
+body.dark .announcement-wall,
+body.dark-mode .announcement-wall {
+    border-color: rgba(255,255,255,.16) !important;
+    background:
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px) 0 0/24px 24px,
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px) 0 0/24px 24px,
+        #222624 !important;
+    box-shadow: 8px 8px 0 rgba(0,0,0,.40) !important;
+}
+
+/* Announcement note cards remain colorful paper cutouts */
+body.dark .announcements-section .dashboard-list-item,
+body.dark-mode .announcements-section .dashboard-list-item {
+    color: #111 !important;
+}
+
+/* Shared loading / empty states */
+body.dark .card-loading,
+body.dark-mode .card-loading,
+body.dark .dashboard-empty,
+body.dark-mode .dashboard-empty {
+    color: #d9d5cc !important;
+}
+
+body.dark .small-spinner,
+body.dark-mode .small-spinner {
+    border-color: rgba(255,255,255,.15) !important;
+    border-top-color: var(--zine-pink) !important;
+}
+
+/* Keep all color stickers / CTA cards vivid in dark mode */
+body.dark .paper-scrap,
+body.dark-mode .paper-scrap,
+body.dark .zine-button,
+body.dark-mode .zine-button,
+body.dark .finale-quote-card,
+body.dark-mode .finale-quote-card {
+    color: #111 !important;
+}
+
+/* =========================================================
+   DARK MODE — TEXT READABILITY FIX
+========================================================= */
+
+/* MAIN HEADINGS */
+body.dark .section-masthead h2,
+body.dark-mode .section-masthead h2,
+body.dark .profile-completion-heading h3,
+body.dark-mode .profile-completion-heading h3 {
+    color: #f6f1e8 !important;
+}
+
+
+/* NORMAL BODY / MESSAGE TEXT */
+body.dark .section-masthead p,
+body.dark-mode .section-masthead p,
+body.dark .profile-completion-content p,
+body.dark-mode .profile-completion-content p {
+    color: #c7c9ce !important;
+}
+
+
+/* SMALL LABELS */
+body.dark .mini-label,
+body.dark-mode .mini-label,
+body.dark .profile-completion-label,
+body.dark-mode .profile-completion-label {
+    color: #e2e0da !important;
+}
+
+
+/* DATE CARD */
+body.dark .date-stamp,
+body.dark-mode .date-stamp {
+    color: #f4f1e9 !important;
+}
+
+body.dark .date-stamp span,
+body.dark-mode .date-stamp span {
+    color: #b8bbc1 !important;
+}
+
+
+/* =========================================================
+   COLORED STAT CARDS
+   Keep text readable without removing their bright colors
+========================================================= */
+
+body.dark .stat-card,
+body.dark-mode .stat-card {
+    color: #ffffff !important;
+}
+
+body.dark .stat-card .summary-value,
+body.dark-mode .stat-card .summary-value {
+    color: #ffffff !important;
+}
+
+body.dark .stat-card .summary-label,
+body.dark-mode .stat-card .summary-label {
+    color: rgba(255, 255, 255, 0.94) !important;
+}
+
+body.dark .stat-card p,
+body.dark-mode .stat-card p,
+body.dark .stat-card .summary-description,
+body.dark-mode .stat-card .summary-description {
+    color: rgba(255, 255, 255, 0.82) !important;
+}
+
+body.dark .stat-card i,
+body.dark-mode .stat-card i {
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   PROFILE COMPLETION
+========================================================= */
+
+body.dark .profile-completion-card,
+body.dark-mode .profile-completion-card {
+    color: #f6f1e8 !important;
+}
+
+body.dark .profile-completion-card p,
+body.dark-mode .profile-completion-card p {
+    color: #bfc3c9 !important;
+}
+
+body.dark #profileCompletionText,
+body.dark-mode #profileCompletionText {
+    color: #c9ccd1 !important;
+}
+
+body.dark #profileCompletionPercent,
+body.dark-mode #profileCompletionPercent {
+    color: #8c6cff !important;
+}

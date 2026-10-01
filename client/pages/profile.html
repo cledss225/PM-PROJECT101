@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Profile | AlumniHub</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Shared CSS -->
+<link rel="stylesheet" href="../assets/css/variable.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/page-transition.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+
+<!-- Profile CSS -->
+<link rel="stylesheet" href="../assets/css/profile.css">
+</head>
+
+<body>
+
+<div class="dashboard-shell">
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="dashboard.html" class="sidebar-brand">
+
+                <div class="brand-mark">
+                    <img
+                        src="../assets/images/logo/ams-round-logo.jpg"
+                        alt="AMS Logo"
+                        class="ams-brand-logo"
+                    >
+                </div>
+
+                <div class="brand-text">
+                    <strong>A.M.S</strong>
+                    <small>AlumniHub</small>
+                </div>
+
+            </a>
+
+
+            <div class="sidebar-search">
+
+                <i class="bx bx-search"></i>
+
+                <input
+                    type="text"
+                    placeholder="Search anything"
+                >
+
+                <span>⌘ K</span>
+
+            </div>
+
+
+            <p class="menu-label">
+                Main Navigation
+            </p>
+
+
+            <nav class="menu">
+
+                <a href="dashboard.html">
+
+                    <i class="bx bxs-dashboard"></i>
+
+                    <span>Overview</span>
+
+                </a>
+
+
+                <a href="alumni-directory.html">
+
+                    <i class="bx bx-group"></i>
+
+                    <span>Alumni Directory</span>
+
+                </a>
+
+
+                <a href="account-approvals.html">
+
+                    <i class="bx bx-user-check"></i>
+
+                    <span>Account Approvals</span>
+
+                </a>
+
+
+                <a href="profile.html" class="active">
+
+                    <i class="bx bx-user"></i>
+
+                    <span>My Profile</span>
+
+                </a>
+
+
+                <a href="events.html">
+
+                    <i class="bx bx-calendar-event"></i>
+
+                    <span>Events</span>
+
+                </a>
+
+
+                <a href="jobs.html">
+
+                    <i class="bx bx-briefcase"></i>
+
+                    <span>Jobs</span>
+
+                </a>
+
+
+                <a href="announcements.html">
+
+                    <i class="bx bxs-megaphone"></i>
+
+                    <span>Announcements</span>
+
+                </a>
+
+
+                <a href="reports.html">
+
+                    <i class="bx bx-bar-chart-alt-2"></i>
+
+                    <span>Reports</span>
+
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <p class="menu-label">
+                Support
+            </p>
+
+
+            <a
+                href="settings.html"
+                class="support-link"
+            >
+
+                <i class="bx bx-cog"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+
+            <button
+                id="logout"
+                class="sidebar-profile"
+                type="button"
+            >
+
+                <div
+                    class="sidebar-avatar"
+                    id="sidebarAvatar"
+                >
+                    AU
+                </div>
+
+
+                <div class="sidebar-user">
+
+                    <strong id="sidebarName">
+                        Admin User
+                    </strong>
+
+                    <small id="sidebarEmail">
+                        admin@gmail.com
+                    </small>
+
+                </div>
+
+
+                <i class="bx bx-log-out"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+    <div class="topbar-inner">
+
+        <div class="topbar-left">
+
+            <button
+                class="topbar-menu-button"
+                type="button"
+                aria-label="Open menu"
+            >
+                <i class="bx bx-menu"></i>
+            </button>
+
+            <div class="breadcrumb">
+
+                <a
+                    href="dashboard.html"
+                    class="breadcrumb-dashboard"
+                    title="Back to Dashboard"
+                >
+                    Administrator
+                </a>
+
+                <i class="bx bx-chevron-right"></i>
+
+                <strong>My Profile</strong>
+
+            </div>
+
+        </div>
+
+        <div class="topbar-actions">
+
+            <button
+                id="themeToggle"
+                class="topbar-icon"
+                type="button"
+            >
+                <i class="bx bx-moon"></i>
+            </button>
+
+            <button
+                class="topbar-icon notification-button"
+                type="button"
+            >
+                <i class="bx bx-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+
+            <button
+                class="topbar-icon"
+                type="button"
+            >
+                <i class="bx bx-help-circle"></i>
+            </button>
+
+            <div
+                class="topbar-avatar"
+                id="topbarAvatar"
+            >
+                AU
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+        <!-- PROFILE CONTENT WRAPPER -->
+
+        <div class="profile-page-container">
+
+
+            <!-- PAGE HEADING -->
+
+            <section class="profile-page-heading">
+
+                <div>
+
+                    <span class="page-badge">
+
+                        <i class="bx bx-user"></i>
+
+                        My Account
+
+                    </span>
+
+
+                    <h1>
+                        My Profile
+                    </h1>
+
+
+                    <p>
+                        View and update your administrator account information.
+                    </p>
+
+                </div>
+
+
+                <div class="member-card">
+
+                    <div class="member-card-icon">
+                        <i class="bx bx-calendar"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Member Since
+                        </strong>
+
+                        <span id="memberSince">
+                            Loading...
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PROFILE GRID -->
+
+            <section class="profile-main-grid">
+
+
+                <!-- LEFT PROFILE SUMMARY -->
+
+                <aside class="profile-summary-card">
+
+                    <div class="profile-cover">
+
+                        <div class="cover-shape cover-shape-one"></div>
+
+                        <div class="cover-shape cover-shape-two"></div>
+
+                    </div>
+
+
+                    <div class="profile-avatar-area">
+
+                        <div
+                            class="profile-avatar"
+                            id="profileAvatar"
+                        >
+                            AU
+                        </div>
+
+
+                        <button
+                            class="avatar-upload-button"
+                            type="button"
+                            title="Profile picture upload will be added later"
+                        >
+                            <i class="bx bx-camera"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="profile-identity">
+
+                        <h2 id="profileFullName">
+                            Admin User
+                        </h2>
+
+
+                        <span
+                            class="role-badge"
+                            id="profileRole"
+                        >
+                            <i class="bx bx-shield-quarter"></i>
+
+                            Administrator
+                        </span>
+
+
+                        <span
+                            class="profile-status"
+                            id="profileStatus"
+                        >
+                            Active Account
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-summary-divider"></div>
+
+
+                    <div class="profile-metadata">
+
+                        <div class="metadata-item">
+
+                            <div class="metadata-icon">
+                                <i class="bx bx-envelope"></i>
+                            </div>
+
+                            <div>
+
+                                <span>Email Address</span>
+
+                                <strong id="summaryEmail">
+                                    admin@gmail.com
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="metadata-item">
+
+                            <div class="metadata-icon">
+                                <i class="bx bx-time-five"></i>
+                            </div>
+
+                            <div>
+
+                                <span>Last Login</span>
+
+                                <strong id="lastLogin">
+                                    No login record
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="metadata-item">
+
+                            <div class="metadata-icon">
+                                <i class="bx bx-id-card"></i>
+                            </div>
+
+                            <div>
+
+                                <span>Account ID</span>
+
+                                <strong id="accountId">
+                                    #USR
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- RIGHT PROFILE DETAILS -->
+
+                <section class="profile-details-card">
+
+
+                    <!-- TABS -->
+
+                    <div class="profile-tabs">
+
+    <div class="profile-tab active">
+
+        <i class="bx bx-user"></i>
+
+        Personal Information
+
+    </div>
+
+</div>
+
+
+                    <!-- FORM SECTION -->
+
+                    <div class="profile-details-content">
+
+                        <div class="details-heading">
+
+                            <div class="details-heading-icon">
+                                <i class="bx bx-user-pin"></i>
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Personal Details
+                                </h3>
+
+                                <p>
+                                    Update your basic account information.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <form id="profileForm">
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group">
+
+                                    <label for="firstName">
+                                        First Name
+                                    </label>
+
+
+                                    <div class="input-wrapper">
+
+                                        <i class="bx bx-user"></i>
+
+                                        <input
+                                            type="text"
+                                            id="firstName"
+                                            placeholder="Enter first name"
+                                            required
+                                        >
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="middleName">
+                                        Middle Name
+                                    </label>
+
+
+                                    <div class="input-wrapper">
+
+                                        <i class="bx bx-user"></i>
+
+                                        <input
+                                            type="text"
+                                            id="middleName"
+                                            placeholder="Enter middle name"
+                                        >
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="lastName">
+                                        Last Name
+                                    </label>
+
+
+                                    <div class="input-wrapper">
+
+                                        <i class="bx bx-user"></i>
+
+                                        <input
+                                            type="text"
+                                            id="lastName"
+                                            placeholder="Enter last name"
+                                            required
+                                        >
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="email">
+                                        Email Address
+                                    </label>
+
+
+                                    <div class="input-wrapper">
+
+                                        <i class="bx bx-envelope"></i>
+
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            placeholder="Enter email address"
+                                            required
+                                        >
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="role">
+                                        Role
+                                    </label>
+
+
+                                    <div class="input-wrapper disabled">
+
+                                        <i class="bx bx-shield-quarter"></i>
+
+                                        <input
+                                            type="text"
+                                            id="role"
+                                            disabled
+                                        >
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="accountStatus">
+                                        Account Status
+                                    </label>
+
+
+                                    <div class="input-wrapper disabled status-input">
+
+                                        <span class="status-input-dot"></span>
+
+                                        <input
+                                            type="text"
+                                            id="accountStatus"
+                                            disabled
+                                        >
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="information-banner">
+
+                                <i class="bx bx-info-circle"></i>
+
+                                <p>
+                                    Your account information is used for system
+                                    identification and communication.
+                                </p>
+
+                            </div>
+
+
+                            <div class="profile-form-footer">
+
+                                <p
+                                    id="profileMessage"
+                                    class="profile-message"
+                                ></p>
+
+
+                                <div class="profile-form-actions">
+
+                                    <button
+                                        type="button"
+                                        id="discardChanges"
+                                        class="secondary-button"
+                                    >
+
+                                        <i class="bx bx-undo"></i>
+
+                                        Discard
+
+                                    </button>
+
+
+                                    <button
+                                        type="submit"
+                                        class="primary-button"
+                                    >
+
+                                        <i class="bx bx-save"></i>
+
+                                        Save Changes
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/profile.js"></script>
+<script src="../assets/js/page-transition.js"></script>
+<script src="../assets/js/admin-header.js"></script>
+</body>
+
+</html>

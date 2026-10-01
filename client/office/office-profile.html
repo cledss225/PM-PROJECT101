@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Profile | AlumniHub</title>
+
+    <!-- Google Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Profile CSS -->
+    <link
+        rel="stylesheet"
+        href="../assets/css/office-profile.css"
+    >
+</head>
+
+<body>
+
+    <!-- ==========================================
+         PAGE LOADER
+    =========================================== -->
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+    >
+        <div class="loader-content">
+
+            <div
+                class="office-ams-logo"
+                style="
+                    width:58px;
+                    height:58px;
+                    min-width:58px;
+                    border-radius:50%;
+                    overflow:hidden;
+                    background:#fff;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    margin-bottom:14px;
+                "
+            >
+                <img
+                    src="/assets/images/logo/ams-office-logo.png"
+                    alt="AMS Logo"
+                    style="
+                        width:58px;
+                        height:58px;
+                        min-width:58px;
+                        max-width:58px;
+                        object-fit:cover;
+                        object-position:center;
+                        border-radius:50%;
+                        display:block;
+                        margin:0;
+                        padding:0;
+                    "
+                >
+            </div>
+
+            <div class="loader-spinner"></div>
+
+            <p>Loading profile...</p>
+
+        </div>
+    </div>
+
+
+    <!-- ==========================================
+         MOBILE SIDEBAR OVERLAY
+    =========================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="sidebar-header">
+
+            <a
+                href="office-dashboard.html"
+                class="brand"
+            >
+
+                <div
+                    class="office-ams-logo"
+                    style="
+                        width:46px;
+                        height:46px;
+                        min-width:46px;
+                        flex:0 0 46px;
+                        border-radius:50%;
+                        overflow:hidden;
+                        background:#fff;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                    "
+                >
+                    <img
+                        src="/assets/images/logo/ams-round-logo.jpg"
+                        alt="AMS Logo"
+                        style="
+                            width:46px;
+                            height:46px;
+                            min-width:46px;
+                            max-width:46px;
+                            object-fit:cover;
+                            object-position:center;
+                            border-radius:50%;
+                            display:block;
+                            margin:0;
+                            padding:0;
+                        "
+                    >
+                </div>
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        AlumniHub
+                    </span>
+
+                    <span class="brand-role">
+                        Office Portal
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <button
+                class="sidebar-close"
+                id="sidebarClose"
+                type="button"
+                aria-label="Close sidebar"
+            >
+                <i class="bx bx-x"></i>
+            </button>
+
+        </div>
+
+
+        <!-- OFFICE ACCOUNT -->
+
+        <div class="office-account">
+
+            <div class="office-account-avatar">
+
+                <img
+                    id="sidebarProfileImage"
+                    src="../assets/images/logo/avatars/background/avatar.jpg"
+                    alt="Profile"
+                >
+
+                <div
+                    class="avatar-initials"
+                    id="sidebarInitials"
+                >
+                    AO
+                </div>
+
+                <span class="online-indicator"></span>
+
+            </div>
+
+
+            <div class="office-account-details">
+
+                <div
+                    class="office-account-name"
+                    id="sidebarUserName"
+                >
+                    Alumni Office
+                </div>
+
+                <div class="office-account-role">
+
+                    <i class="bx bxs-badge-check"></i>
+
+                    <span>
+                        Alumni Affairs Office
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-navigation">
+
+            <div class="sidebar-section-title">
+                Main Menu
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a
+                        href="office-dashboard.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="alumni-records.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-group"></i>
+                        <span>Alumni Records</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="account-verification.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-user-check"></i>
+                        <span>Account Verification</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="office-events.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-calendar"></i>
+                        <span>Events Management</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="office-jobs.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-briefcase"></i>
+                        <span>Job Opportunities</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="office-announcements.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-megaphone"></i>
+                        <span>Announcements</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="office-reports.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-report"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <div class="sidebar-section-title">
+                Account
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a
+                        href="office-profile.html"
+                        class="sidebar-link active"
+                    >
+                        <i class="bx bxs-user-circle"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="office-settings.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- LOGOUT -->
+
+        <div class="sidebar-footer">
+
+            <button
+                class="logout-button"
+                id="logoutButton"
+                type="button"
+            >
+
+                <i class="bx bx-log-out"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==========================================
+         MAIN APP
+    =========================================== -->
+
+    <div class="app-layout">
+
+
+        <!-- ======================================
+             TOP HEADER
+        ======================================= -->
+
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open menu"
+                >
+                    <i class="bx bx-menu"></i>
+                </button>
+
+
+                <div class="header-search">
+
+                    <i class="bx bx-search"></i>
+
+                    <input
+                        type="search"
+                        id="globalSearch"
+                        placeholder="Search profile settings..."
+                        autocomplete="off"
+                    >
+
+                    <span class="search-shortcut">
+                        Ctrl K
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <!-- THEME -->
+
+                <button
+                    class="header-action-button"
+                    id="themeToggle"
+                    type="button"
+                    title="Toggle theme"
+                >
+                    <i
+                        class="bx bx-moon"
+                        id="themeIcon"
+                    ></i>
+                </button>
+
+
+                <!-- NOTIFICATION -->
+
+                <button
+                    class="header-action-button"
+                    type="button"
+                    title="Notifications"
+                >
+                    <i class="bx bx-bell"></i>
+                </button>
+
+
+                <!-- PROFILE -->
+
+                <div class="header-profile-wrapper">
+
+                    <button
+                        class="header-profile"
+                        id="headerProfileButton"
+                        type="button"
+                    >
+
+                        <div class="header-profile-avatar">
+
+                            <img
+                                id="headerProfileImage"
+                                src="../assets/images/logo/avatars/background/avatar.jpg"
+                                alt="Profile"
+                            >
+
+                            <div
+                                class="avatar-initials"
+                                id="headerInitials"
+                            >
+                                AO
+                            </div>
+
+                        </div>
+
+
+                        <div class="header-profile-info">
+
+                            <span
+                                class="header-profile-name"
+                                id="headerUserName"
+                            >
+                                Alumni Office
+                            </span>
+
+                            <span class="header-profile-role">
+                                Office Staff
+                            </span>
+
+                        </div>
+
+                        <i class="bx bx-chevron-down"></i>
+
+                    </button>
+
+
+                    <!-- DROPDOWN -->
+
+                    <div
+                        class="profile-dropdown"
+                        id="profileDropdown"
+                    >
+
+                        <a href="office-profile.html">
+
+                            <i class="bx bx-user"></i>
+
+                            My Profile
+
+                        </a>
+
+
+                        <a href="office-settings.html">
+
+                            <i class="bx bx-cog"></i>
+
+                            Settings
+
+                        </a>
+
+
+                        <button
+                            type="button"
+                            id="profileLogoutButton"
+                        >
+
+                            <i class="bx bx-log-out"></i>
+
+                            Sign Out
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ======================================
+             MAIN CONTENT
+        ======================================= -->
+
+        <main class="main-content">
+
+
+            <!-- PAGE HEADER -->
+
+            <section class="page-header">
+
+                <div class="page-heading">
+
+                    <div class="page-heading-icon">
+                        <i class="bx bxs-user-circle"></i>
+                    </div>
+
+
+                    <div>
+
+                        <div class="page-eyebrow">
+                            Alumni Office
+                        </div>
+
+                        <h1>
+                            My Profile
+                        </h1>
+
+                        <p class="page-description">
+                            View and manage your Alumni Office account information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="button button-primary"
+                    id="editProfileButton"
+                    type="button"
+                >
+
+                    <i class="bx bx-edit"></i>
+
+                    Edit Profile
+
+                </button>
+
+            </section>
+
+
+            <!-- ==================================
+                 PROFILE HERO
+            =================================== -->
+
+            <section class="profile-hero-card">
+
+                <div class="profile-cover"></div>
+
+
+                <div class="profile-hero-content">
+
+
+                    <div class="profile-main-avatar">
+
+                        <img
+                            id="profileImage"
+                            src="../assets/images/logo/avatars/background/avatar.jpg"
+                            alt="Profile photo"
+                        >
+
+                        <div
+                            class="profile-main-initials"
+                            id="profileInitials"
+                        >
+                            AO
+                        </div>
+
+                        <button
+                            class="change-photo-button"
+                            id="changePhotoButton"
+                            type="button"
+                            title="Change profile photo"
+                        >
+                            <i class="bx bx-camera"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="profile-identity">
+
+                        <div class="profile-name-row">
+
+                            <h2 id="profileFullName">
+                                Alumni Office
+                            </h2>
+
+                            <span class="verified-badge">
+
+                                <i class="bx bxs-badge-check"></i>
+
+                                Office Staff
+
+                            </span>
+
+                        </div>
+
+
+                        <p id="profileEmail">
+                            Loading email...
+                        </p>
+
+
+                        <div class="profile-meta">
+
+                            <span>
+
+                                <i class="bx bx-buildings"></i>
+
+                                Alumni Affairs Office
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="bx bx-shield-quarter"></i>
+
+                                Authorized Personnel
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="bx bx-check-circle"></i>
+
+                                Active Account
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 PROFILE CONTENT
+            =================================== -->
+
+            <div class="profile-content-grid">
+
+
+                <!-- LEFT COLUMN -->
+
+                <div class="profile-column">
+
+
+                    <!-- PERSONAL INFORMATION -->
+
+                    <section class="profile-card">
+
+                        <div class="profile-card-header">
+
+                            <div>
+
+                                <h2>
+                                    Personal Information
+                                </h2>
+
+                                <p>
+                                    Basic information associated with your account.
+                                </p>
+
+                            </div>
+
+                            <div class="section-icon">
+                                <i class="bx bx-user"></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-information-grid">
+
+
+                            <div class="information-item">
+
+                                <span class="information-label">
+                                    First Name
+                                </span>
+
+                                <strong id="firstNameValue">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="information-item">
+
+                                <span class="information-label">
+                                    Middle Name
+                                </span>
+
+                                <strong id="middleNameValue">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="information-item">
+
+                                <span class="information-label">
+                                    Last Name
+                                </span>
+
+                                <strong id="lastNameValue">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="information-item">
+
+                                <span class="information-label">
+                                    Email Address
+                                </span>
+
+                                <strong id="emailValue">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- CONTACT INFORMATION -->
+
+                    <section class="profile-card">
+
+                        <div class="profile-card-header">
+
+                            <div>
+
+                                <h2>
+                                    Contact Information
+                                </h2>
+
+                                <p>
+                                    Contact details used by the Alumni Office.
+                                </p>
+
+                            </div>
+
+                            <div class="section-icon">
+                                <i class="bx bx-phone"></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-information-grid">
+
+
+                            <div class="information-item">
+
+                                <span class="information-label">
+                                    Phone Number
+                                </span>
+
+                                <strong id="phoneValue">
+                                    Not provided
+                                </strong>
+
+                            </div>
+
+
+                            <div class="information-item">
+
+                                <span class="information-label">
+                                    Office
+                                </span>
+
+                                <strong id="officeValue">
+                                    Alumni Affairs Office
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- RIGHT COLUMN -->
+
+                <div class="profile-column">
+
+
+                    <!-- ACCOUNT INFORMATION -->
+
+                    <section class="profile-card">
+
+                        <div class="profile-card-header">
+
+                            <div>
+
+                                <h2>
+                                    Account Information
+                                </h2>
+
+                                <p>
+                                    System role and account status.
+                                </p>
+
+                            </div>
+
+                            <div class="section-icon">
+                                <i class="bx bx-shield-quarter"></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="account-details-list">
+
+
+                            <div class="account-detail">
+
+                                <div class="account-detail-icon">
+                                    <i class="bx bx-id-card"></i>
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Account Role
+                                    </span>
+
+                                    <strong id="roleValue">
+                                        Alumni Office
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="account-detail">
+
+                                <div class="account-detail-icon success">
+                                    <i class="bx bx-check-shield"></i>
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Account Status
+                                    </span>
+
+                                    <strong id="accountStatusValue">
+                                        Active
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="account-detail">
+
+                                <div class="account-detail-icon">
+                                    <i class="bx bx-calendar"></i>
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Member Since
+                                    </span>
+
+                                    <strong id="memberSinceValue">
+                                        —
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="account-detail">
+
+                                <div class="account-detail-icon">
+                                    <i class="bx bx-time-five"></i>
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Last Login
+                                    </span>
+
+                                    <strong id="lastLoginValue">
+                                        —
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- SECURITY -->
+
+                    <section class="profile-card">
+
+                        <div class="profile-card-header">
+
+                            <div>
+
+                                <h2>
+                                    Security
+                                </h2>
+
+                                <p>
+                                    Manage the security of your account.
+                                </p>
+
+                            </div>
+
+                            <div class="section-icon">
+                                <i class="bx bx-lock-alt"></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="security-option">
+
+                            <div>
+
+                                <div class="security-icon">
+                                    <i class="bx bx-key"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Password
+                                    </strong>
+
+                                    <span>
+                                        Change your account password from Settings.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <a
+                                href="office-settings.html"
+                                class="security-action"
+                            >
+                                Manage
+
+                                <i class="bx bx-chevron-right"></i>
+                            </a>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================
+                 FOOTER
+            =================================== -->
+
+            <footer class="page-footer">
+
+                <span>
+                    © <span id="currentYear"></span> AlumniHub
+                </span>
+
+
+                <span>
+
+                    <span class="status-dot"></span>
+
+                    Alumni Office Portal
+
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- ==========================================
+         EDIT PROFILE MODAL
+    =========================================== -->
+
+    <div
+        class="modal"
+        id="editProfileModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close-modal="editProfileModal"
+        ></div>
+
+
+        <div class="modal-dialog profile-edit-dialog">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-eyebrow">
+                        Account Profile
+                    </span>
+
+                    <h2>
+                        Edit Profile
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-close-modal="editProfileModal"
+                >
+                    <i class="bx bx-x"></i>
+                </button>
+
+            </div>
+
+
+            <form
+                id="editProfileForm"
+                class="profile-edit-form"
+            >
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="editFirstName">
+                            First Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editFirstName"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editMiddleName">
+                            Middle Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editMiddleName"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editLastName">
+                            Last Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editLastName"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editEmail">
+                            Email Address *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="editEmail"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group form-group-full">
+
+                        <label for="editPhone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="editPhone"
+                            placeholder="09XXXXXXXXX"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="button button-secondary"
+                        data-close-modal="editProfileModal"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="button button-primary"
+                        id="saveProfileButton"
+                    >
+
+                        <i class="bx bx-save"></i>
+
+                        <span id="saveProfileButtonText">
+                            Save Changes
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+<!-- ==========================================
+         PROFILE PHOTO INPUT
+    =========================================== -->
+
+    <input
+        type="file"
+        id="profilePhotoInput"
+        accept="image/png,image/jpeg,image/webp"
+        hidden
+    >
+
+
+    <!-- ==========================================
+         LOGOUT MODAL
+    =========================================== -->
+
+    <div
+        class="modal"
+        id="logoutModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close-modal="logoutModal"
+        ></div>
+
+
+        <div class="modal-dialog confirmation-modal-dialog">
+
+            <div class="modal-icon danger">
+                <i class="bx bx-log-out"></i>
+            </div>
+
+
+            <h2>
+                Sign out?
+            </h2>
+
+
+            <p>
+                You will need to sign in again to access the Alumni Office portal.
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    data-close-modal="logoutModal"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    class="button button-danger"
+                    id="confirmLogoutButton"
+                >
+                    Sign Out
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         TOASTS
+    =========================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script
+        src="../assets/js/office-profile.js"
+        
+    ></script>
+    <script src="../assets/js/office-header.js"></script>
+
+</body>
+</html>

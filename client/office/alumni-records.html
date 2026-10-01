@@ -1,0 +1,3318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AlumniHub Alumni Records Management"
+    >
+
+    <title>
+        Alumni Records | AlumniHub
+    </title>
+
+
+    <!-- Google Font -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Boxicons -->
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- Page CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/alumni-records.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PAGE LOADER
+    ====================================================== -->
+
+    <div
+        id="pageLoader"
+        class="page-loader"
+    >
+
+        <div class="loader-content">
+
+            <div class="loader-logo">
+
+                <i class="bx bxs-graduation"></i>
+
+            </div>
+
+            <div class="loader-spinner"></div>
+
+            <p>
+                Loading alumni records...
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+    ====================================================== -->
+
+    <div
+        id="sidebarOverlay"
+        class="sidebar-overlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        id="sidebar"
+        class="sidebar"
+    >
+
+
+        <!-- Sidebar Header -->
+
+        <div class="sidebar-header">
+
+            <a
+    href="office-dashboard.html"
+    class="sidebar-brand"
+>
+
+    <div
+    class="office-ams-logo"
+    style="
+        width:46px;
+        height:46px;
+        min-width:46px;
+        flex:0 0 46px;
+        border-radius:50%;
+        overflow:hidden;
+        background:#fff;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    "
+>
+    <img
+        src="/assets/images/logo/ams-round-logo.jpg"
+        alt="AMS Logo"
+        style="
+            width:46px;
+            height:46px;
+            min-width:46px;
+            max-width:46px;
+            object-fit:cover;
+            object-position:center;
+            border-radius:50%;
+            display:block;
+            margin:0;
+            padding:0;
+        "
+    >
+</div>
+
+    <div class="brand-text">
+        <strong>
+            AlumniHub
+        </strong>
+
+        <span>
+            Office Portal
+        </span>
+    </div>
+
+
+
+            </a>
+
+
+            <button
+                type="button"
+                id="sidebarClose"
+                class="sidebar-close"
+                aria-label="Close sidebar"
+            >
+
+                <i class="bx bx-x"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- Sidebar User -->
+
+        <div class="sidebar-user">
+
+            <div class="sidebar-user-avatar">
+
+                <img
+                    id="sidebarProfileImage"
+                    src="../assets/images/logo/avatars/background/avatar.jpg"
+                    alt="Office staff profile"
+                >
+
+                <span id="sidebarInitials">
+                    AO
+                </span>
+
+            </div>
+
+
+            <div class="sidebar-user-info">
+
+                <strong id="sidebarUserName">
+                    Alumni Office Staff
+                </strong>
+
+                <span>
+                    Alumni Affairs Office
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Sidebar Navigation -->
+
+        <nav class="sidebar-navigation">
+
+
+            <p class="sidebar-menu-label">
+                Main Menu
+            </p>
+
+
+            <a
+                href="office-dashboard.html"
+                class="sidebar-link"
+            >
+
+                <i class="bx bx-grid-alt"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="alumni-records.html"
+                class="sidebar-link active"
+            >
+
+                <i class="bx bx-group"></i>
+
+                <span>
+                    Alumni Records
+                </span>
+
+            </a>
+
+
+            <a
+                href="account-verification.html"
+                class="sidebar-link"
+            >
+
+                <i class="bx bx-user-check"></i>
+
+                <span>
+                    Account Verification
+                </span>
+
+                <span
+                    id="verificationMenuBadge"
+                    class="sidebar-badge"
+                >
+                    0
+                </span>
+
+            </a>
+
+
+            <a
+                href="events.html"
+                class="sidebar-link"
+            >
+
+                <i class="bx bx-calendar-event"></i>
+
+                <span>
+                    Events Management
+                </span>
+
+            </a>
+
+
+            <a
+                href="jobs.html"
+                class="sidebar-link"
+            >
+
+                <i class="bx bx-briefcase-alt-2"></i>
+
+                <span>
+                    Job Opportunities
+                </span>
+
+            </a>
+
+
+            <a
+                href="office-announcements.html"
+                class="sidebar-link"
+            >
+
+                <i class="bx bxs-megaphone"></i>
+
+                <span>
+                    Announcements
+                </span>
+
+            </a>
+
+
+            <a
+                href="office-reports.html"
+                class="sidebar-link"
+            >
+
+                <i class="bx bx-bar-chart-alt-2"></i>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+
+            <p class="sidebar-menu-label settings-label">
+                Account
+            </p>
+
+
+            <a
+                href="office-profile.html"
+                class="sidebar-link"
+            >
+
+                <i class="bx bx-user-circle"></i>
+
+                <span>
+                    My Profile
+                </span>
+
+            </a>
+
+
+            <a
+                href="office-settings.html"
+                class="sidebar-link"
+            >
+
+                <i class="bx bx-cog"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+
+        <!-- Sidebar Footer -->
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="sidebar-logout-button"
+            >
+
+                <i class="bx bx-log-out"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="top-header">
+
+
+            <div class="header-left">
+
+                <button
+                    type="button"
+                    id="menuToggle"
+                    class="header-icon-button menu-toggle"
+                    aria-label="Open sidebar"
+                >
+
+                    <i class="bx bx-menu"></i>
+
+                </button>
+
+
+                <div class="header-page-title">
+
+                    <h1>
+                        Alumni Records
+                    </h1>
+
+                    <p>
+                        Manage and maintain alumni information
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="header-right">
+
+
+                <!-- Header Search -->
+
+               
+
+
+
+                <!-- Theme Toggle -->
+
+                <button
+                    type="button"
+                    id="themeToggle"
+                    class="header-icon-button"
+                    aria-label="Toggle dark mode"
+                >
+
+                    <i
+                        id="themeIcon"
+                        class="bx bx-moon"
+                    ></i>
+
+                </button>
+
+
+
+                <!-- Notifications -->
+
+                <div class="header-dropdown-wrapper">
+
+                    <button
+                        type="button"
+                        id="notificationButton"
+                        class="header-icon-button notification-button"
+                        aria-label="Open notifications"
+                        aria-expanded="false"
+                    >
+
+                        <i class="bx bx-bell"></i>
+
+                        <span
+                            id="notificationDot"
+                            class="notification-dot"
+                        ></span>
+
+                    </button>
+
+
+                    <div
+                        id="notificationDropdown"
+                        class="header-dropdown notification-dropdown"
+                    >
+
+                        <div class="dropdown-header">
+
+                            <div>
+
+                                <strong>
+                                    Notifications
+                                </strong>
+
+                                <span>
+                                    Office updates and alerts
+                                </span>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                id="markAllReadButton"
+                            >
+                                Mark all read
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            id="notificationList"
+                            class="notification-list"
+                        >
+
+                            <div class="notification-empty">
+
+                                <i class="bx bx-bell-off"></i>
+
+                                <p>
+                                    No new notifications
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="notifications.html"
+                            class="dropdown-footer-link"
+                        >
+
+                            View all notifications
+
+                            <i class="bx bx-right-arrow-alt"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Profile Dropdown -->
+
+                <div class="header-dropdown-wrapper">
+
+                    <button
+                        type="button"
+                        id="headerProfileButton"
+                        class="header-profile-button"
+                        aria-expanded="false"
+                    >
+
+                        <div class="header-profile-avatar">
+
+                            <img
+                                id="headerProfileImage"
+                                src="../assets/images/logo/avatars/background/avatar.jpg"
+                                alt="Office staff profile"
+                            >
+
+                            <span id="headerInitials">
+                                AO
+                            </span>
+
+                        </div>
+
+
+                        <div class="header-profile-info">
+
+                            <strong id="headerUserName">
+                                Office Staff
+                            </strong>
+
+                            <span>
+                                Alumni Office
+                            </span>
+
+                        </div>
+
+
+                        <i class="bx bx-chevron-down"></i>
+
+                    </button>
+
+
+                    <div
+                        id="profileDropdown"
+                        class="header-dropdown profile-dropdown"
+                    >
+
+                        <div class="profile-dropdown-header">
+
+                            <div class="profile-dropdown-avatar">
+
+                                <span id="profileDropdownInitials">
+                                    AO
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong id="profileDropdownName">
+                                    Alumni Office Staff
+                                </strong>
+
+                                <span id="profileDropdownEmail">
+                                    office@alumnihub.com
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-dropdown-menu">
+
+                            <a href="office-profile.html">
+
+                                <i class="bx bx-user"></i>
+
+                                My Profile
+
+                            </a>
+
+
+                            <a href="settings.html">
+
+                                <i class="bx bx-cog"></i>
+
+                                Settings
+
+                            </a>
+
+
+                            <button
+                                type="button"
+                                id="profileLogoutButton"
+                            >
+
+                                <i class="bx bx-log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE BODY
+        ================================================== -->
+
+        <div class="page-container">
+
+
+            <!-- Page Introduction -->
+
+            <section class="page-introduction">
+
+                <div>
+
+                    <div class="page-breadcrumb">
+
+                        <a href="office-dashboard.html">
+                            Dashboard
+                        </a>
+
+                        <i class="bx bx-chevron-right"></i>
+
+                        <span>
+                            Alumni Records
+                        </span>
+
+                    </div>
+
+
+                    <h2>
+                        Alumni Records Management
+                    </h2>
+
+                    <p>
+                        View, search, organize, and update registered alumni
+                        information.
+                    </p>
+
+                </div>
+
+
+                <div class="page-actions">
+
+                    <button
+                        type="button"
+                        id="exportRecordsButton"
+                        class="secondary-button"
+                    >
+
+                        <i class="bx bx-download"></i>
+
+                        Export Records
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="addAlumniButton"
+                        class="primary-button"
+                    >
+
+                        <i class="bx bx-user-plus"></i>
+
+                        Add Alumni
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+            ================================================== -->
+
+            <section class="summary-grid">
+
+
+                <article class="summary-card">
+
+                    <div class="summary-icon total">
+
+                        <i class="bx bx-group"></i>
+
+                    </div>
+
+
+                    <div class="summary-details">
+
+                        <span>
+                            Total Alumni
+                        </span>
+
+                        <strong id="totalAlumniCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Registered alumni records
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="summary-card">
+
+                    <div class="summary-icon verified">
+
+                        <i class="bx bx-badge-check"></i>
+
+                    </div>
+
+
+                    <div class="summary-details">
+
+                        <span>
+                            Verified Alumni
+                        </span>
+
+                        <strong id="verifiedAlumniCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Approved alumni accounts
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="summary-card">
+
+                    <div class="summary-icon employed">
+
+                        <i class="bx bx-briefcase"></i>
+
+                    </div>
+
+
+                    <div class="summary-details">
+
+                        <span>
+                            Employed Alumni
+                        </span>
+
+                        <strong id="employedAlumniCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Alumni currently employed
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="summary-card">
+
+                    <div class="summary-icon batches">
+
+                        <i class="bx bx-calendar"></i>
+
+                    </div>
+
+
+                    <div class="summary-details">
+
+                        <span>
+                            Active Batches
+                        </span>
+
+                        <strong id="activeBatchCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Batch years with records
+                        </small>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RECORDS PANEL
+            ================================================== -->
+
+            <section class="records-panel">
+
+
+                <!-- Panel Header -->
+
+                <div class="records-panel-header">
+
+                    <div>
+
+                        <h3>
+                            Alumni Directory
+                        </h3>
+
+                        <p id="recordResultText">
+                            Showing all alumni records
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="refreshRecordsButton"
+                        class="icon-text-button"
+                    >
+
+                        <i class="bx bx-refresh"></i>
+
+                        Refresh
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- Search and Filters -->
+
+                <div class="records-toolbar">
+
+
+                    <div class="records-search">
+
+                        <i class="bx bx-search"></i>
+
+                        <input
+                            type="search"
+                            id="recordSearchInput"
+                            placeholder="Search by name, email, or student number..."
+                            autocomplete="off"
+                        >
+
+                        <button
+                            type="button"
+                            id="clearSearchButton"
+                            aria-label="Clear search"
+                        >
+
+                            <i class="bx bx-x"></i>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="filter-controls">
+
+
+                        <div class="filter-field">
+
+                            <label for="programFilter">
+                                Program
+                            </label>
+
+                            <select id="programFilter">
+
+                                <option value="">
+                                    All Programs
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="filter-field">
+
+                            <label for="batchFilter">
+                                Batch Year
+                            </label>
+
+                            <select id="batchFilter">
+
+                                <option value="">
+                                    All Batches
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="filter-field">
+
+                            <label for="employmentFilter">
+                                Employment
+                            </label>
+
+                            <select id="employmentFilter">
+
+                                <option value="">
+                                    All Statuses
+                                </option>
+
+                                <option value="employed">
+                                    Employed
+                                </option>
+
+                                <option value="unemployed">
+                                    Unemployed
+                                </option>
+
+                                <option value="self-employed">
+                                    Self-employed
+                                </option>
+
+                                <option value="not-specified">
+                                    Not Specified
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="filter-field">
+
+                            <label for="verificationFilter">
+                                Verification
+                            </label>
+
+                            <select id="verificationFilter">
+
+                                <option value="">
+                                    All Statuses
+                                </option>
+
+                                <option value="verified">
+                                    Verified
+                                </option>
+
+                                <option value="pending">
+                                    Pending
+                                </option>
+
+                                <option value="rejected">
+                                    Rejected
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <button
+                            type="button"
+                            id="resetFiltersButton"
+                            class="reset-filter-button"
+                        >
+
+                            <i class="bx bx-reset"></i>
+
+                            Reset
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Bulk Action Bar -->
+
+                <div
+                    id="bulkActionBar"
+                    class="bulk-action-bar"
+                >
+
+                    <div>
+
+                        <strong id="selectedRecordCount">
+                            0
+                        </strong>
+
+                        <span>
+                            records selected
+                        </span>
+
+                    </div>
+
+
+                    <div class="bulk-action-buttons">
+
+                        <button
+                            type="button"
+                            id="bulkExportButton"
+                        >
+
+                            <i class="bx bx-export"></i>
+
+                            Export
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="clearSelectionButton"
+                        >
+
+                            <i class="bx bx-x"></i>
+
+                            Clear Selection
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Records Table -->
+
+                <div class="records-table-wrapper">
+
+                    <table class="records-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th class="checkbox-column">
+
+                                    <input
+                                        type="checkbox"
+                                        id="selectAllRecords"
+                                        aria-label="Select all records"
+                                    >
+
+                                </th>
+
+                                <th>
+                                    Alumni
+                                </th>
+
+                                <th>
+                                    Student Number
+                                </th>
+
+                                <th>
+                                    Program
+                                </th>
+
+                                <th>
+                                    Batch
+                                </th>
+
+                                <th>
+                                    Employment
+                                </th>
+
+                                <th>
+                                    Verification
+                                </th>
+
+                                <th>
+                                    Last Updated
+                                </th>
+
+                                <th class="actions-column">
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="alumniRecordsBody">
+
+
+                            <!-- Loading State -->
+
+                            <tr id="tableLoadingRow">
+
+                                <td colspan="9">
+
+                                    <div class="table-loading-state">
+
+                                        <div class="small-spinner"></div>
+
+                                        <p>
+                                            Loading alumni records...
+                                        </p>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- Empty State -->
+
+                <div
+                    id="recordsEmptyState"
+                    class="records-empty-state"
+                >
+
+                    <div class="empty-state-icon">
+
+                        <i class="bx bx-search-alt"></i>
+
+                    </div>
+
+                    <h3>
+                        No alumni records found
+                    </h3>
+
+                    <p>
+                        Try changing your search keyword or selected filters.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="emptyStateResetButton"
+                        class="secondary-button"
+                    >
+
+                        <i class="bx bx-reset"></i>
+
+                        Reset Filters
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- Pagination -->
+
+                <div class="records-pagination">
+
+                    <div class="pagination-information">
+
+                        <span>
+                            Showing
+                        </span>
+
+                        <strong id="paginationStart">
+                            0
+                        </strong>
+
+                        <span>
+                            to
+                        </span>
+
+                        <strong id="paginationEnd">
+                            0
+                        </strong>
+
+                        <span>
+                            of
+                        </span>
+
+                        <strong id="paginationTotal">
+                            0
+                        </strong>
+
+                        <span>
+                            records
+                        </span>
+
+                    </div>
+
+
+                    <div class="pagination-controls">
+
+                        <div class="rows-per-page">
+
+                            <label for="recordsPerPage">
+                                Rows:
+                            </label>
+
+                            <select id="recordsPerPage">
+
+                                <option value="5">
+                                    5
+                                </option>
+
+                                <option
+                                    value="10"
+                                    selected
+                                >
+                                    10
+                                </option>
+
+                                <option value="20">
+                                    20
+                                </option>
+
+                                <option value="50">
+                                    50
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="previousPageButton"
+                            class="pagination-button"
+                            aria-label="Previous page"
+                            disabled
+                        >
+
+                            <i class="bx bx-chevron-left"></i>
+
+                        </button>
+
+
+                        <div
+                            id="paginationNumbers"
+                            class="pagination-numbers"
+                        >
+
+                            <button
+                                type="button"
+                                class="pagination-number active"
+                            >
+                                1
+                            </button>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="nextPageButton"
+                            class="pagination-button"
+                            aria-label="Next page"
+                            disabled
+                        >
+
+                            <i class="bx bx-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="page-footer">
+
+            <p>
+
+                © <span id="currentYear"></span>
+
+                AlumniHub. Alumni Office Portal.
+
+            </p>
+
+
+            <div>
+
+                <span>
+                    Secure Alumni Records Management
+                </span>
+
+                <span class="system-status-dot"></span>
+
+                <strong>
+                    System Online
+                </strong>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         VIEW ALUMNI MODAL
+    ====================================================== -->
+
+    <div
+        id="viewAlumniModal"
+        class="modal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal="viewAlumniModal"
+        ></div>
+
+
+        <div class="modal-dialog profile-modal-dialog">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>
+                        Alumni Profile
+                    </h2>
+
+                    <p>
+                        Complete alumni information
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close-button"
+                    data-close-modal="viewAlumniModal"
+                    aria-label="Close alumni profile"
+                >
+
+                    <i class="bx bx-x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="profile-modal-banner">
+
+                    <div class="profile-modal-avatar">
+
+                        <img
+                            id="viewProfileImage"
+                                src="../assets/images/logo/avatars/background/avatar.jpg"
+                            alt="Alumni profile"
+                        >
+
+                        <span id="viewProfileInitials">
+                            AL
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="viewFullName">
+                            Alumni Name
+                        </h3>
+
+                        <p id="viewEmail">
+                            alumni@email.com
+                        </p>
+
+                        <span
+                            id="viewVerificationBadge"
+                            class="status-badge verified"
+                        >
+                            Verified
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="profile-information-grid">
+
+
+                    <div class="profile-information-section">
+
+                        <h4>
+
+                            <i class="bx bx-id-card"></i>
+
+                            Personal Information
+
+                        </h4>
+
+
+                        <div class="information-list">
+
+                            <div>
+
+                                <span>
+                                    Student Number
+                                </span>
+
+                                <strong id="viewStudentNumber">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Birth Date
+                                </span>
+
+                                <strong id="viewBirthDate">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Gender
+                                </span>
+
+                                <strong id="viewGender">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Phone Number
+                                </span>
+
+                                <strong id="viewPhoneNumber">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="full-information-row">
+
+                                <span>
+                                    Address
+                                </span>
+
+                                <strong id="viewAddress">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="profile-information-section">
+
+                        <h4>
+
+                            <i class="bx bx-book-open"></i>
+
+                            Academic Information
+
+                        </h4>
+
+
+                        <div class="information-list">
+
+                            <div>
+
+                                <span>
+                                    Program
+                                </span>
+
+                                <strong id="viewProgram">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Batch Year
+                                </span>
+
+                                <strong id="viewBatchYear">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="profile-information-section">
+
+                        <h4>
+
+                            <i class="bx bx-briefcase"></i>
+
+                            Employment Information
+
+                        </h4>
+
+
+                        <div class="information-list">
+
+                            <div>
+
+                                <span>
+                                    Employment Status
+                                </span>
+
+                                <strong id="viewEmploymentStatus">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Current Job
+                                </span>
+
+                                <strong id="viewCurrentJob">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Company
+                                </span>
+
+                                <strong id="viewCompany">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="full-information-row">
+
+                                <span>
+                                    LinkedIn Profile
+                                </span>
+
+                                <a
+                                    id="viewLinkedIn"
+                                    href="#"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Not provided
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    data-close-modal="viewAlumniModal"
+                >
+                    Close
+                </button>
+
+
+                <button
+                    type="button"
+                    id="editFromViewButton"
+                    class="primary-button"
+                >
+
+                    <i class="bx bx-edit"></i>
+
+                    Edit Record
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ADD ALUMNI MODAL
+    ====================================================== -->
+
+    <div
+        id="addAlumniModal"
+        class="modal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal="addAlumniModal"
+        ></div>
+
+
+        <div class="modal-dialog form-modal-dialog">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>
+                        Add Alumni Record
+                    </h2>
+
+                    <p>
+                        Create a new alumni account and profile
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close-button"
+                    data-close-modal="addAlumniModal"
+                    aria-label="Close add alumni form"
+                >
+
+                    <i class="bx bx-x"></i>
+
+                </button>
+
+            </div>
+
+
+            <form id="addAlumniForm">
+
+
+                <div class="modal-body">
+
+
+                    <!-- Account Information -->
+
+                    <section class="form-section">
+
+                        <div class="form-section-heading">
+
+                            <div class="form-section-icon">
+
+                                <i class="bx bx-user"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Account Information
+                                </h3>
+
+                                <p>
+                                    Basic login and personal details
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid three-columns">
+
+
+                            <div class="form-group">
+
+                                <label for="addFirstName">
+
+                                    First Name
+
+                                    <span>*</span>
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addFirstName"
+                                    name="first_name"
+                                    placeholder="Enter first name"
+                                    required
+                                >
+
+                                <small class="form-error"></small>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="addMiddleName">
+                                    Middle Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addMiddleName"
+                                    name="middle_name"
+                                    placeholder="Enter middle name"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="addLastName">
+
+                                    Last Name
+
+                                    <span>*</span>
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addLastName"
+                                    name="last_name"
+                                    placeholder="Enter last name"
+                                    required
+                                >
+
+                                <small class="form-error"></small>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="addEmail">
+
+                                    Email Address
+
+                                    <span>*</span>
+
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="addEmail"
+                                    name="email"
+                                    placeholder="alumni@email.com"
+                                    required
+                                >
+
+                                <small class="form-error"></small>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="addPassword">
+
+                                    Temporary Password
+
+                                    <span>*</span>
+
+                                </label>
+
+                                <div class="password-input-wrapper">
+
+                                    <input
+                                        type="password"
+                                        id="addPassword"
+                                        name="password"
+                                        placeholder="Minimum 8 characters"
+                                        minlength="8"
+                                        required
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="password-toggle-button"
+                                        data-password-target="addPassword"
+                                        aria-label="Show password"
+                                    >
+
+                                        <i class="bx bx-show"></i>
+
+                                    </button>
+
+                                </div>
+
+                                <small class="form-error"></small>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="addStudentNumber">
+
+                                    Student Number
+
+                                    <span>*</span>
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addStudentNumber"
+                                    name="student_number"
+                                    placeholder="Enter student number"
+                                    required
+                                >
+
+                                <small class="form-error"></small>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- Academic Information -->
+
+                    <section class="form-section">
+
+                        <div class="form-section-heading">
+
+                            <div class="form-section-icon">
+
+                                <i class="bx bx-book-open"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Academic Information
+                                </h3>
+
+                                <p>
+                                    Program and graduation details
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid two-columns">
+
+
+                            <div class="form-group">
+
+                                <label for="addProgram">
+
+                                    Program
+
+                                    <span>*</span>
+
+                                </label>
+
+                                <select
+                                    id="addProgram"
+                                    name="program"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select program
+                                    </option>
+
+                                    <option value="Bachelor of Science in Information Technology">
+                                        Bachelor of Science in Information Technology
+                                    </option>
+
+                                    <option value="Bachelor of Science in Computer Science">
+                                        Bachelor of Science in Computer Science
+                                    </option>
+
+                                    <option value="Bachelor of Science in Information Systems">
+                                        Bachelor of Science in Information Systems
+                                    </option>
+
+                                    <option value="Bachelor of Science in Business Administration">
+                                        Bachelor of Science in Business Administration
+                                    </option>
+
+                                    <option value="Bachelor of Secondary Education">
+                                        Bachelor of Secondary Education
+                                    </option>
+
+                                    <option value="Bachelor of Elementary Education">
+                                        Bachelor of Elementary Education
+                                    </option>
+
+                                    <option value="Other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                                <small class="form-error"></small>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="addBatchYear">
+
+                                    Batch Year
+
+                                    <span>*</span>
+
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="addBatchYear"
+                                    name="batch_year"
+                                    placeholder="Example: 2025"
+                                    min="1950"
+                                    max="2100"
+                                    required
+                                >
+
+                                <small class="form-error"></small>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- Contact Information -->
+
+                    <section class="form-section">
+
+                        <div class="form-section-heading">
+
+                            <div class="form-section-icon">
+
+                                <i class="bx bx-phone"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Contact Information
+                                </h3>
+
+                                <p>
+                                    Optional personal and contact details
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid three-columns">
+
+
+                            <div class="form-group">
+
+                                <label for="addBirthDate">
+                                    Birth Date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="addBirthDate"
+                                    name="birth_date"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="addGender">
+                                    Gender
+                                </label>
+
+                                <select
+                                    id="addGender"
+                                    name="gender"
+                                >
+
+                                    <option value="">
+                                        Select gender
+                                    </option>
+
+                                    <option value="Male">
+                                        Male
+                                    </option>
+
+                                    <option value="Female">
+                                        Female
+                                    </option>
+
+                                    <option value="Prefer not to say">
+                                        Prefer not to say
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="addPhoneNumber">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="addPhoneNumber"
+                                    name="phone_number"
+                                    placeholder="09XX XXX XXXX"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group full-width">
+
+                                <label for="addAddress">
+                                    Address
+                                </label>
+
+                                <textarea
+                                    id="addAddress"
+                                    name="address"
+                                    rows="3"
+                                    placeholder="Enter complete address"
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- Employment Information -->
+
+                    <section class="form-section">
+
+                        <div class="form-section-heading">
+
+                            <div class="form-section-icon">
+
+                                <i class="bx bx-briefcase"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Employment Information
+                                </h3>
+
+                                <p>
+                                    Current career and company details
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid two-columns">
+
+
+                            <div class="form-group">
+
+                                <label for="addEmploymentStatus">
+                                    Employment Status
+                                </label>
+
+                                <select
+                                    id="addEmploymentStatus"
+                                    name="employment_status"
+                                >
+
+                                    <option value="">
+                                        Select status
+                                    </option>
+
+                                    <option value="Employed">
+                                        Employed
+                                    </option>
+
+                                    <option value="Unemployed">
+                                        Unemployed
+                                    </option>
+
+                                    <option value="Self-employed">
+                                        Self-employed
+                                    </option>
+
+                                    <option value="Student">
+                                        Continuing Education
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="addCurrentJob">
+                                    Current Job
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addCurrentJob"
+                                    name="current_job"
+                                    placeholder="Example: Web Developer"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="addCompany">
+                                    Company
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addCompany"
+                                    name="company"
+                                    placeholder="Enter company name"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="addLinkedIn">
+                                    LinkedIn URL
+                                </label>
+
+                                <input
+                                    type="url"
+                                    id="addLinkedIn"
+                                    name="linkedin_url"
+                                    placeholder="https://linkedin.com/in/username"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- Verification Option -->
+
+                    <section class="form-section compact-section">
+
+                        <label class="custom-checkbox">
+
+                            <input
+                                type="checkbox"
+                                id="addVerifyImmediately"
+                                name="verify_immediately"
+                            >
+
+                            <span class="checkbox-design">
+
+                                <i class="bx bx-check"></i>
+
+                            </span>
+
+
+                            <span class="checkbox-content">
+
+                                <strong>
+                                    Verify this alumni immediately
+                                </strong>
+
+                                <small>
+                                    The account will be marked as verified
+                                    after creation.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+                    </section>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        data-close-modal="addAlumniModal"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        id="saveAlumniButton"
+                        class="primary-button"
+                    >
+
+                        <i class="bx bx-save"></i>
+
+                        Create Alumni Record
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         EDIT ALUMNI MODAL
+    ====================================================== -->
+
+    <div
+        id="editAlumniModal"
+        class="modal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal="editAlumniModal"
+        ></div>
+
+
+        <div class="modal-dialog form-modal-dialog">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>
+                        Edit Alumni Record
+                    </h2>
+
+                    <p>
+                        Update alumni personal and professional information
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close-button"
+                    data-close-modal="editAlumniModal"
+                    aria-label="Close edit alumni form"
+                >
+
+                    <i class="bx bx-x"></i>
+
+                </button>
+
+            </div>
+
+
+            <form id="editAlumniForm">
+
+                <input
+                    type="hidden"
+                    id="editUserId"
+                    name="user_id"
+                >
+
+                <input
+                    type="hidden"
+                    id="editProfileId"
+                    name="profile_id"
+                >
+
+
+                <div class="modal-body">
+
+
+                    <section class="form-section">
+
+                        <div class="form-section-heading">
+
+                            <div class="form-section-icon">
+
+                                <i class="bx bx-user"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Personal Information
+                                </h3>
+
+                                <p>
+                                    Update the alumni's basic information
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid three-columns">
+
+
+                            <div class="form-group">
+
+                                <label for="editFirstName">
+
+                                    First Name
+
+                                    <span>*</span>
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="editFirstName"
+                                    name="first_name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="editMiddleName">
+                                    Middle Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="editMiddleName"
+                                    name="middle_name"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="editLastName">
+
+                                    Last Name
+
+                                    <span>*</span>
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="editLastName"
+                                    name="last_name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="editEmail">
+
+                                    Email Address
+
+                                    <span>*</span>
+
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="editEmail"
+                                    name="email"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="editStudentNumber">
+
+                                    Student Number
+
+                                    <span>*</span>
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="editStudentNumber"
+                                    name="student_number"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="editBirthDate">
+                                    Birth Date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="editBirthDate"
+                                    name="birth_date"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="editGender">
+                                    Gender
+                                </label>
+
+                                <select
+                                    id="editGender"
+                                    name="gender"
+                                >
+
+                                    <option value="">
+                                        Select gender
+                                    </option>
+
+                                    <option value="Male">
+                                        Male
+                                    </option>
+
+                                    <option value="Female">
+                                        Female
+                                    </option>
+
+                                    <option value="Prefer not to say">
+                                        Prefer not to say
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="editPhoneNumber">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="editPhoneNumber"
+                                    name="phone_number"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group full-width">
+
+                                <label for="editAddress">
+                                    Address
+                                </label>
+
+                                <textarea
+                                    id="editAddress"
+                                    name="address"
+                                    rows="3"
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <section class="form-section">
+
+                        <div class="form-section-heading">
+
+                            <div class="form-section-icon">
+
+                                <i class="bx bx-book-open"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Academic Information
+                                </h3>
+
+                                <p>
+                                    Update the program and batch year
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid two-columns">
+
+
+                            <div class="form-group">
+
+                                <label for="editProgram">
+
+                                    Program
+
+                                    <span>*</span>
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="editProgram"
+                                    name="program"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="editBatchYear">
+
+                                    Batch Year
+
+                                    <span>*</span>
+
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="editBatchYear"
+                                    name="batch_year"
+                                    min="1950"
+                                    max="2100"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <section class="form-section">
+
+                        <div class="form-section-heading">
+
+                            <div class="form-section-icon">
+
+                                <i class="bx bx-briefcase"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Employment Information
+                                </h3>
+
+                                <p>
+                                    Update employment and company information
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid two-columns">
+
+
+                            <div class="form-group">
+
+                                <label for="editEmploymentStatus">
+                                    Employment Status
+                                </label>
+
+                                <select
+                                    id="editEmploymentStatus"
+                                    name="employment_status"
+                                >
+
+                                    <option value="">
+                                        Select status
+                                    </option>
+
+                                    <option value="Employed">
+                                        Employed
+                                    </option>
+
+                                    <option value="Unemployed">
+                                        Unemployed
+                                    </option>
+
+                                    <option value="Self-employed">
+                                        Self-employed
+                                    </option>
+
+                                    <option value="Student">
+                                        Continuing Education
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="editCurrentJob">
+                                    Current Job
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="editCurrentJob"
+                                    name="current_job"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="editCompany">
+                                    Company
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="editCompany"
+                                    name="company"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="editLinkedIn">
+                                    LinkedIn URL
+                                </label>
+
+                                <input
+                                    type="url"
+                                    id="editLinkedIn"
+                                    name="linkedin_url"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <section class="form-section compact-section">
+
+                        <div class="form-grid two-columns">
+
+
+                            <div class="form-group">
+
+                                <label for="editVerificationStatus">
+                                    Verification Status
+                                </label>
+
+                                <select
+                                    id="editVerificationStatus"
+                                    name="verification_status"
+                                >
+
+                                    <option value="verified">
+                                        Verified
+                                    </option>
+
+                                    <option value="pending">
+                                        Pending
+                                    </option>
+
+                                    <option value="rejected">
+                                        Rejected
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="editAccountStatus">
+                                    Account Status
+                                </label>
+
+                                <select
+                                    id="editAccountStatus"
+                                    name="account_status"
+                                >
+
+                                    <option value="active">
+                                        Active
+                                    </option>
+
+                                    <option value="inactive">
+                                        Inactive
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        data-close-modal="editAlumniModal"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        id="updateAlumniButton"
+                        class="primary-button"
+                    >
+
+                        <i class="bx bx-save"></i>
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         DELETE CONFIRMATION MODAL
+    ====================================================== -->
+
+    <div
+        id="deleteAlumniModal"
+        class="modal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal="deleteAlumniModal"
+        ></div>
+
+
+        <div class="modal-dialog confirmation-modal-dialog">
+
+            <div class="confirmation-icon danger">
+
+                <i class="bx bx-trash"></i>
+
+            </div>
+
+
+            <div class="confirmation-content">
+
+                <h2>
+                    Delete Alumni Record?
+                </h2>
+
+                <p>
+
+                    You are about to delete the record of
+
+                    <strong id="deleteAlumniName">
+                        this alumni
+                    </strong>.
+
+                    This action may permanently remove their profile
+                    information.
+
+                </p>
+
+            </div>
+
+
+            <input
+                type="hidden"
+                id="deleteAlumniUserId"
+            >
+
+
+            <div class="confirmation-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    data-close-modal="deleteAlumniModal"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    id="confirmDeleteAlumniButton"
+                    class="danger-button"
+                >
+
+                    <i class="bx bx-trash"></i>
+
+                    Delete Record
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         EXPORT RECORDS MODAL
+    ====================================================== -->
+
+    <div
+        id="exportRecordsModal"
+        class="modal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal="exportRecordsModal"
+        ></div>
+
+
+        <div class="modal-dialog export-modal-dialog">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>
+                        Export Alumni Records
+                    </h2>
+
+                    <p>
+                        Select your preferred file format and record range
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close-button"
+                    data-close-modal="exportRecordsModal"
+                    aria-label="Close export dialog"
+                >
+
+                    <i class="bx bx-x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="export-options">
+
+
+                    <label class="export-option">
+
+                        <input
+                            type="radio"
+                            name="export_format"
+                            value="csv"
+                            checked
+                        >
+
+                        <span class="export-option-icon">
+
+                            <i class="bx bx-file"></i>
+
+                        </span>
+
+
+                        <span>
+
+                            <strong>
+                                CSV File
+                            </strong>
+
+                            <small>
+                                Best for spreadsheets and data analysis
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+
+                    <label class="export-option">
+
+                        <input
+                            type="radio"
+                            name="export_format"
+                            value="excel"
+                        >
+
+                        <span class="export-option-icon">
+
+                            <i class="bx bx-spreadsheet"></i>
+
+                        </span>
+
+
+                        <span>
+
+                            <strong>
+                                Excel File
+                            </strong>
+
+                            <small>
+                                Formatted workbook for Microsoft Excel
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+
+                    <label class="export-option">
+
+                        <input
+                            type="radio"
+                            name="export_format"
+                            value="pdf"
+                        >
+
+                        <span class="export-option-icon">
+
+                            <i class="bx bxs-file-pdf"></i>
+
+                        </span>
+
+
+                        <span>
+
+                            <strong>
+                                PDF Report
+                            </strong>
+
+                            <small>
+                                Printable alumni records report
+                            </small>
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="form-group export-range-field">
+
+                    <label for="exportRecordRange">
+                        Records to Export
+                    </label>
+
+                    <select id="exportRecordRange">
+
+                        <option value="filtered">
+                            Current filtered records
+                        </option>
+
+                        <option value="all">
+                            All alumni records
+                        </option>
+
+                        <option value="selected">
+                            Selected records only
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    data-close-modal="exportRecordsModal"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    id="confirmExportButton"
+                    class="primary-button"
+                >
+
+                    <i class="bx bx-download"></i>
+
+                    Export Records
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+    ====================================================== -->
+
+    <div
+        id="logoutModal"
+        class="modal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            data-close-modal="logoutModal"
+        ></div>
+
+
+        <div class="modal-dialog confirmation-modal-dialog">
+
+            <div class="confirmation-icon">
+
+                <i class="bx bx-log-out"></i>
+
+            </div>
+
+
+            <div class="confirmation-content">
+
+                <h2>
+                    Log out of AlumniHub?
+                </h2>
+
+                <p>
+                    You will need to sign in again to access the Alumni
+                    Office Portal.
+                </p>
+
+            </div>
+
+
+            <div class="confirmation-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    data-close-modal="logoutModal"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    id="confirmLogoutButton"
+                    class="danger-button"
+                >
+
+                    <i class="bx bx-log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST CONTAINER
+    ====================================================== -->
+
+    <div
+        id="toastContainer"
+        class="toast-container"
+        aria-live="polite"
+    ></div>
+
+
+
+    <!-- =====================================================
+         PAGE SCRIPT
+    ====================================================== -->
+
+    <script src="../assets/js/alumni/alumni-records.js"></script>
+    <script src="../assets/js/office-header.js"></script>
+
+</body>
+
+</html>

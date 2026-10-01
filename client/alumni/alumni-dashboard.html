@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AlumniHub Alumni Dashboard"
+    >
+
+    <title>
+        Alumni Dashboard | AlumniHub
+    </title>
+
+
+    <!-- Google Font -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Boxicons -->
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- Alumni Dashboard CSS -->
+
+    <link rel="stylesheet" href="../assets/css/alumni/alumni-dashboard.css"
+    >
+    <link rel="stylesheet" href="../assets/css/alumni/alumni-theme.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     PAGE LOADER
+========================================================== -->
+
+<div
+    class="page-loader"
+    id="pageLoader"
+>
+
+    <div class="loader-content">
+
+       <div
+    class="alumni-ams-logo"
+    style="
+        width:46px;
+        height:46px;
+        min-width:46px;
+        max-width:46px;
+        flex:0 0 46px;
+        border-radius:50%;
+        overflow:hidden;
+        background:#fff;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:0;
+        margin:0 0 14px 0;
+    "
+>
+    <img
+        src="/assets/images/logo/ams-round-logo.jpg"
+        alt="AMS Logo"
+        width="46"
+        height="46"
+        style="
+            width:46px;
+            height:46px;
+            min-width:46px;
+            max-width:46px;
+            object-fit:cover;
+            object-position:center;
+            border-radius:50%;
+            display:block;
+            margin:0;
+            padding:0;
+        "
+    >
+</div>
+
+
+        <div class="loader-spinner"></div>
+
+
+        <p>
+            Loading your alumni dashboard...
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     MOBILE SIDEBAR OVERLAY
+========================================================== -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================== -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+
+    <!-- SIDEBAR HEADER -->
+
+    <div class="sidebar-header">
+
+        <a
+            href="alumni-dashboard.html"
+            class="brand"
+        >
+
+            <div
+                class="alumni-ams-logo"
+                style="
+                    width:46px;
+                    height:46px;
+                    min-width:46px;
+                    max-width:46px;
+                    flex:0 0 46px;
+                    border-radius:50%;
+                    overflow:hidden;
+                    background:#ffffff;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    padding:0;
+                    margin:0;
+                "
+            >
+                <img
+                    src="/assets/images/logo/ams-round-logo.jpg"
+                    alt="AMS Logo"
+                    width="46"
+                    height="46"
+                    style="
+                        width:46px;
+                        height:46px;
+                        min-width:46px;
+                        max-width:46px;
+                        object-fit:cover;
+                        object-position:center;
+                        border-radius:50%;
+                        display:block;
+                        margin:0;
+                        padding:0;
+                    "
+                >
+            </div>
+
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+                    AlumniHub
+                </span>
+
+                <span class="brand-role">
+                    Alumni Portal
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <button
+            type="button"
+            class="sidebar-close"
+            id="sidebarClose"
+            aria-label="Close sidebar"
+        >
+
+            <i class="bx bx-x"></i>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ALUMNI ACCOUNT -->
+
+    <div class="alumni-account">
+
+        <div class="alumni-account-avatar">
+
+            <img
+                src="../assets/images/avatars/default-avatar.png"
+                alt="Alumni profile"
+                id="sidebarProfileImage"
+            >
+
+            <span
+                class="avatar-initials"
+                id="sidebarInitials"
+            >
+                AL
+            </span>
+
+
+            <span class="online-indicator"></span>
+
+        </div>
+
+
+        <div class="alumni-account-details">
+
+            <p
+                class="alumni-account-name"
+                id="sidebarUserName"
+            >
+                Alumni User
+            </p>
+
+
+            <p class="alumni-account-role">
+
+                <i class="bx bxs-badge-check"></i>
+
+                Verified Alumni
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SIDEBAR NAVIGATION -->
+
+    <nav class="sidebar-navigation">
+
+
+        <p class="sidebar-section-title">
+            Main Menu
+        </p>
+
+
+        <ul class="sidebar-menu">
+
+
+            <li>
+
+                <a
+                    href="alumni-dashboard.html"
+                    class="sidebar-link active" title="Dashboard"
+                    aria-current="page"
+                >
+
+                    <i class="bx bxs-dashboard"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="alumni-profile.html"
+                    class="sidebar-link" title="My Profile"
+                >
+
+                    <i class="bx bxs-user-circle"></i>
+
+                    <span>
+                        My Profile
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="alumni-events.html"
+                    class="sidebar-link" title="Events"
+                >
+
+                    <i class="bx bxs-calendar-event"></i>
+
+                    <span>
+                        Events
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="alumni-jobs.html"
+                    class="sidebar-link" title="Job Opportunities"
+                >
+
+                    <i class="bx bxs-briefcase-alt-2"></i>
+
+                    <span>
+                        Job Opportunities
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="alumni-announcements.html"
+                    class="sidebar-link" title="Announcements"
+                >
+
+                    <i class="bx bxs-megaphone"></i>
+
+                    <span>
+                        Announcements
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="alumni-directory.html"
+                    class="sidebar-link" title="Alumni Directory"
+                >
+
+                    <i class="bx bxs-group"></i>
+
+                    <span>
+                        Alumni Directory
+                    </span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+
+
+        <p class="sidebar-section-title">
+            Account
+        </p>
+
+
+        <ul class="sidebar-menu">
+
+            <li>
+
+                <a
+                    href="alumni-settings.html"
+                    class="sidebar-link" title="Settings"
+                >
+
+                    <i class="bx bxs-cog"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- LOGOUT -->
+
+    <div class="sidebar-footer">
+
+        <button
+            type="button"
+            class="logout-button"
+            id="logoutButton"
+        >
+
+            <i class="bx bx-log-out"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     APP LAYOUT
+========================================================== -->
+
+<div class="app-layout">
+
+
+    <!-- =====================================================
+         TOP HEADER
+    ====================================================== -->
+
+    <header class="top-header">
+
+
+        <div class="header-left">
+
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Collapse sidebar" aria-expanded="true"
+            >
+
+                <i class="bx bx-menu"></i>
+
+            </button>
+
+
+            <div class="header-search">
+
+                <i class="bx bx-search"></i>
+
+                <input
+                    type="search"
+                    id="globalSearch"
+                    placeholder="Search events, jobs, announcements..."
+                    autocomplete="off"
+                >
+
+                <span class="search-shortcut">
+                    Ctrl K
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="header-actions">
+
+
+            <!-- THEME -->
+
+            <button
+                type="button"
+                class="header-action-button"
+                id="themeToggle"
+                aria-label="Toggle theme"
+            >
+
+                <i
+                    class="bx bx-moon"
+                    id="themeIcon"
+                ></i>
+
+            </button>
+
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div class="notification-wrapper">
+
+                <button
+                    type="button"
+                    class="header-action-button notification-button"
+                    id="notificationButton"
+                    aria-label="Notifications"
+                >
+
+                    <i class="bx bx-bell"></i>
+
+                    <span
+                        class="notification-dot"
+                        id="notificationDot"
+                        hidden
+                    ></span>
+
+                </button>
+
+
+                <div
+                    class="notification-dropdown"
+                    id="notificationDropdown"
+                >
+
+                    <div class="notification-dropdown-header">
+
+                        <div>
+
+                            <strong>
+                                Notifications
+                            </strong>
+
+                            <span>
+                                Recent AlumniHub updates
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="notification-list"
+                        id="notificationList"
+                    >
+
+                        <div class="notification-empty">
+
+                            <i class="bx bx-bell-off"></i>
+
+                            <p>
+                                No new notifications.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROFILE -->
+
+            <div class="header-profile-wrapper">
+
+                <button
+                    type="button"
+                    class="header-profile"
+                    id="headerProfileButton"
+                >
+
+                    <div class="header-profile-avatar">
+
+                        <img
+                            src="../assets/images/avatars/default-avatar.png"
+                            alt="Alumni profile"
+                            id="headerProfileImage"
+                        >
+
+                        <span
+                            class="avatar-initials"
+                            id="headerInitials"
+                        >
+                            AL
+                        </span>
+
+                    </div>
+
+
+                    <div class="header-profile-info">
+
+                        <span
+                            class="header-profile-name"
+                            id="headerUserName"
+                        >
+                            Alumni User
+                        </span>
+
+                        <span class="header-profile-role">
+                            Alumni
+                        </span>
+
+                    </div>
+
+
+                    <i class="bx bx-chevron-down"></i>
+
+                </button>
+
+
+                <div
+                    class="profile-dropdown"
+                    id="profileDropdown"
+                >
+
+                    <a href="alumni-profile.html">
+
+                        <i class="bx bx-user"></i>
+
+                        My Profile
+
+                    </a>
+
+
+                    <a href="alumni-settings.html">
+
+                        <i class="bx bx-cog"></i>
+
+                        Settings
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        id="profileLogoutButton"
+                    >
+
+                        <i class="bx bx-log-out"></i>
+
+                        Logout
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <!-- =====================================================
+             01 — COLLEGE ART HERO
+        ====================================================== -->
+        <section class="zine-section zine-hero" id="heroSection">
+            <div class="zine-noise" aria-hidden="true"></div>
+            <div class="hero-collage-photo hero-photo-main" aria-hidden="true"></div>
+            <div class="hero-collage-photo hero-photo-small" aria-hidden="true"></div>
+
+            <div class="paper-scrap scrap-blue" aria-hidden="true">ALUMNI<br>STORIES</div>
+            <div class="paper-scrap scrap-yellow" aria-hidden="true">KEEP<br>CONNECTED</div>
+            <div class="paper-scrap scrap-pink" aria-hidden="true">YOUR NEXT<br>CHAPTER →</div>
+
+            <div class="hero-copy">
+                <span class="zine-kicker">ALUMNIHUB · DIGITAL COLLEGE ZINE</span>
+                <h1>
+                    Your story<br>
+                    <span>continues here.</span>
+                </h1>
+                <p>
+                    Reconnect with familiar faces, discover new opportunities,
+                    and stay part of the community that helped shape your story.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="alumni-directory.html" class="zine-button zine-button-primary">
+                        <span>Find Alumni</span>
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </a>
+                    <a href="alumni-events.html" class="zine-button zine-button-paper">
+                        <span>See Events</span>
+                        <i class="bx bx-calendar-event"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-editorial-card">
+                <span class="editorial-number">01</span>
+                <strong>Once a student.<br>Always part of the story.</strong>
+                <p>AlumniHub Community</p>
+            </div>
+
+            <button class="scroll-cue" type="button" data-scroll-to="overviewSection">
+                <span>EXPLORE THE ISSUE</span>
+                <i class="bx bx-down-arrow-alt"></i>
+            </button>
+        </section>
+
+
+        <!-- =====================================================
+             02 — ALUMNI AT A GLANCE
+        ====================================================== -->
+        <section class="zine-section overview-section reveal-section" id="overviewSection">
+            <div class="section-masthead">
+                <div>
+                    <span class="section-number">02</span>
+                    <p class="zine-kicker">ALUMNI AT A GLANCE</p>
+                    <h2>Mabuhay, <span id="welcomeFirstName">Alumni</span>!</h2>
+                </div>
+
+                <div class="date-stamp">
+                    <span>TODAY</span>
+                    <strong id="currentDate">—</strong>
+                </div>
+            </div>
+
+            <div class="stats-collage">
+                <article class="zine-stat stat-yellow tilt-left">
+                    <span class="stat-icon"><i class="bx bxs-calendar-event"></i></span>
+                    <strong id="upcomingEventsCount">0</strong>
+                    <p>Upcoming Events</p>
+                    <small>Things worth showing up for.</small>
+                </article>
+
+                <article class="zine-stat stat-blue tilt-right">
+                    <span class="stat-icon"><i class="bx bxs-check-circle"></i></span>
+                    <strong id="myRsvpCount">0</strong>
+                    <p>My RSVPs</p>
+                    <small>Your saved alumni moments.</small>
+                </article>
+
+                <article class="zine-stat stat-green tilt-left-soft">
+                    <span class="stat-icon"><i class="bx bxs-briefcase"></i></span>
+                    <strong id="availableJobsCount">0</strong>
+                    <p>Open Jobs</p>
+                    <small>Possibilities for your next move.</small>
+                </article>
+
+                <article class="zine-stat stat-pink tilt-right-soft">
+                    <span class="stat-icon"><i class="bx bxs-megaphone"></i></span>
+                    <strong id="announcementCount">0</strong>
+                    <p>Announcements</p>
+                    <small>Updates from the community.</small>
+                </article>
+            </div>
+
+            <article class="profile-completion-card" id="profileCompletionCard">
+                <div class="profile-tape" aria-hidden="true"></div>
+                <div class="profile-completion-icon"><i class="bx bx-user-check"></i></div>
+                <div class="profile-completion-content">
+                    <div class="profile-completion-heading">
+                        <div>
+                            <span class="mini-label">PROFILE CHECK</span>
+                            <h3>Complete your alumni profile.</h3>
+                            <p>Keep your information current so fellow alumni and AlumniHub services can connect with you better.</p>
+                        </div>
+                        <strong id="profileCompletionPercent">0%</strong>
+                    </div>
+                    <div class="profile-progress"><span id="profileProgressBar"></span></div>
+                </div>
+                <a href="alumni-profile.html" class="zine-button zine-button-dark">
+                    Update Profile <i class="bx bx-right-arrow-alt"></i>
+                </a>
+            </article>
+        </section>
+
+
+        <!-- =====================================================
+             03 — FIND YOUR PEOPLE
+        ====================================================== -->
+        <section class="zine-section people-section reveal-section" id="peopleSection">
+            <div class="section-masthead editorial-heading">
+                <div>
+                    <span class="section-number">03</span>
+                    <p class="zine-kicker">FIND YOUR PEOPLE</p>
+                    <h2>Old classmates.<br>New connections.</h2>
+                </div>
+                <p class="section-intro">
+                    Your network did not end at graduation. Browse the alumni directory,
+                    reconnect with batchmates, and discover where your community is now.
+                </p>
+            </div>
+
+            <div class="people-collage">
+                <a href="alumni-directory.html" class="people-feature-card">
+                    <div class="people-photo"></div>
+                    <div class="people-feature-copy">
+                        <span class="scribble-label">COMMUNITY DIRECTORY</span>
+                        <h3>Who will you discover today?</h3>
+                        <p>Explore alumni profiles and reconnect across batches and programs.</p>
+                        <span class="inline-arrow">Browse Directory <i class="bx bx-right-arrow-alt"></i></span>
+                    </div>
+                </a>
+
+                <div class="people-note-stack">
+                    <a href="alumni-profile.html" class="paper-note note-white">
+                        <span class="note-icon"><i class="bx bx-id-card"></i></span>
+                        <strong>Make your profile worth finding.</strong>
+                        <p>Keep your current work, program, batch, and contact information updated.</p>
+                        <span>Open My Profile →</span>
+                    </a>
+
+                    <a href="alumni-directory.html" class="paper-note note-blue">
+                        <span class="note-icon"><i class="bx bx-search-alt-2"></i></span>
+                        <strong>Search. Reconnect. Repeat.</strong>
+                        <p>Use the Alumni Directory whenever you want to find fellow graduates.</p>
+                        <span>Start Searching →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             04 — EVENTS / CAMPUS BOARD
+        ====================================================== -->
+        <section class="zine-section events-section reveal-section" id="eventsSection">
+            <div class="section-masthead">
+                <div>
+                    <span class="section-number">04</span>
+                    <p class="zine-kicker">CAMPUS & ALUMNI EVENTS</p>
+                    <h2>What’s happening?</h2>
+                </div>
+                <a href="alumni-events.html" class="cutout-link">VIEW ALL EVENTS <i class="bx bx-right-arrow-alt"></i></a>
+            </div>
+
+            <div class="bulletin-board">
+                <div class="board-pin pin-a" aria-hidden="true"></div>
+                <div class="board-pin pin-b" aria-hidden="true"></div>
+
+                <div class="card-loading" id="eventsLoading">
+                    <div class="small-spinner"></div>
+                    <span>Pinning the latest events...</span>
+                </div>
+
+                <div class="dashboard-list event-poster-grid" id="upcomingEventsList" hidden></div>
+
+                <div class="dashboard-empty" id="eventsEmpty" hidden>
+                    <i class="bx bx-calendar-x"></i>
+                    <h3>No upcoming events yet.</h3>
+                    <p>New alumni activities will be pinned here when they are published.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             05 — CAREER CORNER
+        ====================================================== -->
+        <section class="zine-section careers-section reveal-section" id="careersSection">
+            <div class="classified-header">
+                <div>
+                    <span class="section-number">05</span>
+                    <p class="zine-kicker">CAREER CORNER</p>
+                </div>
+                <div class="classified-title">
+                    <span>THE</span>
+                    <h2>ALUMNI CLASSIFIEDS</h2>
+                    <small>Opportunities for your next chapter</small>
+                </div>
+                <a href="alumni-jobs.html" class="classified-cta">ALL JOBS →</a>
+            </div>
+
+            <div class="classified-paper">
+                <div class="classified-rule"></div>
+                <div class="card-loading" id="jobsLoading">
+                    <div class="small-spinner"></div>
+                    <span>Gathering opportunities...</span>
+                </div>
+                <div class="dashboard-list jobs-classified-grid" id="latestJobsList" hidden></div>
+                <div class="dashboard-empty" id="jobsEmpty" hidden>
+                    <i class="bx bx-briefcase-alt-2"></i>
+                    <h3>No job opportunities available.</h3>
+                    <p>Check back soon for new career opportunities.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             06 — ALUMNI BULLETIN
+        ====================================================== -->
+        <section class="zine-section announcements-section reveal-section" id="bulletinSection">
+            <div class="section-masthead editorial-heading">
+                <div>
+                    <span class="section-number">06</span>
+                    <p class="zine-kicker">ALUMNI BULLETIN</p>
+                    <h2>Notes from the community.</h2>
+                </div>
+                <a href="alumni-announcements.html" class="cutout-link cutout-link-dark">READ ALL <i class="bx bx-right-arrow-alt"></i></a>
+            </div>
+
+            <div class="announcement-wall">
+                <div class="wall-doodle doodle-one" aria-hidden="true">✦</div>
+                <div class="wall-doodle doodle-two" aria-hidden="true">↗</div>
+
+                <div class="card-loading" id="announcementsLoading">
+                    <div class="small-spinner"></div>
+                    <span>Collecting community notes...</span>
+                </div>
+                <div class="dashboard-list announcement-note-grid" id="latestAnnouncementsList" hidden></div>
+                <div class="dashboard-empty" id="announcementsEmpty" hidden>
+                    <i class="bx bx-megaphone"></i>
+                    <h3>No announcements yet.</h3>
+                    <p>Official AlumniHub updates will appear here.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             07 — STAY CONNECTED / FINALE
+        ====================================================== -->
+        <section class="zine-section finale-section reveal-section" id="finaleSection">
+            <div class="finale-collage" aria-hidden="true"></div>
+            <div class="finale-copy">
+                <span class="section-number inverse">07</span>
+                <p class="zine-kicker inverse-kicker">STAY CONNECTED</p>
+                <h2>Your college story<br>didn’t end at graduation.</h2>
+                <p>
+                    Keep showing up. Keep building connections. Keep discovering what comes next.
+                    AlumniHub is your space to stay part of the community.
+                </p>
+
+                <div class="finale-actions">
+                    <a href="alumni-directory.html" class="zine-button zine-button-yellow">Find Alumni <i class="bx bx-group"></i></a>
+                    <a href="alumni-events.html" class="zine-button zine-button-white">Explore Events <i class="bx bx-calendar-event"></i></a>
+                    <a href="alumni-jobs.html" class="zine-button zine-button-white">Find Jobs <i class="bx bx-briefcase"></i></a>
+                    <a href="alumni-announcements.html" class="zine-button zine-button-white">Bulletin <i class="bx bx-megaphone"></i></a>
+                </div>
+            </div>
+
+            <div class="finale-quote-card">
+                <span>ALUMNIHUB</span>
+                <strong>RECONNECT.<br>REDISCOVER.<br>RETURN.</strong>
+                <small>Community lives beyond campus.</small>
+            </div>
+        </section>
+
+        <footer class="page-footer zine-footer">
+            <span>© <span id="currentYear"></span> AlumniHub</span>
+            <span><span class="status-dot"></span> Alumni Portal · Connected</span>
+        </footer>
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     LOGOUT MODAL
+========================================================== -->
+
+<div
+    class="modal"
+    id="logoutModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal-backdrop"
+        data-close-modal="logoutModal"
+    ></div>
+
+
+    <div class="modal-dialog confirmation-modal-dialog">
+
+        <div class="modal-icon danger">
+
+            <i class="bx bx-log-out"></i>
+
+        </div>
+
+
+        <h2>
+            Log out of AlumniHub?
+        </h2>
+
+
+        <p>
+            You will need to sign in again to access your Alumni Portal.
+        </p>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="button button-secondary"
+                data-close-modal="logoutModal"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                class="button button-danger"
+                id="confirmLogoutButton"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TOASTS
+========================================================== -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+></div>
+
+
+
+<!-- =========================================================
+     ALUMNI DASHBOARD JAVASCRIPT
+========================================================== -->
+
+<script src="../assets/js/alumni/alumni-dashboard.js"></script>
+
+
+</body>
+
+</html>

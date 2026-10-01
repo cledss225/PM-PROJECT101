@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AlumniHub Office Account Verification Monitoring"
+    >
+
+    <title>
+        Account Verification | AlumniHub Office
+    </title>
+
+
+    <!-- Google Font -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Boxicons -->
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- Office Account Verification CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/office-account-verification.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- Mobile Sidebar Overlay -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- Sidebar -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="sidebar-header">
+
+            <a
+                href="office-dashboard.html"
+                class="brand"
+            >
+
+                <div
+    class="office-ams-logo"
+    style="
+        width:46px;
+        height:46px;
+        min-width:46px;
+        flex:0 0 46px;
+        border-radius:50%;
+        overflow:hidden;
+        background:#fff;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    "
+>
+    <img
+        src="/assets/images/logo/ams-round-logo.jpg"
+        alt="AMS Logo"
+        style="
+            width:46px;
+            height:46px;
+            min-width:46px;
+            max-width:46px;
+            object-fit:cover;
+            object-position:center;
+            border-radius:50%;
+            display:block;
+            margin:0;
+            padding:0;
+        "
+    >
+</div>
+
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        AlumniHub
+                    </span>
+
+                    <span class="brand-role">
+                        Office Portal
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <button
+                type="button"
+                class="sidebar-close"
+                id="sidebarClose"
+                aria-label="Close sidebar"
+            >
+
+                <i class="bx bx-x"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- Office Account -->
+
+        <div class="office-account">
+
+            <div class="office-account-avatar">
+
+                <img
+                    src="../assets/images/logo/avatars/background/avatar.jpg"
+                    alt="Office staff profile"
+                    id="sidebarProfileImage"
+                    onerror="this.style.display='none'; document.getElementById('sidebarInitials').style.display='flex';"
+                >
+
+                <span
+                    class="avatar-initials"
+                    id="sidebarInitials"
+                >
+                    AO
+                </span>
+
+                <span class="online-indicator"></span>
+
+            </div>
+
+
+            <div class="office-account-details">
+
+                <p
+                    class="office-account-name"
+                    id="sidebarUserName"
+                >
+                    Alumni Office Staff
+                </p>
+
+                <p class="office-account-role">
+
+                    <i class="bx bx-shield-quarter"></i>
+
+                    Alumni Affairs Office
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav
+            class="sidebar-navigation"
+            aria-label="Office portal navigation"
+        >
+
+            <p class="sidebar-section-title">
+                Main Menu
+            </p>
+
+
+            <ul class="sidebar-menu">
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="office-dashboard.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class="bx bxs-dashboard"></i>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="alumni-records.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class="bx bxs-user-detail"></i>
+
+                        <span>
+                            Alumni Records
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="account-verification.html"
+                        class="sidebar-link active"
+                        aria-current="page"
+                    >
+
+                        <i class="bx bxs-user-check"></i>
+
+                        <span>
+                            Account Verification
+                        </span>
+
+                        <span
+                            class="menu-badge"
+                            id="verificationMenuBadge"
+                        >
+                            0
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="office-events.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class="bx bxs-calendar-event"></i>
+
+                        <span>
+                            Events Management
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="jobs.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class="bx bxs-briefcase-alt-2"></i>
+
+                        <span>
+                            Job Opportunities
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="office-announcements.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class="bx bxs-megaphone"></i>
+
+                        <span>
+                            Announcements
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="office-reports.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class="bx bxs-report"></i>
+
+                        <span>
+                            Reports
+                        </span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+        
+
+
+            <p class="sidebar-section-title">
+                Account
+            </p>
+
+
+            <ul class="sidebar-menu">
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="office-profile.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class="bx bxs-user-circle"></i>
+
+                        <span>
+                            Profile
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item">
+
+                    <a
+                        href="office-settings.html"
+                        class="sidebar-link"
+                    >
+
+                        <i class="bx bxs-cog"></i>
+
+                        <span>
+                            Settings
+                        </span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- Sidebar Footer -->
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+
+                <i class="bx bx-log-out"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main Application -->
+
+    <div class="app-layout">
+
+        <!-- Top Header -->
+
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open sidebar"
+                >
+
+                    <i class="bx bx-menu"></i>
+
+                </button>
+
+
+                <div class="header-search">
+
+                    <i class="bx bx-search"></i>
+
+                    <input
+                        type="search"
+                        id="globalSearch"
+                        placeholder="Search account verification..."
+                        aria-label="Search account verification"
+                    >
+
+                    <span class="search-shortcut">
+                        Ctrl K
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <!-- Theme Toggle -->
+
+                <button
+                    type="button"
+                    class="header-action-button theme-toggle"
+                    id="themeToggle"
+                    aria-label="Change theme"
+                    title="Change theme"
+                >
+
+                    <i
+                        class="bx bx-moon"
+                        id="themeIcon"
+                    ></i>
+
+                </button>
+
+
+                <!-- Notification -->
+
+                <div class="notification-wrapper">
+
+                    <button
+                        type="button"
+                        class="header-action-button notification-button"
+                        id="notificationButton"
+                        aria-label="View notifications"
+                        aria-expanded="false"
+                    >
+
+                        <i class="bx bx-bell"></i>
+
+                        <span
+                            class="notification-dot"
+                            id="notificationDot"
+                        ></span>
+
+                    </button>
+
+
+                    <div
+                        class="notification-dropdown"
+                        id="notificationDropdown"
+                    >
+
+                        <div class="notification-header">
+
+                            <div>
+
+                                <h3>
+                                    Notifications
+                                </h3>
+
+                                <p>
+                                    Verification updates
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                id="markAllReadButton"
+                            >
+                                Mark all read
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="notification-list"
+                            id="notificationList"
+                        >
+
+                            <div class="notification-empty">
+
+                                <i class="bx bx-bell-off"></i>
+
+                                <p>
+                                    No new notifications
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="account-verification.html"
+                            class="notification-footer"
+                        >
+                            View verification records
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Header Profile -->
+
+                <div class="header-profile-wrapper">
+
+                    <button
+                        type="button"
+                        class="header-profile"
+                        id="headerProfileButton"
+                        aria-expanded="false"
+                    >
+
+                        <div class="header-profile-avatar">
+
+                            <img
+                                src="../assets/images/logo/avatars/background/avatar.jpg"
+                                alt="Office staff"
+                                id="headerProfileImage"
+                                onerror="this.style.display='none'; document.getElementById('headerInitials').style.display='flex';"
+                            >
+
+                            <span
+                                class="avatar-initials"
+                                id="headerInitials"
+                            >
+                                AO
+                            </span>
+
+                        </div>
+
+
+                        <div class="header-profile-info">
+
+                            <span
+                                class="header-profile-name"
+                                id="headerUserName"
+                            >
+                                Office Staff
+                            </span>
+
+                            <span class="header-profile-role">
+                                Alumni Office
+                            </span>
+
+                        </div>
+
+
+                        <i class="bx bx-chevron-down"></i>
+
+                    </button>
+
+
+                    <div
+                        class="profile-dropdown"
+                        id="profileDropdown"
+                    >
+
+                        <a href="office-profile.html">
+
+                            <i class="bx bx-user"></i>
+
+                            My Profile
+
+                        </a>
+
+
+                        <a href="settings.html">
+
+                            <i class="bx bx-cog"></i>
+
+                            Settings
+
+                        </a>
+
+
+                        <div class="dropdown-divider"></div>
+
+
+                        <button
+                            type="button"
+                            id="profileLogoutButton"
+                        >
+
+                            <i class="bx bx-log-out"></i>
+
+                            Logout
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Main Content -->
+
+        <main class="main-content">
+
+            <!-- Page Header -->
+
+            <section class="page-header">
+
+                <div class="page-heading">
+
+                    <div class="page-heading-icon">
+
+                        <i class="bx bxs-user-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="page-eyebrow">
+                            Alumni Office
+                        </p>
+
+                        <h1>
+                            Account Verification
+                        </h1>
+
+                        <p class="page-description">
+                            Monitor the verification status of registered
+                            alumni accounts.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="page-header-actions">
+
+                    <button
+                        type="button"
+                        class="button button-secondary"
+                        id="refreshButton"
+                    >
+
+                        <i class="bx bx-refresh"></i>
+
+                        Refresh
+
+                    </button>
+
+
+                    <a
+                        href="alumni-records.html"
+                        class="button button-primary"
+                    >
+
+                        <i class="bx bx-user-plus"></i>
+
+                        Add Alumni
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- Information Banner -->
+
+            <section class="information-banner">
+
+                <div class="information-banner-icon">
+
+                    <i class="bx bx-info-circle"></i>
+
+                </div>
+
+
+                <div class="information-banner-content">
+
+                    <h2>
+                        Verification Monitoring
+                    </h2>
+
+                    <p>
+                        The Alumni Office can monitor account statuses.
+                        Final approval and rejection are handled by the
+                        system administrator.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Summary Cards -->
+
+            <section
+                class="summary-grid"
+                aria-label="Account verification summary"
+            >
+
+                <article class="summary-card summary-pending">
+
+                    <div class="summary-card-icon">
+
+                        <i class="bx bx-time-five"></i>
+
+                    </div>
+
+
+                    <div class="summary-card-content">
+
+                        <p>
+                            Pending Accounts
+                        </p>
+
+                        <h2 id="pendingCount">
+                            0
+                        </h2>
+
+                        <span>
+                            Waiting for administrator review
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card summary-verified">
+
+                    <div class="summary-card-icon">
+
+                        <i class="bx bx-check-shield"></i>
+
+                    </div>
+
+
+                    <div class="summary-card-content">
+
+                        <p>
+                            Verified Accounts
+                        </p>
+
+                        <h2 id="verifiedCount">
+                            0
+                        </h2>
+
+                        <span>
+                            Successfully verified alumni
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card summary-rejected">
+
+                    <div class="summary-card-icon">
+
+                        <i class="bx bx-user-x"></i>
+
+                    </div>
+
+
+                    <div class="summary-card-content">
+
+                        <p>
+                            Rejected Accounts
+                        </p>
+
+                        <h2 id="rejectedCount">
+                            0
+                        </h2>
+
+                        <span>
+                            Accounts requiring correction
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card summary-total">
+
+                    <div class="summary-card-icon">
+
+                        <i class="bx bx-group"></i>
+
+                    </div>
+
+
+                    <div class="summary-card-content">
+
+                        <p>
+                            Total Records
+                        </p>
+
+                        <h2 id="totalCount">
+                            0
+                        </h2>
+
+                        <span>
+                            All verification records
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- Verification Records Card -->
+
+            <section class="verification-card">
+
+                <!-- Card Header -->
+
+                <div class="verification-card-header">
+
+                    <div>
+
+                        <h2>
+                            Alumni Verification Records
+                        </h2>
+
+                        <p>
+                            View and monitor account verification progress.
+                        </p>
+
+                    </div>
+
+
+                    <div class="record-result-count">
+
+                        <span id="resultCount">
+                            0
+                        </span>
+
+                        records found
+
+                    </div>
+
+                </div>
+
+
+                <!-- Filters -->
+
+                <div class="verification-filters">
+
+                    <div class="filter-search">
+
+                        <i class="bx bx-search"></i>
+
+                        <input
+                            type="search"
+                            id="verificationSearch"
+                            placeholder="Search name, email, or student number..."
+                            aria-label="Search verification records"
+                        >
+
+                        <button
+                            type="button"
+                            id="clearSearchButton"
+                            aria-label="Clear search"
+                            title="Clear search"
+                            hidden
+                        >
+
+                            <i class="bx bx-x"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="statusFilter">
+                            Status
+                        </label>
+
+                        <div class="select-wrapper">
+
+                            <i class="bx bx-filter-alt"></i>
+
+                            <select id="statusFilter">
+
+                                <option value="all">
+                                    All Statuses
+                                </option>
+
+                                <option value="pending">
+                                    Pending
+                                </option>
+
+                                <option value="verified">
+                                    Verified
+                                </option>
+
+                                <option value="rejected">
+                                    Rejected
+                                </option>
+
+                            </select>
+
+                            <i class="bx bx-chevron-down select-arrow"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="programFilter">
+                            Program
+                        </label>
+
+                        <div class="select-wrapper">
+
+                            <i class="bx bx-book-open"></i>
+
+                            <select id="programFilter">
+
+                                <option value="all">
+                                    All Programs
+                                </option>
+
+                            </select>
+
+                            <i class="bx bx-chevron-down select-arrow"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="batchFilter">
+                            Batch
+                        </label>
+
+                        <div class="select-wrapper">
+
+                            <i class="bx bx-calendar"></i>
+
+                            <select id="batchFilter">
+
+                                <option value="all">
+                                    All Batches
+                                </option>
+
+                            </select>
+
+                            <i class="bx bx-chevron-down select-arrow"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="reset-filter-button"
+                        id="resetFiltersButton"
+                    >
+
+                        <i class="bx bx-reset"></i>
+
+                        Reset
+
+                    </button>
+
+                </div>
+
+
+                <!-- Loading State -->
+
+                <div
+                    class="verification-loading"
+                    id="verificationLoading"
+                >
+
+                    <div class="loading-spinner"></div>
+
+                    <h3>
+                        Loading verification records
+                    </h3>
+
+                    <p>
+                        Please wait while we retrieve the latest data.
+                    </p>
+
+                </div>
+
+
+                <!-- Error State -->
+
+                <div
+                    class="verification-state"
+                    id="verificationErrorState"
+                    hidden
+                >
+
+                    <div class="state-icon error">
+
+                        <i class="bx bx-error-circle"></i>
+
+                    </div>
+
+                    <h3>
+                        Unable to load records
+                    </h3>
+
+                    <p id="verificationErrorMessage">
+                        Something went wrong while retrieving account records.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        id="retryButton"
+                    >
+
+                        <i class="bx bx-refresh"></i>
+
+                        Try Again
+
+                    </button>
+
+                </div>
+
+
+                <!-- Empty State -->
+
+                <div
+                    class="verification-state"
+                    id="verificationEmptyState"
+                    hidden
+                >
+
+                    <div class="state-icon empty">
+
+                        <i class="bx bx-user-check"></i>
+
+                    </div>
+
+                    <h3>
+                        No verification records found
+                    </h3>
+
+                    <p>
+                        There are currently no accounts matching the
+                        selected filters.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="button button-secondary"
+                        id="clearFiltersButton"
+                    >
+
+                        <i class="bx bx-reset"></i>
+
+                        Clear Filters
+
+                    </button>
+
+                </div>
+
+
+                <!-- Verification Table -->
+
+                <div
+                    class="verification-table-wrapper"
+                    id="verificationTableWrapper"
+                    hidden
+                >
+
+                    <table class="verification-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Alumni
+                                </th>
+
+                                <th>
+                                    Student Number
+                                </th>
+
+                                <th>
+                                    Program
+                                </th>
+
+                                <th>
+                                    Batch
+                                </th>
+
+                                <th>
+                                    Registered
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th class="table-action-heading">
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="verificationTableBody"></tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- Mobile Record List -->
+
+                <div
+                    class="verification-mobile-list"
+                    id="verificationMobileList"
+                    hidden
+                ></div>
+
+
+                <!-- Pagination -->
+
+                <div
+                    class="pagination-container"
+                    id="paginationContainer"
+                    hidden
+                >
+
+                    <div class="pagination-information">
+
+                        Showing
+
+                        <strong id="paginationStart">
+                            0
+                        </strong>
+
+                        to
+
+                        <strong id="paginationEnd">
+                            0
+                        </strong>
+
+                        of
+
+                        <strong id="paginationTotal">
+                            0
+                        </strong>
+
+                        records
+
+                    </div>
+
+
+                    <div class="pagination-controls">
+
+                        <button
+                            type="button"
+                            class="pagination-button"
+                            id="previousPageButton"
+                            disabled
+                        >
+
+                            <i class="bx bx-chevron-left"></i>
+
+                            Previous
+
+                        </button>
+
+
+                        <div
+                            class="pagination-pages"
+                            id="paginationPages"
+                        ></div>
+
+
+                        <button
+                            type="button"
+                            class="pagination-button"
+                            id="nextPageButton"
+                            disabled
+                        >
+
+                            Next
+
+                            <i class="bx bx-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Footer -->
+
+            <footer class="page-footer">
+
+                <p>
+
+                    © <span id="currentYear"></span>
+
+                    AlumniHub. Alumni Affairs Office Portal.
+
+                </p>
+
+
+                <div>
+
+                    <span>
+
+                        <i class="bx bx-shield-quarter"></i>
+
+                        Read-Only Verification Monitoring
+
+                    </span>
+
+
+                    <span class="system-status">
+
+                        <span class="status-dot"></span>
+
+                        System Online
+
+                    </span>
+
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- Account Details Modal -->
+
+    <div
+        class="modal"
+        id="detailsModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close-modal="detailsModal"
+        ></div>
+
+
+        <div
+            class="modal-dialog details-modal-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="detailsModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="modal-eyebrow">
+                        Verification Record
+                    </p>
+
+                    <h2 id="detailsModalTitle">
+                        Alumni Account Details
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close-button"
+                    data-close-modal="detailsModal"
+                    aria-label="Close details modal"
+                >
+
+                    <i class="bx bx-x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <!-- Profile Summary -->
+
+                <div class="details-profile-summary">
+
+                    <div class="details-avatar">
+
+                        <img
+                            src="../assets/images/avatars/default-avatar.png"
+                            alt="Alumni profile"
+                            id="detailsProfileImage"
+                        >
+
+                        <span
+                            class="details-avatar-initials"
+                            id="detailsAvatarInitials"
+                        >
+                            AL
+                        </span>
+
+                    </div>
+
+
+                    <div class="details-profile-information">
+
+                        <h3 id="detailsFullName">
+                            Alumni Name
+                        </h3>
+
+                        <p id="detailsEmail">
+                            alumni@email.com
+                        </p>
+
+                        <span
+                            class="status-badge status-pending"
+                            id="detailsStatusBadge"
+                        >
+
+                            <i class="bx bx-time-five"></i>
+
+                            Pending
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Verification Message -->
+
+                <div
+                    class="verification-status-message pending"
+                    id="verificationStatusMessage"
+                >
+
+                    <div class="verification-message-icon">
+
+                        <i
+                            class="bx bx-time-five"
+                            id="verificationMessageIcon"
+                        ></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="verificationMessageTitle">
+                            Waiting for Administrator Review
+                        </h3>
+
+                        <p id="verificationMessageText">
+                            This account is currently pending final
+                            verification from the system administrator.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Personal Information -->
+
+                <section class="details-section">
+
+                    <div class="details-section-heading">
+
+                        <i class="bx bx-user"></i>
+
+                        <div>
+
+                            <h3>
+                                Personal Information
+                            </h3>
+
+                            <p>
+                                Basic alumni account details
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="details-information-grid">
+
+                        <div class="details-information-item">
+
+                            <span>
+                                Student Number
+                            </span>
+
+                            <strong id="detailsStudentNumber">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="details-information-item">
+
+                            <span>
+                                Email Address
+                            </span>
+
+                            <strong id="detailsEmailAddress">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="details-information-item">
+
+                            <span>
+                                Phone Number
+                            </span>
+
+                            <strong id="detailsPhoneNumber">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="details-information-item">
+
+                            <span>
+                                Gender
+                            </span>
+
+                            <strong id="detailsGender">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="details-information-item full-width">
+
+                            <span>
+                                Address
+                            </span>
+
+                            <strong id="detailsAddress">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Academic Information -->
+
+                <section class="details-section">
+
+                    <div class="details-section-heading">
+
+                        <i class="bx bxs-graduation"></i>
+
+                        <div>
+
+                            <h3>
+                                Academic Information
+                            </h3>
+
+                            <p>
+                                Graduation and program details
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="details-information-grid">
+
+                        <div class="details-information-item">
+
+                            <span>
+                                Program
+                            </span>
+
+                            <strong id="detailsProgram">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="details-information-item">
+
+                            <span>
+                                Batch Year
+                            </span>
+
+                            <strong id="detailsBatchYear">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Employment Information -->
+
+                <section class="details-section">
+
+                    <div class="details-section-heading">
+
+                        <i class="bx bx-briefcase"></i>
+
+                        <div>
+
+                            <h3>
+                                Employment Information
+                            </h3>
+
+                            <p>
+                                Current professional information
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="details-information-grid">
+
+                        <div class="details-information-item">
+
+                            <span>
+                                Current Job
+                            </span>
+
+                            <strong id="detailsCurrentJob">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="details-information-item">
+
+                            <span>
+                                Company
+                            </span>
+
+                            <strong id="detailsCompany">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="details-information-item full-width">
+
+                            <span>
+                                LinkedIn Profile
+                            </span>
+
+                            <a
+                                href="#"
+                                id="detailsLinkedIn"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Not provided
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Verification Information -->
+
+                <section class="details-section">
+
+                    <div class="details-section-heading">
+
+                        <i class="bx bx-shield-quarter"></i>
+
+                        <div>
+
+                            <h3>
+                                Verification Information
+                            </h3>
+
+                            <p>
+                                Current account review status
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="details-information-grid">
+
+                        <div class="details-information-item">
+
+                            <span>
+                                Account Created
+                            </span>
+
+                            <strong id="detailsCreatedAt">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="details-information-item">
+
+                            <span>
+                                Last Updated
+                            </span>
+
+                            <strong id="detailsUpdatedAt">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div
+                            class="details-information-item full-width"
+                            id="rejectionReasonContainer"
+                            hidden
+                        >
+
+                            <span>
+                                Rejection Reason
+                            </span>
+
+                            <strong id="detailsRejectionReason">
+                                No reason provided
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    data-close-modal="detailsModal"
+                >
+
+                    Close
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Logout Confirmation Modal -->
+
+    <div
+        class="modal"
+        id="logoutModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close-modal="logoutModal"
+        ></div>
+
+
+        <div
+            class="modal-dialog logout-modal-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-icon danger">
+
+                <i class="bx bx-log-out"></i>
+
+            </div>
+
+
+            <h2 id="logoutModalTitle">
+                Log out of AlumniHub?
+            </h2>
+
+
+            <p>
+                You will need to sign in again to access the
+                Alumni Office Portal.
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    data-close-modal="logoutModal"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    class="button button-danger"
+                    id="confirmLogoutButton"
+                >
+                    Yes, Log Out
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Page Loader -->
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+    >
+
+        <div class="loader-content">
+
+            <div class="loader-logo">
+
+                <i class="bx bxs-graduation"></i>
+
+            </div>
+
+
+            <div class="loader-spinner"></div>
+
+
+            <p>
+                Loading Account Verification...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Toast Container -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+    <!-- Office Account Verification JavaScript -->
+
+    <script src="../assets/js/office-account-verification.js"></script>
+    <script src="../assets/js/office-header.js"></script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Announcements Management | AlumniHub
+    </title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Main Office Layout -->
+    <link
+        rel="stylesheet"
+        href="../assets/css/office-layout.css"
+    >
+
+    <!-- Announcements CSS -->
+    <link
+        rel="stylesheet"
+        href="../assets/css/office-announcements.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     SIDEBAR
+========================================= -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+    <div class="sidebar-header">
+
+        <div class="brand">
+
+            <div
+    class="office-ams-logo"
+    style="
+        width:46px;
+        height:46px;
+        min-width:46px;
+        flex:0 0 46px;
+        border-radius:50%;
+        overflow:hidden;
+        background:#fff;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    "
+>
+    <img
+        src="/assets/images/logo/ams-round-logo.jpg"
+        alt="AMS Logo"
+        style="
+            width:46px;
+            height:46px;
+            min-width:46px;
+            max-width:46px;
+            object-fit:cover;
+            object-position:center;
+            border-radius:50%;
+            display:block;
+            margin:0;
+            padding:0;
+        "
+    >
+</div>
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+                    AlumniHub
+                </span>
+
+                <span class="brand-role">
+                    Alumni Office Portal
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="sidebar-close"
+            id="sidebarClose"
+            type="button"
+        >
+            <i class="bx bx-x"></i>
+        </button>
+
+    </div>
+
+
+    <!-- OFFICE ACCOUNT -->
+
+    <div class="office-account">
+
+        <div class="office-account-avatar">
+
+            <img
+                id="sidebarProfileImage"
+                src="../assets/images/logo/avatars/background/avatar.jpg"
+                alt="Profile"
+            >
+
+            <span
+                class="avatar-initials"
+                id="sidebarInitials"
+            >
+                AO
+            </span>
+
+            <span class="online-indicator"></span>
+
+        </div>
+
+
+        <div class="office-account-details">
+
+            <p
+                class="office-account-name"
+                id="sidebarUserName"
+            >
+                Alumni Office
+            </p>
+
+            <p class="office-account-role">
+
+                <i class="bx bxs-badge-check"></i>
+
+                Office Staff
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="sidebar-navigation">
+
+        <p class="sidebar-section-title">
+            Main Menu
+        </p>
+
+
+        <ul class="sidebar-menu">
+
+
+            <li>
+
+                <a
+                    href="office-dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-dashboard"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="alumni-records.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-user-detail"></i>
+
+                    <span>
+                        Alumni Records
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="account-verification.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-user-check"></i>
+
+                    <span>
+                        Account Verification
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="events.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-calendar-event"></i>
+
+                    <span>
+                        Events Management
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="office-jobs.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-briefcase-alt-2"></i>
+
+                    <span>
+                        Job Opportunities
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="office-announcements.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i class="bx bxs-megaphone"></i>
+
+                    <span>
+                        Announcements
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="office-reports.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-report"></i>
+
+                    <span>
+                        Reports
+                    </span>
+
+                </a>
+
+            </li>
+
+
+        </ul>
+
+
+        <p class="sidebar-section-title">
+            Account
+        </p>
+
+
+        <ul class="sidebar-menu">
+
+
+            <li>
+
+                <a
+                    href="office-profile.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-user-circle"></i>
+
+                    <span>
+                        My Profile
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="office-settings.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="bx bxs-cog"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </li>
+
+
+        </ul>
+
+    </nav>
+
+
+    <div class="sidebar-footer">
+
+        <button
+            class="logout-button"
+            id="logoutButton"
+            type="button"
+        >
+
+            <i class="bx bx-log-out"></i>
+
+            <span>
+                Log out
+            </span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+
+<!-- =========================================
+     APP
+========================================= -->
+
+<div class="app-layout">
+
+
+    <!-- HEADER -->
+
+    <header class="top-header">
+
+
+        <div class="header-left">
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+            >
+
+                <i class="bx bx-menu"></i>
+
+            </button>
+
+
+            <div class="header-search">
+
+                <i class="bx bx-search"></i>
+
+                <input
+                    type="search"
+                    id="globalSearch"
+                    placeholder="Search announcements..."
+                    autocomplete="off"
+                >
+
+                <span class="search-shortcut">
+                    Ctrl K
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="header-actions">
+
+
+            <!-- THEME -->
+
+            <button
+                class="header-action-button"
+                id="themeToggle"
+                type="button"
+                title="Change theme"
+            >
+
+                <i
+                    class="bx bx-moon"
+                    id="themeIcon"
+                ></i>
+
+            </button>
+
+
+            <!-- PROFILE -->
+
+            <div class="header-profile-wrapper">
+
+
+                <button
+                    class="header-profile"
+                    id="headerProfileButton"
+                    type="button"
+                >
+
+
+                    <div class="header-profile-avatar">
+
+                        <img
+                            id="headerProfileImage"
+                            src="../assets/images/logo/avatars/background/avatar.jpg"
+                            alt="Profile"
+                        >
+
+                        <span
+                            class="avatar-initials"
+                            id="headerInitials"
+                        >
+                            AO
+                        </span>
+
+                    </div>
+
+
+                    <div class="header-profile-info">
+
+                        <span
+                            class="header-profile-name"
+                            id="headerUserName"
+                        >
+                            Alumni Office
+                        </span>
+
+                        <span class="header-profile-role">
+                            Office Staff
+                        </span>
+
+                    </div>
+
+
+                    <i class="bx bx-chevron-down"></i>
+
+
+                </button>
+
+
+
+                <div
+                    class="profile-dropdown"
+                    id="profileDropdown"
+                >
+
+
+                    <a href="office-profile.html">
+
+                        <i class="bx bx-user"></i>
+
+                        My Profile
+
+                    </a>
+
+
+                    <a href="settings.html">
+
+                        <i class="bx bx-cog"></i>
+
+                        Settings
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        id="profileLogoutButton"
+                    >
+
+                        <i class="bx bx-log-out"></i>
+
+                        Sign Out
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================= -->
+
+    <main class="main-content">
+
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-header">
+
+
+            <div class="page-heading">
+
+
+                <div class="page-heading-icon">
+
+                    <i class="bx bxs-megaphone"></i>
+
+                </div>
+
+
+                <div>
+
+                    <p class="page-eyebrow">
+                        Alumni Engagement
+                    </p>
+
+                    <h1>
+                        Announcements Management
+                    </h1>
+
+                    <p class="page-description">
+                        Create and manage announcements for the alumni community.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="page-header-actions">
+
+
+                <button
+                    class="button button-secondary"
+                    id="refreshButton"
+                    type="button"
+                >
+
+                    <i class="bx bx-refresh"></i>
+
+                    Refresh
+
+                </button>
+
+
+                <button
+                    class="button button-primary"
+                    id="createAnnouncementButton"
+                    type="button"
+                >
+
+                    <i class="bx bx-plus"></i>
+
+                    Create Announcement
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- INFO -->
+
+        <section class="information-banner">
+
+
+            <i class="bx bx-info-circle"></i>
+
+
+            <div>
+
+                <h2>
+                    Announcement Publishing
+                </h2>
+
+                <p>
+                    Publish important news, alumni updates,
+                    reminders, event notices, and other
+                    information intended for the alumni community.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             SUMMARY
+        ========================================= -->
+
+        <section class="summary-grid">
+
+
+            <article class="summary-card">
+
+                <i class="bx bxs-megaphone"></i>
+
+                <div>
+
+                    <p>
+                        Total Announcements
+                    </p>
+
+                    <h2 id="totalAnnouncementsCount">
+                        0
+                    </h2>
+
+                    <span>
+                        All records
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="summary-card summary-published">
+
+                <i class="bx bx-check-circle"></i>
+
+                <div>
+
+                    <p>
+                        Published
+                    </p>
+
+                    <h2 id="publishedAnnouncementsCount">
+                        0
+                    </h2>
+
+                    <span>
+                        Visible to alumni
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="summary-card summary-draft">
+
+                <i class="bx bx-edit-alt"></i>
+
+                <div>
+
+                    <p>
+                        Draft
+                    </p>
+
+                    <h2 id="draftAnnouncementsCount">
+                        0
+                    </h2>
+
+                    <span>
+                        Not yet published
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="summary-card summary-archived">
+
+                <i class="bx bx-archive"></i>
+
+                <div>
+
+                    <p>
+                        Archived
+                    </p>
+
+                    <h2 id="archivedAnnouncementsCount">
+                        0
+                    </h2>
+
+                    <span>
+                        Archived records
+                    </span>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             ANNOUNCEMENTS
+        ========================================= -->
+
+        <section class="announcements-card">
+
+
+            <div class="announcements-card-header">
+
+
+                <div>
+
+                    <h2>
+                        Announcement Records
+                    </h2>
+
+                    <p>
+                        Manage announcements published by the Alumni Office.
+                    </p>
+
+                </div>
+
+
+                <div class="record-result-count">
+
+                    <span id="resultCount">
+                        0
+                    </span>
+
+                    results
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- FILTERS -->
+
+            <div class="announcements-filters">
+
+
+                <div class="filter-search">
+
+
+                    <i class="bx bx-search"></i>
+
+
+                    <input
+                        type="search"
+                        id="announcementSearch"
+                        placeholder="Search title, category, or content..."
+                    >
+
+
+                    <button
+                        id="clearSearchButton"
+                        type="button"
+                        hidden
+                    >
+
+                        <i class="bx bx-x"></i>
+
+                    </button>
+
+
+                </div>
+
+
+
+                <div class="filter-group">
+
+                    <label for="statusFilter">
+                        Status
+                    </label>
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="published">
+                            Published
+                        </option>
+
+                        <option value="draft">
+                            Draft
+                        </option>
+
+                        <option value="archived">
+                            Archived
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="filter-group">
+
+                    <label for="categoryFilter">
+                        Category
+                    </label>
+
+                    <select id="categoryFilter">
+
+                        <option value="all">
+                            All Categories
+                        </option>
+
+                        <option value="general">
+                            General
+                        </option>
+
+                        <option value="event">
+                            Event
+                        </option>
+
+                        <option value="career">
+                            Career
+                        </option>
+
+                        <option value="academic">
+                            Academic
+                        </option>
+
+                        <option value="community">
+                            Community
+                        </option>
+
+                        <option value="important">
+                            Important Notice
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <button
+                    class="reset-filter-button"
+                    id="resetFiltersButton"
+                    type="button"
+                >
+
+                    <i class="bx bx-reset"></i>
+
+                    Reset
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- LOADING -->
+
+            <div
+                class="announcements-loading"
+                id="announcementsLoading"
+            >
+
+                <div class="loading-spinner"></div>
+
+                <h3>
+                    Loading announcements
+                </h3>
+
+                <p>
+                    Please wait while the latest records are retrieved.
+                </p>
+
+            </div>
+
+
+
+            <!-- ERROR -->
+
+            <div
+                class="announcements-state"
+                id="announcementsErrorState"
+                hidden
+            >
+
+                <i class="bx bx-error-circle"></i>
+
+                <h3>
+                    Unable to load announcements
+                </h3>
+
+                <p id="announcementsErrorMessage">
+                    Something went wrong while retrieving the records.
+                </p>
+
+                <button
+                    class="button button-primary"
+                    id="retryButton"
+                    type="button"
+                >
+
+                    <i class="bx bx-refresh"></i>
+
+                    Try Again
+
+                </button>
+
+            </div>
+
+
+
+            <!-- EMPTY -->
+
+            <div
+                class="announcements-state"
+                id="announcementsEmptyState"
+                hidden
+            >
+
+                <i class="bx bxs-megaphone"></i>
+
+                <h3>
+                    No announcements found
+                </h3>
+
+                <p>
+                    Create your first announcement or adjust
+                    the current search and filters.
+                </p>
+
+                <button
+                    class="button button-primary"
+                    id="emptyCreateAnnouncementButton"
+                    type="button"
+                >
+
+                    <i class="bx bx-plus"></i>
+
+                    Create Announcement
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ANNOUNCEMENT GRID -->
+
+            <div
+                class="announcements-grid"
+                id="announcementsGrid"
+                hidden
+            ></div>
+
+
+
+            <!-- PAGINATION -->
+
+            <div
+                class="pagination-container"
+                id="paginationContainer"
+                hidden
+            >
+
+
+                <p>
+
+                    Showing
+
+                    <strong id="paginationStart">
+                        0
+                    </strong>
+
+                    –
+
+                    <strong id="paginationEnd">
+                        0
+                    </strong>
+
+                    of
+
+                    <strong id="paginationTotal">
+                        0
+                    </strong>
+
+                </p>
+
+
+                <div class="pagination-controls">
+
+
+                    <button
+                        id="previousPageButton"
+                        type="button"
+                    >
+
+                        <i class="bx bx-chevron-left"></i>
+
+                    </button>
+
+
+                    <div id="paginationPages"></div>
+
+
+                    <button
+                        id="nextPageButton"
+                        type="button"
+                    >
+
+                        <i class="bx bx-chevron-right"></i>
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <footer class="page-footer">
+
+
+            <p>
+                ©
+                <span id="currentYear"></span>
+                AlumniHub
+            </p>
+
+
+            <p>
+
+                <span class="status-dot"></span>
+
+                Alumni Office Portal
+
+            </p>
+
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =========================================
+     CREATE / EDIT ANNOUNCEMENT MODAL
+========================================= -->
+
+<div
+    class="modal"
+    id="announcementFormModal"
+    aria-hidden="true"
+>
+
+
+    <div
+        class="modal-backdrop"
+        data-close-modal="announcementFormModal"
+    ></div>
+
+
+    <div class="modal-dialog announcement-form-modal-dialog">
+
+
+        <div class="modal-header">
+
+
+            <div>
+
+                <p class="modal-eyebrow">
+                    Announcement
+                </p>
+
+                <h2 id="announcementFormModalTitle">
+                    Create Announcement
+                </h2>
+
+            </div>
+
+
+            <button
+                class="modal-close-button"
+                data-close-modal="announcementFormModal"
+                type="button"
+            >
+
+                <i class="bx bx-x"></i>
+
+            </button>
+
+
+        </div>
+
+
+
+        <form id="announcementForm">
+
+
+            <div class="modal-body">
+
+
+                <input
+                    type="hidden"
+                    id="announcementId"
+                >
+
+
+                <div class="form-grid">
+
+
+                    <!-- TITLE -->
+
+                    <div class="form-group full-width">
+
+                        <label for="announcementTitle">
+                            Announcement Title *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="announcementTitle"
+                            maxlength="180"
+                            placeholder="Enter announcement title"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="form-group">
+
+                        <label for="announcementCategory">
+                            Category *
+                        </label>
+
+                        <select
+                            id="announcementCategory"
+                            required
+                        >
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="general">
+                                General
+                            </option>
+
+                            <option value="event">
+                                Event
+                            </option>
+
+                            <option value="career">
+                                Career
+                            </option>
+
+                            <option value="academic">
+                                Academic
+                            </option>
+
+                            <option value="community">
+                                Community
+                            </option>
+
+                            <option value="important">
+                                Important Notice
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- PRIORITY -->
+
+                    <div class="form-group">
+
+                        <label for="announcementPriority">
+                            Priority
+                        </label>
+
+                        <select id="announcementPriority">
+
+                            <option value="normal">
+                                Normal
+                            </option>
+
+                            <option value="high">
+                                High
+                            </option>
+
+                            <option value="urgent">
+                                Urgent
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- AUDIENCE -->
+
+                    <div class="form-group">
+
+                        <label for="targetAudience">
+                            Target Audience *
+                        </label>
+
+                        <select
+                            id="targetAudience"
+                            required
+                        >
+
+                            <option value="all">
+                                All Alumni
+                            </option>
+
+                            <option value="specific_batch">
+                                Specific Batch
+                            </option>
+
+                            <option value="specific_program">
+                                Specific Program
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- STATUS -->
+
+                    <div class="form-group">
+
+                        <label for="announcementStatus">
+                            Status *
+                        </label>
+
+                        <select
+                            id="announcementStatus"
+                            required
+                        >
+
+                            <option value="published">
+                                Published
+                            </option>
+
+                            <option value="draft">
+                                Draft
+                            </option>
+
+                            <option value="archived">
+                                Archived
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- TARGET VALUE -->
+
+                    <div
+                        class="form-group full-width"
+                        id="targetValueGroup"
+                        hidden
+                    >
+
+                        <label for="targetValue">
+                            Target Batch / Program
+                        </label>
+
+                        <input
+                            type="text"
+                            id="targetValue"
+                            placeholder="Example: 2026 or BS Information Technology"
+                        >
+
+                    </div>
+
+
+
+                    <!-- PUBLISH DATE -->
+
+                    <div class="form-group">
+
+                        <label for="publishDate">
+                            Publish Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="publishDate"
+                        >
+
+                    </div>
+
+
+
+                    <!-- EXPIRY DATE -->
+
+                    <div class="form-group">
+
+                        <label for="expiryDate">
+                            Expiry Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="expiryDate"
+                        >
+
+                    </div>
+
+
+
+                    <!-- CONTENT -->
+
+                    <div class="form-group full-width">
+
+                        <label for="announcementContent">
+                            Announcement Content *
+                        </label>
+
+                        <textarea
+                            id="announcementContent"
+                            rows="8"
+                            placeholder="Write the announcement..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+
+                <button
+                    class="button button-secondary"
+                    data-close-modal="announcementFormModal"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    class="button button-primary"
+                    id="saveAnnouncementButton"
+                    type="submit"
+                >
+
+                    <i class="bx bx-save"></i>
+
+                    <span id="saveAnnouncementButtonText">
+                        Publish Announcement
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================
+     DETAILS MODAL
+========================================= -->
+
+<div
+    class="modal"
+    id="announcementDetailsModal"
+    aria-hidden="true"
+>
+
+
+    <div
+        class="modal-backdrop"
+        data-close-modal="announcementDetailsModal"
+    ></div>
+
+
+    <div class="modal-dialog">
+
+
+        <div class="modal-header">
+
+
+            <div>
+
+                <p class="modal-eyebrow">
+                    Announcement Details
+                </p>
+
+                <h2 id="detailsAnnouncementTitle">
+                    Announcement
+                </h2>
+
+            </div>
+
+
+            <button
+                class="modal-close-button"
+                data-close-modal="announcementDetailsModal"
+                type="button"
+            >
+
+                <i class="bx bx-x"></i>
+
+            </button>
+
+
+        </div>
+
+
+
+        <div class="modal-body">
+
+
+            <div class="announcement-details-header">
+
+
+                <div class="announcement-details-icon">
+
+                    <i class="bx bxs-megaphone"></i>
+
+                </div>
+
+
+                <div>
+
+
+                    <span
+                        class="announcement-status-badge"
+                        id="detailsAnnouncementStatus"
+                    >
+                        Published
+                    </span>
+
+
+                    <h3 id="detailsAnnouncementCategory">
+                        General
+                    </h3>
+
+
+                    <p id="detailsAnnouncementPriority">
+                        Normal Priority
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div
+                class="announcement-details-content"
+                id="detailsAnnouncementContent"
+            >
+                —
+            </div>
+
+
+
+            <div class="details-information-grid">
+
+
+                <div>
+
+                    <span>
+                        Target Audience
+                    </span>
+
+                    <strong id="detailsTargetAudience">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Target
+                    </span>
+
+                    <strong id="detailsTargetValue">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Publish Date
+                    </span>
+
+                    <strong id="detailsPublishDate">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Expiry Date
+                    </span>
+
+                    <strong id="detailsExpiryDate">
+                        —
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="modal-footer">
+
+
+            <button
+                class="button button-secondary"
+                data-close-modal="announcementDetailsModal"
+                type="button"
+            >
+                Close
+            </button>
+
+
+            <button
+                class="button button-primary"
+                id="editAnnouncementFromDetailsButton"
+                type="button"
+            >
+
+                <i class="bx bx-edit"></i>
+
+                Edit Announcement
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================
+     DELETE MODAL
+========================================= -->
+
+<div
+    class="modal"
+    id="deleteAnnouncementModal"
+    aria-hidden="true"
+>
+
+
+    <div
+        class="modal-backdrop"
+        data-close-modal="deleteAnnouncementModal"
+    ></div>
+
+
+    <div class="modal-dialog confirmation-modal-dialog">
+
+
+        <div class="modal-icon danger">
+
+            <i class="bx bx-trash"></i>
+
+        </div>
+
+
+        <h2>
+            Delete Announcement?
+        </h2>
+
+
+        <p>
+
+            Are you sure you want to delete
+
+            <strong id="deleteAnnouncementName">
+                this announcement
+            </strong>?
+
+            This action cannot be undone.
+
+        </p>
+
+
+        <div class="modal-actions">
+
+
+            <button
+                class="button button-secondary"
+                data-close-modal="deleteAnnouncementModal"
+                type="button"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                class="button button-danger"
+                id="confirmDeleteAnnouncementButton"
+                type="button"
+            >
+
+                <i class="bx bx-trash"></i>
+
+                Delete
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================
+     LOGOUT MODAL
+========================================= -->
+
+<div
+    class="modal"
+    id="logoutModal"
+    aria-hidden="true"
+>
+
+
+    <div
+        class="modal-backdrop"
+        data-close-modal="logoutModal"
+    ></div>
+
+
+    <div class="modal-dialog confirmation-modal-dialog">
+
+
+        <div class="modal-icon">
+
+            <i class="bx bx-log-out"></i>
+
+        </div>
+
+
+        <h2>
+            Sign Out?
+        </h2>
+
+
+        <p>
+            Are you sure you want to sign out of AlumniHub?
+        </p>
+
+
+        <div class="modal-actions">
+
+
+            <button
+                class="button button-secondary"
+                data-close-modal="logoutModal"
+                type="button"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                class="button button-primary"
+                id="confirmLogoutButton"
+                type="button"
+            >
+                Sign Out
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- PAGE LOADER -->
+
+<div
+    class="page-loader"
+    id="pageLoader"
+>
+
+    <div class="loader-content">
+
+        <div class="loader-logo">
+            <i class="bx bxs-graduation"></i>
+        </div>
+
+        <div class="loader-spinner"></div>
+
+        <p>
+            Loading AlumniHub...
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- TOAST -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+></div>
+
+
+
+<!-- JS -->
+
+<script src="../assets/js/office-announcements.js"></script>
+<script src="../assets/js/office-header.js"></script>
+
+
+</body>
+
+</html>

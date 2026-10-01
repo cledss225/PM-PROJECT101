@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AlumniHub Office Job Opportunities Management"
+    >
+
+    <title>Job Opportunities | AlumniHub Office</title>
+
+    <!-- Google Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Jobs CSS -->
+    <link
+        rel="stylesheet"
+        href="../assets/css/office-jobs.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- =========================================================
+         SIDEBAR
+    ========================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="sidebar-header">
+
+            <a
+                href="office-dashboard.html"
+                class="brand"
+            >
+
+                <div
+    class="office-ams-logo"
+    style="
+        width:46px;
+        height:46px;
+        min-width:46px;
+        flex:0 0 46px;
+        border-radius:50%;
+        overflow:hidden;
+        background:#fff;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    "
+>
+    <img
+        src="/assets/images/logo/ams-round-logo.jpg"
+        alt="AMS Logo"
+        style="
+            width:46px;
+            height:46px;
+            min-width:46px;
+            max-width:46px;
+            object-fit:cover;
+            object-position:center;
+            border-radius:50%;
+            display:block;
+            margin:0;
+            padding:0;
+        "
+    >
+</div>
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        AlumniHub
+                    </span>
+
+                    <span class="brand-role">
+                        Office Portal
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <button
+                type="button"
+                class="sidebar-close"
+                id="sidebarClose"
+                aria-label="Close sidebar"
+            >
+                <i class="bx bx-x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="office-account">
+
+            <div class="office-account-avatar">
+
+                <img
+                    src="../assets/images/logo/avatars/background/avatar.jpg"
+                    alt="Office staff profile"
+                    id="sidebarProfileImage"
+                >
+
+                <span
+                    class="avatar-initials"
+                    id="sidebarInitials"
+                >
+                    AO
+                </span>
+
+                <span class="online-indicator"></span>
+
+            </div>
+
+
+            <div class="office-account-details">
+
+                <p
+                    class="office-account-name"
+                    id="sidebarUserName"
+                >
+                    Alumni Office Staff
+                </p>
+
+                <p class="office-account-role">
+
+                    <i class="bx bx-shield-quarter"></i>
+
+                    Alumni Affairs Office
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav
+            class="sidebar-navigation"
+            aria-label="Office portal navigation"
+        >
+
+            <p class="sidebar-section-title">
+                Main Menu
+            </p>
+
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a
+                        href="office-dashboard.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="alumni-records.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-user-detail"></i>
+                        <span>Alumni Records</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="account-verification.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-user-check"></i>
+                        <span>Account Verification</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="office-events.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-calendar-event"></i>
+                        <span>Events Management</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="office-jobs.html"
+                        class="sidebar-link active"
+                        aria-current="page"
+                    >
+                        <i class="bx bxs-briefcase-alt-2"></i>
+                        <span>Job Opportunities</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="office-announcements.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-megaphone"></i>
+                        <span>Announcements</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="office-reports.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-report"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <p class="sidebar-section-title">
+                Account
+            </p>
+
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a
+                        href="office-profile.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-user-circle"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="office-settings.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                <i class="bx bx-log-out"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================================
+         APP LAYOUT
+    ========================================================== -->
+
+    <div class="app-layout">
+
+
+        <!-- TOP HEADER -->
+
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open sidebar"
+                >
+                    <i class="bx bx-menu"></i>
+                </button>
+
+
+                <div class="header-search">
+
+                    <i class="bx bx-search"></i>
+
+                    <input
+                        type="search"
+                        id="globalSearch"
+                        placeholder="Search job opportunities..."
+                        aria-label="Search jobs"
+                    >
+
+                    <span class="search-shortcut">
+                        Ctrl K
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="header-action-button"
+                    id="themeToggle"
+                    aria-label="Change theme"
+                >
+                    <i
+                        class="bx bx-moon"
+                        id="themeIcon"
+                    ></i>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="header-action-button"
+                    id="notificationButton"
+                    aria-label="Notifications"
+                >
+                    <i class="bx bx-bell"></i>
+                </button>
+
+
+                <div class="header-profile-wrapper">
+
+                    <button
+                        type="button"
+                        class="header-profile"
+                        id="headerProfileButton"
+                    >
+
+                        <div class="header-profile-avatar">
+
+                            <img
+                                src="../assets/images/logo/avatars/background/avatar.jpg"
+                                alt="Office staff"
+                                id="headerProfileImage"
+                            >
+
+                            <span
+                                class="avatar-initials"
+                                id="headerInitials"
+                            >
+                                AO
+                            </span>
+
+                        </div>
+
+
+                        <div class="header-profile-info">
+
+                            <span
+                                class="header-profile-name"
+                                id="headerUserName"
+                            >
+                                Alumni Office
+                            </span>
+
+                            <span class="header-profile-role">
+                                Alumni Office
+                            </span>
+
+                        </div>
+
+
+                        <i class="bx bx-chevron-down"></i>
+
+                    </button>
+
+
+                    <div
+                        class="profile-dropdown"
+                        id="profileDropdown"
+                    >
+
+                        <a href="office-profile.html">
+                            <i class="bx bx-user"></i>
+                            My Profile
+                        </a>
+
+                        <a href="office-settings.html">
+                            <i class="bx bx-cog"></i>
+                            Settings
+                        </a>
+
+                        <button
+                            type="button"
+                            id="profileLogoutButton"
+                        >
+                            <i class="bx bx-log-out"></i>
+                            Logout
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+
+        <main class="main-content">
+
+
+            <section class="page-header">
+
+                <div class="page-heading">
+
+                    <div class="page-heading-icon">
+                        <i class="bx bxs-briefcase-alt-2"></i>
+                    </div>
+
+
+                    <div>
+
+                        <p class="page-eyebrow">
+                            Alumni Office
+                        </p>
+
+                        <h1>
+                            Job Opportunities
+                        </h1>
+
+                        <p class="page-description">
+                            Create, publish, and manage career opportunities for alumni.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="page-header-actions">
+
+                    <button
+                        type="button"
+                        class="button button-secondary"
+                        id="refreshButton"
+                    >
+                        <i class="bx bx-refresh"></i>
+                        Refresh
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        id="createJobButton"
+                    >
+                        <i class="bx bx-plus"></i>
+                        Post Job
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- INFORMATION BANNER -->
+
+            <section class="information-banner">
+
+                <i class="bx bx-info-circle"></i>
+
+                <div>
+
+                    <h2>
+                        Career Opportunities Management
+                    </h2>
+
+                    <p>
+                        Publish employment opportunities that alumni can browse and access
+                        through the Alumni portal.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+            ================================================== -->
+
+            <section class="summary-grid">
+
+                <article class="summary-card summary-total">
+
+                    <i class="bx bx-briefcase"></i>
+
+                    <div>
+
+                        <p>Total Jobs</p>
+
+                        <h2 id="totalJobsCount">
+                            0
+                        </h2>
+
+                        <span>
+                            All job postings
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card summary-active">
+
+                    <i class="bx bx-check-circle"></i>
+
+                    <div>
+
+                        <p>Active</p>
+
+                        <h2 id="activeJobsCount">
+                            0
+                        </h2>
+
+                        <span>
+                            Open opportunities
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card summary-draft">
+
+                    <i class="bx bx-edit-alt"></i>
+
+                    <div>
+
+                        <p>Draft</p>
+
+                        <h2 id="draftJobsCount">
+                            0
+                        </h2>
+
+                        <span>
+                            Unpublished postings
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card summary-closed">
+
+                    <i class="bx bx-lock-alt"></i>
+
+                    <div>
+
+                        <p>Closed</p>
+
+                        <h2 id="closedJobsCount">
+                            0
+                        </h2>
+
+                        <span>
+                            Expired or closed jobs
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 JOBS CARD
+            ================================================== -->
+
+            <section class="jobs-card">
+
+
+                <div class="jobs-card-header">
+
+                    <div>
+
+                        <h2>
+                            Career Opportunities
+                        </h2>
+
+                        <p>
+                            Manage available job postings for alumni.
+                        </p>
+
+                    </div>
+
+
+                    <div class="record-result-count">
+
+                        <span id="resultCount">
+                            0
+                        </span>
+
+                        jobs found
+
+                    </div>
+
+                </div>
+
+
+                <!-- FILTERS -->
+
+                <div class="jobs-filters">
+
+
+                    <div class="filter-search">
+
+                        <i class="bx bx-search"></i>
+
+                        <input
+                            type="search"
+                            id="jobSearch"
+                            placeholder="Search title, company, location..."
+                        >
+
+                        <button
+                            type="button"
+                            id="clearSearchButton"
+                            hidden
+                        >
+                            <i class="bx bx-x"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="statusFilter">
+                            Status
+                        </label>
+
+                        <select id="statusFilter">
+
+                            <option value="all">
+                                All Statuses
+                            </option>
+
+                            <option value="active">
+                                Active
+                            </option>
+
+                            <option value="draft">
+                                Draft
+                            </option>
+
+                            <option value="closed">
+                                Closed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="employmentTypeFilter">
+                            Employment Type
+                        </label>
+
+                        <select id="employmentTypeFilter">
+
+                            <option value="all">
+                                All Types
+                            </option>
+
+                            <option value="full-time">
+                                Full-time
+                            </option>
+
+                            <option value="part-time">
+                                Part-time
+                            </option>
+
+                            <option value="contract">
+                                Contract
+                            </option>
+
+                            <option value="internship">
+                                Internship
+                            </option>
+
+                            <option value="freelance">
+                                Freelance
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="reset-filter-button"
+                        id="resetFiltersButton"
+                    >
+                        <i class="bx bx-reset"></i>
+                        Reset
+                    </button>
+
+                </div>
+
+
+                <!-- LOADING -->
+
+                <div
+                    class="jobs-loading"
+                    id="jobsLoading"
+                >
+
+                    <div class="loading-spinner"></div>
+
+                    <h3>
+                        Loading job opportunities
+                    </h3>
+
+                    <p>
+                        Please wait while we retrieve job postings.
+                    </p>
+
+                </div>
+
+
+                <!-- ERROR -->
+
+                <div
+                    class="jobs-state"
+                    id="jobsErrorState"
+                    hidden
+                >
+
+                    <i class="bx bx-error-circle"></i>
+
+                    <h3>
+                        Unable to load jobs
+                    </h3>
+
+                    <p id="jobsErrorMessage">
+                        Something went wrong while retrieving job records.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        id="retryButton"
+                    >
+                        Try Again
+                    </button>
+
+                </div>
+
+
+                <!-- EMPTY -->
+
+                <div
+                    class="jobs-state"
+                    id="jobsEmptyState"
+                    hidden
+                >
+
+                    <i class="bx bx-briefcase-alt"></i>
+
+                    <h3>
+                        No job opportunities found
+                    </h3>
+
+                    <p>
+                        There are no job postings matching the selected filters.
+                    </p>
+
+                </div>
+
+
+                <!-- JOB CARDS -->
+
+                <div
+                    class="jobs-grid"
+                    id="jobsGrid"
+                    hidden
+                ></div>
+
+
+                <!-- PAGINATION -->
+
+                <div
+                    class="pagination-container"
+                    id="paginationContainer"
+                    hidden
+                >
+
+                    <span>
+
+                        Showing
+
+                        <strong id="paginationStart">
+                            0
+                        </strong>
+
+                        to
+
+                        <strong id="paginationEnd">
+                            0
+                        </strong>
+
+                        of
+
+                        <strong id="paginationTotal">
+                            0
+                        </strong>
+
+                        jobs
+
+                    </span>
+
+
+                    <div class="pagination-controls">
+
+                        <button
+                            type="button"
+                            id="previousPageButton"
+                        >
+                            Previous
+                        </button>
+
+                        <div id="paginationPages"></div>
+
+                        <button
+                            type="button"
+                            id="nextPageButton"
+                        >
+                            Next
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <footer class="page-footer">
+
+                <p>
+                    © <span id="currentYear"></span>
+                    AlumniHub. Alumni Affairs Office Portal.
+                </p>
+
+                <span>
+                    <span class="status-dot"></span>
+                    System Online
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         CREATE / EDIT JOB MODAL
+    ========================================================== -->
+
+    <div
+        class="modal"
+        id="jobFormModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close-modal="jobFormModal"
+        ></div>
+
+
+        <div
+            class="modal-dialog job-form-modal-dialog"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="modal-eyebrow">
+                        Job Opportunities
+                    </p>
+
+                    <h2 id="jobFormModalTitle">
+                        Post New Job
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close-button"
+                    data-close-modal="jobFormModal"
+                >
+                    <i class="bx bx-x"></i>
+                </button>
+
+            </div>
+
+
+            <form id="jobForm">
+
+
+                <div class="modal-body">
+
+                    <input
+                        type="hidden"
+                        id="jobId"
+                    >
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group full-width">
+
+                            <label for="jobTitle">
+                                Job Title *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="jobTitle"
+                                maxlength="150"
+                                placeholder="e.g. Junior Web Developer"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="companyName">
+                                Company *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="companyName"
+                                maxlength="150"
+                                placeholder="Company name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="employmentType">
+                                Employment Type *
+                            </label>
+
+                            <select
+                                id="employmentType"
+                                required
+                            >
+
+                                <option value="">
+                                    Select type
+                                </option>
+
+                                <option value="full-time">
+                                    Full-time
+                                </option>
+
+                                <option value="part-time">
+                                    Part-time
+                                </option>
+
+                                <option value="contract">
+                                    Contract
+                                </option>
+
+                                <option value="internship">
+                                    Internship
+                                </option>
+
+                                <option value="freelance">
+                                    Freelance
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="jobLocation">
+                                Location *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="jobLocation"
+                                maxlength="180"
+                                placeholder="e.g. Quezon City"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="workSetup">
+                                Work Setup
+                            </label>
+
+                            <select id="workSetup">
+
+                                <option value="onsite">
+                                    On-site
+                                </option>
+
+                                <option value="remote">
+                                    Remote
+                                </option>
+
+                                <option value="hybrid">
+                                    Hybrid
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="salaryMin">
+                                Minimum Salary
+                            </label>
+
+                            <input
+                                type="number"
+                                id="salaryMin"
+                                min="0"
+                                step="0.01"
+                                placeholder="e.g. 20000"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="salaryMax">
+                                Maximum Salary
+                            </label>
+
+                            <input
+                                type="number"
+                                id="salaryMax"
+                                min="0"
+                                step="0.01"
+                                placeholder="e.g. 30000"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="salaryCurrency">
+                                Currency
+                            </label>
+
+                            <select id="salaryCurrency">
+
+                                <option value="PHP">
+                                    PHP
+                                </option>
+
+                                <option value="USD">
+                                    USD
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="jobStatus">
+                                Status
+                            </label>
+
+                            <select id="jobStatus">
+
+                                <option value="active">
+                                    Active
+                                </option>
+
+                                <option value="draft">
+                                    Draft
+                                </option>
+
+                                <option value="closed">
+                                    Closed
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="jobDescription">
+                                Job Description *
+                            </label>
+
+                            <textarea
+                                id="jobDescription"
+                                rows="5"
+                                maxlength="3000"
+                                placeholder="Describe the role, responsibilities, and company information..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="jobRequirements">
+                                Requirements
+                            </label>
+
+                            <textarea
+                                id="jobRequirements"
+                                rows="4"
+                                maxlength="3000"
+                                placeholder="List qualifications, skills, education, or experience requirements..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="applicationDeadline">
+                                Application Deadline
+                            </label>
+
+                            <input
+                                type="date"
+                                id="applicationDeadline"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="contactEmail">
+                                Contact Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="contactEmail"
+                                maxlength="180"
+                                placeholder="jobs@company.com"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="applicationLink">
+                                Application Link
+                            </label>
+
+                            <input
+                                type="url"
+                                id="applicationLink"
+                                maxlength="500"
+                                placeholder="https://company.com/careers/job"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="companyLogo">
+                                Company Logo / Job Image
+                            </label>
+
+                            <input
+                                type="file"
+                                id="companyLogo"
+                                accept="image/png,image/jpeg,image/webp"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="button button-secondary"
+                        data-close-modal="jobFormModal"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="button button-primary"
+                        id="saveJobButton"
+                    >
+
+                        <i class="bx bx-save"></i>
+
+                        <span id="saveJobButtonText">
+                            Post Job
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         JOB DETAILS MODAL
+    ========================================================== -->
+
+    <div
+        class="modal"
+        id="jobDetailsModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close-modal="jobDetailsModal"
+        ></div>
+
+
+        <div
+            class="modal-dialog"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="modal-eyebrow">
+                        Job Details
+                    </p>
+
+                    <h2 id="detailsJobTitle">
+                        Job Opportunity
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close-button"
+                    data-close-modal="jobDetailsModal"
+                >
+                    <i class="bx bx-x"></i>
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="job-details-header">
+
+                    <div class="job-details-logo">
+
+                        <img
+                            src=""
+                            alt="Company logo"
+                            id="detailsCompanyLogo"
+                            hidden
+                        >
+
+                        <span id="detailsCompanyInitials">
+                            CO
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <span
+                            class="job-status-badge"
+                            id="detailsJobStatus"
+                        >
+                            Active
+                        </span>
+
+                        <h3 id="detailsCompanyName">
+                            Company Name
+                        </h3>
+
+                        <p id="detailsEmploymentType">
+                            Full-time
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <p
+                    class="job-details-description"
+                    id="detailsJobDescription"
+                >
+                    —
+                </p>
+
+
+                <div class="details-information-grid">
+
+                    <div>
+                        <span>Location</span>
+                        <strong id="detailsJobLocation">—</strong>
+                    </div>
+
+                    <div>
+                        <span>Work Setup</span>
+                        <strong id="detailsWorkSetup">—</strong>
+                    </div>
+
+                    <div>
+                        <span>Salary</span>
+                        <strong id="detailsSalary">—</strong>
+                    </div>
+
+                    <div>
+                        <span>Deadline</span>
+                        <strong id="detailsApplicationDeadline">—</strong>
+                    </div>
+
+                    <div class="full-width">
+                        <span>Requirements</span>
+                        <strong id="detailsJobRequirements">—</strong>
+                    </div>
+
+                    <div class="full-width">
+                        <span>Contact Email</span>
+                        <strong id="detailsContactEmail">—</strong>
+                    </div>
+
+                    <div class="full-width">
+                        <span>Application Link</span>
+                        <a
+                            href="#"
+                            id="detailsApplicationLink"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Not provided
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    data-close-modal="jobDetailsModal"
+                >
+                    Close
+                </button>
+
+
+                <button
+                    type="button"
+                    class="button button-primary"
+                    id="editJobFromDetailsButton"
+                >
+                    <i class="bx bx-edit"></i>
+                    Edit Job
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DELETE JOB MODAL
+    ========================================================== -->
+
+    <div
+        class="modal"
+        id="deleteJobModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close-modal="deleteJobModal"
+        ></div>
+
+
+        <div class="modal-dialog confirmation-modal-dialog">
+
+            <div class="modal-icon danger">
+                <i class="bx bx-trash"></i>
+            </div>
+
+            <h2>
+                Delete this job posting?
+            </h2>
+
+            <p>
+                This action will permanently remove
+                <strong id="deleteJobName">
+                    this job
+                </strong>.
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    data-close-modal="deleteJobModal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="button button-danger"
+                    id="confirmDeleteJobButton"
+                >
+                    Delete Job
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         LOGOUT MODAL
+    ========================================================== -->
+
+    <div
+        class="modal"
+        id="logoutModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close-modal="logoutModal"
+        ></div>
+
+
+        <div class="modal-dialog confirmation-modal-dialog">
+
+            <div class="modal-icon danger">
+                <i class="bx bx-log-out"></i>
+            </div>
+
+            <h2>
+                Log out of AlumniHub?
+            </h2>
+
+            <p>
+                You will need to sign in again to access the Alumni Office Portal.
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    data-close-modal="logoutModal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="button button-danger"
+                    id="confirmLogoutButton"
+                >
+                    Yes, Log Out
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PAGE LOADER -->
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+    >
+
+        <div class="loader-content">
+
+            <div class="loader-logo">
+                <i class="bx bxs-graduation"></i>
+            </div>
+
+            <div class="loader-spinner"></div>
+
+            <p>
+                Loading Job Opportunities...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+    ></div>
+
+
+    <!-- Jobs JavaScript -->
+    <script src="../assets/js/office-jobs.js"></script>
+    <script src="../assets/js/office-header.js"></script>
+
+</body>
+
+</html>

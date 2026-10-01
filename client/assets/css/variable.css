@@ -1,0 +1,209 @@
+:root {
+
+    /* ==========================================
+       BRAND
+    ========================================== */
+
+    --primary: #2563EB;
+    --primary-light: #3B82F6;
+    --primary-dark: #1D4ED8;
+
+    --success: #10B981;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+
+
+    /* ==========================================
+       LIGHT MODE
+    ========================================== */
+
+    --background: #EEF2F7;
+    --surface: #FFFFFF;
+
+    --sidebar: #0F172A;
+    --sidebar-hover: #1E293B;
+
+    --text: #1E293B;
+    --text-light: #64748B;
+
+    --border: #D8E1EB;
+
+
+    /* ==========================================
+       SHADOW
+    ========================================== */
+
+    --shadow:
+        0 12px 30px rgba(15, 23, 42, 0.08);
+
+    --shadow-hover:
+        0 18px 40px rgba(15, 23, 42, 0.15);
+
+
+    /* ==========================================
+       RADIUS
+    ========================================== */
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+}
+
+
+/* =========================================================
+   GLOSSY OLED DARK MODE
+========================================================= */
+
+body.dark,
+body.dark-mode {
+
+    /* Main background */
+
+    --background: #030303;
+
+
+    /* Elevated surfaces */
+
+    --surface: #0B0B0D;
+
+
+    /* Sidebar */
+
+    --sidebar: #050505;
+
+    --sidebar-hover:
+        rgba(255, 255, 255, 0.055);
+
+
+    /* Text */
+
+    --text: #F7F7F8;
+
+    --text-light: #A1A1AA;
+
+
+    /* Borders */
+
+    --border:
+        rgba(255, 255, 255, 0.09);
+
+
+    /* Glossy Shadows */
+
+    --shadow:
+        0 10px 35px
+        rgba(0, 0, 0, 0.45);
+
+    --shadow-hover:
+        0 18px 50px
+        rgba(0, 0, 0, 0.65);
+
+
+    background: #030303;
+
+    color: #F7F7F8;
+}:root {
+
+    /* ==========================================
+       BRAND
+    ========================================== */
+
+    --primary: #2563EB;
+    --primary-light: #3B82F6;
+    --primary-dark: #1D4ED8;
+
+    --success: #10B981;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+
+
+    /* ==========================================
+       LIGHT MODE
+    ========================================== */
+
+    --background: #EEF2F7;
+    --surface: #FFFFFF;
+
+    --sidebar: #0F172A;
+    --sidebar-hover: #1E293B;
+
+    --text: #1E293B;
+    --text-light: #64748B;
+
+    --border: #D8E1EB;
+
+
+    /* ==========================================
+       SHADOW
+    ========================================== */
+
+    --shadow:
+        0 12px 30px rgba(15, 23, 42, 0.08);
+
+    --shadow-hover:
+        0 18px 40px rgba(15, 23, 42, 0.15);
+
+
+    /* ==========================================
+       RADIUS
+    ========================================== */
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+}
+
+
+/* =========================================================
+   GLOSSY OLED DARK MODE
+========================================================= */
+
+body.dark,
+body.dark-mode {
+
+    /* Main background */
+
+    --background: #030303;
+
+
+    /* Elevated surfaces */
+
+    --surface: #0B0B0D;
+
+
+    /* Sidebar */
+
+    --sidebar: #050505;
+
+    --sidebar-hover:
+        rgba(255, 255, 255, 0.055);
+
+
+    /* Text */
+
+    --text: #F7F7F8;
+
+    --text-light: #A1A1AA;
+
+
+    /* Borders */
+
+    --border:
+        rgba(255, 255, 255, 0.09);
+
+
+    /* Glossy Shadows */
+
+    --shadow:
+        0 10px 35px
+        rgba(0, 0, 0, 0.45);
+
+    --shadow-hover:
+        0 18px 50px
+        rgba(0, 0, 0, 0.65);
+
+
+    background: #030303;
+
+    color: #F7F7F8;
+}

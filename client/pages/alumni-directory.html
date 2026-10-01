@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Alumni Directory | AlumniHub</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+   <!-- Shared CSS -->
+<link rel="stylesheet" href="../assets/css/variable.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/page-transition.css">
+
+<!-- Page CSS -->
+<link rel="stylesheet" href="../assets/css/alumni.css">
+</head>
+
+<body>
+
+<div class="dashboard-shell">
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a
+                href="dashboard.html"
+                class="sidebar-brand"
+            >
+
+                <div class="brand-mark">
+                    <img
+                        src="../assets/images/logo/ams-round-logo.jpg"
+                        alt="AMS Logo"
+                        class="sidebar-brand-logo"
+                    >
+                </div>
+
+                <span>A.M.S</span>
+
+            </a>
+
+
+            <div class="sidebar-search">
+
+                <i class="bx bx-search"></i>
+
+                <input
+                    type="text"
+                    placeholder="Search anything"
+                >
+
+                <span>⌘ K</span>
+
+            </div>
+
+
+            <p class="menu-label">
+                Main Navigation
+            </p>
+
+
+            <nav class="menu">
+
+                <a href="dashboard.html">
+
+                    <i class="bx bxs-dashboard"></i>
+
+                    <span>Overview</span>
+
+                </a>
+
+
+                <a
+                    href="alumni-directory.html"
+                    class="active"
+                >
+
+                    <i class="bx bx-group"></i>
+
+                    <span>Alumni Directory</span>
+
+                </a>
+
+
+                <a href="account-approvals.html">
+
+                    <i class="bx bx-user-check"></i>
+
+                    <span>Account Approvals</span>
+
+                </a>
+
+
+                <a href="profile.html">
+
+                    <i class="bx bx-user"></i>
+
+                    <span>My Profile</span>
+
+                </a>
+
+
+                <a href="events.html">
+
+                    <i class="bx bx-calendar-event"></i>
+
+                    <span>Events</span>
+
+                </a>
+
+
+                <a href="jobs.html">
+
+                    <i class="bx bx-briefcase"></i>
+
+                    <span>Jobs</span>
+
+                </a>
+
+
+                <a href="announcements.html">
+
+                    <i class="bx bxs-megaphone"></i>
+
+                    <span>Announcements</span>
+
+                </a>
+
+
+                <a href="reports.html">
+
+                    <i class="bx bx-bar-chart-alt-2"></i>
+
+                    <span>Reports</span>
+
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <p class="menu-label">
+                Support
+            </p>
+
+
+            <a
+                href="settings.html"
+                class="support-link"
+            >
+
+                <i class="bx bx-cog"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+
+            <button
+                id="logout"
+                class="sidebar-profile"
+            >
+
+                <div class="sidebar-avatar">
+                    A
+                </div>
+
+
+                <div class="sidebar-user">
+
+                    <strong>
+                        Administrator
+                    </strong>
+
+                    <small>
+                        admin@alumnihub.com
+                    </small>
+
+                </div>
+
+
+                <i class="bx bx-log-out"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="topbar-menu-button"
+                    aria-label="Toggle sidebar"
+                    title="Toggle sidebar"
+                >
+                    <i class="bx bx-menu"></i>
+                </button>
+
+
+                <div class="breadcrumb">
+
+                    <a
+                        href="dashboard.html"
+                        class="breadcrumb-dashboard"
+                        title="Back to Dashboard"
+                    >
+                        Alumni Management
+                    </a>
+
+                    <i class="bx bx-chevron-right"></i>
+
+                    <strong>Directory</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button
+                    type="button"
+                    class="header-icon-button"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode"
+                >
+                    <i
+                        class="bx bx-moon"
+                        id="themeIcon"
+                    ></i>
+                </button>
+
+
+                <button
+                    class="topbar-icon"
+                    type="button"
+                    aria-label="Notifications"
+                >
+                    <i class="bx bx-bell"></i>
+                </button>
+
+
+                <button
+                    class="topbar-icon"
+                    type="button"
+                    aria-label="Help"
+                >
+                    <i class="bx bx-help-circle"></i>
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE HEADING -->
+
+        <section class="directory-heading">
+
+            <div>
+
+                <span class="page-eyebrow">
+                    Alumni Management
+                </span>
+
+                <h1>
+                    Alumni Directory
+                </h1>
+
+                <p>
+                    Search, review, and manage registered alumni records.
+                </p>
+
+            </div>
+
+
+            <button
+                class="add-btn"
+                id="addAlumni"
+                type="button"
+            >
+
+                <i class="bx bx-plus"></i>
+
+                Add Alumni
+
+            </button>
+
+        </section>
+
+
+        <!-- DIRECTORY SUMMARY -->
+
+        <section class="directory-summary">
+
+            <article class="directory-stat">
+
+                <div class="directory-stat-icon blue">
+
+                    <i class="bx bx-group"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Directory Records
+                    </span>
+
+                    <strong id="directoryRecordCount">
+                        —
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+            <article class="directory-stat">
+
+                <div class="directory-stat-icon green">
+
+                    <i class="bx bx-briefcase"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Employment Tracking
+                    </span>
+
+                    <strong>
+                        Active
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+            <article class="directory-stat">
+
+                <div class="directory-stat-icon purple">
+
+                    <i class="bx bx-search-alt"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Search and Filters
+                    </span>
+
+                    <strong>
+                        Available
+                    </strong>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- SEARCH AND FILTER PANEL -->
+
+        <section class="directory-toolbar panel">
+
+            <div class="directory-search">
+
+                <i class="bx bx-search"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by name, program, batch, company, or job..."
+                >
+
+                <span class="search-shortcut">
+                    Ctrl K
+                </span>
+
+            </div>
+
+
+            <div class="directory-filters">
+
+                <div class="filter-field">
+
+                    <i class="bx bx-book-open"></i>
+
+                    <select id="programFilter">
+
+                        <option value="">
+                            All Programs
+                        </option>
+
+                        <option value="BSIT">
+                            BSIT
+                        </option>
+
+                        <option value="BSCS">
+                            BSCS
+                        </option>
+
+                        <option value="BSIS">
+                            BSIS
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="filter-field">
+
+                    <i class="bx bx-calendar"></i>
+
+                    <select id="batchFilter">
+
+                        <option value="">
+                            All Batches
+                        </option>
+
+                        <option value="2026">
+                            2026
+                        </option>
+
+                        <option value="2025">
+                            2025
+                        </option>
+
+                        <option value="2024">
+                            2024
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="filter-field">
+
+                    <i class="bx bx-briefcase"></i>
+
+                    <select id="employmentFilter">
+
+                        <option value="">
+                            All Employment
+                        </option>
+
+                        <option value="Employed">
+                            Employed
+                        </option>
+
+                        <option value="Unemployed">
+                            Unemployed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="filter-reset-btn"
+                    id="resetFilters"
+                    type="button"
+                >
+
+                    <i class="bx bx-reset"></i>
+
+                    Reset
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ALUMNI TABLE -->
+
+        <section class="directory-panel panel">
+
+            <div class="directory-panel-header">
+
+                <div>
+
+                    <span class="panel-eyebrow">
+                        Registered Alumni
+                    </span>
+
+                    <h3>
+                        Alumni Records
+                    </h3>
+
+                </div>
+
+
+                <div class="directory-panel-actions">
+
+                    <span class="record-indicator">
+
+                        <span class="indicator-dot"></span>
+
+                        Live database records
+
+                    </span>
+
+
+                    <button
+                        class="compact-icon-btn"
+                        type="button"
+                        aria-label="More options"
+                    >
+
+                        <i class="bx bx-dots-horizontal-rounded"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="directory-table-wrapper">
+
+                <table class="directory-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Alumni</th>
+
+                            <th>Program</th>
+
+                            <th>Batch</th>
+
+                            <th>Company</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="alumniTable"></tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="directory-footer">
+
+                <span class="pagination-info">
+                    Showing alumni records
+                </span>
+
+
+                <div class="pagination">
+
+                    <button
+                        id="prevBtn"
+                        type="button"
+                    >
+
+                        <i class="bx bx-chevron-left"></i>
+
+                        Previous
+
+                    </button>
+
+
+                    <span id="pageNumber">
+                        Page 1
+                    </span>
+
+
+                    <button
+                        id="nextBtn"
+                        type="button"
+                    >
+
+                        Next
+
+                        <i class="bx bx-chevron-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================
+     PROFILE MODAL
+====================================== -->
+
+<div
+    id="profileModal"
+    class="modal"
+>
+
+    <div class="modal-content profile-modal-content">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    Alumni Profile
+                </span>
+
+                <h2 id="profileName">
+                    Alumni Name
+                </h2>
+
+            </div>
+
+
+            <button
+                id="closeModal"
+                class="close"
+                type="button"
+                aria-label="Close profile modal"
+            >
+
+                <i class="bx bx-x"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="profile-hero">
+
+            <div class="profile-modal-avatar">
+
+                <i class="bx bx-user"></i>
+
+            </div>
+
+
+            <div>
+
+                <span class="profile-status">
+                    Registered Alumni
+                </span>
+
+                <p>
+                    AlumniHub directory profile
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-detail-grid">
+
+            <div class="profile-detail">
+
+                <i class="bx bx-book-open"></i>
+
+                <div>
+
+                    <span>Program</span>
+
+                    <strong id="profileProgram">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-detail">
+
+                <i class="bx bx-calendar"></i>
+
+                <div>
+
+                    <span>Batch Year</span>
+
+                    <strong id="profileBatch">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-detail">
+
+                <i class="bx bx-briefcase"></i>
+
+                <div>
+
+                    <span>Current Job</span>
+
+                    <strong id="profileJob">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-detail">
+
+                <i class="bx bx-buildings"></i>
+
+                <div>
+
+                    <span>Company</span>
+
+                    <strong id="profileCompany">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     ADD ALUMNI MODAL
+====================================== -->
+
+<div
+    id="addModal"
+    class="modal"
+>
+
+    <div class="modal-content form-modal-content">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    Alumni Management
+                </span>
+
+                <h2>
+                    Add New Alumni
+                </h2>
+
+                <p>
+                    Create an alumni account and directory profile.
+                </p>
+
+            </div>
+
+
+            <button
+                id="closeAddModal"
+                class="close"
+                type="button"
+                aria-label="Close add modal"
+            >
+
+                <i class="bx bx-x"></i>
+
+            </button>
+
+        </div>
+
+
+        <form
+            id="addAlumniForm"
+            class="alumni-form"
+        >
+
+            <div class="form-section-title">
+
+                <i class="bx bx-user"></i>
+
+                Personal Information
+
+            </div>
+
+
+            <div class="form-grid three-columns">
+
+                <div class="form-group">
+
+                    <label for="first_name">
+                        First Name
+                    </label>
+
+                    <input
+                        id="first_name"
+                        placeholder="Enter first name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="middle_name">
+                        Middle Name
+                    </label>
+
+                    <input
+                        id="middle_name"
+                        placeholder="Enter middle name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="last_name">
+                        Last Name
+                    </label>
+
+                    <input
+                        id="last_name"
+                        placeholder="Enter last name"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-grid two-columns">
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="name@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Temporary Password
+                    </label>
+
+                    <input
+                        id="password"
+                        type="password"
+                        placeholder="Create temporary password"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-section-title">
+
+                <i class="bx bxs-graduation"></i>
+
+                Academic Information
+
+            </div>
+
+
+            <div class="form-grid three-columns">
+
+                <div class="form-group">
+
+                    <label for="student_number">
+                        Student Number
+                    </label>
+
+                    <input
+                        id="student_number"
+                        placeholder="Student number"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="program">
+                        Program
+                    </label>
+
+                    <input
+                        id="program"
+                        placeholder="Example: BSIT"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="batch_year">
+                        Batch Year
+                    </label>
+
+                    <input
+                        id="batch_year"
+                        type="number"
+                        placeholder="2026"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-section-title">
+
+                <i class="bx bx-briefcase"></i>
+
+                Employment Information
+
+            </div>
+
+
+            <div class="form-grid two-columns">
+
+                <div class="form-group">
+
+                    <label for="current_job">
+                        Current Job
+                    </label>
+
+                    <input
+                        id="current_job"
+                        placeholder="Current position"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="company">
+                        Company
+                    </label>
+
+                    <input
+                        id="company"
+                        placeholder="Company name"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    onclick="document.getElementById('addModal').style.display='none'"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+
+                    <i class="bx bx-user-plus"></i>
+
+                    Save Alumni
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     EDIT ALUMNI MODAL
+====================================== -->
+
+<div
+    id="editModal"
+    class="modal"
+>
+
+    <div class="modal-content form-modal-content edit-modal-content">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    Alumni Management
+                </span>
+
+                <h2>
+                    Edit Alumni
+                </h2>
+
+                <p>
+                    Update academic and employment information.
+                </p>
+
+            </div>
+
+
+            <button
+                id="closeEditModal"
+                class="close"
+                type="button"
+                aria-label="Close edit modal"
+            >
+
+                <i class="bx bx-x"></i>
+
+            </button>
+
+        </div>
+
+
+        <form
+            id="editAlumniForm"
+            class="alumni-form"
+        >
+
+            <input
+                type="hidden"
+                id="edit_user_id"
+            >
+
+
+            <div class="form-section-title">
+
+                <i class="bx bxs-graduation"></i>
+
+                Academic Information
+
+            </div>
+
+
+            <div class="form-grid three-columns">
+
+                <div class="form-group">
+
+                    <label for="edit_student_number">
+                        Student Number
+                    </label>
+
+                    <input
+                        id="edit_student_number"
+                        placeholder="Student number"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="edit_program">
+                        Program
+                    </label>
+
+                    <input
+                        id="edit_program"
+                        placeholder="Program"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="edit_batch_year">
+                        Batch Year
+                    </label>
+
+                    <input
+                        id="edit_batch_year"
+                        type="number"
+                        placeholder="Batch year"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-section-title">
+
+                <i class="bx bx-briefcase"></i>
+
+                Employment Information
+
+            </div>
+
+
+            <div class="form-grid two-columns">
+
+                <div class="form-group">
+
+                    <label for="edit_current_job">
+                        Current Job
+                    </label>
+
+                    <input
+                        id="edit_current_job"
+                        placeholder="Current position"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="edit_company">
+                        Company
+                    </label>
+
+                    <input
+                        id="edit_company"
+                        placeholder="Company name"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    onclick="document.getElementById('editModal').style.display='none'"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+
+                    <i class="bx bx-save"></i>
+
+                    Save Changes
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/alumni.js"></script>
+<script src="../assets/js/page-transition.js"></script>
+<script src="../assets/js/admin-header.js"></script>
+</body>
+
+</html>

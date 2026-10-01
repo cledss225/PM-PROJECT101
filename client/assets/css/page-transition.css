@@ -1,0 +1,604 @@
+/* =========================================================
+   ALUMNIHUB
+   SEAMLESS MORPH + FROSTED GLASS DISSOLVE
+   Premium Cross-Page Transition
+========================================================= */
+
+
+/* =========================================================
+   ENABLE CROSS-DOCUMENT VIEW TRANSITIONS
+========================================================= */
+
+@view-transition {
+    navigation: auto;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root {
+    --transition-fast: 260ms;
+    --transition-main: 460ms;
+
+    --transition-enter:
+        cubic-bezier(0.16, 1, 0.3, 1);
+
+    --transition-exit:
+        cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* Prevent browser white flash */
+html {
+    overflow-y: scroll;
+
+    background:
+        #f4f3f7;
+}
+
+
+body {
+    margin: 0;
+
+    background:
+        #f4f3f7;
+}
+
+
+/* Dark mode canvas */
+html:has(body.dark),
+html:has(body.dark-mode),
+body.dark,
+body.dark-mode {
+    background:
+        #090b0b;
+}
+
+
+/* =========================================================
+   PERSISTENT APPLICATION ELEMENTS
+========================================================= */
+
+/*
+   These remain visually connected
+   between separate HTML pages.
+*/
+
+.sidebar {
+    view-transition-name:
+        alumni-sidebar;
+}
+
+
+.top-header,
+.topbar {
+    view-transition-name:
+        alumni-topbar;
+}
+
+
+/* Main page content */
+.main-content {
+    view-transition-name:
+        alumni-main-content;
+}
+
+
+/* =========================================================
+   ACTIVE SIDEBAR MORPH
+========================================================= */
+
+/*
+   IMPORTANT:
+   Every page should have only ONE
+   .sidebar-link.active
+*/
+
+.sidebar-link.active,
+.menu a.active {
+    view-transition-name:
+        alumni-active-navigation;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Soft glossy active indicator */
+.sidebar-link.active::after,
+.menu a.active::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139, 92, 246, 0.12),
+            rgba(108, 76, 255, 0.03)
+        );
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   ROOT SNAPSHOTS
+========================================================= */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+
+    mix-blend-mode: normal;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   Keep completely stable
+========================================================= */
+
+::view-transition-old(alumni-sidebar),
+::view-transition-new(alumni-sidebar) {
+    animation: none;
+
+    mix-blend-mode: normal;
+}
+
+
+/* =========================================================
+   TOPBAR
+   Keep completely stable
+========================================================= */
+
+::view-transition-old(alumni-topbar),
+::view-transition-new(alumni-topbar) {
+    animation: none;
+
+    mix-blend-mode: normal;
+}
+
+
+/* =========================================================
+   ACTIVE SIDEBAR PILL
+   Shared-element morph
+========================================================= */
+
+::view-transition-group(alumni-active-navigation) {
+    animation-duration:
+        420ms;
+
+    animation-timing-function:
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+}
+
+
+::view-transition-old(alumni-active-navigation),
+::view-transition-new(alumni-active-navigation) {
+    mix-blend-mode:
+        normal;
+
+    height: 100%;
+
+    width: 100%;
+}
+
+
+/* Old active menu softly disappears */
+::view-transition-old(alumni-active-navigation) {
+    animation:
+        activeNavOld
+        260ms
+        ease
+        both;
+}
+
+
+/* New active menu materializes */
+::view-transition-new(alumni-active-navigation) {
+    animation:
+        activeNavNew
+        420ms
+        var(--transition-enter)
+        both;
+}
+
+
+@keyframes activeNavOld {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.55;
+    }
+
+}
+
+
+@keyframes activeNavNew {
+
+    from {
+        opacity: 0.55;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   FROSTED GLASS DISSOLVE
+========================================================= */
+
+::view-transition-group(alumni-main-content) {
+    overflow: hidden;
+}
+
+
+/* OLD PAGE */
+::view-transition-old(alumni-main-content) {
+
+    animation:
+        alumniContentExit
+        var(--transition-fast)
+        var(--transition-exit)
+        both;
+
+}
+
+
+/* NEW PAGE */
+::view-transition-new(alumni-main-content) {
+
+    animation:
+        alumniContentEnter
+        var(--transition-main)
+        var(--transition-enter)
+        both;
+
+}
+
+
+/* =========================================================
+   OLD PAGE EXIT
+========================================================= */
+
+@keyframes alumniContentExit {
+
+    0% {
+
+        opacity: 1;
+
+        filter:
+            blur(0);
+
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            )
+            scale(1);
+
+    }
+
+
+    100% {
+
+        opacity: 0.22;
+
+        filter:
+            blur(7px);
+
+        transform:
+            translate3d(
+                0,
+                -4px,
+                0
+            )
+            scale(0.992);
+
+    }
+
+}
+
+
+/* =========================================================
+   NEW PAGE ENTER
+========================================================= */
+
+@keyframes alumniContentEnter {
+
+    0% {
+
+        opacity: 0;
+
+        filter:
+            blur(10px);
+
+        transform:
+            translate3d(
+                0,
+                9px,
+                0
+            )
+            scale(0.992);
+
+    }
+
+
+    40% {
+
+        opacity: 0.72;
+
+        filter:
+            blur(4px);
+
+    }
+
+
+    100% {
+
+        opacity: 1;
+
+        filter:
+            blur(0);
+
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            )
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   FROSTED GLASS TRANSITION VEIL
+========================================================= */
+
+.page-transition-layer {
+
+    position: fixed;
+
+    inset:
+        var(--header-height, 76px)
+        0
+        0
+        var(--sidebar-width, 280px);
+
+    z-index: 9998;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.025
+        );
+
+    backdrop-filter:
+        blur(0px);
+
+    -webkit-backdrop-filter:
+        blur(0px);
+
+    transition:
+        opacity
+        220ms ease,
+
+        backdrop-filter
+        220ms ease,
+
+        -webkit-backdrop-filter
+        220ms ease;
+}
+
+
+/* Dark glass */
+body.dark .page-transition-layer,
+body.dark-mode .page-transition-layer {
+
+    background:
+        rgba(
+            7,
+            10,
+            10,
+            0.055
+        );
+}
+
+
+/* Fallback navigation */
+body.page-transition-exit
+.page-transition-layer {
+
+    opacity: 1;
+
+    backdrop-filter:
+        blur(5px);
+
+    -webkit-backdrop-filter:
+        blur(5px);
+}
+
+
+/* =========================================================
+   SIDEBAR MICRO INTERACTIONS
+========================================================= */
+
+.sidebar-link,
+.sidebar a,
+.menu a,
+.support-link {
+
+    transition:
+
+        transform
+        260ms
+        var(--transition-enter),
+
+        background-color
+        220ms ease,
+
+        color
+        220ms ease,
+
+        border-color
+        220ms ease,
+
+        box-shadow
+        220ms ease;
+
+}
+
+
+.sidebar-link:hover,
+.sidebar a:hover,
+.menu a:hover,
+.support-link:hover {
+
+    transform:
+        translateX(3px);
+
+}
+
+
+/* Icons */
+.sidebar-link i,
+.sidebar a i,
+.menu a i,
+.support-link i {
+
+    transition:
+        transform
+        300ms
+        var(--transition-enter);
+}
+
+
+.sidebar-link:hover i,
+.sidebar a:hover i,
+.menu a:hover i,
+.support-link:hover i {
+
+    transform:
+        scale(1.07);
+
+}
+
+
+/* Click feedback */
+.sidebar-link.page-link-clicked,
+.sidebar a.page-link-clicked,
+.menu a.page-link-clicked,
+.support-link.page-link-clicked {
+
+    transform:
+        translateX(2px)
+        scale(0.985);
+
+}
+
+
+/* =========================================================
+   GPU / RENDERING
+========================================================= */
+
+.main-content,
+.sidebar,
+.top-header,
+.topbar {
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+    transform:
+        translateZ(0);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .page-transition-layer {
+
+        inset:
+            var(--header-height, 76px)
+            0
+            0
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    ::view-transition-old(*),
+    ::view-transition-new(*),
+    ::view-transition-group(*) {
+
+        animation-duration:
+            1ms !important;
+
+    }
+
+
+    .sidebar-link,
+    .sidebar a,
+    .menu a,
+    .support-link,
+    .sidebar-link i,
+    .sidebar a i {
+
+        transition-duration:
+            1ms !important;
+
+    }
+
+}

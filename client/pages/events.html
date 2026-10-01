@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Events Management | AlumniHub</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Shared CSS -->
+<link rel="stylesheet" href="../assets/css/variable.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/page-transition.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+
+<!-- Events CSS -->
+<link rel="stylesheet" href="../assets/css/events.css">
+
+<body>
+
+<div class="dashboard-shell">
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="dashboard.html" class="sidebar-brand">
+
+                    <div class="brand-mark">
+                        <img
+                            src="../assets/images/logo/ams-round-logo.jpg"
+                            alt="AMS Logo"
+                            class="ams-brand-logo"
+                        >
+                    </div>
+
+                    <div class="brand-text">
+                        <strong>A.M.S</strong>
+                        <small>AlumniHub</small>
+                    </div>
+
+                </a>
+
+
+            <div class="sidebar-search">
+
+                <i class="bx bx-search"></i>
+
+                <input
+                    type="text"
+                    placeholder="Search anything"
+                >
+
+                <span>⌘ K</span>
+
+            </div>
+
+
+            <p class="menu-label">
+                Main Navigation
+            </p>
+
+
+            <nav class="menu">
+
+                <a href="dashboard.html">
+
+                    <i class="bx bxs-dashboard"></i>
+
+                    <span>Overview</span>
+
+                </a>
+
+
+                <a href="alumni-directory.html">
+
+                    <i class="bx bx-group"></i>
+
+                    <span>Alumni Directory</span>
+
+                </a>
+
+
+                <a href="account-approvals.html">
+
+                    <i class="bx bx-user-check"></i>
+
+                    <span>Account Approvals</span>
+
+                </a>
+
+
+                <a href="profile.html">
+
+                    <i class="bx bx-user"></i>
+
+                    <span>My Profile</span>
+
+                </a>
+
+
+                <a
+                    href="events.html"
+                    class="active"
+                >
+
+                    <i class="bx bx-calendar-event"></i>
+
+                    <span>Events</span>
+
+                </a>
+
+
+                <a href="jobs.html">
+
+                    <i class="bx bx-briefcase"></i>
+
+                    <span>Jobs</span>
+
+                </a>
+
+
+                <a href="announcements.html">
+
+                    <i class="bx bxs-megaphone"></i>
+
+                    <span>Announcements</span>
+
+                </a>
+
+
+                <a href="reports.html">
+
+                    <i class="bx bx-bar-chart-alt-2"></i>
+
+                    <span>Reports</span>
+
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <p class="menu-label">
+                Support
+            </p>
+
+
+            <a
+                href="settings.html"
+                class="support-link"
+            >
+
+                <i class="bx bx-cog"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+
+            <button
+                id="logout"
+                class="sidebar-profile"
+                type="button"
+            >
+
+                <div
+                    class="sidebar-avatar"
+                    id="sidebarAvatar"
+                >
+                    A
+                </div>
+
+
+                <div class="sidebar-user">
+
+                    <strong id="sidebarName">
+                        Administrator
+                    </strong>
+
+                    <small id="sidebarEmail">
+                        admin@alumnihub.com
+                    </small>
+
+                </div>
+
+
+                <i class="bx bx-log-out"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-inner">
+
+                <div class="topbar-left">
+
+                    <button
+                        class="topbar-menu-button"
+                        type="button"
+                        aria-label="Open menu"
+                    >
+                        <i class="bx bx-menu"></i>
+                    </button>
+
+
+                    <div class="breadcrumb">
+
+                    <a
+                        href="dashboard.html"
+                        class="breadcrumb-dashboard"
+                        title="Back to Dashboard"
+                    >
+                        Administrator
+                    </a>
+
+                    <i class="bx bx-chevron-right"></i>
+
+                    <strong>Events</strong>
+
+                </div>
+
+                </div>
+
+
+                <div class="topbar-actions">
+
+                    <button
+                        id="themeToggle"
+                        class="topbar-icon"
+                        type="button"
+                        aria-label="Toggle theme"
+                    >
+                        <i class="bx bx-moon"></i>
+                    </button>
+
+
+                    <button
+                        class="topbar-icon notification-button"
+                        type="button"
+                        aria-label="Notifications"
+                    >
+
+                        <i class="bx bx-bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <button
+                        class="topbar-icon"
+                        type="button"
+                        aria-label="Help"
+                    >
+                        <i class="bx bx-help-circle"></i>
+                    </button>
+
+
+                    <div
+                        class="topbar-avatar"
+                        id="topbarAvatar"
+                    >
+                        A
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             EVENTS PAGE
+        ====================================== -->
+
+        <div class="events-page-container">
+
+            <!-- PAGE HEADER -->
+
+            <section class="events-page-header">
+
+                <div class="events-heading-content">
+
+                    <div class="events-badge">
+
+                        <i class="bx bx-calendar-event"></i>
+
+                        Event Management
+
+                    </div>
+
+
+                    <h1>Events Management</h1>
+
+
+                    <p>
+                        Create, organize, and manage alumni events and
+                        university activities.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="openCreateEventModal"
+                    class="create-event-button"
+                    type="button"
+                >
+
+                    <i class="bx bx-plus"></i>
+
+                    Create Event
+
+                </button>
+
+            </section>
+
+
+            <!-- =====================================
+                 STATISTICS
+            ====================================== -->
+
+            <section class="event-statistics">
+
+                <article class="event-stat-card">
+
+                    <div class="event-stat-icon total-event-icon">
+
+                        <i class="bx bx-calendar"></i>
+
+                    </div>
+
+
+                    <div class="event-stat-content">
+
+                        <span>Total Events</span>
+
+                        <strong id="totalEvents">0</strong>
+
+                        <small>
+                            All recorded events
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="event-stat-card">
+
+                    <div class="event-stat-icon upcoming-event-icon">
+
+                        <i class="bx bx-time-five"></i>
+
+                    </div>
+
+
+                    <div class="event-stat-content">
+
+                        <span>Upcoming</span>
+
+                        <strong id="upcomingEvents">0</strong>
+
+                        <small>
+                            Scheduled activities
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="event-stat-card">
+
+                    <div class="event-stat-icon completed-event-icon">
+
+                        <i class="bx bx-check-circle"></i>
+
+                    </div>
+
+
+                    <div class="event-stat-content">
+
+                        <span>Completed</span>
+
+                        <strong id="completedEvents">0</strong>
+
+                        <small>
+                            Finished events
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="event-stat-card">
+
+                    <div class="event-stat-icon attendee-event-icon">
+
+                        <i class="bx bx-group"></i>
+
+                    </div>
+
+
+                    <div class="event-stat-content">
+
+                        <span>Total Attendees</span>
+
+                        <strong id="totalAttendees">0</strong>
+
+                        <small>
+                            Registered participants
+                        </small>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =====================================
+                 FILTER TOOLBAR
+            ====================================== -->
+
+            <section class="event-toolbar">
+
+                <div class="event-search-box">
+
+                    <i class="bx bx-search"></i>
+
+                    <input
+                        id="eventSearch"
+                        type="search"
+                        placeholder="Search by event title, venue, or organizer..."
+                    >
+
+                </div>
+
+
+                <div class="event-filter-group">
+
+                    <select
+                        id="categoryFilter"
+                        aria-label="Filter by category"
+                    >
+
+                        <option value="all">
+                            All Categories
+                        </option>
+
+                        <option value="Academic">
+                            Academic
+                        </option>
+
+                        <option value="Networking">
+                            Networking
+                        </option>
+
+                        <option value="Career">
+                            Career
+                        </option>
+
+                        <option value="Community">
+                            Community
+                        </option>
+
+                    </select>
+
+
+                    <select
+                        id="statusFilter"
+                        aria-label="Filter by status"
+                    >
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="Upcoming">
+                            Upcoming
+                        </option>
+
+                        <option value="Completed">
+                            Completed
+                        </option>
+
+                        <option value="Cancelled">
+                            Cancelled
+                        </option>
+
+                    </select>
+
+
+                    <button
+                        id="resetEventFilters"
+                        class="reset-filter-button"
+                        type="button"
+                    >
+
+                        <i class="bx bx-reset"></i>
+
+                        Reset
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 EVENTS PANEL
+            ====================================== -->
+
+            <section class="events-panel">
+
+                <div class="events-panel-header">
+
+                    <div>
+
+                        <h2>All Events</h2>
+
+                        <p id="eventResultText">
+                            Showing all available events.
+                        </p>
+
+                    </div>
+
+
+                    <div class="events-live-status">
+
+                        <span></span>
+
+                        Live Records
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="eventsContainer"
+                    class="events-grid"
+                >
+                    <!-- JavaScript inserts event cards here -->
+                </div>
+
+
+                <div
+                    id="eventEmptyState"
+                    class="event-empty-state hidden"
+                >
+
+                    <div class="event-empty-icon">
+
+                        <i class="bx bx-calendar-x"></i>
+
+                    </div>
+
+
+                    <h3>No events found</h3>
+
+
+                    <p>
+                        Try changing your search keyword or selected
+                        filters.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================
+     CREATE / EDIT EVENT MODAL
+====================================== -->
+
+<div
+    id="eventFormModal"
+    class="event-modal"
+    aria-hidden="true"
+>
+
+    <div class="event-modal-backdrop"></div>
+
+
+    <div
+        class="event-modal-dialog event-form-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="eventModalTitle"
+    >
+
+        <div class="event-modal-header">
+
+            <div>
+
+                <span class="event-modal-label">
+                    Event Information
+                </span>
+
+                <h2 id="eventModalTitle">
+                    Create New Event
+                </h2>
+
+                <p>
+                    Enter the complete information for this event.
+                </p>
+
+            </div>
+
+
+            <button
+                class="event-modal-close"
+                data-close-modal="eventFormModal"
+                type="button"
+                aria-label="Close modal"
+            >
+                <i class="bx bx-x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="event-modal-body">
+
+            <form id="eventForm">
+
+                <input
+                    id="eventId"
+                    type="hidden"
+                >
+
+
+                <div class="event-form-grid">
+
+                    <div class="event-form-group event-form-full">
+
+                        <label for="eventTitle">
+                            Event Title
+                        </label>
+
+                        <div class="event-input-wrapper">
+
+                            <i class="bx bx-calendar-event"></i>
+
+                            <input
+                                id="eventTitle"
+                                type="text"
+                                placeholder="Enter event title"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="event-form-group">
+
+                        <label for="eventCategory">
+                            Category
+                        </label>
+
+                        <div class="event-select-wrapper">
+
+                            <i class="bx bx-category"></i>
+
+                            <select
+                                id="eventCategory"
+                                required
+                            >
+
+                                <option value="">
+                                    Select category
+                                </option>
+
+                                <option value="Academic">
+                                    Academic
+                                </option>
+
+                                <option value="Networking">
+                                    Networking
+                                </option>
+
+                                <option value="Career">
+                                    Career
+                                </option>
+
+                                <option value="Community">
+                                    Community
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="event-form-group">
+
+                        <label for="eventStatus">
+                            Status
+                        </label>
+
+                        <div class="event-select-wrapper">
+
+                            <i class="bx bx-check-circle"></i>
+
+                            <select
+                                id="eventStatus"
+                                required
+                            >
+
+                                <option value="Upcoming">
+                                    Upcoming
+                                </option>
+
+                                <option value="Completed">
+                                    Completed
+                                </option>
+
+                                <option value="Cancelled">
+                                    Cancelled
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="event-form-group">
+
+                        <label for="eventDate">
+                            Event Date
+                        </label>
+
+                        <div class="event-input-wrapper">
+
+                            <i class="bx bx-calendar"></i>
+
+                            <input
+                                id="eventDate"
+                                type="date"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="event-form-group">
+
+                        <label for="eventTime">
+                            Event Time
+                        </label>
+
+                        <div class="event-input-wrapper">
+
+                            <i class="bx bx-time"></i>
+
+                            <input
+                                id="eventTime"
+                                type="time"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="event-form-group event-form-full">
+
+                        <label for="eventVenue">
+                            Venue
+                        </label>
+
+                        <div class="event-input-wrapper">
+
+                            <i class="bx bx-map"></i>
+
+                            <input
+                                id="eventVenue"
+                                type="text"
+                                placeholder="Enter event venue"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="event-form-group">
+
+                        <label for="eventOrganizer">
+                            Organizer
+                        </label>
+
+                        <div class="event-input-wrapper">
+
+                            <i class="bx bx-user"></i>
+
+                            <input
+                                id="eventOrganizer"
+                                type="text"
+                                placeholder="Enter organizer name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="event-form-group">
+
+                        <label for="eventCapacity">
+                            Maximum Participants
+                        </label>
+
+                        <div class="event-input-wrapper">
+
+                            <i class="bx bx-group"></i>
+
+                            <input
+                                id="eventCapacity"
+                                type="number"
+                                min="1"
+                                placeholder="Enter participant limit"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="event-form-group event-form-full">
+
+                        <label for="eventDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="eventDescription"
+                            rows="5"
+                            placeholder="Write a short event description..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <div class="event-modal-actions">
+
+                    <button
+                        class="event-secondary-button"
+                        data-close-modal="eventFormModal"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        class="event-primary-button"
+                        type="submit"
+                    >
+
+                        <i class="bx bx-save"></i>
+
+                        <span id="eventSubmitText">
+                            Save Event
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIEW EVENT MODAL
+====================================== -->
+
+<div
+    id="viewEventModal"
+    class="event-modal"
+    aria-hidden="true"
+>
+
+    <div class="event-modal-backdrop"></div>
+
+
+    <div
+        class="event-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="viewEventTitle"
+    >
+
+        <div class="event-modal-header">
+
+            <div>
+
+                <span class="event-modal-label">
+                    Event Details
+                </span>
+
+                <h2 id="viewEventTitle">
+                    Event Information
+                </h2>
+
+            </div>
+
+
+            <button
+                class="event-modal-close"
+                data-close-modal="viewEventModal"
+                type="button"
+                aria-label="Close modal"
+            >
+                <i class="bx bx-x"></i>
+            </button>
+
+        </div>
+
+
+        <div
+            id="viewEventContent"
+            class="event-modal-body"
+        >
+        </div>
+
+
+        <div class="event-modal-footer">
+
+            <button
+                class="event-secondary-button"
+                data-close-modal="viewEventModal"
+                type="button"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     DELETE CONFIRMATION MODAL
+====================================== -->
+
+<div
+    id="deleteEventModal"
+    class="event-modal"
+    aria-hidden="true"
+>
+
+    <div class="event-modal-backdrop"></div>
+
+
+    <div
+        class="event-modal-dialog delete-event-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="deleteEventTitle"
+    >
+
+        <div class="delete-event-icon">
+
+            <i class="bx bx-trash"></i>
+
+        </div>
+
+
+        <h2 id="deleteEventTitle">
+            Delete Event?
+        </h2>
+
+
+        <p>
+            This event will be removed from the event list. This action
+            cannot be undone.
+        </p>
+
+
+        <div class="event-modal-actions">
+
+            <button
+                class="event-secondary-button"
+                data-close-modal="deleteEventModal"
+                type="button"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                id="confirmDeleteEvent"
+                class="event-danger-button"
+                type="button"
+            >
+
+                <i class="bx bx-trash"></i>
+
+                Delete Event
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     TOAST MESSAGE
+====================================== -->
+
+<div
+    id="eventToast"
+    class="event-toast"
+>
+
+    <i class="bx bx-check-circle"></i>
+
+    <span id="eventToastMessage">
+        Event saved successfully.
+    </span>
+
+</div>
+
+
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/events.js"></script>
+<script src="../assets/js/page-transition.js"></script>
+<script src="../assets/js/admin-header.js"></script>
+</body>
+
+</html>

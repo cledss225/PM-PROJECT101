@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Reports & Analytics | AlumniHub</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Shared CSS -->
+<link rel="stylesheet" href="../assets/css/variable.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/page-transition.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+
+<!-- Reports CSS -->
+<link rel="stylesheet" href="../assets/css/reports.css">
+</head>
+
+<body>
+
+<div class="dashboard-shell">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="dashboard.html" class="sidebar-brand">
+
+                <div class="brand-mark">
+                    <img
+                        src="../assets/images/logo/ams-round-logo.jpg"
+                        alt="AMS Logo"
+                        class="ams-brand-logo"
+                    >
+                </div>
+
+                <div class="brand-text">
+                    <strong>A.M.S</strong>
+                    <small>AlumniHub</small>
+                </div>
+
+            </a>
+
+
+            <div class="sidebar-search">
+
+                <i class="bx bx-search"></i>
+
+                <input
+                    type="text"
+                    placeholder="Search anything"
+                >
+
+                <span>⌘ K</span>
+
+            </div>
+
+
+            <p class="menu-label">
+                Main Navigation
+            </p>
+
+
+            <nav class="menu">
+
+                <a href="dashboard.html">
+                    <i class="bx bxs-dashboard"></i>
+                    <span>Overview</span>
+                </a>
+
+                <a href="alumni-directory.html">
+                    <i class="bx bx-group"></i>
+                    <span>Alumni Directory</span>
+                </a>
+
+                <a href="account-approvals.html">
+                    <i class="bx bx-user-check"></i>
+                    <span>Account Approvals</span>
+                </a>
+
+                <a href="profile.html">
+                    <i class="bx bx-user"></i>
+                    <span>My Profile</span>
+                </a>
+
+                <a href="events.html">
+                    <i class="bx bx-calendar-event"></i>
+                    <span>Events</span>
+                </a>
+
+                <a href="jobs.html">
+                    <i class="bx bx-briefcase"></i>
+                    <span>Jobs</span>
+                </a>
+
+                <a href="announcements.html">
+                    <i class="bx bx-volume-full"></i>
+                    <span>Announcements</span>
+                </a>
+
+                <a
+                    href="reports.html"
+                    class="active"
+                >
+                    <i class="bx bx-bar-chart-alt-2"></i>
+                    <span>Reports</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <p class="menu-label">
+                Support
+            </p>
+
+            <a
+                href="settings.html"
+                class="support-link"
+            >
+                <i class="bx bx-cog"></i>
+                <span>Settings</span>
+            </a>
+
+
+            <button
+                id="logout"
+                class="sidebar-profile"
+                type="button"
+            >
+
+                <div
+                    class="sidebar-avatar"
+                    id="sidebarAvatar"
+                >
+                    A
+                </div>
+
+                <div class="sidebar-user">
+
+                    <strong id="sidebarName">
+                        Administrator
+                    </strong>
+
+                    <small id="sidebarEmail">
+                        admin@alumnihub.com
+                    </small>
+
+                </div>
+
+                <i class="bx bx-log-out"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <!-- TOPBAR -->
+
+<header class="topbar">
+
+    <div class="topbar-inner">
+
+        <!-- LEFT SIDE -->
+        <div class="topbar-left">
+
+            <button
+                class="topbar-menu-button"
+                type="button"
+                aria-label="Open menu"
+            >
+                <i class="bx bx-menu"></i>
+            </button>
+
+            <div class="breadcrumb">
+
+                <a
+                    href="dashboard.html"
+                    class="breadcrumb-dashboard"
+                    title="Back to Dashboard"
+                >
+                    Administrator
+                </a>
+
+                <i class="bx bx-chevron-right"></i>
+
+                <strong>Reports</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="topbar-actions">
+
+            <button
+                id="themeToggle"
+                class="topbar-icon"
+                type="button"
+                aria-label="Toggle theme"
+            >
+                <i class="bx bx-moon"></i>
+            </button>
+
+            <button
+                class="topbar-icon notification-button"
+                type="button"
+                aria-label="Notifications"
+            >
+                <i class="bx bx-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+
+            <button
+                class="topbar-icon"
+                type="button"
+                aria-label="Help"
+            >
+                <i class="bx bx-help-circle"></i>
+            </button>
+
+            <div
+                class="topbar-avatar"
+                id="topbarAvatar"
+            >
+                A
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+        <!-- REPORTS PAGE -->
+
+        <div class="reports-page-container">
+
+            <!-- PAGE HEADER -->
+
+            <section class="reports-page-header">
+
+                <div>
+
+                    <div class="reports-page-badge">
+
+                        <i class="bx bx-line-chart"></i>
+
+                        Data Intelligence Center
+
+                    </div>
+
+                    <h1>Reports & Analytics</h1>
+
+                    <p>
+                        Analyze alumni demographics, verification,
+                        employment, and academic information.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="generateReportButton"
+                    class="generate-report-button"
+                    type="button"
+                >
+                    <i class="bx bx-file"></i>
+                    Generate Report
+                </button>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+
+            <section class="reports-statistics">
+
+                <article class="report-stat-card">
+
+                    <div class="report-stat-icon report-total-icon">
+                        <i class="bx bx-group"></i>
+                    </div>
+
+                    <div class="report-stat-information">
+
+                        <span>Total Alumni</span>
+
+                        <strong id="totalAlumniStat">0</strong>
+
+                        <small>Current filtered records</small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="report-stat-card">
+
+                    <div class="report-stat-icon report-verified-icon">
+                        <i class="bx bx-badge-check"></i>
+                    </div>
+
+                    <div class="report-stat-information">
+
+                        <span>Verified Alumni</span>
+
+                        <strong id="verifiedAlumniStat">0</strong>
+
+                        <small id="verifiedRateText">
+                            0% verification rate
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="report-stat-card">
+
+                    <div class="report-stat-icon report-employed-icon">
+                        <i class="bx bx-briefcase-alt-2"></i>
+                    </div>
+
+                    <div class="report-stat-information">
+
+                        <span>Employed Alumni</span>
+
+                        <strong id="employedAlumniStat">0</strong>
+
+                        <small id="employmentRateText">
+                            0% employment rate
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="report-stat-card">
+
+                    <div class="report-stat-icon report-generated-icon">
+                        <i class="bx bx-file-blank"></i>
+                    </div>
+
+                    <div class="report-stat-information">
+
+                        <span>Reports Generated</span>
+
+                        <strong id="generatedReportsStat">0</strong>
+
+                        <small>Reports generated this session</small>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- FILTER PANEL -->
+
+            <section class="reports-filter-panel">
+
+                <div class="reports-filter-header">
+
+                    <div>
+
+                        <h2>Report Filters</h2>
+
+                        <p>
+                            Refine the analytics using available alumni
+                            information.
+                        </p>
+
+                    </div>
+
+                    <div class="reports-filter-status">
+                        <span></span>
+                        Live analytics
+                    </div>
+
+                </div>
+
+
+                <div class="reports-filter-grid">
+
+                    <div class="reports-filter-field">
+
+                        <label for="reportFromDate">
+                            From Date
+                        </label>
+
+                        <div class="reports-input-wrapper">
+
+                            <i class="bx bx-calendar"></i>
+
+                            <input
+                                id="reportFromDate"
+                                type="date"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reports-filter-field">
+
+                        <label for="reportToDate">
+                            To Date
+                        </label>
+
+                        <div class="reports-input-wrapper">
+
+                            <i class="bx bx-calendar"></i>
+
+                            <input
+                                id="reportToDate"
+                                type="date"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reports-filter-field">
+
+                        <label for="reportBatchFilter">
+                            Batch Year
+                        </label>
+
+                        <div class="reports-select-wrapper">
+
+                            <i class="bx bx-calendar-event"></i>
+
+                            <select id="reportBatchFilter">
+
+                                <option value="all">
+                                    All Batches
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reports-filter-field">
+
+                        <label for="reportProgramFilter">
+                            Program
+                        </label>
+
+                        <div class="reports-select-wrapper">
+
+                            <i class="bx bx-book"></i>
+
+                            <select id="reportProgramFilter">
+
+                                <option value="all">
+                                    All Programs
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reports-filter-field">
+
+                        <label for="reportEmploymentFilter">
+                            Employment Status
+                        </label>
+
+                        <div class="reports-select-wrapper">
+
+                            <i class="bx bx-briefcase"></i>
+
+                            <select id="reportEmploymentFilter">
+
+                                <option value="all">
+                                    All Employment Status
+                                </option>
+
+                                <option value="Employed">
+                                    Employed
+                                </option>
+
+                                <option value="Self-employed">
+                                    Self-employed
+                                </option>
+
+                                <option value="Unemployed">
+                                    Unemployed
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reports-filter-actions">
+
+                        <button
+                            id="applyReportFilters"
+                            class="reports-primary-button"
+                            type="button"
+                        >
+                            <i class="bx bx-filter-alt"></i>
+                            Apply Filters
+                        </button>
+
+                        <button
+                            id="resetReportFilters"
+                            class="reports-secondary-button"
+                            type="button"
+                        >
+                            <i class="bx bx-reset"></i>
+                            Reset
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CHARTS ROW 1 -->
+
+            <section class="reports-chart-grid">
+
+                <article class="report-chart-card">
+
+                    <div class="report-card-header">
+
+                        <div>
+
+                            <span class="report-card-label">
+                                Academic Analytics
+                            </span>
+
+                            <h2>Alumni by Batch Year</h2>
+
+                            <p>
+                                Total number of alumni registered per
+                                graduating batch.
+                            </p>
+
+                        </div>
+
+                        <div class="report-header-icon">
+                            <i class="bx bx-bar-chart-square"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="report-chart-wrapper report-large-chart">
+
+                        <canvas id="batchYearChart"></canvas>
+
+                    </div>
+
+                </article>
+
+
+                <article class="report-chart-card">
+
+                    <div class="report-card-header">
+
+                        <div>
+
+                            <span class="report-card-label">
+                                Career Analytics
+                            </span>
+
+                            <h2>Employment Status</h2>
+
+                            <p>
+                                Current employment condition of alumni.
+                            </p>
+
+                        </div>
+
+                        <div class="report-header-icon">
+                            <i class="bx bx-doughnut-chart"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="report-chart-wrapper report-donut-chart">
+
+                        <canvas id="employmentChart"></canvas>
+
+                        <div class="report-chart-center">
+
+                            <strong id="employmentCenterRate">
+                                0%
+                            </strong>
+
+                            <span>Working</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- CHARTS ROW 2 -->
+
+            <section class="reports-chart-grid">
+
+                <article class="report-chart-card">
+
+                    <div class="report-card-header">
+
+                        <div>
+
+                            <span class="report-card-label">
+                                Program Analytics
+                            </span>
+
+                            <h2>Program Distribution</h2>
+
+                            <p>
+                                Alumni distribution across academic
+                                programs.
+                            </p>
+
+                        </div>
+
+                        <div class="report-header-icon">
+                            <i class="bx bx-horizontal-left"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="report-chart-wrapper report-large-chart">
+
+                        <canvas id="programChart"></canvas>
+
+                    </div>
+
+                </article>
+
+
+                <article class="report-chart-card">
+
+                    <div class="report-card-header">
+
+                        <div>
+
+                            <span class="report-card-label">
+                                Demographic Analytics
+                            </span>
+
+                            <h2>Gender Distribution</h2>
+
+                            <p>
+                                Gender representation in filtered records.
+                            </p>
+
+                        </div>
+
+                        <div class="report-header-icon">
+                            <i class="bx bx-pie-chart-alt-2"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="report-chart-wrapper report-donut-chart">
+
+                        <canvas id="genderChart"></canvas>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- SUMMARY TABLE -->
+
+            <section class="report-summary-panel">
+
+                <div class="report-summary-header">
+
+                    <div>
+
+                        <span class="report-card-label">
+                            Consolidated Records
+                        </span>
+
+                        <h2>Alumni Report Summary</h2>
+
+                        <p id="reportSummaryText">
+                            Showing all available alumni records.
+                        </p>
+
+                    </div>
+
+
+                    <div class="report-export-actions">
+
+                        <button
+                            id="exportPdfButton"
+                            class="report-export-button"
+                            type="button"
+                        >
+                            <i class="bx bxs-file-pdf"></i>
+                            PDF
+                        </button>
+
+                        <button
+                            id="exportExcelButton"
+                            class="report-export-button"
+                            type="button"
+                        >
+                            <i class="bx bxs-file"></i>
+                            CSV
+                        </button>
+
+                        <button
+                            id="printReportButton"
+                            class="report-export-button"
+                            type="button"
+                        >
+                            <i class="bx bx-printer"></i>
+                            Print
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-table-wrapper">
+
+                    <table class="report-summary-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Batch</th>
+                                <th>Program</th>
+                                <th>Total Alumni</th>
+                                <th>Verified</th>
+                                <th>Employed</th>
+                                <th>Employment Rate</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="reportSummaryTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div
+                    id="reportTableEmptyState"
+                    class="report-table-empty hidden"
+                >
+
+                    <i class="bx bx-data"></i>
+
+                    <h3>No report data found</h3>
+
+                    <p>
+                        Change or reset the selected filters to display
+                        report data.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- RECENT REPORTS -->
+
+            <section class="recent-reports-panel">
+
+                <div class="recent-reports-header">
+
+                    <div>
+
+                        <span class="report-card-label">
+                            Report Activity
+                        </span>
+
+                        <h2>Recently Generated Reports</h2>
+
+                        <p>
+                            Reports created during the current session.
+                        </p>
+
+                    </div>
+
+                    <span
+                        id="recentReportCount"
+                        class="recent-report-count"
+                    >
+                        0 reports
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="recentReportsContainer"
+                    class="recent-reports-list"
+                >
+                </div>
+
+
+                <div
+                    id="recentReportsEmptyState"
+                    class="recent-reports-empty"
+                >
+
+                    <div>
+                        <i class="bx bx-file-blank"></i>
+                    </div>
+
+                    <h3>No generated reports yet</h3>
+
+                    <p>
+                        Click Generate Report to create your first report.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- GENERATE REPORT MODAL -->
+
+<div
+    id="generateReportModal"
+    class="reports-modal"
+    aria-hidden="true"
+>
+
+    <div class="reports-modal-backdrop"></div>
+
+    <div
+        class="reports-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="generateReportModalTitle"
+    >
+
+        <div class="reports-modal-header">
+
+            <div>
+
+                <span class="report-card-label">
+                    Report Generator
+                </span>
+
+                <h2 id="generateReportModalTitle">
+                    Generate New Report
+                </h2>
+
+                <p>
+                    Choose the report type and file format.
+                </p>
+
+            </div>
+
+            <button
+                class="reports-modal-close"
+                data-close-modal="generateReportModal"
+                type="button"
+                aria-label="Close modal"
+            >
+                <i class="bx bx-x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="reports-modal-body">
+
+            <div class="reports-modal-form">
+
+                <div class="reports-filter-field">
+
+                    <label for="generatedReportName">
+                        Report Name
+                    </label>
+
+                    <div class="reports-input-wrapper">
+
+                        <i class="bx bx-file"></i>
+
+                        <input
+                            id="generatedReportName"
+                            type="text"
+                            placeholder="Enter report name"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="reports-filter-field">
+
+                    <label for="generatedReportType">
+                        Report Type
+                    </label>
+
+                    <div class="reports-select-wrapper">
+
+                        <i class="bx bx-category"></i>
+
+                        <select id="generatedReportType">
+
+                            <option value="Comprehensive Alumni Report">
+                                Comprehensive Alumni Report
+                            </option>
+
+                            <option value="Employment Report">
+                                Employment Report
+                            </option>
+
+                            <option value="Verification Report">
+                                Verification Report
+                            </option>
+
+                            <option value="Program Distribution Report">
+                                Program Distribution Report
+                            </option>
+
+                            <option value="Batch Summary Report">
+                                Batch Summary Report
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="reports-filter-field">
+
+                    <label for="generatedReportFormat">
+                        Export Format
+                    </label>
+
+                    <div class="reports-select-wrapper">
+
+                        <i class="bx bx-download"></i>
+
+                        <select id="generatedReportFormat">
+
+                            <option value="PDF">PDF</option>
+                            <option value="CSV">CSV</option>
+                            <option value="Print">Print</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="reports-modal-actions">
+
+                <button
+                    class="reports-secondary-button"
+                    data-close-modal="generateReportModal"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    id="confirmGenerateReport"
+                    class="reports-primary-button"
+                    type="button"
+                >
+                    <i class="bx bx-file"></i>
+                    Generate Report
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    id="reportToast"
+    class="report-toast"
+>
+
+    <i class="bx bx-check-circle"></i>
+
+    <span id="reportToastMessage">
+        Report generated successfully.
+    </span>
+
+</div>
+
+
+<!-- Chart.js -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- JavaScript -->
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/reports.js"></script>
+<script src="../assets/js/page-transition.js"></script>
+<script src="../assets/js/admin-header.js"></script>
+</body>
+
+</html>

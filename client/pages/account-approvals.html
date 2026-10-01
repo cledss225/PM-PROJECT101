@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Account Approvals | AlumniHub</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+   <!-- CSS -->
+<link rel="stylesheet" href="../assets/css/variable.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/account-approvals.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+</head>
+
+<body>
+
+<div class="dashboard-shell">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a
+                    href="dashboard.html"
+                    class="sidebar-brand"
+                >
+
+                    <div class="brand-mark">
+                        <img
+                            src="../assets/images/logo/ams-round-logo.jpg"
+                            alt="AMS Logo"
+                            class="ams-brand-logo"
+                        >
+                    </div>
+
+                    <div class="brand-text">
+                        <strong>A.M.S</strong>
+                        <small>AlumniHub</small>
+                    </div>
+
+                </a>
+
+
+            <div class="sidebar-search">
+
+                <i class="bx bx-search"></i>
+
+                <input
+                    type="text"
+                    placeholder="Search anything"
+                >
+
+                <span>⌘ K</span>
+
+            </div>
+
+
+            <p class="menu-label">
+                Main Navigation
+            </p>
+
+
+            <nav class="menu">
+
+                <a href="dashboard.html">
+
+                    <i class="bx bxs-dashboard"></i>
+
+                    <span>Overview</span>
+
+                </a>
+
+
+                <a href="alumni-directory.html">
+
+                    <i class="bx bx-group"></i>
+
+                    <span>Alumni Directory</span>
+
+                </a>
+
+
+                <a
+                    href="account-approvals.html"
+                    class="active"
+                >
+
+                    <i class="bx bx-user-check"></i>
+
+                    <span>Account Approvals</span>
+
+                </a>
+
+
+                <a href="profile.html">
+
+                    <i class="bx bx-user"></i>
+
+                    <span>My Profile</span>
+
+                </a>
+
+
+                <a href="events.html">
+
+                    <i class="bx bx-calendar-event"></i>
+
+                    <span>Events</span>
+
+                </a>
+
+
+                <a href="jobs.html">
+
+                    <i class="bx bx-briefcase"></i>
+
+                    <span>Jobs</span>
+
+                </a>
+
+
+                <a href="announcements.html">
+
+                    <i class="bx bxs-megaphone"></i>
+
+                    <span>Announcements</span>
+
+                </a>
+
+
+                <a href="reports.html">
+
+                    <i class="bx bx-bar-chart-alt-2"></i>
+
+                    <span>Reports</span>
+
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <p class="menu-label">
+                Support
+            </p>
+
+
+            <a
+                href="settings.html"
+                class="support-link"
+            >
+
+                <i class="bx bx-cog"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+
+            <button
+                id="logout"
+                class="sidebar-profile"
+                type="button"
+            >
+
+                <div class="sidebar-avatar">
+                    A
+                </div>
+
+
+                <div class="sidebar-user">
+
+                    <strong>
+                        Administrator
+                    </strong>
+
+                    <small>
+                        admin@alumnihub.com
+                    </small>
+
+                </div>
+
+
+                <i class="bx bx-log-out"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-inner">
+
+                <div class="topbar-left">
+
+                    <button
+                        class="topbar-menu-button"
+                        type="button"
+                        aria-label="Open menu"
+                    >
+                        <i class="bx bx-menu"></i>
+                    </button>
+
+
+                    <div class="breadcrumb">
+
+                        <a
+                            href="dashboard.html"
+                            class="breadcrumb-dashboard"
+                            title="Back to Dashboard"
+                        >
+                            Account Management
+                        </a>
+
+                        <i class="bx bx-chevron-right"></i>
+
+                        <strong>Account Approvals</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-actions">
+
+                    <button
+                        id="themeToggle"
+                        class="topbar-icon"
+                        type="button"
+                        aria-label="Toggle theme"
+                    >
+                        <i class="bx bx-moon"></i>
+                    </button>
+
+
+                    <button
+                        class="topbar-icon"
+                        type="button"
+                        aria-label="Notifications"
+                    >
+                        <i class="bx bx-bell"></i>
+                    </button>
+
+
+                    <button
+                        class="topbar-icon"
+                        type="button"
+                        aria-label="Help"
+                    >
+                        <i class="bx bx-help-circle"></i>
+                    </button>
+
+
+                    <div class="topbar-avatar">
+                        A
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE HEADING -->
+
+        <section class="page-heading approval-page-heading">
+
+            <div>
+
+                <span class="page-eyebrow">
+                    User Verification
+                </span>
+
+                <h1>
+                    Account Approvals
+                </h1>
+
+                <p>
+                    Review pending alumni accounts before granting
+                    access to AlumniHub.
+                </p>
+
+            </div>
+
+
+            <button
+                id="refreshAccounts"
+                class="refresh-button"
+                type="button"
+            >
+
+                <i class="bx bx-refresh"></i>
+
+                Refresh
+
+            </button>
+
+        </section>
+
+
+        <!-- SUMMARY CARDS -->
+
+        <section class="approval-summary-grid">
+
+            <article class="approval-summary-card">
+
+                <div class="summary-icon pending">
+                    <i class="bx bx-time-five"></i>
+                </div>
+
+                <div>
+                    <span>Pending Accounts</span>
+
+                    <strong id="pendingCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Awaiting verification
+                    </small>
+                </div>
+
+            </article>
+
+
+            <article class="approval-summary-card">
+
+                <div class="summary-icon approved">
+                    <i class="bx bx-user-check"></i>
+                </div>
+
+                <div>
+                    <span>Approved Today</span>
+
+                    <strong id="approvedTodayCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Verified by administrator
+                    </small>
+                </div>
+
+            </article>
+
+
+            <article class="approval-summary-card">
+
+                <div class="summary-icon rejected">
+                    <i class="bx bx-user-x"></i>
+                </div>
+
+                <div>
+                    <span>Rejected Today</span>
+
+                    <strong id="rejectedTodayCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Declined account requests
+                    </small>
+                </div>
+
+            </article>
+
+
+            <article class="approval-summary-card">
+
+                <div class="summary-icon total">
+                    <i class="bx bx-group"></i>
+                </div>
+
+                <div>
+                    <span>Visible Records</span>
+
+                    <strong id="visibleCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Based on active filters
+                    </small>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- MAIN APPROVAL PANEL -->
+
+        <section class="approval-panel">
+
+            <div class="approval-panel-header">
+
+                <div>
+
+                    <h2>
+                        Pending Verification Requests
+                    </h2>
+
+                    <p>
+                        Review the submitted account information
+                        before approving or rejecting a user.
+                    </p>
+
+                </div>
+
+
+                <div class="approval-toolbar">
+
+                    <div class="approval-search">
+
+                        <i class="bx bx-search"></i>
+
+                        <input
+                            type="search"
+                            id="accountSearch"
+                            placeholder="Search name, email, program..."
+                        >
+
+                    </div>
+
+
+                    <select
+                        id="programFilter"
+                        class="approval-filter"
+                    >
+                        <option value="">
+                            All Programs
+                        </option>
+                    </select>
+
+
+                    <select
+                        id="batchFilter"
+                        class="approval-filter"
+                    >
+                        <option value="">
+                            All Batches
+                        </option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOADING STATE -->
+
+            <div
+                id="approvalLoading"
+                class="approval-loading"
+            >
+
+                <div class="loading-spinner"></div>
+
+                <p>
+                    Loading pending accounts...
+                </p>
+
+            </div>
+
+
+            <!-- ERROR STATE -->
+
+            <div
+                id="approvalError"
+                class="approval-state approval-error"
+                hidden
+            >
+
+                <div class="state-icon">
+                    <i class="bx bx-error-circle"></i>
+                </div>
+
+                <h3>
+                    Unable to load accounts
+                </h3>
+
+                <p id="approvalErrorMessage">
+                    Something went wrong while loading pending accounts.
+                </p>
+
+                <button
+                    id="retryLoadAccounts"
+                    type="button"
+                >
+                    Try Again
+                </button>
+
+            </div>
+
+
+            <!-- EMPTY STATE -->
+
+            <div
+                id="approvalEmpty"
+                class="approval-state"
+                hidden
+            >
+
+                <div class="state-icon">
+                    <i class="bx bx-user-check"></i>
+                </div>
+
+                <h3>
+                    No pending accounts
+                </h3>
+
+                <p>
+                    All current registration requests have already
+                    been reviewed.
+                </p>
+
+            </div>
+
+
+            <!-- TABLE -->
+
+            <div
+                id="approvalTableWrapper"
+                class="approval-table-wrapper"
+                hidden
+            >
+
+                <table class="approval-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Alumni
+                            </th>
+
+                            <th>
+                                Program
+                            </th>
+
+                            <th>
+                                Batch
+                            </th>
+
+                            <th>
+                                Student Number
+                            </th>
+
+                            <th>
+                                Registered
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th class="actions-heading">
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="approvalTableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <div class="approval-panel-footer">
+
+                <p id="approvalResultText">
+                    Showing 0 pending accounts
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- VIEW DETAILS MODAL -->
+
+<div
+    id="accountDetailsModal"
+    class="approval-modal"
+    aria-hidden="true"
+>
+
+    <div
+        class="approval-modal-backdrop"
+        data-close-modal="accountDetailsModal"
+    ></div>
+
+
+    <div
+        class="approval-modal-dialog details-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="detailsModalTitle"
+    >
+
+        <div class="approval-modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    Account Information
+                </span>
+
+                <h2 id="detailsModalTitle">
+                    Alumni Details
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close-button"
+                data-close-modal="accountDetailsModal"
+                aria-label="Close details modal"
+            >
+                <i class="bx bx-x"></i>
+            </button>
+
+        </div>
+
+
+        <div
+            id="accountDetailsContent"
+            class="account-details-content"
+        >
+        </div>
+
+
+        <div class="approval-modal-footer">
+
+            <button
+                type="button"
+                class="modal-secondary-button"
+                data-close-modal="accountDetailsModal"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- APPROVE CONFIRMATION MODAL -->
+
+<div
+    id="approveAccountModal"
+    class="approval-modal"
+    aria-hidden="true"
+>
+
+    <div
+        class="approval-modal-backdrop"
+        data-close-modal="approveAccountModal"
+    ></div>
+
+
+    <div
+        class="approval-modal-dialog confirmation-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="approveModalTitle"
+    >
+
+        <div class="confirmation-icon approve">
+            <i class="bx bx-user-check"></i>
+        </div>
+
+
+        <h2 id="approveModalTitle">
+            Approve this account?
+        </h2>
+
+
+        <p>
+            This alumni will become verified and may receive
+            access to the AlumniHub portal.
+        </p>
+
+
+        <div class="confirmation-account">
+
+            <strong id="approveAccountName">
+                Alumni Account
+            </strong>
+
+            <span id="approveAccountEmail">
+                alumni@email.com
+            </span>
+
+        </div>
+
+
+        <div class="confirmation-actions">
+
+            <button
+                type="button"
+                class="modal-secondary-button"
+                data-close-modal="approveAccountModal"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                id="confirmApproveButton"
+                class="modal-primary-button approve"
+            >
+                <i class="bx bx-check"></i>
+
+                Approve Account
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- REJECT CONFIRMATION MODAL -->
+
+<div
+    id="rejectAccountModal"
+    class="approval-modal"
+    aria-hidden="true"
+>
+
+    <div
+        class="approval-modal-backdrop"
+        data-close-modal="rejectAccountModal"
+    ></div>
+
+
+    <div
+        class="approval-modal-dialog confirmation-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="rejectModalTitle"
+    >
+
+        <div class="confirmation-icon reject">
+            <i class="bx bx-user-x"></i>
+        </div>
+
+
+        <h2 id="rejectModalTitle">
+            Reject this account?
+        </h2>
+
+
+        <p>
+            The account will be removed from the pending
+            verification list.
+        </p>
+
+
+        <div class="confirmation-account">
+
+            <strong id="rejectAccountName">
+                Alumni Account
+            </strong>
+
+            <span id="rejectAccountEmail">
+                alumni@email.com
+            </span>
+
+        </div>
+
+
+        <label
+            class="rejection-field"
+            for="rejectionReason"
+        >
+
+            <span>
+                Rejection reason
+            </span>
+
+            <textarea
+                id="rejectionReason"
+                rows="4"
+                placeholder="Enter the reason for rejecting this account..."
+            ></textarea>
+
+        </label>
+
+
+        <p
+            id="rejectionReasonError"
+            class="field-error"
+            hidden
+        >
+            Please provide a rejection reason.
+        </p>
+
+
+        <div class="confirmation-actions">
+
+            <button
+                type="button"
+                class="modal-secondary-button"
+                data-close-modal="rejectAccountModal"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                id="confirmRejectButton"
+                class="modal-primary-button reject"
+            >
+                <i class="bx bx-x"></i>
+
+                Reject Account
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST CONTAINER -->
+
+<div
+    id="toastContainer"
+    class="toast-container"
+    aria-live="polite"
+    aria-atomic="true"
+></div>
+
+
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/account-approvals.js"></script>
+<script src="../assets/js/admin-header.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events Management | AlumniHub Office</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/office-events.css">
+</head>
+<body>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a href="office-dashboard.html" class="brand">
+
+  <div class="brand-logo">
+    <img
+      src="../assets/images/logo/ams-round-logo.jpg"
+      alt="AMS Logo"
+      class="office-brand-logo"
+    >
+  </div>
+
+  <div class="brand-text">
+    <span class="brand-name">AlumniHub</span>
+    <span class="brand-role">Office Portal</span>
+  </div>
+
+</a>
+    <button class="sidebar-close" id="sidebarClose" type="button"><i class="bx bx-x"></i></button>
+  </div>
+
+  <div class="office-account">
+    <div class="office-account-avatar">
+      <img src="../assets/images/logo/avatars/background/avatar.jpg" alt="Office staff" id="sidebarProfileImage">
+      <span class="avatar-initials" id="sidebarInitials">AO</span>
+      <span class="online-indicator"></span>
+    </div>
+    <div class="office-account-details">
+      <p class="office-account-name" id="sidebarUserName">Alumni Office Staff</p>
+      <p class="office-account-role"><i class="bx bx-shield-quarter"></i> Alumni Affairs Office</p>
+    </div>
+  </div>
+
+  <nav class="sidebar-navigation">
+    <p class="sidebar-section-title">Main Menu</p>
+    <ul class="sidebar-menu">
+      <li><a href="office-dashboard.html" class="sidebar-link"><i class="bx bxs-dashboard"></i><span>Dashboard</span></a></li>
+      <li><a href="alumni-records.html" class="sidebar-link"><i class="bx bxs-user-detail"></i><span>Alumni Records</span></a></li>
+      <li><a href="account-verification.html" class="sidebar-link"><i class="bx bxs-user-check"></i><span>Account Verification</span><span class="menu-badge" id="verificationMenuBadge" hidden>0</span></a></li>
+      <li><a href="events.html" class="sidebar-link active"><i class="bx bxs-calendar-event"></i><span>Events Management</span></a></li>
+      <li><a href="office-jobs.html" class="sidebar-link"><i class="bx bxs-briefcase-alt-2"></i><span>Job Opportunities</span></a></li>
+      <li><a href="office-announcements.html" class="sidebar-link"><i class="bx bxs-megaphone"></i><span>Announcements</span></a></li>
+      <li><a href="office-reports.html" class="sidebar-link"><i class="bx bxs-report"></i><span>Reports</span></a></li>
+    </ul>
+
+    <p class="sidebar-section-title">Account</p>
+    <ul class="sidebar-menu">
+      <li><a href="office-profile.html" class="sidebar-link"><i class="bx bxs-user-circle"></i><span>Profile</span></a></li>
+      <li><a href="office-settings.html" class="sidebar-link"><i class="bx bxs-cog"></i><span>Settings</span></a></li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-footer">
+    <button class="logout-button" id="logoutButton" type="button"><i class="bx bx-log-out"></i><span>Logout</span></button>
+  </div>
+</aside>
+
+<div class="app-layout">
+  <header class="top-header">
+    <div class="header-left">
+      <button class="menu-toggle" id="menuToggle" type="button"><i class="bx bx-menu"></i></button>
+      <div class="header-search">
+        <i class="bx bx-search"></i>
+        <input id="globalSearch" type="search" placeholder="Search events...">
+        <span class="search-shortcut">Ctrl K</span>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="header-action-button" id="themeToggle" type="button"><i class="bx bx-moon" id="themeIcon"></i></button>
+      <button class="header-action-button" id="notificationButton" type="button"><i class="bx bx-bell"></i></button>
+      <div class="header-profile-wrapper">
+        <button class="header-profile" id="headerProfileButton" type="button">
+          <div class="header-profile-avatar">
+            <img src="../assets/images/logo/avatars/background/avatar.jpg" alt="Office staff" id="headerProfileImage">
+            <span class="avatar-initials" id="headerInitials">AO</span>
+          </div>
+          <div class="header-profile-info">
+            <span class="header-profile-name" id="headerUserName">Alumni Office</span>
+            <span class="header-profile-role">Alumni Office</span>
+          </div>
+          <i class="bx bx-chevron-down"></i>
+        </button>
+        <div class="profile-dropdown" id="profileDropdown">
+          <a href="office-profile.html"><i class="bx bx-user"></i> My Profile</a>
+          <a href="settings.html"><i class="bx bx-cog"></i> Settings</a>
+          <button type="button" id="profileLogoutButton"><i class="bx bx-log-out"></i> Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="page-header">
+      <div class="page-heading">
+        <div class="page-heading-icon"><i class="bx bxs-calendar-event"></i></div>
+        <div>
+          <p class="page-eyebrow">Alumni Office</p>
+          <h1>Events Management</h1>
+          <p class="page-description">Create, update, publish, and monitor alumni events.</p>
+        </div>
+      </div>
+      <div class="page-header-actions">
+        <button class="button button-secondary" id="refreshButton" type="button"><i class="bx bx-refresh"></i> Refresh</button>
+        <button class="button button-primary" id="createEventButton" type="button"><i class="bx bx-plus"></i> Create Event</button>
+      </div>
+    </section>
+
+    <section class="information-banner">
+      <i class="bx bx-info-circle"></i>
+      <div>
+        <h2>Event Management</h2>
+        <p>Manage alumni activities and prepare events for RSVP access on the Alumni portal.</p>
+      </div>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary-card"><i class="bx bx-calendar"></i><div><p>Total Events</p><h2 id="totalEventsCount">0</h2><span>All event records</span></div></article>
+      <article class="summary-card"><i class="bx bx-time-five"></i><div><p>Upcoming</p><h2 id="upcomingEventsCount">0</h2><span>Future events</span></div></article>
+      <article class="summary-card"><i class="bx bx-radio-circle-marked"></i><div><p>Ongoing</p><h2 id="ongoingEventsCount">0</h2><span>Currently active</span></div></article>
+      <article class="summary-card"><i class="bx bx-check-circle"></i><div><p>Completed</p><h2 id="completedEventsCount">0</h2><span>Finished events</span></div></article>
+    </section>
+
+    <section class="events-card">
+      <div class="events-card-header">
+        <div><h2>Alumni Events</h2><p>Manage published and scheduled activities.</p></div>
+        <div class="record-result-count"><span id="resultCount">0</span> events found</div>
+      </div>
+
+      <div class="events-filters">
+        <div class="filter-search">
+          <i class="bx bx-search"></i>
+          <input id="eventSearch" type="search" placeholder="Search title, venue, or description...">
+          <button id="clearSearchButton" type="button" hidden><i class="bx bx-x"></i></button>
+        </div>
+
+        <div class="filter-group">
+          <label for="statusFilter">Status</label>
+          <select id="statusFilter">
+            <option value="all">All Statuses</option>
+            <option value="upcoming">Upcoming</option>
+            <option value="ongoing">Ongoing</option>
+            <option value="completed">Completed</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="eventTypeFilter">Event Type</label>
+          <select id="eventTypeFilter">
+            <option value="all">All Types</option>
+            <option value="reunion">Reunion</option>
+            <option value="seminar">Seminar</option>
+            <option value="webinar">Webinar</option>
+            <option value="career">Career Event</option>
+            <option value="networking">Networking</option>
+            <option value="community">Community Activity</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <button class="reset-filter-button" id="resetFiltersButton" type="button"><i class="bx bx-reset"></i> Reset</button>
+      </div>
+
+      <div class="events-loading" id="eventsLoading">
+        <div class="loading-spinner"></div>
+        <h3>Loading events</h3>
+        <p>Please wait while we retrieve event records.</p>
+      </div>
+
+      <div class="events-state" id="eventsErrorState" hidden>
+        <i class="bx bx-error-circle"></i>
+        <h3>Unable to load events</h3>
+        <p id="eventsErrorMessage">Something went wrong.</p>
+        <button class="button button-primary" id="retryButton" type="button">Try Again</button>
+      </div>
+
+      <div class="events-state" id="eventsEmptyState" hidden>
+        <i class="bx bx-calendar-x"></i>
+        <h3>No events found</h3>
+        <p>No events match the selected filters.</p>
+      </div>
+
+      <div class="events-grid" id="eventsGrid" hidden></div>
+
+      <div class="pagination-container" id="paginationContainer" hidden>
+        <span>Showing <strong id="paginationStart">0</strong> to <strong id="paginationEnd">0</strong> of <strong id="paginationTotal">0</strong></span>
+        <div>
+          <button id="previousPageButton" type="button">Previous</button>
+          <div id="paginationPages"></div>
+          <button id="nextPageButton" type="button">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <p>© <span id="currentYear"></span> AlumniHub. Alumni Affairs Office Portal.</p>
+      <span><span class="status-dot"></span> System Online</span>
+    </footer>
+  </main>
+</div>
+
+<!-- CREATE / EDIT EVENT -->
+<div class="modal" id="eventFormModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal="eventFormModal"></div>
+  <div class="modal-dialog event-form-modal-dialog">
+    <div class="modal-header">
+      <div>
+        <p class="modal-eyebrow">Events Management</p>
+        <h2 id="eventFormModalTitle">Create New Event</h2>
+      </div>
+      <button class="modal-close-button" type="button" data-close-modal="eventFormModal"><i class="bx bx-x"></i></button>
+    </div>
+
+    <form id="eventForm">
+      <div class="modal-body">
+        <input type="hidden" id="eventId">
+
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label for="eventTitle">Event Title *</label>
+            <input id="eventTitle" type="text" maxlength="150" required>
+          </div>
+
+          <div class="form-group">
+            <label for="eventType">Event Type *</label>
+            <select id="eventType" required>
+              <option value="">Select type</option>
+              <option value="reunion">Reunion</option>
+              <option value="seminar">Seminar</option>
+              <option value="webinar">Webinar</option>
+              <option value="career">Career Event</option>
+              <option value="networking">Networking</option>
+              <option value="community">Community Activity</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="eventStatus">Status</label>
+            <select id="eventStatus">
+              <option value="upcoming">Upcoming</option>
+              <option value="ongoing">Ongoing</option>
+              <option value="completed">Completed</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="eventDescription">Description *</label>
+            <textarea id="eventDescription" rows="5" maxlength="2000" required></textarea>
+          </div>
+
+          <div class="form-group"><label for="eventStartDate">Start Date *</label><input id="eventStartDate" type="date" required></div>
+          <div class="form-group"><label for="eventStartTime">Start Time *</label><input id="eventStartTime" type="time" required></div>
+          <div class="form-group"><label for="eventEndDate">End Date</label><input id="eventEndDate" type="date"></div>
+          <div class="form-group"><label for="eventEndTime">End Time</label><input id="eventEndTime" type="time"></div>
+
+          <div class="form-group">
+            <label for="eventMode">Mode *</label>
+            <select id="eventMode" required>
+              <option value="">Select mode</option>
+              <option value="onsite">On-site</option>
+              <option value="online">Online</option>
+              <option value="hybrid">Hybrid</option>
+            </select>
+          </div>
+
+          <div class="form-group"><label for="eventCapacity">Capacity</label><input id="eventCapacity" type="number" min="1"></div>
+          <div class="form-group full-width"><label for="eventVenue">Venue</label><input id="eventVenue" type="text" maxlength="255"></div>
+          <div class="form-group full-width"><label for="eventMeetingLink">Online Link</label><input id="eventMeetingLink" type="url" maxlength="500"></div>
+          <div class="form-group"><label for="registrationDeadline">RSVP Deadline</label><input id="registrationDeadline" type="datetime-local"></div>
+
+          <div class="form-group">
+            <label for="eventVisibility">Visibility</label>
+            <select id="eventVisibility">
+              <option value="published">Published</option>
+              <option value="draft">Draft</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label class="checkbox-option">
+              <input id="eventRsvpEnabled" type="checkbox" checked>
+              Enable RSVP for alumni
+            </label>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="eventImage">Event Cover</label>
+            <input id="eventImage" type="file" accept="image/png,image/jpeg,image/webp">
+          </div>
+        </div>
+      </div>
+
+     <div class="modal-footer">
+
+  <button
+    class="button button-secondary"
+    type="button"
+    data-close-modal="eventFormModal">
+    Cancel
+  </button>
+
+  <button
+    class="button button-primary"
+    id="saveEventButton"
+    type="submit">
+
+    <i class="bx bx-save"></i>
+
+    <span id="saveEventButtonText">
+      Create Event
+    </span>
+
+  </button>
+
+</div>
+
+</form>
+
+</div>
+</div>
+
+<!-- DETAILS -->
+<div class="modal" id="eventDetailsModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal="eventDetailsModal"></div>
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2 id="detailsEventTitle">Event Details</h2>
+      <button class="modal-close-button" type="button" data-close-modal="eventDetailsModal"><i class="bx bx-x"></i></button>
+    </div>
+    <div class="modal-body">
+      <span id="detailsEventStatus">Upcoming</span>
+      <p id="detailsEventDescription">—</p>
+      <div class="details-information-grid">
+        <div><span>Type</span><strong id="detailsEventType">—</strong></div>
+        <div><span>Date</span><strong id="detailsEventDate">—</strong></div>
+        <div><span>Time</span><strong id="detailsEventTime">—</strong></div>
+        <div><span>Mode</span><strong id="detailsEventMode">—</strong></div>
+        <div><span>Venue</span><strong id="detailsEventVenue">—</strong></div>
+        <div><span>Capacity</span><strong id="detailsEventCapacity">—</strong></div>
+        <div><span>RSVP</span><strong id="detailsRsvpCount">0</strong></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="button button-secondary" type="button" data-close-modal="eventDetailsModal">Close</button>
+      <button class="button button-primary" id="editEventFromDetailsButton" type="button"><i class="bx bx-edit"></i> Edit Event</button>
+    </div>
+  </div>
+</div>
+<!-- EVENT ATTENDEES -->
+<div
+  class="modal"
+  id="eventAttendeesModal"
+  aria-hidden="true">
+
+  <div
+    class="modal-backdrop"
+    data-close-modal="eventAttendeesModal">
+  </div>
+
+  <div class="modal-dialog">
+
+    <div class="modal-header">
+
+      <div>
+        <p class="modal-eyebrow">
+          Event RSVP
+        </p>
+
+        <h2 id="attendeesEventTitle">
+          Event Attendees
+        </h2>
+      </div>
+
+      <button
+        class="modal-close-button"
+        type="button"
+        data-close-modal="eventAttendeesModal">
+
+        <i class="bx bx-x"></i>
+
+      </button>
+
+    </div>
+
+
+    <div class="modal-body">
+
+      <!-- RSVP SUMMARY -->
+
+      <div class="attendees-summary">
+
+        <div>
+          <span>Confirmed Attendees</span>
+
+          <strong id="attendeesCount">
+            0
+          </strong>
+        </div>
+
+      </div>
+
+
+      <!-- LOADING -->
+
+      <div
+        class="attendees-loading"
+        id="attendeesLoading"
+        hidden>
+
+        <div class="loading-spinner"></div>
+
+        <p>
+          Loading attendees...
+        </p>
+
+      </div>
+
+
+      <!-- ERROR -->
+
+      <div
+        class="attendees-empty"
+        id="attendeesError"
+        hidden>
+
+        <i class="bx bx-error-circle"></i>
+
+        <h3>
+          Unable to load attendees
+        </h3>
+
+        <p id="attendeesErrorMessage">
+          Something went wrong.
+        </p>
+
+      </div>
+
+
+      <!-- EMPTY -->
+
+      <div
+        class="attendees-empty"
+        id="attendeesEmpty"
+        hidden>
+
+        <i class="bx bx-user-x"></i>
+
+        <h3>
+          No attendees yet
+        </h3>
+
+        <p>
+          No alumni have confirmed attendance
+          for this event yet.
+        </p>
+
+      </div>
+
+
+      <!-- ATTENDEE LIST -->
+
+      <div
+        class="attendees-list"
+        id="attendeesList">
+      </div>
+
+    </div>
+
+
+    <div class="modal-footer">
+
+      <button
+        class="button button-secondary"
+        type="button"
+        data-close-modal="eventAttendeesModal">
+
+        Close
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- DELETE -->
+<div class="modal" id="deleteEventModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal="deleteEventModal"></div>
+  <div class="modal-dialog confirmation-modal-dialog">
+    <div class="modal-icon danger"><i class="bx bx-trash"></i></div>
+    <h2>Delete this event?</h2>
+    <p>This action will permanently remove <strong id="deleteEventName">this event</strong>.</p>
+    <div class="modal-actions">
+      <button class="button button-secondary" type="button" data-close-modal="deleteEventModal">Cancel</button>
+      <button class="button button-danger" id="confirmDeleteEventButton" type="button">Delete Event</button>
+    </div>
+  </div>
+</div>
+
+<!-- LOGOUT -->
+<div class="modal" id="logoutModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal="logoutModal"></div>
+  <div class="modal-dialog confirmation-modal-dialog">
+    <div class="modal-icon danger"><i class="bx bx-log-out"></i></div>
+    <h2>Log out of AlumniHub?</h2>
+    <p>You will need to sign in again to access the Alumni Office Portal.</p>
+    <div class="modal-actions">
+      <button class="button button-secondary" type="button" data-close-modal="logoutModal">Cancel</button>
+      <button class="button button-danger" id="confirmLogoutButton" type="button">Yes, Log Out</button>
+    </div>
+  </div>
+</div>
+
+<div class="page-loader" id="pageLoader">
+  <div class="loader-content">
+    <div class="loader-logo"><i class="bx bxs-graduation"></i></div>
+    <div class="loader-spinner"></div>
+    <p>Loading Events Management...</p>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="../assets/js/office-events.js"></script>
+<script src="../assets/js/office-header.js"></script>
+</body>
+</html>

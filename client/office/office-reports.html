@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AlumniHub Office Reports Management"
+    >
+
+    <title>Reports | AlumniHub Office</title>
+
+    <!-- Google Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Reports CSS -->
+    <link
+        rel="stylesheet"
+        href="../assets/css/office-reports.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- Mobile Overlay -->
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- =========================================================
+         SIDEBAR
+    ========================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="sidebar-header">
+
+            <a
+                href="office-dashboard.html"
+                class="brand"
+            >
+
+                <div
+    class="office-ams-logo"
+    style="
+        width:46px;
+        height:46px;
+        min-width:46px;
+        flex:0 0 46px;
+        border-radius:50%;
+        overflow:hidden;
+        background:#fff;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    "
+>
+    <img
+        src="/assets/images/logo/ams-round-logo.jpg"
+        alt="AMS Logo"
+        style="
+            width:46px;
+            height:46px;
+            min-width:46px;
+            max-width:46px;
+            object-fit:cover;
+            object-position:center;
+            border-radius:50%;
+            display:block;
+            margin:0;
+            padding:0;
+        "
+    >
+</div>
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        AlumniHub
+                    </span>
+
+                    <span class="brand-role">
+                        Office Portal
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <button
+                type="button"
+                class="sidebar-close"
+                id="sidebarClose"
+                aria-label="Close sidebar"
+            >
+                <i class="bx bx-x"></i>
+            </button>
+
+        </div>
+
+
+        <div class="office-account">
+
+            <div class="office-account-avatar">
+
+                <img
+                    src="../assets/images/logo/avatars/background/avatar.jpg"
+                    alt="Office staff"
+                    id="sidebarProfileImage"
+                >
+
+                <span
+                    class="avatar-initials"
+                    id="sidebarInitials"
+                >
+                    AO
+                </span>
+
+                <span class="online-indicator"></span>
+
+            </div>
+
+
+            <div class="office-account-details">
+
+                <p
+                    class="office-account-name"
+                    id="sidebarUserName"
+                >
+                    Alumni Office Staff
+                </p>
+
+                <p class="office-account-role">
+                    <i class="bx bx-shield-quarter"></i>
+                    Alumni Affairs Office
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-navigation">
+
+            <p class="sidebar-section-title">
+                Main Menu
+            </p>
+
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a
+                        href="office-dashboard.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="alumni-records.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-user-detail"></i>
+                        <span>Alumni Records</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="account-verification.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-user-check"></i>
+                        <span>Account Verification</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="office-events.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-calendar-event"></i>
+                        <span>Events Management</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="office-jobs.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-briefcase-alt-2"></i>
+                        <span>Job Opportunities</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="office-announcements.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-megaphone"></i>
+                        <span>Announcements</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="office-reports.html"
+                        class="sidebar-link active"
+                        aria-current="page"
+                    >
+                        <i class="bx bxs-report"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+
+            </ul>
+                            <div class="sidebar-section-title">
+                    Account
+                </div>
+
+                <ul class="sidebar-menu">
+
+                
+
+
+        
+
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a
+                        href="office-profile.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-user-circle"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="office-settings.html"
+                        class="sidebar-link"
+                    >
+                        <i class="bx bxs-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                <i class="bx bx-log-out"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================================
+         APP LAYOUT
+    ========================================================== -->
+
+    <div class="app-layout">
+
+
+        <!-- TOP HEADER -->
+
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open sidebar"
+                >
+                    <i class="bx bx-menu"></i>
+                </button>
+
+
+                <div class="header-search">
+
+                    <i class="bx bx-search"></i>
+
+                    <input
+                        type="search"
+                        id="globalSearch"
+                        placeholder="Search report data..."
+                    >
+
+                    <span class="search-shortcut">
+                        Ctrl K
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="header-action-button"
+                    id="themeToggle"
+                    aria-label="Change theme"
+                >
+                    <i
+                        class="bx bx-moon"
+                        id="themeIcon"
+                    ></i>
+                </button>
+
+
+                <div class="header-profile-wrapper">
+
+                    <button
+                        type="button"
+                        class="header-profile"
+                        id="headerProfileButton"
+                    >
+
+                        <div class="header-profile-avatar">
+
+                            <img
+                                src="../assets/images/logo/avatars/background/avatar.jpg"
+                                alt="Office staff"
+                                id="headerProfileImage"
+                            >
+
+                            <span
+                                class="avatar-initials"
+                                id="headerInitials"
+                            >
+                                AO
+                            </span>
+
+                        </div>
+
+
+                        <div class="header-profile-info">
+
+                            <span
+                                class="header-profile-name"
+                                id="headerUserName"
+                            >
+                                Alumni Office
+                            </span>
+
+                            <span class="header-profile-role">
+                                Alumni Office
+                            </span>
+
+                        </div>
+
+
+                        <i class="bx bx-chevron-down"></i>
+
+                    </button>
+
+
+                    <div
+                        class="profile-dropdown"
+                        id="profileDropdown"
+                    >
+
+                        <a href="office-profile.html">
+                            <i class="bx bx-user"></i>
+                            My Profile
+                        </a>
+
+                        <a href="settings.html">
+                            <i class="bx bx-cog"></i>
+                            Settings
+                        </a>
+
+                        <button
+                            type="button"
+                            id="profileLogoutButton"
+                        >
+                            <i class="bx bx-log-out"></i>
+                            Logout
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- PAGE HEADER -->
+
+            <section class="page-header">
+
+                <div class="page-heading">
+
+                    <div class="page-heading-icon">
+                        <i class="bx bxs-report"></i>
+                    </div>
+
+
+                    <div>
+
+                        <p class="page-eyebrow">
+                            Alumni Office
+                        </p>
+
+                        <h1>
+                            Reports Management
+                        </h1>
+
+                        <p class="page-description">
+                            Generate, preview, filter, and export alumni information reports.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="page-header-actions">
+
+                    <button
+                        type="button"
+                        class="button button-secondary"
+                        id="refreshButton"
+                    >
+                        <i class="bx bx-refresh"></i>
+                        Refresh
+                    </button>
+
+                    <button
+                        type="button"
+                        class="button button-secondary"
+                        id="printReportButton"
+                    >
+                        <i class="bx bx-printer"></i>
+                        Print
+                    </button>
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        id="exportCsvButton"
+                    >
+                        <i class="bx bx-download"></i>
+                        Export CSV
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- INFORMATION BANNER -->
+
+            <section class="information-banner">
+
+                <i class="bx bx-info-circle"></i>
+
+                <div>
+
+                    <h2>
+                        Alumni Reporting Center
+                    </h2>
+
+                    <p>
+                        Use the filters below to prepare alumni, employment,
+                        batch, program, and event-related reports for monitoring
+                        and administrative purposes.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+            ================================================== -->
+
+            <section class="summary-grid">
+
+                <article class="summary-card">
+
+                    <i class="bx bxs-user-detail"></i>
+
+                    <div>
+
+                        <p>Total Alumni</p>
+
+                        <h2 id="totalAlumniCount">
+                            0
+                        </h2>
+
+                        <span>
+                            Registered alumni
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card summary-verified">
+
+                    <i class="bx bxs-user-check"></i>
+
+                    <div>
+
+                        <p>Verified Alumni</p>
+
+                        <h2 id="verifiedAlumniCount">
+                            0
+                        </h2>
+
+                        <span>
+                            Verified accounts
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card summary-employed">
+
+                    <i class="bx bxs-briefcase"></i>
+
+                    <div>
+
+                        <p>Employed Alumni</p>
+
+                        <h2 id="employedAlumniCount">
+                            0
+                        </h2>
+
+                        <span>
+                            With current employment
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card summary-events">
+
+                    <i class="bx bxs-calendar-event"></i>
+
+                    <div>
+
+                        <p>Total Events</p>
+
+                        <h2 id="totalEventsCount">
+                            0
+                        </h2>
+
+                        <span>
+                            Alumni events
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 REPORT BUILDER
+            ================================================== -->
+
+            <section class="report-builder-card">
+
+                <div class="section-card-header">
+
+                    <div>
+
+                        <h2>
+                            Report Builder
+                        </h2>
+
+                        <p>
+                            Choose the type of report and apply optional filters.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-builder-grid">
+
+
+                    <!-- REPORT TYPE -->
+
+                    <div class="filter-group">
+
+                        <label for="reportType">
+                            Report Type
+                        </label>
+
+                        <select id="reportType">
+
+                            <option value="alumni">
+                                Alumni Directory
+                            </option>
+
+                            <option value="employment">
+                                Employment Report
+                            </option>
+
+                            <option value="batch">
+                                Alumni by Batch
+                            </option>
+
+                            <option value="program">
+                                Alumni by Program
+                            </option>
+
+                            <option value="events">
+                                Events Report
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- PROGRAM -->
+
+                    <div class="filter-group">
+
+                        <label for="programFilter">
+                            Program
+                        </label>
+
+                        <select id="programFilter">
+
+                            <option value="all">
+                                All Programs
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- BATCH -->
+
+                    <div class="filter-group">
+
+                        <label for="batchFilter">
+                            Batch Year
+                        </label>
+
+                        <select id="batchFilter">
+
+                            <option value="all">
+                                All Batches
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- EMPLOYMENT STATUS -->
+
+                    <div class="filter-group">
+
+                        <label for="employmentFilter">
+                            Employment Status
+                        </label>
+
+                        <select id="employmentFilter">
+
+                            <option value="all">
+                                All
+                            </option>
+
+                            <option value="employed">
+                                Employed
+                            </option>
+
+                            <option value="unemployed">
+                                Unemployed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- VERIFICATION -->
+
+                    <div class="filter-group">
+
+                        <label for="verificationFilter">
+                            Verification Status
+                        </label>
+
+                        <select id="verificationFilter">
+
+                            <option value="all">
+                                All
+                            </option>
+
+                            <option value="verified">
+                                Verified
+                            </option>
+
+                            <option value="pending">
+                                Pending
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- START DATE -->
+
+                    <div class="filter-group">
+
+                        <label for="startDateFilter">
+                            Start Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="startDateFilter"
+                        >
+
+                    </div>
+
+
+                    <!-- END DATE -->
+
+                    <div class="filter-group">
+
+                        <label for="endDateFilter">
+                            End Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="endDateFilter"
+                        >
+
+                    </div>
+
+
+                    <!-- GENERATE -->
+
+                    <div class="builder-action-group">
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="resetFiltersButton"
+                        >
+                            <i class="bx bx-reset"></i>
+                            Reset
+                        </button>
+
+                        <button
+                            type="button"
+                            class="button button-primary"
+                            id="generateReportButton"
+                        >
+                            <i class="bx bx-bar-chart-alt-2"></i>
+                            Generate Report
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 REPORT PREVIEW
+            ================================================== -->
+
+            <section class="report-preview-card">
+
+
+                <div class="section-card-header">
+
+                    <div>
+
+                        <h2 id="reportPreviewTitle">
+                            Alumni Directory Report
+                        </h2>
+
+                        <p id="reportPreviewDescription">
+                            Preview of generated report data.
+                        </p>
+
+                    </div>
+
+
+                    <div class="report-record-count">
+
+                        <span id="reportResultCount">
+                            0
+                        </span>
+
+                        records
+
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH WITHIN REPORT -->
+
+                <div class="report-toolbar">
+
+                    <div class="report-search">
+
+                        <i class="bx bx-search"></i>
+
+                        <input
+                            type="search"
+                            id="reportSearch"
+                            placeholder="Search generated report..."
+                        >
+
+                        <button
+                            type="button"
+                            id="clearReportSearchButton"
+                            hidden
+                        >
+                            <i class="bx bx-x"></i>
+                        </button>
+
+                    </div>
+
+
+                    <span
+                        class="generated-time"
+                        id="generatedTime"
+                    >
+                        Not generated yet
+                    </span>
+
+                </div>
+
+
+                <!-- LOADING -->
+
+                <div
+                    class="reports-loading"
+                    id="reportsLoading"
+                    hidden
+                >
+
+                    <div class="loading-spinner"></div>
+
+                    <h3>
+                        Generating report
+                    </h3>
+
+                    <p>
+                        Please wait while report data is being prepared.
+                    </p>
+
+                </div>
+
+
+                <!-- ERROR -->
+
+                <div
+                    class="reports-state"
+                    id="reportsErrorState"
+                    hidden
+                >
+
+                    <i class="bx bx-error-circle"></i>
+
+                    <h3>
+                        Unable to generate report
+                    </h3>
+
+                    <p id="reportsErrorMessage">
+                        Something went wrong.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        id="retryButton"
+                    >
+                        Try Again
+                    </button>
+
+                </div>
+
+
+                <!-- EMPTY -->
+
+                <div
+                    class="reports-state"
+                    id="reportsEmptyState"
+                >
+
+                    <i class="bx bx-file-blank"></i>
+
+                    <h3>
+                        No report generated yet
+                    </h3>
+
+                    <p>
+                        Select a report type and filters, then click
+                        Generate Report to display data here.
+                    </p>
+
+                </div>
+
+
+                <!-- TABLE -->
+
+                <div
+                    class="report-table-wrapper"
+                    id="reportTableWrapper"
+                    hidden
+                >
+
+                    <table class="report-table">
+
+                        <thead id="reportTableHead">
+                        </thead>
+
+                        <tbody id="reportTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+
+                <div
+                    class="pagination-container"
+                    id="paginationContainer"
+                    hidden
+                >
+
+                    <span>
+
+                        Showing
+
+                        <strong id="paginationStart">
+                            0
+                        </strong>
+
+                        to
+
+                        <strong id="paginationEnd">
+                            0
+                        </strong>
+
+                        of
+
+                        <strong id="paginationTotal">
+                            0
+                        </strong>
+
+                        records
+
+                    </span>
+
+
+                    <div class="pagination-controls">
+
+                        <button
+                            type="button"
+                            id="previousPageButton"
+                        >
+                            Previous
+                        </button>
+
+                        <div id="paginationPages"></div>
+
+                        <button
+                            type="button"
+                            id="nextPageButton"
+                        >
+                            Next
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer class="page-footer">
+
+                <p>
+                    © <span id="currentYear"></span>
+                    AlumniHub. Alumni Affairs Office Portal.
+                </p>
+
+                <span>
+                    <span class="status-dot"></span>
+                    System Online
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         LOGOUT MODAL
+    ========================================================== -->
+
+    <div
+        class="modal"
+        id="logoutModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-backdrop"
+            data-close-modal="logoutModal"
+        ></div>
+
+
+        <div class="modal-dialog confirmation-modal-dialog">
+
+            <div class="modal-icon danger">
+                <i class="bx bx-log-out"></i>
+            </div>
+
+            <h2>
+                Log out of AlumniHub?
+            </h2>
+
+            <p>
+                You will need to sign in again to access the Alumni Office Portal.
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    data-close-modal="logoutModal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="button button-danger"
+                    id="confirmLogoutButton"
+                >
+                    Yes, Log Out
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PAGE LOADER -->
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+    >
+
+        <div class="loader-content">
+
+            <div class="loader-logo">
+                <i class="bx bxs-graduation"></i>
+            </div>
+
+            <div class="loader-spinner"></div>
+
+            <p>
+                Loading Reports Management...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+    ></div>
+
+
+    <!-- Reports JavaScript -->
+    <script src="../assets/js/office-reports.js"></script>
+    <script src="../assets/js/office-header.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AlumniHub Login"
+    >
+
+    <title>
+        AlumniHub | Sign In
+    </title>
+
+
+    <!-- Boxicons -->
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- Login CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/login.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="login-page">
+
+
+    <!-- =====================================================
+         LEFT SIDE
+    ====================================================== -->
+
+    <section class="login-panel">
+
+
+        <div class="login-content">
+
+
+            <div class="brand">
+
+    <div class="brand-logo">
+        <img
+    src="../assets/images/logo/ams-round-logo.jpg"
+    alt="AMS Logo"
+        >
+    </div>
+
+    <div class="brand-text">
+        <strong>AlumniHub</strong>
+        <small>Alumni Management System</small>
+    </div>
+
+</div>
+
+
+
+            <!-- HEADING -->
+
+            <div class="login-heading">
+
+                <h1>
+                    Welcome back
+                </h1>
+
+
+                <p>
+                    Sign in to continue to your alumni community.
+                </p>
+
+            </div>
+
+
+
+            <!-- LOGIN FORM -->
+
+            <form
+                id="loginForm"
+                autocomplete="on"
+            >
+
+
+                <!-- EMAIL -->
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="bx bx-envelope"></i>
+
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="input-group">
+
+
+                    <div class="password-label">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+
+                        <a
+                            href="#"
+                            id="forgotPasswordLink"
+                        >
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="bx bx-lock-alt"></i>
+
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+
+                        <i
+                            class="bx bx-show password-toggle"
+                            id="passwordToggle"
+                            title="Show password"
+                        ></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- REMEMBER -->
+
+                <div class="remember-row">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+                        <span>
+                            Keep me logged in
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                    id="loginButton"
+                >
+
+                    <span>
+                        Sign In
+                    </span>
+
+                    <i class="bx bx-right-arrow-alt"></i>
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- DIVIDER -->
+
+            <div class="divider">
+
+                <span>
+                    or continue with
+                </span>
+
+            </div>
+
+
+
+            <!-- GOOGLE -->
+
+            <button
+                type="button"
+                class="google-btn"
+                id="googleLoginButton"
+            >
+
+                <i class="bx bxl-google"></i>
+
+                Sign in with Google
+
+            </button>
+
+
+
+            <!-- REGISTER -->
+
+            <div class="register-link">
+
+                Don't have an account?
+
+                <a href="register.html">
+                    Create an account
+                </a>
+
+            </div>
+
+
+
+            <!-- FOOTER -->
+
+            <div class="login-footer">
+
+                <span>
+                    © 2026 AlumniHub
+                </span>
+
+
+                <span>
+                    Need help? Contact Support
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RIGHT SIDE
+    ====================================================== -->
+
+    <section class="showcase-panel">
+
+
+        <div class="showcase-content">
+
+
+            <!-- TOP -->
+
+            <div class="showcase-top">
+
+                <span class="mini-logo">
+                    AlumniHub
+                </span>
+
+
+                <span class="secure-badge">
+
+                    <i class="bx bx-shield-quarter"></i>
+
+                    Secure Platform
+
+                </span>
+
+            </div>
+
+
+
+            <!-- DASHBOARD PREVIEW -->
+
+            <div class="dashboard-preview">
+
+
+                <div class="preview-header">
+
+
+                    <div>
+
+                        <small>
+                            AlumniHub Overview
+                        </small>
+
+
+                        <h3>
+                            Welcome back 👋
+                        </h3>
+
+                    </div>
+
+
+                    <div class="preview-avatar">
+                        A
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PREVIEW STATS -->
+
+                <div class="preview-stats">
+
+
+                    <div class="preview-stat">
+
+                        <span>
+                            Total Alumni
+                        </span>
+
+
+                        <strong>
+                            2,348
+                        </strong>
+
+
+                        <small class="growth">
+                            ↑ 12.5% this month
+                        </small>
+
+                    </div>
+
+
+
+                    <div class="preview-stat">
+
+                        <span>
+                            Active Members
+                        </span>
+
+
+                        <strong>
+                            1,892
+                        </strong>
+
+
+                        <small class="growth">
+                            ↑ 8.2% this month
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PREVIEW CHART -->
+
+                <div class="preview-chart">
+
+
+                    <div class="chart-title">
+
+                        <strong>
+                            Alumni Community Growth
+                        </strong>
+
+
+                        <span>
+                            2026
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="chart-bars">
+
+                        <span style="height:35%"></span>
+
+                        <span style="height:48%"></span>
+
+                        <span style="height:42%"></span>
+
+                        <span style="height:65%"></span>
+
+                        <span style="height:58%"></span>
+
+                        <span style="height:80%"></span>
+
+                        <span style="height:92%"></span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- MESSAGE -->
+
+            <div class="showcase-message">
+
+                <h2>
+                    Connect. Grow.<br>
+                    Give Back.
+                </h2>
+
+
+                <p>
+                    Stay connected with your fellow alumni,
+                    discover opportunities, and grow together
+                    as one powerful community.
+                </p>
+
+            </div>
+
+
+
+            <!-- COMMUNITY -->
+
+            <div class="community-preview">
+
+
+                <div class="community-avatar avatar-one">
+                    J
+                </div>
+
+
+                <div class="community-avatar avatar-two">
+                    M
+                </div>
+
+
+                <div class="community-avatar avatar-three">
+                    R
+                </div>
+
+
+                <div class="community-avatar avatar-four">
+                    A
+                </div>
+
+
+                <span>
+                    Join thousands of alumni building
+                    meaningful connections.
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     LOGIN JAVASCRIPT
+========================================================== -->
+
+<script src="../assets/js/login.js"></script>
+
+
+<!-- =========================================================
+     SMALL LOGIN UI HELPERS
+========================================================== -->
+
+<script>
+
+    const passwordInput =
+        document.getElementById("password");
+
+    const passwordToggle =
+        document.getElementById("passwordToggle");
+
+
+    if (
+        passwordInput &&
+        passwordToggle
+    ) {
+
+        passwordToggle.addEventListener(
+            "click",
+            () => {
+
+                const isHidden =
+                    passwordInput.type ===
+                    "password";
+
+
+                passwordInput.type =
+                    isHidden
+                        ? "text"
+                        : "password";
+
+
+                passwordToggle.className =
+                    isHidden
+                        ? "bx bx-hide password-toggle"
+                        : "bx bx-show password-toggle";
+
+
+                passwordToggle.title =
+                    isHidden
+                        ? "Hide password"
+                        : "Show password";
+
+            }
+        );
+
+    }
+
+
+    const forgotPasswordLink =
+        document.getElementById(
+            "forgotPasswordLink"
+        );
+
+
+    forgotPasswordLink?.addEventListener(
+        "click",
+        event => {
+
+            event.preventDefault();
+
+            alert(
+                "Forgot Password feature will be connected to AlumniHub account recovery."
+            );
+
+        }
+    );
+
+
+    const googleLoginButton =
+        document.getElementById(
+            "googleLoginButton"
+        );
+
+
+    googleLoginButton?.addEventListener(
+        "click",
+        () => {
+
+            alert(
+                "Google Sign-In is not connected yet."
+            );
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>
